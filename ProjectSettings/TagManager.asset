@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 4028875415
+    locked: 0
+  - name: Underground
+    uniqueID: 1906620315
+    locked: 0
+  - name: Background
+    uniqueID: 1271857133
+    locked: 0
+  - name: Foreground
+    uniqueID: 56633649
+    locked: 0
