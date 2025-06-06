@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : MonoBehaviour
+public class Archer : CharacterCommonBehavior
 {
-    public float moveSpeed = 5f;
-    public Vector3 moveInput;
-
     public GameObject arrow;
     public Transform arrowSpawnPoint;
     public float timeBtwArrow = 0.2f;
@@ -16,11 +13,11 @@ public class Archer : MonoBehaviour
 
     private Rigidbody2D rb;
 
-
-
-    private void Update()
+    protected override void Update()
     {
-        Move();
+
+        base.Update();
+
         _timeBtwArrow -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _timeBtwArrow < 0)
         {
@@ -29,24 +26,7 @@ public class Archer : MonoBehaviour
         }
     }
 
-    void Move()
-    {
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
-
-        if (moveInput.x != 0)
-        {
-            if (moveInput.x != 0)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x = moveInput.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-                transform.localScale = scale;
-            }
-        }
-    }
-
-    void Attack()
+    public override void Attack()
     {
         _timeBtwArrow = timeBtwArrow;
 
@@ -69,4 +49,21 @@ public class Archer : MonoBehaviour
         arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
 
+    public override void Skill1()
+    {
+        // Implement Skill1 logic here
+    }
+    public override void Skill2()
+    {
+        // Implement Skill2 logic here
+    }
+    public override void Skill3()
+    {
+        // Implement Skill3 logic here
+    }
+    public override void Skill4()
+    {
+        // Implement Skill4 logic here
+
+    }
 }
