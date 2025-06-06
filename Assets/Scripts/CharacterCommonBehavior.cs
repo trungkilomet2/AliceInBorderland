@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class CharacterCommonBehavior : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
+    public abstract float moveSpeed { get; set; }
     public Vector3 moveInput;
 
     private Rigidbody2D rb;
