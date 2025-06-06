@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_0
+      name: sprite_sheet_11
       rect:
         serializedVersion: 2
         x: 686
@@ -118,7 +118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_1
+      name: sprite_sheet_12
       rect:
         serializedVersion: 2
         x: 974
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_2
+      name: sprite_sheet_08
       rect:
         serializedVersion: 2
         x: 974
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_3
+      name: sprite_sheet_07
       rect:
         serializedVersion: 2
         x: 686
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_4
+      name: sprite_sheet_06
       rect:
         serializedVersion: 2
         x: 398
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_5
+      name: sprite_sheet_05
       rect:
         serializedVersion: 2
         x: 110
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_6
+      name: sprite_sheet_01
       rect:
         serializedVersion: 2
         x: 110
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_7
+      name: sprite_sheet_02
       rect:
         serializedVersion: 2
         x: 398
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_8
+      name: sprite_sheet_10
       rect:
         serializedVersion: 2
         x: 398
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_9
+      name: sprite_sheet_03
       rect:
         serializedVersion: 2
         x: 686
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_10
+      name: sprite_sheet_04
       rect:
         serializedVersion: 2
         x: 974
@@ -328,7 +328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_12
+      name: sprite_sheet_09
       rect:
         serializedVersion: 2
         x: 110
@@ -359,19 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_0: 1759497631
-      sprite_sheet_1: -1606924240
-      sprite_sheet_10: -887491221
-      sprite_sheet_11: -774921041
-      sprite_sheet_12: -1125670242
-      sprite_sheet_2: -907481018
-      sprite_sheet_3: 1501163602
-      sprite_sheet_4: 1999318444
-      sprite_sheet_5: -1184440437
-      sprite_sheet_6: 1609942367
-      sprite_sheet_7: 495779342
-      sprite_sheet_8: -397440397
-      sprite_sheet_9: -889412812
+      sprite_sheet_01: 1609942367
+      sprite_sheet_02: 495779342
+      sprite_sheet_03: -889412812
+      sprite_sheet_04: -887491221
+      sprite_sheet_05: -1184440437
+      sprite_sheet_06: 1999318444
+      sprite_sheet_07: 1501163602
+      sprite_sheet_08: -907481018
+      sprite_sheet_09: -1125670242
+      sprite_sheet_10: -397440397
+      sprite_sheet_11: 1759497631
+      sprite_sheet_12: -1606924240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
