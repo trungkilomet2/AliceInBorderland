@@ -12,40 +12,18 @@ public class Archer : CharacterCommonBehavior
     public float bulletForce;
 
     private float _timeBtwArrow = 0.2f;
-    private Animator animator;
-
-    public SkillBase[] skills;
-
-
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     protected override void Update()
     {
         base.Update();
-        UpdateAnimation();
 
         _timeBtwArrow -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _timeBtwArrow < 0)
         {
             Attack();
         }
-
-        // Use the new skill input handling flow
-        if (skills != null && skills.Length > 0 && skills[0] != null)
-        {
-            skills[0].HandleSkillInput();
-        }
     }
 
-    private void UpdateAnimation()
-    {
-        bool isRunning = Mathf.Abs(moveInput.x) > 0.01f || Mathf.Abs(moveInput.y) > 0.01f;
-        animator.SetBool("isRunning", isRunning);
-    }
 
     public override void Attack()
     {
