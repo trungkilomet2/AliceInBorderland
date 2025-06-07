@@ -34,7 +34,11 @@ public class Archer : CharacterCommonBehavior
             Attack();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) skills[0].UseSkill();
+        // Use the new skill input handling flow
+        if (skills != null && skills.Length > 0 && skills[0] != null)
+        {
+            skills[0].HandleSkillInput();
+        }
     }
 
     private void UpdateAnimation()

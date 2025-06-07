@@ -2,28 +2,24 @@
 
 public class Skill1 : SkillBase
 {
-
-    //Skill 1:
-    public float rollDistance = 5f;
     public float rollSpeed = 20f;
-    public GameObject arrowIndicatorPrefab;
 
-    private bool isChoosingDirection = false;
-    private Vector2 rollDirection;
     private bool isRolling = false;
     private Vector3 rollTarget;
-    private GameObject arrowInstance;
+    private Vector2 rollDirection;
     private Animator animator;
 
-    private void Awake()
+    public override void Awake()
     {
         animator = GetComponent<Animator>();
+        base.Awake();
     }
 
-    private void Update()
+    public override void Update()
     {
-        HandleSkillInput(KeyCode.Alpha1);
+        base.Update();
 
+        // Handle rolling movement
         if (isRolling)
         {
             transform.position = Vector3.MoveTowards(transform.position, rollTarget, rollSpeed * Time.deltaTime);
@@ -31,77 +27,26 @@ public class Skill1 : SkillBase
             {
                 isRolling = false;
             }
-            return;
-        }
-
-        if (isChoosingDirection)
-        {
-            UpdateArrowDirection();
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-                HideArrowIndicator();
-                StartRoll();
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                HideArrowIndicator();
-            }
         }
     }
-
-
 
     protected override void Activate()
     {
-        if (isChoosingDirection || isRolling) return;
-        isChoosingDirection = true;
-        ShowArrowIndicator();
-    }
-
-
-    void ShowArrowIndicator()
-    {
-        arrowInstance = Instantiate(arrowIndicatorPrefab, transform.position, Quaternion.identity);
-        arrowInstance.transform.localScale = new Vector3(rollDistance, 1f, 1f);
-    }
-
-
-
-    void UpdateArrowDirection()
-    {
-        if (arrowInstance != null)
-        {
-            Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            dir.z = 0;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            arrowInstance.transform.position = transform.position;
-            arrowInstance.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
-    }
-
-    void HideArrowIndicator()
-    {
-        if (arrowInstance != null)
-        {
-            Destroy(arrowInstance);
-        }
-        isChoosingDirection = false;
-    }
-
-    void StartRoll()
-    {
+        // When Activate is called (from SkillBase), choose direction and roll
         if (isRolling) return;
-        animator.SetTrigger("roll");
 
-        Vector2 rollDir = arrowInstance != null
-            ? arrowInstance.transform.right.normalized
-            : rollDirection;
+        // Calculate direction from player to mouse
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorld.z = 0;
+        rollDirection = (mouseWorld - transform.position).normalized;
 
-        rollTarget = transform.position + (Vector3)(rollDir * rollDistance);
+        // Set roll target
+        rollTarget = transform.position + (Vector3)(rollDirection * skillRange);
+
+        // Play roll animation
+        if (animator != null)
+            animator.SetTrigger("roll");
+
         isRolling = true;
     }
-
 }
