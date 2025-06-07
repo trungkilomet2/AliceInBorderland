@@ -15,14 +15,16 @@ public class Archer : CharacterCommonBehavior
     private Animator animator;
 
     //Skill 1:
-    private bool isChoosingDirection = false;
-    private Vector2 rollDirection;
     public float rollDistance = 5f;
     public float rollSpeed = 20f;
+    public float timeBtwSkill1 = 10f;
+    public GameObject arrowIndicatorPrefab;
+
+    private bool isChoosingDirection = false;
+    private Vector2 rollDirection;
     private bool isRolling = false;
     private Vector3 rollTarget;
-
-    public GameObject arrowIndicatorPrefab;
+    private float _timeBtwSkill1 = 0f;
     private GameObject arrowInstance;
 
 
@@ -88,7 +90,8 @@ public class Archer : CharacterCommonBehavior
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !isChoosingDirection)
+        _timeBtwSkill1 -= Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !isChoosingDirection && _timeBtwSkill1 < 0)
         {
             isChoosingDirection = true;
             ShowArrowIndicator();
@@ -103,6 +106,11 @@ public class Archer : CharacterCommonBehavior
                 rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
                 HideArrowIndicator();
                 StartRoll();
+            }
+            if(Input.GetMouseButtonDown(1))
+            {
+                HideArrowIndicator(); // Hủy chọn nếu nhấn chuột phải
+                isChoosingDirection = false;
             }
         }
     }
@@ -148,6 +156,11 @@ public class Archer : CharacterCommonBehavior
 
     void StartRoll()
     {
+        _timeBtwSkill1 = timeBtwSkill1; // Reset cooldown
+
+        if (isRolling) return;
+        animator.SetTrigger("roll"); // Optional
+
         Vector2 rollDir = arrowInstance.transform.right.normalized;
 
         // Lấy chiều dài từ scale của body (child)
@@ -157,6 +170,5 @@ public class Archer : CharacterCommonBehavior
         rollTarget = transform.position + (Vector3)(rollDir * rollLength);
 
         isRolling = true;
-        animator.SetTrigger("roll"); // Optional
     }
 }
