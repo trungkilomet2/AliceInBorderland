@@ -14,18 +14,8 @@ public class Archer : CharacterCommonBehavior
     private float _timeBtwArrow = 0.2f;
     private Animator animator;
 
-    //Skill 1:
-    public float rollDistance = 5f;
-    public float rollSpeed = 20f;
-    public float timeBtwSkill1 = 10f;
-    public GameObject arrowIndicatorPrefab;
+    public SkillBase[] skills;
 
-    private bool isChoosingDirection = false;
-    private Vector2 rollDirection;
-    private bool isRolling = false;
-    private Vector3 rollTarget;
-    private float _timeBtwSkill1 = 0f;
-    private GameObject arrowInstance;
 
 
     private void Awake()
@@ -44,7 +34,7 @@ public class Archer : CharacterCommonBehavior
             Attack();
         }
 
-        Skill1();
+        if (Input.GetKeyDown(KeyCode.Alpha1)) skills[0].UseSkill();
     }
 
     private void UpdateAnimation()
@@ -78,41 +68,7 @@ public class Archer : CharacterCommonBehavior
 
     public override void Skill1()
     {
-        // Skill 1: Roll - Character rolls in the direction of movement
-        if (isRolling)
-        {
-            // Di chuyển tới target
-            transform.position = Vector3.MoveTowards(transform.position, rollTarget, rollSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, rollTarget) < 0.1f)
-            {
-                isRolling = false;
-            }
-            return;
-        }
-
-        _timeBtwSkill1 -= Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !isChoosingDirection && _timeBtwSkill1 < 0)
-        {
-            isChoosingDirection = true;
-            ShowArrowIndicator();
-        }
-
-        if (isChoosingDirection)
-        {
-            UpdateArrowDirection();
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-                HideArrowIndicator();
-                StartRoll();
-            }
-            if(Input.GetMouseButtonDown(1))
-            {
-                HideArrowIndicator(); // Hủy chọn nếu nhấn chuột phải
-                isChoosingDirection = false;
-            }
-        }
+        
     }
     public override void Skill2()
     {
@@ -128,47 +84,5 @@ public class Archer : CharacterCommonBehavior
 
     }
 
-    void ShowArrowIndicator()
-    {
-        arrowInstance = Instantiate(arrowIndicatorPrefab, transform.position, Quaternion.identity);
-    }
-
-    void UpdateArrowDirection()
-    {
-        if (arrowInstance != null)
-        {
-            Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            //dir.z = 0;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            arrowInstance.transform.position = transform.position;
-            arrowInstance.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
-    }
-
-    void HideArrowIndicator()
-    {
-        if (arrowInstance != null)
-        {
-            Destroy(arrowInstance);
-        }
-        isChoosingDirection = false;
-    }
-
-    void StartRoll()
-    {
-        _timeBtwSkill1 = timeBtwSkill1; // Reset cooldown
-
-        if (isRolling) return;
-        animator.SetTrigger("roll"); // Optional
-
-        Vector2 rollDir = arrowInstance.transform.right.normalized;
-
-        // Lấy chiều dài từ scale của body (child)
-        float rollLength = arrowInstance.transform.GetChild(0).localScale.x;
-
-        // Tính vị trí đích
-        rollTarget = transform.position + (Vector3)(rollDir * rollLength);
-
-        isRolling = true;
-    }
+    
 }
