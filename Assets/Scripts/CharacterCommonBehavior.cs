@@ -40,8 +40,4 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     }
 
     public abstract void Attack();
-    public abstract void Skill1();
-    public abstract void Skill2();
-    public abstract void Skill3();
-    public abstract void Skill4();
 }

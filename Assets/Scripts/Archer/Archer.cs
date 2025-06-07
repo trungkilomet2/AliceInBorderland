@@ -69,24 +69,4 @@ public class Archer : CharacterCommonBehavior
         Rigidbody2D arrowRb = newArrow.GetComponent<Rigidbody2D>();
         arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
-
-    public override void Skill1()
-    {
-        
-    }
-    public override void Skill2()
-    {
-        // Implement Skill2 logic here
-    }
-    public override void Skill3()
-    {
-        // Implement Skill3 logic here
-    }
-    public override void Skill4()
-    {
-        // Implement Skill4 logic here
-
-    }
-
-    
 }
