@@ -5,23 +5,28 @@ public enum SkillNum { Skill1, Skill2, Skill3, Skill4 }
 public enum SkillType { Active, Passive }
 public abstract class SkillBase : MonoBehaviour
 {
+    public SkillNum skillNum;
+    public SkillType skillType = SkillType.Active;
+    public IndicatorType indicatorType = IndicatorType.Circle; 
     public string skillName;
     public float cooldown = 5f;
     public float skillRange = 10f;
     public float skillWidth = 1f;
-    public SkillNum skillNum;
-    public SkillType skillType = SkillType.Active;
-    public IndicatorType indicatorType = IndicatorType.Circle; 
+    public float skillDuration = 2f;
 
     protected float currentCooldown = 0f;
     protected bool isCoolingDown = false;
+    protected Transform skillTransform;
+    protected GameObject indicatorInstance;
+    protected GameObject rangeIndicatorInstance;
 
     private GameObject indicatorPrefab;
-    private GameObject indicatorInstance;
     private GameObject rangeIndicatorPrefab;
-    private GameObject rangeIndicatorInstance;
     private KeyCode key;
     private bool isPreparingSkill = false;
+
+    // Static field to track if any skill is being prepared or executed
+    private static SkillBase currentActiveSkill = null;
 
     public virtual void Awake()
     {
@@ -68,12 +73,20 @@ public abstract class SkillBase : MonoBehaviour
             }
         }
 
+        // Prevent preparing/executing another skill if one is already being prepared or executed
+        if (currentActiveSkill != null && currentActiveSkill != this)
+        {
+            return;
+        }
+
         // Passive skill: activate immediately, no indicator
         if (skillType == SkillType.Passive && !isCoolingDown && Input.GetKeyDown(key))
         {
+            currentActiveSkill = this;
             Activate();
             isCoolingDown = true;
             currentCooldown = cooldown;
+            currentActiveSkill = null;
             return;
         }
 
@@ -82,6 +95,7 @@ public abstract class SkillBase : MonoBehaviour
         {
             ShowIndicators();
             isPreparingSkill = true;
+            currentActiveSkill = this;
         }
     }
 
@@ -143,13 +157,10 @@ public abstract class SkillBase : MonoBehaviour
             }
             else if (indicatorType == IndicatorType.Circle)
             {
-                // Update circle indicator position if needed
                 Vector3 mouseScreen = Input.mousePosition;
                 mouseScreen.z = Mathf.Abs(Camera.main.transform.position.z);
-
                 Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
                 mouseWorld.z = 0;
-
                 float distance = Vector3.Distance(transform.position, mouseWorld);
                 if (distance > skillRange)
                 {
@@ -184,17 +195,21 @@ public abstract class SkillBase : MonoBehaviour
 
     private void ExecuteSkill()
     {
+        skillTransform = indicatorInstance != null ? indicatorInstance.transform : null;
         HideIndicators();
         Activate();
         isCoolingDown = true;
         currentCooldown = cooldown;
         isPreparingSkill = false;
+        currentActiveSkill = null;
     }
 
     public virtual void CancelSkill()
     {
         HideIndicators();
         isPreparingSkill = false;
+        if (currentActiveSkill == this)
+            currentActiveSkill = null;
     }
 
     protected abstract void Activate();

@@ -6,9 +6,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 {
 
     public abstract float moveSpeed { get; set; }
-    public Vector3 moveInput;
+    public SkillBase[] skills;
 
+    private Vector3 moveInput;
     private Rigidbody2D rb;
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -20,6 +27,19 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     protected virtual void Update()
     {
         Move();
+        UpdateAnimation();
+
+        // Use the new skill input handling flow
+        if (skills != null && skills.Length > 0 && skills[0] != null)
+        {
+            for (int i = 0; i < skills.Length; i++)
+            {
+                if (skills[i] != null)
+                {
+                    skills[i].HandleSkillInput();
+                }
+            }
+        }
     }
 
     protected virtual void Move()
@@ -37,6 +57,12 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                 transform.localScale = scale;
             }
         }
+    }
+
+    private void UpdateAnimation()
+    {
+        bool isRunning = Mathf.Abs(moveInput.x) > 0.01f || Mathf.Abs(moveInput.y) > 0.01f;
+        animator.SetBool("isRunning", isRunning);
     }
 
     public abstract void Attack();
