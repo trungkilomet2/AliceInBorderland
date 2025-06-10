@@ -7,6 +7,7 @@ public class Warrior : CharacterCommonBehavior
     public override float moveSpeed { get; set; } = 4f;
     public GameObject axePrefabs;
     public Transform throwPoint;
+
     public float throwForce = 10f;
     // Start is called before the first frame update
 
