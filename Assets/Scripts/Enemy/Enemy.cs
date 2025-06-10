@@ -62,13 +62,16 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Weapon"))
+        if (other.CompareTag("Weapon"))
         {
-            Arrow arrow = other.GetComponent<Arrow>();
-            if (arrow != null)
+            WeaponBase weapon = other.GetComponent<WeaponBase>();
+            if (weapon != null)
             {
-                TakeDamage(arrow.damage);
-                Destroy(other.gameObject);
+                TakeDamage(weapon.damage);
+                if (!weapon.isThought)
+                {
+                    Destroy(other.gameObject);
+                }
             }
         }
         else if (other.CompareTag("Player"))

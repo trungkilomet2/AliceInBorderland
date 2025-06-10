@@ -2,23 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Arrow : WeaponBase
 {
-    public float maxDistance = 10f;
-    private Vector3 startPos;
 
-    public float damage = 10;
-
-    void Start()
+    protected override void Start()
     {
-        startPos = transform.position;
+        base.Start();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (Vector3.Distance(transform.position, startPos) > maxDistance)
-        {
-            Destroy(gameObject);
-        }
+        base.Update();
     }
 }
