@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,5 +47,10 @@ public class Archer : CharacterCommonBehavior
         // Thêm lực
         Rigidbody2D arrowRb = newArrow.GetComponent<Rigidbody2D>();
         arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+    }
+
+    internal void TakeDamage(int damage)
+    {
+        throw new NotImplementedException();
     }
 }
