@@ -49,8 +49,4 @@ public class Archer : CharacterCommonBehavior
         arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
 
-    internal void TakeDamage(int damage)
-    {
-        throw new NotImplementedException();
-    }
 }

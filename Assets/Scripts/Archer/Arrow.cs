@@ -7,6 +7,8 @@ public class Arrow : MonoBehaviour
     public float maxDistance = 10f;
     private Vector3 startPos;
 
+    public float damage = 10;
+
     void Start()
     {
         startPos = transform.position;

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     public abstract float moveSpeed { get; set; }
     public SkillBase[] skills;
+    public float hp;
 
     private Vector3 moveInput;
     private Rigidbody2D rb;
@@ -63,6 +64,17 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         bool isRunning = Mathf.Abs(moveInput.x) > 0.01f || Mathf.Abs(moveInput.y) > 0.01f;
         animator.SetBool("isRunning", isRunning);
+    }
+
+    internal void TakeDamage(float damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0f;
+        }
+        animator.SetTrigger("takeHit");
     }
 
     public abstract void Attack();

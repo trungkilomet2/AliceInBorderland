@@ -18,10 +18,41 @@ public class Skill2 : SkillBase
         base.Update();
     }
 
+
     protected override void Activate()
     {
-        skillEffectInstant = Instantiate(skillEffect, skillTransform.position, Quaternion.identity);
+        Vector3 damagePosition = skillTransform.position;
+
+        skillEffectInstant = Instantiate(skillEffect, damagePosition, Quaternion.identity);
         skillEffectInstant.transform.localScale = new Vector3(skillRange, skillRange, 1f);
+
+        StartCoroutine(DealContinuousDamage(damagePosition));
         Destroy(skillEffectInstant, skillDuration);
     }
+
+    private IEnumerator DealContinuousDamage(Vector3 position)
+    {
+        float elapsed = 0f;
+        float damageInterval = 1f;
+
+        while (elapsed < skillDuration)
+        {
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(position, skillRange / 2);
+            foreach (Collider2D hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("Enemy"))
+                {
+                    Enemy enemy = hitCollider.GetComponent<Enemy>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(skillDamage);
+                    }
+                }
+            }
+            yield return new WaitForSeconds(damageInterval);
+            elapsed += damageInterval;
+        }
+    }
+
+
 }

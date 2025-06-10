@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +7,14 @@ public class Enemy : MonoBehaviour
 {
     Transform targetDestination;
     GameObject targetGameObject;
-    Archer targetCharacter;
+    CharacterCommonBehavior targetCharacter;
     [SerializeField] float speed;
+    [SerializeField] private GameObject damageTextPrefab;
 
     Rigidbody2D rgb2d;
 
-    [SerializeField] int hp = 999;
-    [SerializeField] int damage = 1;
+    [SerializeField] float hp = 50f;
+    [SerializeField] float damage = 10f;
 
     private void Awake()
     {
@@ -48,12 +49,44 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy attacks!");
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
+        ShowDamageText(damage);
         hp -= damage;
         if (hp <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Weapon"))
+        {
+            Arrow arrow = other.GetComponent<Arrow>();
+            if (arrow != null)
+            {
+                TakeDamage(arrow.damage);
+                Destroy(other.gameObject);
+            }
+        }
+        else if (other.CompareTag("Player"))
+        {
+            targetCharacter = other.GetComponent<CharacterCommonBehavior>();
+            if (targetCharacter != null)
+            {
+                targetCharacter.TakeDamage(damage);
+            }
+        }
+    }
+
+    private void ShowDamageText(float damage)
+    {
+        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0); // bay lên đầu enemy
+
+        GameObject dmgTextObj = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity);
+
+        DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
+        dmgText.SetDamage(damage);
     }
 }
