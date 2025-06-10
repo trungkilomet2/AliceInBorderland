@@ -7,9 +7,7 @@ public class DamageText : MonoBehaviour
 {
     public float moveUpSpeed = 1f;
     public float duration = 2f;
-    public TextMeshProUGUI text;
-
-    private Color originalColor;
+    public TMP_Text text;
 
     void Start()
     {
@@ -19,7 +17,6 @@ public class DamageText : MonoBehaviour
             canvas.worldCamera = Camera.main;
         }
 
-        originalColor = text.color;
         Destroy(gameObject, duration);
     }
 
@@ -35,7 +32,6 @@ public class DamageText : MonoBehaviour
 
     public void SetDamage(float damage)
     {
-        text.text = damage.ToString();
-        text.color = originalColor;
+        text.SetText(damage.ToString()); // Hiển thị số nguyên
     }
 }

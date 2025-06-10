@@ -194,6 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  damageTextPrefab: {fileID: 3972441783722797616, guid: ea550627ed3244443b6d380ba32e79be, type: 3}
+  damageTextPrefab: {fileID: 2155049830766882976, guid: 92b2e8696a41b794a96f125d7ae681a1, type: 3}
   hp: 50
   damage: 10

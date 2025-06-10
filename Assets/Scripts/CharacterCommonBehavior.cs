@@ -13,8 +13,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    private GameObject damageTextPrefab;
+
     private void Awake()
     {
+        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
     }
 
@@ -68,6 +71,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        ShowDamageText(damage);
         hp -= damage;
         if (hp <= 0)
         {
@@ -75,6 +79,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             Time.timeScale = 0f;
         }
         animator.SetTrigger("takeHit");
+    }
+
+    private void ShowDamageText(float damage)
+    {
+        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0); // bay lên đầu enemy
+
+        GameObject dmgTextObj = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity);
+
+        DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
+        dmgText.SetDamage(damage);
     }
 
     public abstract void Attack();

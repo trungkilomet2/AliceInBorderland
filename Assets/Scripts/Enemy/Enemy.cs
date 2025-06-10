@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     GameObject targetGameObject;
     CharacterCommonBehavior targetCharacter;
     [SerializeField] float speed;
-    [SerializeField] private GameObject damageTextPrefab;
+    private GameObject damageTextPrefab;
 
     Rigidbody2D rgb2d;
 
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         rgb2d = GetComponent<Rigidbody2D>();
     }
 
