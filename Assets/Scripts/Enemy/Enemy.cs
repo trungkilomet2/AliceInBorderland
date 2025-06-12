@@ -5,80 +5,24 @@ using UnityEngine;
 
 public class Enemy : EnemyBase
 {
-    Transform targetDestination;
-    GameObject targetGameObject;
-    CharacterCommonBehavior targetCharacter;
     [SerializeField] float speed;
-    private GameObject damageTextPrefab;
 
     Rigidbody2D rgb2d;
 
-    [SerializeField] float hp = 50f;
-    [SerializeField] float damage = 10f;
-
-    private void Awake()
+    public override void Awake()
     {
-        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
+        base.Awake();
         rgb2d = GetComponent<Rigidbody2D>();
-    }
-
-    public void SetTarget(GameObject target)
-    {
-        targetGameObject = target;
-        if (targetGameObject != null)
-        {
-            targetDestination = targetGameObject.transform;
-        }
     }
 
     private void FixedUpdate()
     {
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
+        Vector3 direction = (targetGameObject.transform.position - transform.position).normalized;
         rgb2d.velocity = direction * speed;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    public override void OnTriggerEnter2D(Collider2D collision) // Added 'override' keyword to fix CS0114
     {
-        if (collision.gameObject == targetGameObject)
-        {
-            Attack();
-        }
-    }
-
-    private void Attack()
-    {
-        Debug.Log("Enemy attacks!");
-    }
-
-    public void TakeDamage(float damage)
-    {
-        ShowDamageText(damage);
-        hp -= damage;
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            targetCharacter = other.GetComponent<CharacterCommonBehavior>();
-            if (targetCharacter != null)
-            {
-                targetCharacter.TakeDamage(damage);
-            }
-        }
-    }
-
-    private void ShowDamageText(float damage)
-    {
-        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0); // bay lên đầu enemy
-
-        GameObject dmgTextObj = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity);
-
-        DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
-        dmgText.SetDamage(damage);
+        base.OnTriggerEnter2D(collision);
     }
 }

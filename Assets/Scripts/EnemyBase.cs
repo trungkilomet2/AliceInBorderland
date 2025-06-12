@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
-    CharacterCommonBehavior targetCharacter;
+    protected GameObject targetGameObject;
+
     [SerializeField] float hp = 50f;
+    [SerializeField] float damage = 10f;
 
     private GameObject damageTextPrefab;
 
-    private void Awake()
+    public virtual void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText");
     }
@@ -24,6 +26,11 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    public void SetTarget(GameObject target)
+    {
+        targetGameObject = target;
+    }
+
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Weapon"))
@@ -36,6 +43,14 @@ public class EnemyBase : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                 }
+            }
+        }
+        else if (other.CompareTag("Player"))
+        {
+            CharacterCommonBehavior targetCharacter = other.GetComponent<CharacterCommonBehavior>();
+            if (targetCharacter != null)
+            {
+                targetCharacter.TakeDamage(damage);
             }
         }
     }

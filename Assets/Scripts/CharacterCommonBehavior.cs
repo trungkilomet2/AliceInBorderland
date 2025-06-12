@@ -15,7 +15,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     private GameObject damageTextPrefab;
 
-    private void Awake()
+    public void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
@@ -89,6 +89,22 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
         dmgText.SetDamage(damage);
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy_Weapon"))
+        {
+            WeaponBase weapon = other.GetComponent<WeaponBase>();
+            if (weapon != null)
+            {
+                TakeDamage(weapon.damage);
+                if (!weapon.isThought)
+                {
+                    Destroy(other.gameObject);
+                }
+            }
+        }
     }
 
     public abstract void Attack();
