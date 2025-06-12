@@ -19,15 +19,19 @@ public class Mage : CharacterCommonBehavior
     public float chargeTimeNeeded = 1f; // Thời gian cần giữ để cast chiêu mạnh
     public float chargedSpellForce = 20f; // Lực của chiêu mạnh
     public Vector3 chargedSpellScale = new Vector3(2f, 2f, 1f); // Kích thước của đạn sạc (lớn hơn)
-    public string chargedCastTrigger = "ChargedCast"; // Tên Trigger cho animation chiêu mạnh
+    public string isChargingBoolParam = "IsCharging"; // Tên parameter bool cho animation sạc
 
     private float _timeBtwBasicSpell = 0f;
     private float _chargeTimer = 0f; // Bộ đếm thời gian giữ chuột
     private bool _isCharging = false; // Cờ hiệu đang giữ chuột
+    private bool _animationStarted = false; // Cờ hiệu kiểm soát animation sạc đã bắt đầu chưa
 
-    protected void Start()
+    private Animator _mageAnimator;
+
+    protected override void Start()
     {
         base.Start();
+        _mageAnimator = GetComponent<Animator>();
     }
 
     protected override void Update()
@@ -43,10 +47,20 @@ public class Mage : CharacterCommonBehavior
             {
                 _isCharging = true;
                 _chargeTimer = 0f; // Reset bộ đếm
-                // Có thể thêm animation sạc ở đây nếu muốn
-                // animator.SetBool("IsCharging", true); // Nếu có parameter IsCharging trong Animator
+                _animationStarted = false; // Reset cờ hiệu animation
             }
             _chargeTimer += Time.deltaTime; // Tăng thời gian sạc
+
+            // Kiểm tra nếu thời gian giữ chuột đã đủ để bắt đầu animation sạc
+            // VÀ animation chưa bắt đầu
+            if (_chargeTimer >= chargeTimeNeeded && !_animationStarted)
+            {
+                if (_mageAnimator != null)
+                {
+                    _mageAnimator.SetBool(isChargingBoolParam, true); // Bật animation sạc
+                }
+                _animationStarted = true; // Đặt cờ hiệu là animation đã bắt đầu
+            }
         }
 
         // Xử lý nhả chuột hoặc đã sạc đủ
@@ -55,7 +69,13 @@ public class Mage : CharacterCommonBehavior
             if (_isCharging)
             {
                 _isCharging = false;
-                // animator.SetBool("IsCharging", false); // Tắt animation sạc
+                _animationStarted = false; // Reset cờ hiệu animation khi nhả chuột
+
+                // Tắt animation sạc (nếu nó đang chạy)
+                if (_mageAnimator != null)
+                {
+                    _mageAnimator.SetBool(isChargingBoolParam, false); // Tắt animation sạc
+                }
 
                 if (_chargeTimer >= chargeTimeNeeded)
                 {
@@ -64,7 +84,7 @@ public class Mage : CharacterCommonBehavior
                 }
                 else
                 {
-                    // Nhả ra trước khi sạc đủ, thực hiện tấn công cơ bản (nếu chưa bắn thường trong lúc giữ)
+                    // Nhả ra trước khi sạc đủ, thực hiện tấn công cơ bản
                     if (_timeBtwBasicSpell <= 0) // Chỉ bắn nếu cooldown cho đạn thường đã hết
                     {
                         AttackBasic();
@@ -72,19 +92,20 @@ public class Mage : CharacterCommonBehavior
                 }
             }
         }
-        else if (!_isCharging && Input.GetMouseButton(0) && _timeBtwBasicSpell <= 0) // Nhấn giữ nhưng không trong trạng thái sạc (dùng để bắn liên tục khi nhấn giữ)
+        // Logic bắn liên tục khi nhấn giữ và không sạc (giữ nguyên)
+        else if (!_isCharging && Input.GetMouseButton(0) && _timeBtwBasicSpell <= 0)
         {
             AttackBasic();
         }
     }
 
-    // Hàm tấn công cơ bản (bắn liên tục)
+    // Các hàm AttackBasic, AttackCharged, Attack giữ nguyên
     public void AttackBasic()
     {
         _timeBtwBasicSpell = timeBtwBasicSpell;
 
 
-
+        // ... (phần còn lại của hàm AttackBasic) ...
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         Vector2 direction = (mouseWorldPos - spellSpawnPoint.position).normalized;
@@ -106,16 +127,16 @@ public class Mage : CharacterCommonBehavior
         }
     }
 
-    // Hàm tấn công mạnh (chiêu sạc)
     public void AttackCharged()
     {
 
 
+        // ... (phần còn lại của hàm AttackCharged) ...
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         Vector2 direction = (mouseWorldPos - spellSpawnPoint.position).normalized;
 
-        GameObject newChargedSpell = Instantiate(spellPrefab, spellSpawnPoint.position, Quaternion.identity); // Vẫn dùng spellPrefab
+        GameObject newChargedSpell = Instantiate(spellPrefab, spellSpawnPoint.position, Quaternion.identity);
         newChargedSpell.transform.localScale = chargedSpellScale; // Thiết lập kích thước cho đạn sạc
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -132,17 +153,8 @@ public class Mage : CharacterCommonBehavior
         }
     }
 
-    // Bạn có thể bỏ qua hàm Attack() cũ hoặc thay đổi nó nếu muốn
-    // Hiện tại, Attack() cũ sẽ không được gọi trực tiếp nữa với logic mới này
     public override void Attack()
     {
         // Hàm này không còn cần thiết với logic mới.
-        // Logic tấn công cơ bản và sạc được xử lý trong AttackBasic() và AttackCharged().
-    }
-
-
-    internal void TakeDamage(int damage)
-    {
-        throw new System.NotImplementedException();
     }
 }
