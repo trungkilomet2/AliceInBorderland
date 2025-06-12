@@ -100,10 +100,10 @@ TextureImporter:
       name: Dissapear_0
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Dissapear_1
       rect:
         serializedVersion: 2
-        x: 193
+        x: 160
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Dissapear_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 320
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Dissapear_3
       rect:
         serializedVersion: 2
-        x: 507
+        x: 480
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Dissapear_4
       rect:
         serializedVersion: 2
-        x: 666
+        x: 640
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Dissapear_5
       rect:
         serializedVersion: 2
-        x: 827
+        x: 800
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: Dissapear_6
       rect:
         serializedVersion: 2
-        x: 987
+        x: 960
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Dissapear_7
       rect:
         serializedVersion: 2
-        x: 1148
+        x: 1120
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Dissapear_8
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1280
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : EnemyBase
 {
     Transform targetDestination;
     GameObject targetGameObject;
@@ -60,21 +60,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Weapon"))
-        {
-            WeaponBase weapon = other.GetComponent<WeaponBase>();
-            if (weapon != null)
-            {
-                TakeDamage(weapon.damage);
-                if (!weapon.isThought)
-                {
-                    Destroy(other.gameObject);
-                }
-            }
-        }
-        else if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             targetCharacter = other.GetComponent<CharacterCommonBehavior>();
             if (targetCharacter != null)

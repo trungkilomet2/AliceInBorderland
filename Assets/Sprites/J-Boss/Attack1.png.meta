@@ -100,10 +100,10 @@ TextureImporter:
       name: Attack1_1
       rect:
         serializedVersion: 2
-        x: 1322
-        y: 26
-        width: 88
-        height: 106
+        x: 164
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Attack1_2
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 26
-        width: 88
-        height: 106
+        x: 323
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Attack1_3
       rect:
         serializedVersion: 2
-        x: 1641
-        y: 26
-        width: 88
-        height: 106
+        x: 482
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Attack1_4
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 25
-        width: 88
-        height: 106
+        x: 641
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Attack1_5
       rect:
         serializedVersion: 2
-        x: 1956
-        y: 26
-        width: 88
-        height: 106
+        x: 800
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Attack1_6
       rect:
         serializedVersion: 2
-        x: 1166
-        y: 26
-        width: 88
-        height: 106
+        x: 959
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: Attack1_7
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 26
-        width: 88
-        height: 106
+        x: 1118
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Attack1_8
       rect:
         serializedVersion: 2
-        x: 842
-        y: 26
-        width: 88
-        height: 106
+        x: 1277
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Attack1_9
       rect:
         serializedVersion: 2
-        x: 681
-        y: 26
-        width: 88
-        height: 106
+        x: 1436
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: Attack1_0
       rect:
         serializedVersion: 2
-        x: 521
-        y: 25
-        width: 88
-        height: 106
+        x: 5
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: Attack1_10
       rect:
         serializedVersion: 2
-        x: 358
-        y: 25
-        width: 88
-        height: 106
+        x: 1595
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: Attack1_11
       rect:
         serializedVersion: 2
-        x: 199
-        y: 25
-        width: 88
-        height: 106
+        x: 1754
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: Attack1_12
       rect:
         serializedVersion: 2
-        x: 37
-        y: 25
-        width: 88
-        height: 106
+        x: 1913
+        y: 1
+        width: 159
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
