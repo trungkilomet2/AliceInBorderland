@@ -13,6 +13,7 @@ public abstract class SkillBase : MonoBehaviour
     public float skillRange = 10f;
     public float skillWidth = 1f;
     public float skillDuration = 2f;
+    public float skillDamage = 10f;
 
     protected float currentCooldown = 0f;
     protected bool isCoolingDown = false;
