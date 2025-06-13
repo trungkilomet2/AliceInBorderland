@@ -22,4 +22,4 @@ MonoBehaviour:
   damage: 15
   weaponName: Basic Weapon
   isLocked: 0
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 4419206121676326559, guid: 604842fa83f669445a3940e5e72d2382, type: 3}

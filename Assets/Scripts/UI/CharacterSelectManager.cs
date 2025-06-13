@@ -67,7 +67,7 @@ public class CharacterSelectManager : MonoBehaviour
         if (startButton != null)
         {
             startButton.onClick.AddListener(StartGame);
-            startButton.interactable = false; // Disable until character is selected
+            startButton.interactable = false; 
         }
     }
 
@@ -141,11 +141,9 @@ public class CharacterSelectManager : MonoBehaviour
     {
         if (selectedCharacterData != null)
         {
-            // Store selected character data for next scene
             PlayerPrefs.SetString("SelectedCharacter", selectedCharacterData.name);
             PlayerPrefs.Save();
 
-            // Load game scene
             SceneManager.LoadScene(gameSceneName);
         }
     }
