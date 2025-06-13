@@ -17,13 +17,14 @@ public class Archer : CharacterCommonBehavior
     protected override void Update()
     {
         base.Update();
-
         _timeBtwArrow -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _timeBtwArrow < 0)
         {
             Attack();
         }
     }
+    // Insert By Trung
+    
 
 
     public override void Attack()

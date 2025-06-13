@@ -1,65 +1,143 @@
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CharacterCard : MonoBehaviour
+public class CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("UI References")]
     public Image characterImage;
     public Image cardBackground;
     public Image selectionBorder;
-    public Image lockOverlay;
-    public Text characterNameText;
+    public GameObject lockOverlay;
+    public GameObject lockIcon;
+    public TextMeshProUGUI characterNameText; // Hoặc Text nếu dùng Legacy Text
 
-    [Header("Colors")]
+    [Header("Card Data")]
+    public CharacterData characterData;
+    public bool isSelected = false;
+    public bool isLocked = false;
+
+    [Header("Visual Settings")]
     public Color normalColor = Color.white;
-    public Color selectedColor = Color.yellow;
+    public Color hoverColor = new Color(0.9f, 0.95f, 1f, 1f);
+    public Color selectedColor = new Color(1f, 1f, 0.6f, 1f);
     public Color lockedColor = Color.gray;
 
-    private CharacterData characterData;
-    private CharacterSelectManager selectManager;
     private Button cardButton;
+    private CharacterSelectManager characterSelector;
 
     void Awake()
     {
         cardButton = GetComponent<Button>();
-        cardButton.onClick.AddListener(OnCardClicked);
-    }
 
-    public void SetupCard(CharacterData data, CharacterSelectManager manager)
-    {
-        characterData = data;
-        selectManager = manager;
-
-        characterImage.sprite = data.characterSprite;
-        characterNameText.text = data.characterName;
-
-        UpdateCardVisual();
-    }
-
-    void OnCardClicked()
-    {
-        if (characterData.isUnlocked)
+        // Setup button click event
+        if (cardButton != null)
         {
-            selectManager.SelectCharacter(this);
+            cardButton.onClick.AddListener(OnCardClicked);
         }
+    }
+
+    void Start()
+    {
+        // Tìm CharacterSelectManager sau khi scene đã load
+        if (characterSelector == null)
+        {
+            characterSelector = FindObjectOfType<CharacterSelectManager>();
+        }
+    }
+
+    public void SetupCard(CharacterData data)
+    {
+        if (data == null) return;
+
+        characterData = data;
+
+        // Set basic info
+        if (characterNameText != null)
+        {
+            characterNameText.text = data.characterName;
+        }
+
+        if (characterImage != null && data.characterSprite != null)
+        {
+            characterImage.sprite = data.characterSprite;
+        }
+
+        // Set lock status
+        isLocked = data.isLocked;
+
+        if (lockOverlay != null)
+        {
+            lockOverlay.SetActive(isLocked);
+        }
+
+        if (lockIcon != null)
+        {
+            lockIcon.SetActive(isLocked);
+        }
+
+        // Set interactable state
+        if (cardButton != null)
+        {
+            cardButton.interactable = !isLocked;
+        }
+
+        // Update visual state
+        UpdateVisuals();
     }
 
     public void SetSelected(bool selected)
     {
-        selectionBorder.gameObject.SetActive(selected);
-        cardBackground.color = selected ? selectedColor : normalColor;
+        isSelected = selected;
+
+        if (selectionBorder != null)
+        {
+            selectionBorder.gameObject.SetActive(selected);
+        }
+
+        UpdateVisuals();
     }
 
-    void UpdateCardVisual()
+    private void UpdateVisuals()
     {
-        lockOverlay.gameObject.SetActive(!characterData.isUnlocked);
-        cardButton.interactable = characterData.isUnlocked;
+        if (cardBackground == null) return;
 
-        if (!characterData.isUnlocked)
+        if (isLocked)
         {
-            characterImage.color = lockedColor;
+            cardBackground.color = lockedColor;
+        }
+        else if (isSelected)
+        {
+            cardBackground.color = selectedColor;
+        }
+        else
+        {
+            cardBackground.color = normalColor;
         }
     }
 
-    public CharacterData GetCharacterData() => characterData;
+    private void OnCardClicked()
+    {
+        if (!isLocked && characterSelector != null)
+        {
+            characterSelector.SelectCharacter(this);
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!isLocked && !isSelected && cardBackground != null)
+        {
+            cardBackground.color = hoverColor;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!isLocked && !isSelected && cardBackground != null)
+        {
+            cardBackground.color = normalColor;
+        }
+    }
 }

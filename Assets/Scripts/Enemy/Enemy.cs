@@ -9,7 +9,14 @@ public class Enemy : EnemyBase
 
     Rigidbody2D rgb2d;
 
-    public override void Awake()
+    public GameObject coin;
+    public GameObject exp;
+    private const float MAX_RATTING_DROPCOIN = 10f;
+    private const float MAX_RATTING_DROPEXP = 50f;
+
+
+
+    private void Awake()
     {
         base.Awake();
         rgb2d = GetComponent<Rigidbody2D>();
@@ -21,7 +28,7 @@ public class Enemy : EnemyBase
         rgb2d.velocity = direction * speed;
     }
 
-    public override void OnTriggerEnter2D(Collider2D collision) // Added 'override' keyword to fix CS0114
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
     }

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 0.6}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 5966512476346680830}
   - component: {fileID: 1842972832454948930}
   - component: {fileID: 8311311319781153209}
+  - component: {fileID: 4921051369200115797}
   m_Layer: 5
   m_Name: CharacterCard
   m_TagString: Untagged
@@ -373,6 +374,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4921051369200115797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970283397988959470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a1915433507f347a9fd23544e49596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterImage: {fileID: 861147477722399185}
+  cardBackground: {fileID: 0}
+  selectionBorder: {fileID: 8274726949714427873}
+  lockOverlay: {fileID: 5560079269466605861}
+  lockIcon: {fileID: 8011543845953788703}
+  characterNameText: {fileID: 572432507912980408}
+  characterData: {fileID: 0}
+  isSelected: 0
+  isLocked: 0
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.9, g: 0.95, b: 1, a: 1}
+  selectedColor: {r: 1, g: 1, b: 0, a: 0.43137255}
+  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &7575683171514185755
 GameObject:
   m_ObjectHideFlags: 0
