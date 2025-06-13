@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [Header("Camera Settings")]
     public CinemachineVirtualCamera virtualCamera; 
 
+    [Header("Enemies Settings")]
+    public EnemiesManager enemiesManager; 
+
     void Start()
     {
         SpawnSelectedCharacter();
@@ -48,8 +51,7 @@ public class GameManager : MonoBehaviour
 
         SetCameraTarget(spawnedPlayer);
 
-        Debug.Log($"Đã spawn nhân vật: {selectedCharacter.characterName}");
-
+        SetPlayerForEnemies(spawnedPlayer);
     }
 
     CharacterData FindCharacterByName(string characterName)
@@ -70,12 +72,31 @@ public class GameManager : MonoBehaviour
         {
             virtualCamera.Follow = target.transform;
             virtualCamera.LookAt = target.transform;
-
-            Debug.Log($"Camera đã follow: {target.name}");
         }
         else
         {
             Debug.LogWarning("Virtual Camera hoặc Target không hợp lệ!");
+        }
+    }
+
+    void SetPlayerForEnemies(GameObject player)
+    {
+        if (enemiesManager != null && player != null)
+        {
+            enemiesManager.SetPlayer(player);
+        }
+        else
+        {
+            EnemiesManager foundEnemiesManager = FindObjectOfType<EnemiesManager>();
+            if (foundEnemiesManager != null && player != null)
+            {
+                foundEnemiesManager.SetPlayer(player);
+                Debug.Log($"Tự động tìm và gán player cho EnemiesManager: {player.name}");
+            }
+            else
+            {
+                Debug.LogWarning("Không tìm thấy EnemiesManager hoặc Player không hợp lệ!");
+            }
         }
     }
 }
