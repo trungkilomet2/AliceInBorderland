@@ -10,6 +10,7 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
     float timer;
+    
 
     private void Update()
     {
@@ -24,9 +25,7 @@ public class EnemiesManager : MonoBehaviour
     private void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
-
         position += player.transform.position;
-
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);

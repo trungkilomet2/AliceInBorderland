@@ -14,6 +14,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private Animator animator;
 
     private GameObject damageTextPrefab;
+    private const string COINT_TAG = "Coin";
+   
 
     private void Awake()
     {
@@ -43,6 +45,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                     skills[i].HandleSkillInput();
                 }
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == COINT_TAG)
+        {
+            Destroy(collision.gameObject);
         }
     }
 
