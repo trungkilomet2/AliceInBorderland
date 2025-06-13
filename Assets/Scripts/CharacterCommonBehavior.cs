@@ -1,3 +1,4 @@
+﻿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,18 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     public abstract float moveSpeed { get; set; }
     public SkillBase[] skills;
-
+    public float hp;
     private Vector3 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
+    private GameObject damageTextPrefab;
+    private const string COINT_TAG = "Coin";
+    private const string EXP_TAG = "EXP";
+
 
     private void Awake()
     {
+        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
     }
 
@@ -41,6 +47,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == COINT_TAG)
+        {
+            Destroy(collision.gameObject);
+        } else if (collision.tag == EXP_TAG)
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 
     protected virtual void Move()
     {
@@ -63,6 +79,29 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         bool isRunning = Mathf.Abs(moveInput.x) > 0.01f || Mathf.Abs(moveInput.y) > 0.01f;
         animator.SetBool("isRunning", isRunning);
+    }
+
+    internal void TakeDamage(float damage)
+    {
+        ShowDamageText(damage);
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0f;
+        }
+        animator.SetTrigger("takeHit");
+    }
+
+
+    private void ShowDamageText(float damage)
+    {
+        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0); // bay lên đầu enemy
+
+        GameObject dmgTextObj = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity);
+
+        DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
+        dmgText.SetDamage(damage);
     }
 
     public abstract void Attack();
