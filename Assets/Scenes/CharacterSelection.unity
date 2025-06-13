@@ -756,6 +756,7 @@ MonoBehaviour:
   startButton: {fileID: 541191348}
   availableCharacters:
   - {fileID: 11400000, guid: 5cfd8533e9172934d8a5f095e5cb526e, type: 2}
+  - {fileID: 11400000, guid: 3f60d99be2c13ca44a439960adafb1d0, type: 2}
   gameSceneName: SampleScene
 --- !u!1 &662401232
 GameObject:
