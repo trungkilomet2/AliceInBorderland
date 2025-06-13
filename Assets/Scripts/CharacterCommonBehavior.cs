@@ -13,8 +13,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private GameObject damageTextPrefab;
-    private const string COINT_TAG = "Coin";
+    private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
+    public CommonUI commonUI;
 
 
     private void Awake()
@@ -27,6 +28,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        commonUI.SetExp(0, 100f);
+        commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         Move();
         UpdateAnimation();
+        commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
 
         // Use the new skill input handling flow
         if (skills != null && skills.Length > 0 && skills[0] != null)
@@ -49,12 +53,10 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == COINT_TAG)
+        if (collision.tag == EXP_TAG)
         {
             Destroy(collision.gameObject);
-        } else if (collision.tag == EXP_TAG)
-        {
-            Destroy(collision.gameObject);
+            commonUI.AddExp(10f);
         }
     }
 

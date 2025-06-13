@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9214383774201939496}
   m_Layer: 0
   m_Name: EXP
-  m_TagString: Item
+  m_TagString: EXP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
