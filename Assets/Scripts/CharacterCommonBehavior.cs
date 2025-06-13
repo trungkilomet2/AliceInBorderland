@@ -26,8 +26,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Start is called before the first frame update
     protected virtual void Start()
-    {
+    {   
         rb = GetComponent<Rigidbody2D>();
+        commonUI = FindAnyObjectByType<CommonUI>();
         commonUI.SetExp(0, 100f);
         commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
     }
@@ -53,6 +54,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == COIN_TAG)
+        {
+            Destroy(collision.gameObject);
+            // Xu ly add them playprefabs
+        }
         if (collision.tag == EXP_TAG)
         {
             Destroy(collision.gameObject);
