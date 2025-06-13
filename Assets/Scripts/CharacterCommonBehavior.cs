@@ -24,13 +24,20 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public void DefaultCommonUI()
+    {
+        commonUI = FindAnyObjectByType<CommonUI>();
+        commonUI.SetExp(0, 100f);
+        commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
+        commonUI.SetCurrentHp(hp);
+        commonUI.SetMaxHp(hp);
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {   
         rb = GetComponent<Rigidbody2D>();
-        commonUI = FindAnyObjectByType<CommonUI>();
-        commonUI.SetExp(0, 100f);
-        commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
+        DefaultCommonUI();
     }
 
     // Update is called once per frame
@@ -93,6 +100,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         ShowDamageText(damage);
         hp -= damage;
+        commonUI.SetCurrentHp(hp);
+        commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -113,4 +122,6 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     }
 
     public abstract void Attack();
+
+
 }

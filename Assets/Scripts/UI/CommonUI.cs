@@ -7,11 +7,34 @@ using UnityEngine.UI;
 
 public class CommonUI : MonoBehaviour
 {
+    //EXP Bar
     public Image imageEXP;
     private float currentExp;
     private float maxExp;
     public int currentLevel = 1;
     public TextMeshProUGUI levelText;
+
+    // Image Bar
+    public Image imageHP;
+    private float currentHP;
+    private float maxHP;
+    
+
+
+    public void SetCurrentHp(float hp)
+    {
+        this.currentHP = hp;
+    }
+    public void SetMaxHp(float hp)
+    {
+        this.maxHP = hp;
+    }
+    public void UpdateHealthBar()
+    {
+        if (imageHP != null)
+            imageHP.fillAmount = currentHP / maxHP;
+    }
+
     public void AddExp(float amount)
     {
         currentExp += amount;
