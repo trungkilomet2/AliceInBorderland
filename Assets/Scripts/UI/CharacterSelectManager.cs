@@ -1,52 +1,85 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using TMPro;
 
 public class CharacterSelectManager : MonoBehaviour
 {
-    [Header("Character Data")]
-    public CharacterData[] allCharacters;
-
     [Header("UI References")]
     public Transform characterGrid;
     public GameObject characterCardPrefab;
-    public Button startButton;
 
     [Header("Character Info Panel")]
     public Image characterPortrait;
-    public Text characterNameText;
-    public Text characterDescriptionText;
-    public Text healthText;
-    public Text speedText;
-    public Text damageText;
-    public Text weaponText;
+    public TextMeshProUGUI characterNameText;
+    public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI speedText;
+    public TextMeshProUGUI damageText;
+    public TextMeshProUGUI weaponText;
 
+    [Header("Buttons")]
+    public Button startButton;
+
+    [Header("Character Database")]
+    public CharacterData[] availableCharacters;
+
+    [Header("Settings")]
+    public string gameSceneName = "SampleScene";
+
+    // Private variables
+    private List<CharacterCard> characterCards = new List<CharacterCard>();
     private CharacterCard selectedCard;
-    private CharacterData selectedCharacter;
+    private CharacterData selectedCharacterData;
 
     void Start()
     {
-        SetupCharacterGrid();
-        startButton.onClick.AddListener(StartGame);
-
-        // Select first unlocked character by default
-        SelectFirstUnlockedCharacter();
+        InitializeCharacterGrid();
+        SetupButtons();
     }
 
-    void SetupCharacterGrid()
+    void InitializeCharacterGrid()
     {
         // Clear existing cards
         foreach (Transform child in characterGrid)
         {
             Destroy(child.gameObject);
         }
+        characterCards.Clear();
 
         // Create character cards
-        foreach (CharacterData character in allCharacters)
+        foreach (CharacterData character in availableCharacters)
         {
             GameObject cardObj = Instantiate(characterCardPrefab, characterGrid);
             CharacterCard card = cardObj.GetComponent<CharacterCard>();
-            card.SetupCard(character, this);
+
+            if (card != null)
+            {
+                card.SetupCard(character);
+                characterCards.Add(card);
+            }
+        }
+    }
+
+    void SetupButtons()
+    {
+        if (startButton != null)
+        {
+            startButton.onClick.AddListener(StartGame);
+            startButton.interactable = false; 
+        }
+    }
+
+    void SelectFirstAvailableCharacter()
+    {
+        foreach (CharacterCard card in characterCards)
+        {
+            if (!card.isLocked)
+            {
+                SelectCharacter(card);
+                break;
+            }
         }
     }
 
@@ -60,51 +93,70 @@ public class CharacterSelectManager : MonoBehaviour
 
         // Select new card
         selectedCard = card;
-        selectedCharacter = card.GetCharacterData();
+        selectedCharacterData = card.characterData;
         card.SetSelected(true);
 
         // Update character info panel
         UpdateCharacterInfo();
 
         // Enable start button
-        startButton.interactable = true;
+        if (startButton != null)
+        {
+            startButton.interactable = true;
+        }
     }
 
     void UpdateCharacterInfo()
     {
-        if (selectedCharacter == null) return;
+        if (selectedCharacterData == null) return;
 
-        characterPortrait.sprite = selectedCharacter.characterPortrait;
-        characterNameText.text = selectedCharacter.characterName;
-        characterDescriptionText.text = selectedCharacter.description;
-        healthText.text = "Health: " + selectedCharacter.health;
-        speedText.text = "Speed: " + selectedCharacter.speed;
-        damageText.text = "Damage: " + selectedCharacter.damage;
-        weaponText.text = "Starting Weapon: " + selectedCharacter.startingWeapon;
+        // Update portrait
+        if (characterPortrait != null)
+        {
+            characterPortrait.sprite = selectedCharacterData.characterPortrait != null ?
+                selectedCharacterData.characterPortrait : selectedCharacterData.characterSprite;
+        }
+
+        // Update texts
+        if (characterNameText != null)
+            characterNameText.text = selectedCharacterData.characterName;
+
+        if (descriptionText != null)
+            descriptionText.text = selectedCharacterData.description;
+
+        if (healthText != null)
+            healthText.text = $"Health: {selectedCharacterData.health}";
+
+        if (speedText != null)
+            speedText.text = $"Speed: {selectedCharacterData.speed}";
+
+        if (damageText != null)
+            damageText.text = $"Damage: {selectedCharacterData.damage}";
+
+        if (weaponText != null)
+            weaponText.text = $"Weapon: {selectedCharacterData.weaponName}";
     }
 
-    void SelectFirstUnlockedCharacter()
+    public void StartGame()
     {
-        foreach (Transform child in characterGrid)
+        if (selectedCharacterData != null)
         {
-            CharacterCard card = child.GetComponent<CharacterCard>();
-            if (card.GetCharacterData().isUnlocked)
-            {
-                SelectCharacter(card);
-                break;
-            }
+            PlayerPrefs.SetString("SelectedCharacter", selectedCharacterData.name);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene(gameSceneName);
         }
     }
 
-    void StartGame()
+    // Public methods for external access
+    public CharacterData GetSelectedCharacter()
     {
-        if (selectedCharacter != null)
-        {
-            // L?u character ?ã ch?n
-            PlayerPrefs.SetString("SelectedCharacter", selectedCharacter.name);
+        return selectedCharacterData;
+    }
 
-            // Chuy?n scene
-            SceneManager.LoadScene("GameScene");
-        }
+    public void RefreshCharacterGrid()
+    {
+        InitializeCharacterGrid();
+        SelectFirstAvailableCharacter();
     }
 }

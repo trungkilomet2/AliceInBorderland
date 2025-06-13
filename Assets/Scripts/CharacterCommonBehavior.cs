@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +9,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public abstract float moveSpeed { get; set; }
     public SkillBase[] skills;
     public float hp;
-
     private Vector3 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
-
     private GameObject damageTextPrefab;
+    private const string COINT_TAG = "Coin";
+    private const string EXP_TAG = "EXP";
+
 
     private void Awake()
     {
@@ -43,6 +45,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                     skills[i].HandleSkillInput();
                 }
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == COINT_TAG)
+        {
+            Destroy(collision.gameObject);
+        } else if (collision.tag == EXP_TAG)
+        {
+            Destroy(collision.gameObject);
         }
     }
 
@@ -80,6 +92,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         }
         animator.SetTrigger("takeHit");
     }
+
 
     private void ShowDamageText(float damage)
     {
