@@ -7,20 +7,13 @@ public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTimer;
-    [SerializeField] GameObject player; 
+    [SerializeField] GameObject player;
 
-    float timer;
-
-    private void Update()
+    private void Start()
     {
-        if (player == null) return;
-
-        timer -= Time.deltaTime;
-        if (timer < 0f)
+        if (player == null)
         {
-            SpawnEnemy();
-            timer = spawnTimer;
+            player = GameObject.FindGameObjectWithTag("Player");
         }
     }
 
@@ -29,15 +22,24 @@ public class EnemiesManager : MonoBehaviour
         player = newPlayer;
     }
 
-    private void SpawnEnemy()
+    public void SetEnemyPrefab(GameObject newEnemyPrefab)
     {
-        if (player == null) return; 
+        enemy = newEnemyPrefab;
+    }
 
+    public void SpawnEnemy()
+    {
         Vector3 position = GenerateRandomPosition();
+
         position += player.transform.position;
+
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
-        newEnemy.GetComponent<Enemy>().SetTarget(player);
+        Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
+        if (enemyComponent != null)
+        {
+            enemyComponent.SetTarget(player);
+        }
         newEnemy.transform.parent = transform;
     }
 
@@ -55,7 +57,9 @@ public class EnemiesManager : MonoBehaviour
             position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
             position.x = f * spawnArea.x;
         }
+
         position.z = 0;
+
         return position;
     }
 }
