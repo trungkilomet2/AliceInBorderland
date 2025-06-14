@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +8,14 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject player; 
+
     float timer;
 
     private void Update()
     {
+        if (player == null) return;
+
         timer -= Time.deltaTime;
         if (timer < 0f)
         {
@@ -21,12 +24,17 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    public void SetPlayer(GameObject newPlayer)
+    {
+        player = newPlayer;
+    }
+
     private void SpawnEnemy()
     {
+        if (player == null) return; 
+
         Vector3 position = GenerateRandomPosition();
-
         position += player.transform.position;
-
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
@@ -47,9 +55,7 @@ public class EnemiesManager : MonoBehaviour
             position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
             position.x = f * spawnArea.x;
         }
-
-        position.z = 0; 
-
-        return position; 
+        position.z = 0;
+        return position;
     }
 }
