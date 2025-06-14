@@ -22,7 +22,7 @@ public class CommonUI : MonoBehaviour
     // TimeCounter
     public TextMeshProUGUI timerCounter;
     private int maxTimeInSeconds = 1800;
-    private float currentTime = 0f;
+    public float currentTime = 0f;
     private bool isRunning = true;
 
     private void Update()
