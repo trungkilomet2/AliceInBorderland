@@ -12,6 +12,7 @@ public class Warrior : CharacterCommonBehavior
     public float timeBtwaxe = 0.2f;
     public float bulletForce;
     public float currentHp;
+    private bool isActived = false;
 
     // Start is called before the first frame update
 
@@ -47,9 +48,9 @@ public class Warrior : CharacterCommonBehavior
         // Xoay tên theo hướng bắn (nếu muốn)
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         newaxe.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-            
-             // Thêm lực
-            Rigidbody2D arrowRb = newaxe.GetComponent<Rigidbody2D>();
-            arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+
+        // Thêm lực
+        Rigidbody2D arrowRb = newaxe.GetComponent<Rigidbody2D>();
+        arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
 }
