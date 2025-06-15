@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class Skill4_Warrior : SkillBase
 {
-    public float reviveHpPercent = 0.5f;   // Hồi lại 50% máu tối đa
+    public static float reviveHpPercent = 0.5f;   // Hồi lại 50% máu tối đa
     public float damageMultiplier = 1.5f;  // Tăng sát thương
     public float buffDuration = 45f;       // Hiệu lực buff
     private bool skillUsed = false;        // Đảm bảo chỉ dùng 1 lần khi chết
     private float buffTimer = 0f;
-    
-    private CharacterCommonBehavior character;
+    private static CharacterCommonBehavior character;
+    private WeaponBase weapon;
+    private float reviveHp = 100f;
 
     public override void Awake()
     {
         base.Awake();
+        weapon.damage = 10;
         character = GetComponent<CharacterCommonBehavior>();
     }
     protected override void Activate()
@@ -22,14 +25,13 @@ public class Skill4_Warrior : SkillBase
         if (character == null || skillUsed) return;
 
         skillUsed = true;
-
+    
         // Hồi máu
-        float reviveHp = character.hp * reviveHpPercent;
         character.hp = reviveHp;
 
         // Tăng sát thương
 
-
+        weapon.damage = weapon.damage * damageMultiplier;
         // Bắt đầu timer buff
         buffTimer = buffDuration;
     }
@@ -46,7 +48,7 @@ public class Skill4_Warrior : SkillBase
         if (character == null) return;
 
         // Kiểm tra nếu nhân vật "chết"
-        if (!skillUsed && character.hp <= 0)
+        if (!skillUsed && character.hp <= 10)
         {
             Activate();
         }
@@ -58,6 +60,7 @@ public class Skill4_Warrior : SkillBase
             if (buffTimer <= 0f)
             {
                 // Hết thời gian buff → đưa damage về ban đầu
+                weapon.damage = weapon.damage / damageMultiplier;
             }
         }
     }
