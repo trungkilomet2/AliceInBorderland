@@ -49,4 +49,4 @@ public class Skill1 : SkillBase
 
         isRolling = true;
     }
-}uk
+}
