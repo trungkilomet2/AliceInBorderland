@@ -8,8 +8,8 @@ public class Summoner : CharacterCommonBehavior
 
     public GameObject projectile;
     public Transform projectileSpawnPoint;
-    public float timeBtwProjectile = 0.2f;
-    public float bulletForce = 5f;
+    public float timeBtwProjectile = 0.5f;
+    public float bulletForce = 10f;
 
     private float _timeBtwProjectile = 0.2f;
 

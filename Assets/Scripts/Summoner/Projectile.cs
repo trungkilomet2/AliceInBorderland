@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float maxDistance = 10f;
+    public float maxDistance = 15f;
     private Vector3 startPos;
 
     void Start()
