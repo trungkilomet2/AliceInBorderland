@@ -115,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3238795044292812432}
-  - component: {fileID: 2718122770101265383}
   - component: {fileID: 3428494969682204606}
   - component: {fileID: 7995484288420096763}
   - component: {fileID: 8119783569727878563}
@@ -142,23 +141,6 @@ Transform:
   - {fileID: 856219014479883741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2718122770101265383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496301372032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 300
-  target: {fileID: 0}
-  projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
-  bulletForce: 5
-  timeBtwAttack: 2
 --- !u!61 &3428494969682204606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   hp: 300
+  damage: 10
+  coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
+  exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
   target: {fileID: 0}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5

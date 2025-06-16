@@ -43,10 +43,7 @@ public class CommonUI : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(currentTime / 60f);
         int seconds = Mathf.FloorToInt(currentTime % 60f);
-        if (timerCounter != null)
-        {
-            timerCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        }
+        timerCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void SetCurrentHp(float hp)
@@ -66,13 +63,13 @@ public class CommonUI : MonoBehaviour
     public void AddExp(float amount)
     {
         currentExp += amount;
-        if(currentExp >= maxExp)
+        if (currentExp >= maxExp)
         {
             currentExp -= maxExp;
             LevelUp();
         }
         UpdateExpBar();
-    } 
+    }
     public void LevelUp()
     {
         currentLevel++;

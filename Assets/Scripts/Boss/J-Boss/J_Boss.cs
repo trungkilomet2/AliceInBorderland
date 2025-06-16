@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class J_Boss : BossBase
+public class J_Boss : EnemyBase
 {
     public GameObject target;
     public GameObject projectile;
@@ -13,8 +13,9 @@ public class J_Boss : BossBase
 
     private CharacterCommonBehavior targetCharacter;
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         targetCharacter = target.GetComponent<CharacterCommonBehavior>();
     }
     // Start is called before the first frame update
@@ -36,6 +37,12 @@ public class J_Boss : BossBase
                 _timeBtwAttack = timeBtwAttack;
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 direction = (targetCharacter.transform.position - transform.position).normalized;
+        rgb2d.velocity = direction * speed;
     }
 
     private void Attack1()
