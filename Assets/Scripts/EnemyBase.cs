@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    Transform targetDestination;
-    GameObject targetGameObject;
-    CharacterCommonBehavior targetCharacter;
+    protected Transform targetDestination;
+    protected GameObject targetGameObject;
+    protected CharacterCommonBehavior targetCharacter;
     [SerializeField] protected float speed;
     protected Rigidbody2D rgb2d;
 
-    [SerializeField] float hp = 50f;
-    [SerializeField] float damage = 10f;
+    [SerializeField] protected float hp = 50f;
+    [SerializeField] protected float damage = 10f;
 
     public GameObject coin;
     public GameObject exp;
