@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 300
   target: {fileID: 0}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5
@@ -242,7 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 300
   target: {fileID: 0}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
-  bulletForce: 2
+  bulletForce: 5
   timeBtwAttack: 2

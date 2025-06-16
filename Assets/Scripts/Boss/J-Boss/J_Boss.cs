@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class J_Boss : MonoBehaviour
+public class J_Boss : BossBase
 {
     public GameObject target;
     public GameObject projectile;

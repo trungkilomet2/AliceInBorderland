@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 20
   damage: 20
-  isThought: 1
+  isThought: 0
 --- !u!1 &7206753918389961486
 GameObject:
   m_ObjectHideFlags: 0

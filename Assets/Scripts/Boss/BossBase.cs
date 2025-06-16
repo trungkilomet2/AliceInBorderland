@@ -10,8 +10,7 @@ public class BossBase : MonoBehaviour
 
     private void Awake()
     {
-        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); 
-
+        damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText");
     }
 
     void Start()
