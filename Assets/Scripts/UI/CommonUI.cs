@@ -43,7 +43,10 @@ public class CommonUI : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(currentTime / 60f);
         int seconds = Mathf.FloorToInt(currentTime % 60f);
-        timerCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if (timerCounter != null)
+        {
+            timerCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
     }
 
     public void SetCurrentHp(float hp)
