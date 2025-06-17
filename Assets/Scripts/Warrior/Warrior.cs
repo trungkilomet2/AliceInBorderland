@@ -11,16 +11,17 @@ public class Warrior : CharacterCommonBehavior
     public Transform axeSpawnPoint;
     public float timeBtwaxe = 0.2f;
     public float bulletForce;
-    private bool isActived = false;
-
+    
     // Start is called before the first frame update
 
     // Update is called once per frame
     private float _timeBtwaxe = 0.2f;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();
     }
+   
     protected override void Update()
     {
         base.Update();
