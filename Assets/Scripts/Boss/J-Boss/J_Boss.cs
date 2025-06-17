@@ -11,6 +11,11 @@ public class J_Boss : EnemyBase
     public float timeBtwAttack = 2f;
     private float _timeBtwAttack = 2f;
 
+    public float timeBtwAttack2 = 2f;
+    private float _timeBtwAttack2 = 2f;
+
+    public GameObject cirleFlame;
+
     private CharacterCommonBehavior targetCharacter;
 
     protected override void Awake()
@@ -37,6 +42,16 @@ public class J_Boss : EnemyBase
                 _timeBtwAttack = timeBtwAttack;
             }
         }
+
+        if (Vector3.Distance(transform.position, target.transform.position) < 15f)
+        {
+            _timeBtwAttack2 -= Time.deltaTime;
+            if (_timeBtwAttack2 <= 0f)
+            {
+                Attack2();
+                _timeBtwAttack2 = timeBtwAttack2;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -47,7 +62,6 @@ public class J_Boss : EnemyBase
 
     private void Attack1()
     {
-        Debug.Log("Attack");
         _timeBtwAttack = timeBtwAttack;
 
         Vector2 direction1 = ((Vector2)targetCharacter.transform.position - (Vector2)transform.position).normalized;
@@ -74,5 +88,13 @@ public class J_Boss : EnemyBase
             Rigidbody2D arrowRb = newArrow.GetComponent<Rigidbody2D>();
             arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
         }
+    }
+
+    private void Attack2()
+    {
+        Debug.Log("Skill2");
+
+        _timeBtwAttack2 = timeBtwAttack2;
+        Instantiate(cirleFlame, target.transform.position, Quaternion.identity);
     }
 }
