@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24c76a9dc1dcfc409a29debaa4afe97, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  characterName: Warrior
+  characterSprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
+  characterPortrait: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
+  description: A master of arcane arts, the Mage harnesses elemental power to devastate
+    enemies from afar.
+  health: 100
+  speed: 3.5
+  damage: 15
+  weaponName: Basic Weapon
+  isLocked: 0
+  characterPrefab: {fileID: 482234283679444079, guid: 1a870e277ab1617488d488d8c6af0cbb, type: 3}
