@@ -44,7 +44,7 @@ public class SkillJ : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J) && cooldownTimer <= 0 && !isCasting)
+        if ((Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3)) && cooldownTimer <= 0 && !isCasting)
         {
             StartCoroutine(CastDragonSkill());
         }
