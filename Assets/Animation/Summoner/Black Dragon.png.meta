@@ -1,0 +1,1894 @@
+fileFormatVersion: 2
+guid: 7140dc0c693de864685cee189b2fa440
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Black Dragon_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1148
+        width: 89
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc43fd922c48aad43a4f9547ab95a73c
+      internalID: 625105336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1149
+        width: 89
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ac49e6c86c9dd4f9eef5673b26572d
+      internalID: -1026656474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_2
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1149
+        width: 89
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6216dc73efef74cb9b08d8e34485a7
+      internalID: 623815741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_3
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1149
+        width: 88
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b83d8f457823e54287a5da7f825c22c
+      internalID: 123612096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_4
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1150
+        width: 86
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bd5f7dc7ab4e64e967a54b471e50f0
+      internalID: -619039299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_5
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1150
+        width: 88
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7500cc171921c5c4db01520c10221f65
+      internalID: -1122740030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_6
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1149
+        width: 101
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8f8153bfe4b5d47af167a168219cdd
+      internalID: 1034772667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_7
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1155
+        width: 101
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c300eca2971364c9a71378a9d52bb0
+      internalID: -420005522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_8
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1150
+        width: 97
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d5b064eaf950941b79c617034d0c88
+      internalID: -477968253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_9
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1154
+        width: 167
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103acd6501405b041935d3412648199a
+      internalID: 438982570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_10
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 1157
+        width: 183
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c768ed0714598154b8c33f85d7505c45
+      internalID: 247003975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_11
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1158
+        width: 184
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c11d9d2653b2e3459d8e0d4a228abca
+      internalID: -1864041780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_12
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1157
+        width: 169
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db41de7eb42ded42815cafa44b63cf7
+      internalID: -1883230615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_13
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1152
+        width: 133
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2eb62c00e0f1d24f98e2daa582b5533
+      internalID: -351630808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_30
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 952
+        width: 133
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6243fab2519417a42a9f6ab2b7d9a4e1
+      internalID: 364098818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_31
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 952
+        width: 179
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730359798d5a16244802fe70860d56cd
+      internalID: 2009950527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_32
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 964
+        width: 178
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb218962254a1474abaf1a37249423d5
+      internalID: -1446385111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_33
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 976
+        width: 180
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4d8fdf4f13782448efe5fbeb02fcf5
+      internalID: 1535709699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_34
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 976
+        width: 181
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287ce49e182efb94a90ea2885a501365
+      internalID: -1846013020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_35
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 960
+        width: 181
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bb5685bfe818a438b7376e74aa4d34
+      internalID: -211919854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_36
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 964
+        width: 157
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cff10728b86cec45aeaa917891e7be0
+      internalID: 230975714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_37
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 960
+        width: 143
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b31aea1eb02a3a4f8c7d2adad4a98c6
+      internalID: -1127272826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_38
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 959
+        width: 136
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bd5f4673ff15048a359dc7f6d32d3a
+      internalID: 2124891639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_39
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 958
+        width: 106
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc59a80f4a3c0643bd01444758a6999
+      internalID: -1255213451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_40
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 947
+        width: 94
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ce69739585a7a4ba1af90c67b9a758
+      internalID: 100325121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_42
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 1018
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b6d3e7649e2cf4eb47a9af27afa1d5
+      internalID: 969718220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_47
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 742
+        width: 133
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e626e80834fa847a059770cc5901c5
+      internalID: -245302409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_49
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 757
+        width: 126
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90849b76450d0746bce10ce6378fa13
+      internalID: 1586132808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_50
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 751
+        width: 129
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90bbc1cf6f6ea94d9ba437ea56ed448
+      internalID: 929774205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_52
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 740
+        width: 105
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ed34b888e19d04c8c2d597302b7591
+      internalID: 2015519164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_53
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 735
+        width: 120
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b044b0d47fa77f4693f417f36d5cbf2
+      internalID: 2115288513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_54
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 743
+        width: 125
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6f9aed1e5319b41adcb4f683bdb138
+      internalID: 1583474562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_55
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 748
+        width: 106
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0093fd5e1c918a747a5528aa53e1c1b2
+      internalID: 1451506391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_56
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 751
+        width: 132
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403b61e96963bdc48a8f827a234d1600
+      internalID: 1519999064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_62
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 756
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3996d971f175341a5fac60a3e1fe93
+      internalID: 1228906112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_68
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 760
+        width: 101
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4339d9924ee694b47b3f85285dd15afe
+      internalID: 122983390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_69
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 757
+        width: 90
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d531e0668fcf23646b1b40e6a80e34a9
+      internalID: 445039797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_73
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 520
+        width: 254
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c22756f084c654a9bbc5a980c058f1
+      internalID: -1049871215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_74
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 676
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3a3871b42749849b3188092ba5ea72
+      internalID: -1322824151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_75
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 532
+        width: 129
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0f24f18412df04aa55bcbc316efa3f
+      internalID: -402372055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_76
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 539
+        width: 158
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057f893e06de47c488fe98d1033032b3
+      internalID: -113265176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_77
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 535
+        width: 187
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751f6a682da45314fb91d52c161796a6
+      internalID: -722933901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_78
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 534
+        width: 253
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58de16d0f39ba994c9bc8d0556932635
+      internalID: -184331049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_79
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 524
+        width: 203
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32881acff52229540a2c9eb43319338e
+      internalID: -1619242101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_80
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 536
+        width: 157
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31f2cf0bf55d5e49ba22a7e9bc27e33
+      internalID: -1758458992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_81
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 522
+        width: 188
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5361ac0c31cdd41ba875ced0f51dac
+      internalID: -292583977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_82
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 511
+        width: 205
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2452477e3381bc148a450e10c82996b4
+      internalID: 1111653461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_83
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 524
+        width: 164
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6e11a9e21f4d248aae165aced99a85
+      internalID: -825530527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 535
+        width: 106
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8429b9c2023d741a7c0010a1954d68
+      internalID: -768065501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_86
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 643
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08a3b673e51baa48afe24cacf650623
+      internalID: 758461716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_87
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 538
+        width: 126
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4c49cdaee42544da81ac6dd93314b4
+      internalID: 198196560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_88
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 297
+        width: 143
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d31d66a6784d8d4381a9d712e8c7f1f
+      internalID: -1013932890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_89
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 304
+        width: 175
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5aa1987819428b41a41a6b5f8e5b9a7
+      internalID: -1589126765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_90
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 304
+        width: 200
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b257840a94750458d34b282d6040ae
+      internalID: -1413126642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_91
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 303
+        width: 209
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f4dfdccb89c124fbbf782c819d8ae4
+      internalID: -141530275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_92
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 300
+        width: 222
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476aed429e35aa04ea265803f83128e0
+      internalID: -2046472492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_93
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 299
+        width: 193
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9b3730a6af76e40ab9f7b438487054
+      internalID: -469249090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_94
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 289
+        width: 137
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccc51541c98c964cb240ae3f2a79744
+      internalID: -2042832553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_95
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 297
+        width: 172
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb74d06261a3354ab833d998164671c
+      internalID: -867827195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_96
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 298
+        width: 221
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f211786d13cfb40bbd92a8be5e8426
+      internalID: -1430680821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_97
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 363
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600c2772b63f1404a838b673adc7a5e2
+      internalID: 1024624821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_98
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 298
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6867a18f6c1d8784fa2aa39ca1320a29
+      internalID: -1679989375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_99
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 286
+        width: 253
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb331a63041269d48bbe543f119f88c0
+      internalID: -817862523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_101
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 287
+        width: 232
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b982c8cbcb2ffc408b3ae4957fcb78c
+      internalID: -1878081018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_107
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 303
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f68bec30ab1ad428ce39bb61e3aa1d
+      internalID: 1913059307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_109
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 83
+        width: 136
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a42aa2e96bd7a478d063c257477c34
+      internalID: -604333806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_110
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 90
+        width: 147
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6025634b464fc6842bf173ed52d8cd48
+      internalID: 1359072117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_111
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 91
+        width: 133
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a64c5c87509ae4cad4cd45ec8533be
+      internalID: 446965776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_112
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 91
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cf708b1b27584448402b1d520ee51f
+      internalID: 1071926752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_113
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 69
+        width: 198
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a866d421bad7f41bb2801e95cd2f8a
+      internalID: -672138721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_114
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 53
+        width: 216
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d397201f204f4094babfb9f2d7554a48
+      internalID: -1884344551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_115
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 44
+        width: 202
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ee888cd2e709f4ba54b4060f1558cc
+      internalID: 1752917847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_116
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 51
+        width: 153
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afff0b9ca47c20447b9a895a85b5f6cd
+      internalID: 446126011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_117
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 84
+        width: 112
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9450b62bf1027934790d37bdbab7c77a
+      internalID: -1993004006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_118
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 82
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cec6ee6407e2144b446b3724f27601
+      internalID: -1197149715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_119
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 19
+        width: 199
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ad568414da983459337f35805ef99d
+      internalID: 1129127052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_120
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 10
+        width: 217
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3613403bdf4e04e971abc2f03935ff
+      internalID: -624854009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Dragon_121
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 10
+        width: 199
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17983998b8cd2a14492e7586a0e5c3f0
+      internalID: 1887521192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Black Dragon_0: 625105336
+      Black Dragon_1: -1026656474
+      Black Dragon_10: 247003975
+      Black Dragon_100: -2095163975
+      Black Dragon_101: -1878081018
+      Black Dragon_102: -939363699
+      Black Dragon_103: -1425473045
+      Black Dragon_104: 2116239575
+      Black Dragon_105: -1456571714
+      Black Dragon_106: 1383076799
+      Black Dragon_107: 1913059307
+      Black Dragon_108: 852201119
+      Black Dragon_109: -604333806
+      Black Dragon_11: -1864041780
+      Black Dragon_110: 1359072117
+      Black Dragon_111: 446965776
+      Black Dragon_112: 1071926752
+      Black Dragon_113: -672138721
+      Black Dragon_114: -1884344551
+      Black Dragon_115: 1752917847
+      Black Dragon_116: 446126011
+      Black Dragon_117: -1993004006
+      Black Dragon_118: -1197149715
+      Black Dragon_119: 1129127052
+      Black Dragon_12: -1883230615
+      Black Dragon_120: -624854009
+      Black Dragon_121: 1887521192
+      Black Dragon_122: -1580921459
+      Black Dragon_123: 1765549619
+      Black Dragon_124: 641033059
+      Black Dragon_125: -557189717
+      Black Dragon_126: 1305043068
+      Black Dragon_127: -1072039536
+      Black Dragon_128: 31150712
+      Black Dragon_129: 1840063902
+      Black Dragon_13: -351630808
+      Black Dragon_130: -808862760
+      Black Dragon_131: 1865454338
+      Black Dragon_132: -1327994800
+      Black Dragon_133: 1517720727
+      Black Dragon_134: 575520854
+      Black Dragon_135: -135927337
+      Black Dragon_136: -1087618279
+      Black Dragon_137: 1040054303
+      Black Dragon_138: -1030541779
+      Black Dragon_139: 2060192193
+      Black Dragon_14: -586602461
+      Black Dragon_140: -24925384
+      Black Dragon_141: 244003331
+      Black Dragon_15: -1483658611
+      Black Dragon_16: 1734988542
+      Black Dragon_17: -129247971
+      Black Dragon_18: -1634623872
+      Black Dragon_19: -289042565
+      Black Dragon_2: 623815741
+      Black Dragon_20: 1196019990
+      Black Dragon_21: 360422993
+      Black Dragon_22: -322943779
+      Black Dragon_23: 683540299
+      Black Dragon_24: 1585979733
+      Black Dragon_25: -2137148737
+      Black Dragon_26: -628436692
+      Black Dragon_27: 257686008
+      Black Dragon_28: -1177411348
+      Black Dragon_29: -193365946
+      Black Dragon_3: 123612096
+      Black Dragon_30: 364098818
+      Black Dragon_31: 2009950527
+      Black Dragon_32: -1446385111
+      Black Dragon_33: 1535709699
+      Black Dragon_34: -1846013020
+      Black Dragon_35: -211919854
+      Black Dragon_36: 230975714
+      Black Dragon_37: -1127272826
+      Black Dragon_38: 2124891639
+      Black Dragon_39: -1255213451
+      Black Dragon_4: -619039299
+      Black Dragon_40: 100325121
+      Black Dragon_41: -1756157270
+      Black Dragon_42: 969718220
+      Black Dragon_43: 98367553
+      Black Dragon_44: 2074452969
+      Black Dragon_45: -204466089
+      Black Dragon_46: -213160819
+      Black Dragon_47: -245302409
+      Black Dragon_48: -2056522176
+      Black Dragon_49: 1586132808
+      Black Dragon_5: -1122740030
+      Black Dragon_50: 929774205
+      Black Dragon_51: 313152865
+      Black Dragon_52: 2015519164
+      Black Dragon_53: 2115288513
+      Black Dragon_54: 1583474562
+      Black Dragon_55: 1451506391
+      Black Dragon_56: 1519999064
+      Black Dragon_57: 1903243779
+      Black Dragon_58: -1893678057
+      Black Dragon_59: -1522144174
+      Black Dragon_6: 1034772667
+      Black Dragon_60: 2114815972
+      Black Dragon_61: 746168126
+      Black Dragon_62: 1228906112
+      Black Dragon_63: -1848882442
+      Black Dragon_64: 1724773848
+      Black Dragon_65: 105160587
+      Black Dragon_66: 1199744777
+      Black Dragon_67: 839203215
+      Black Dragon_68: 122983390
+      Black Dragon_69: 445039797
+      Black Dragon_7: -420005522
+      Black Dragon_70: -1246537454
+      Black Dragon_71: 2002445740
+      Black Dragon_72: -381271337
+      Black Dragon_73: -1049871215
+      Black Dragon_74: -1322824151
+      Black Dragon_75: -402372055
+      Black Dragon_76: -113265176
+      Black Dragon_77: -722933901
+      Black Dragon_78: -184331049
+      Black Dragon_79: -1619242101
+      Black Dragon_8: -477968253
+      Black Dragon_80: -1758458992
+      Black Dragon_81: -292583977
+      Black Dragon_82: 1111653461
+      Black Dragon_83: -825530527
+      Black Dragon_84: 1303664818
+      Black Dragon_85: -768065501
+      Black Dragon_86: 758461716
+      Black Dragon_87: 198196560
+      Black Dragon_88: -1013932890
+      Black Dragon_89: -1589126765
+      Black Dragon_9: 438982570
+      Black Dragon_90: -1413126642
+      Black Dragon_91: -141530275
+      Black Dragon_92: -2046472492
+      Black Dragon_93: -469249090
+      Black Dragon_94: -2042832553
+      Black Dragon_95: -867827195
+      Black Dragon_96: -1430680821
+      Black Dragon_97: 1024624821
+      Black Dragon_98: -1679989375
+      Black Dragon_99: -817862523
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

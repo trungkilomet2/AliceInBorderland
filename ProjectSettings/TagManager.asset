@@ -17,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ProjectileSkilJ
   - 
   - 
   - 
@@ -68,4 +68,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3328968647
+    locked: 0
+  - name: Projectile
+    uniqueID: 4181517027
     locked: 0
