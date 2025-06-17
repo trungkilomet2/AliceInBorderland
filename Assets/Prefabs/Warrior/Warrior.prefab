@@ -225,7 +225,6 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 45
   skillDamage: 0
-  reviveHpPercent: 0.5
   damageMultiplier: 1.5
   buffDuration: 45
 --- !u!1 &3781837170630933094
