@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5436857993408052409}
   - component: {fileID: 822072816729744640}
   - component: {fileID: 6576965020303432883}
+  - component: {fileID: 4354898864419079314}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -180,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills: []
+  hp: 40
+  commonUI: {fileID: 0}
   spellPrefab: {fileID: 1520744519247403555, guid: ba7ead42d36477a49b10646e08fd26d1, type: 3}
   spellSpawnPoint: {fileID: 3208863145277326241}
   timeBtwBasicSpell: 0.5
@@ -188,4 +191,49 @@ MonoBehaviour:
   chargeTimeNeeded: 1
   chargedSpellForce: 20
   chargedSpellScale: {x: 5, y: 5, z: 1}
-  chargedCastTrigger: ChargedCast
+  isChargingBoolParam: IsCharging
+--- !u!61 &4354898864419079314
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744297987397367524}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 2.375}
+    newSize: {x: 1.25, y: 2.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 2.375}
+  m_EdgeRadius: 0
