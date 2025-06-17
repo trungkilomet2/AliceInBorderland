@@ -9,18 +9,23 @@ public abstract class BossSkillBase : MonoBehaviour
     public float skillRange = 10f;
     public float skillDuration = 2f;
     public float skillDamage = 10f;
+    public GameObject target;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private float lastUsedTime = -Mathf.Infinity;
 
     protected abstract void Activate();
 
+    private bool IsReady()
+    {
+        return Time.time >= lastUsedTime + cooldown;
+    }
+
+    public void UseSkill()
+    {
+        if (IsReady())
+        {
+            Activate();
+            lastUsedTime = Time.time;
+        }
+    }
 }

@@ -5,15 +5,5 @@ using UnityEngine;
 public abstract class BossBase : EnemyBase
 {
     public BossSkillBase[] bossSkillBases;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 }
