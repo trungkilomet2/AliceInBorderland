@@ -75,7 +75,7 @@ public class SkillJ : MonoBehaviour
             Animator animS = GetComponent<Animator>();
             if (animS != null)
             {
-                animS.SetTrigger("Shoot");
+                animS.SetTrigger("SkillJ");
             }
             FireInCircle(waveCounts[i], waveDistances[i]);
             yield return new WaitForSeconds(delayBetweenWaves);
