@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillJ : MonoBehaviour
-{ 
+{
+    //[SerializeField] private Animator animator;
+
     [Header("Dragon Skill Settings")]
     public GameObject DraSkillJ;
     public GameObject SkillJProjectile;
@@ -61,6 +63,7 @@ public class SkillJ : MonoBehaviour
 
       
         Animator anim = currentDragon.GetComponent<Animator>();
+        
         if (anim != null)
         {
             anim.SetTrigger("Appear");
@@ -69,6 +72,11 @@ public class SkillJ : MonoBehaviour
         // Fire 3 waves
         for (int i = 0; i < waveCounts.Length; i++)
         {
+            Animator animS = GetComponent<Animator>();
+            if (animS != null)
+            {
+                animS.SetTrigger("Shoot");
+            }
             FireInCircle(waveCounts[i], waveDistances[i]);
             yield return new WaitForSeconds(delayBetweenWaves);
         }
@@ -84,6 +92,7 @@ public class SkillJ : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
+            
             float angle = i * angleStep * Mathf.Deg2Rad;
             Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
