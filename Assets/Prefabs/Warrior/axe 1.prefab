@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 20
-  damage: 10
+  damage: 20
   isThought: 1
 --- !u!95 &-8791821751932818107
 Animator:

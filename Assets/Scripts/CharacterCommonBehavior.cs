@@ -15,7 +15,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private GameObject damageTextPrefab;
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
-    public CommonUI commonUI;
+    private CommonUI commonUI;
 
 
     private void Awake()

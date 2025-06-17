@@ -11,7 +11,6 @@ public class Warrior : CharacterCommonBehavior
     public Transform axeSpawnPoint;
     public float timeBtwaxe = 0.2f;
     public float bulletForce;
-    public float currentHp;
     private bool isActived = false;
 
     // Start is called before the first frame update

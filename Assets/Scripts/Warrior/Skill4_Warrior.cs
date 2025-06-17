@@ -17,7 +17,6 @@ public class Skill4_Warrior : SkillBase
     public override void Awake()
     {
         base.Awake();
-        weapon.damage = 10;
         character = GetComponent<CharacterCommonBehavior>();
     }
     protected override void Activate()
@@ -31,7 +30,7 @@ public class Skill4_Warrior : SkillBase
 
         // Tăng sát thương
 
-        weapon.damage = weapon.damage * damageMultiplier;
+        // weapon.damage = weapon.damage * damageMultiplier;
         // Bắt đầu timer buff
         buffTimer = buffDuration;
     }
@@ -60,7 +59,7 @@ public class Skill4_Warrior : SkillBase
             if (buffTimer <= 0f)
             {
                 // Hết thời gian buff → đưa damage về ban đầu
-                weapon.damage = weapon.damage / damageMultiplier;
+                // weapon.damage = weapon.damage / damageMultiplier;
             }
         }
     }

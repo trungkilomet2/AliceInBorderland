@@ -19,7 +19,7 @@ MonoBehaviour:
     enemies from afar.
   health: 200
   speed: 3.5
-  damage: 15
+  damage: 20
   weaponName: Basic Weapon
   isLocked: 0
-  characterPrefab: {fileID: 2891189414864287586, guid: 1a870e277ab1617488d488d8c6af0cbb, type: 3}
+  characterPrefab: {fileID: 482234283679444079, guid: 1a870e277ab1617488d488d8c6af0cbb, type: 3}
