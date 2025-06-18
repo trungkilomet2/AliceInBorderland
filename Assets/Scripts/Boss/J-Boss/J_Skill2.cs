@@ -8,6 +8,7 @@ public class J_Skill2 : BossSkillBase
 
     protected override void Activate()
     {
-        Instantiate(circleFlame, target.transform.position, Quaternion.identity);
+        GameObject flame = Instantiate(circleFlame, target.transform.position, Quaternion.identity);
+        Destroy(flame, skillDuration);
     }
 }

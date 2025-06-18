@@ -26,13 +26,14 @@ public class J_Boss : BossBase
     
     void Update()
     {
-        //check if distance to target is less than 10 units
-        if (Vector3.Distance(transform.position, target.transform.position) < 10f)
-        {
-            bossSkillBases[0].UseSkill();
-        }
+        //BossSkillBase skill1 = bossSkillBases[0];
+        //if (Vector3.Distance(transform.position, target.transform.position) < skill1.skillRange)
+        //{
+        //    bossSkillBases[0].UseSkill();
+        //}
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 15f)
+        BossSkillBase skill2 = bossSkillBases[1];
+        if (Vector3.Distance(transform.position, target.transform.position) < skill2.skillRange)
         {
             bossSkillBases[1].UseSkill();
         }
@@ -40,8 +41,8 @@ public class J_Boss : BossBase
 
     private void FixedUpdate()
     {
-        Vector3 direction = (targetCharacter.transform.position - transform.position).normalized;
-        rgb2d.velocity = direction * speed;
+        //Vector3 direction = (targetCharacter.transform.position - transform.position).normalized;
+        //rgb2d.velocity = direction * speed;
     }
 
 }
