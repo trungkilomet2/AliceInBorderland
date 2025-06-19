@@ -29,11 +29,9 @@ public class StageEventManager : MonoBehaviour
 
             if (currentEvent.enemyToSpawn != null)
             {
-                enemiesManager.SetEnemyPrefab(currentEvent.enemyToSpawn.gameObject);
-
                 for (int i = 0; i < currentEvent.count; i++)
                 {
-                    enemiesManager.SpawnEnemy();
+                    enemiesManager.SpawnEnemy(currentEvent.enemyToSpawn);
                 }
             }
             else
