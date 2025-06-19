@@ -203,7 +203,6 @@ MonoBehaviour:
   axeSpawnPoint: {fileID: 5270292626708380349}
   timeBtwaxe: 0.2
   bulletForce: 9
-  currentHp: 0
 --- !u!114 &7696732050759654250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,10 +222,11 @@ MonoBehaviour:
   cooldown: 120
   skillRange: 0
   skillWidth: 0
-  skillDuration: 45
+  skillDuration: 25
   skillDamage: 0
   damageMultiplier: 1.5
-  buffDuration: 45
+  buffDuration: 25
+  gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
 --- !u!1 &3781837170630933094
 GameObject:
   m_ObjectHideFlags: 0

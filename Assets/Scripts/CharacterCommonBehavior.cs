@@ -21,6 +21,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
+        animator = GetComponent<Animator>();
     }
 
     public void DefaultCommonUI()
@@ -35,7 +36,6 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {   
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         DefaultCommonUI();
     }
