@@ -55,4 +55,7 @@ public class SwordWeapon : MonoBehaviour
         left_Weapon.transform.position =player.transform.position + offset ;
         left_Weapon.SetActive(true);
     }
+
+   
+
 }

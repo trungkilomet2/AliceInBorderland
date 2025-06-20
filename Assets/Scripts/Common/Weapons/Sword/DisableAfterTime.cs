@@ -13,13 +13,17 @@ public class DisableAfterTime : MonoBehaviour
     private void LateUpdate()
     {
         timer -= Time.deltaTime;
-        if( timer < 0f )
+        if (timer < 0f)
         {
-            gameObject.SetActive( false );
+            gameObject.SetActive(false);
         }
     }
 
-
-
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Debug.Log("AttackEnemy");
+        }
+    }
 }

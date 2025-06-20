@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   // public Transform weaponObjectsContainer;
+
+    public WeaponData startingWeapon;
+
+    private void Start()
     {
-        
+        AddWeapon(startingWeapon);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddWeapon(WeaponData weaponData)
     {
-        
+        GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
+
     }
+
 }

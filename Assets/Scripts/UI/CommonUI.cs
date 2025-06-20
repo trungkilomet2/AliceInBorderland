@@ -25,6 +25,9 @@ public class CommonUI : MonoBehaviour
     public float currentTime = 0f;
     private bool isRunning = true;
 
+    //Upgrade
+    [SerializeField] List<UpdateData> upgrades;
+
     private void Update()
     {
         if (!isRunning) return;
@@ -63,13 +66,13 @@ public class CommonUI : MonoBehaviour
     public void AddExp(float amount)
     {
         currentExp += amount;
-        if(currentExp >= maxExp)
+        if (currentExp >= maxExp)
         {
             currentExp -= maxExp;
             LevelUp();
         }
         UpdateExpBar();
-    } 
+    }
     public void LevelUp()
     {
         currentLevel++;
@@ -85,6 +88,23 @@ public class CommonUI : MonoBehaviour
         currentExp = current;
         maxExp = max;
         UpdateExpBar();
+    }
+
+    public List<UpdateData> GetUpdates(int count)
+    {
+        List<UpdateData> listUpgrade = new List<UpdateData>();
+
+        if(count > upgrades.Count)
+        {
+            count = upgrades.Count;
+        }
+
+        for(int i = 0; i< count; i++)
+        {
+            listUpgrade.Add(upgrades[Random.Range(0, upgrades.Count)]);
+        }
+
+        return listUpgrade; 
     }
 
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 [SerializeField]
 public class WeaponStats
 {
-
-    public int damage;
-    public float timeToAttack;
-
+    [SerializeField]  public int damage;
+    [SerializeField]  public float timeToAttack;
 }

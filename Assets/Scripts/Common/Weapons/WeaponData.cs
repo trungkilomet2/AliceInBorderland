@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu]
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;
-    public WeaponStats weaponStats;
-
-
+    [SerializeField] public int damage;
+    [SerializeField] public float timeToAttack;
+    public GameObject weaponPrefabs; 
 }

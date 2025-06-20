@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Weapon Data
   m_EditorClassIdentifier: 
   WeaponName: 
+  damage: 0
+  timeToAttack: 0
+  weaponPrefabs: {fileID: 0}
