@@ -16,6 +16,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
     public CommonUI commonUI;
+    private float onMovingCharacterHorizontal;
+
 
 
     private void Awake()
@@ -81,6 +83,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (moveInput.x != 0)
         {
+            onMovingCharacterHorizontal = moveInput.x;
             if (moveInput.x != 0)
             {
                 Vector3 scale = transform.localScale;
@@ -88,6 +91,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                 transform.localScale = scale;
             }
         }
+    }
+
+    public float GetOnMovingCharacterHorizontal()
+    {
+        return this.onMovingCharacterHorizontal;
+    }
+
+    public Vector3 GetMoveInput()
+    {
+        return this.moveInput;
     }
 
     private void UpdateAnimation()
@@ -121,6 +134,10 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         dmgText.SetDamage(damage);
     }
 
+    public Rigidbody2D GetRigidbody2D()
+    {
+        return rb;
+    }
     public abstract void Attack();
 
 
