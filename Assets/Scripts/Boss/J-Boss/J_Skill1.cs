@@ -6,11 +6,10 @@ public class J_Skill1 : BossSkillBase
 {
     public GameObject projectile;
     public float bulletForce;
-    // Start is called before the first frame update
+
     protected override void Activate()
     {
-        CharacterCommonBehavior targetCharacter = target.GetComponent<CharacterCommonBehavior>();
-        Vector2 direction1 = ((Vector2)targetCharacter.transform.position - (Vector2)transform.position).normalized;
+        Vector2 direction1 = ((Vector2)target.transform.position - (Vector2)transform.position).normalized;
         Vector2 direction2 = Quaternion.Euler(0, 0, 10) * direction1;
         Vector2 direction3 = Quaternion.Euler(0, 0, -10) * direction1;
         Vector2 direction4 = Quaternion.Euler(0, 0, 20) * direction1;

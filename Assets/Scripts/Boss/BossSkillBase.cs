@@ -8,9 +8,15 @@ public abstract class BossSkillBase : MonoBehaviour
     public float cooldown = 5f;
     public float skillDuration = 2f;
     public float skillRange = 10f;
-    public GameObject target;
+    protected GameObject target;
 
     private float lastUsedTime = -Mathf.Infinity;
+
+    protected virtual void Awake()
+    {
+        BossBase bossBase = GetComponent<BossBase>();
+        target = bossBase.targetGameObject;
+    }
 
     protected abstract void Activate();
 

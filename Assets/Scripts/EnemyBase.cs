@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    protected Transform targetDestination;
-    protected GameObject targetGameObject;
-    protected CharacterCommonBehavior targetCharacter;
+    [HideInInspector] public Transform targetDestination;
+    [HideInInspector] public GameObject targetGameObject;
+    [HideInInspector] public CharacterCommonBehavior targetCharacter;
     [SerializeField] protected float speed;
     protected Rigidbody2D rgb2d;
 
@@ -38,6 +38,7 @@ public abstract class EnemyBase : MonoBehaviour
         targetGameObject = target;
         if (targetGameObject != null)
         {
+            targetCharacter = targetGameObject.GetComponent<CharacterCommonBehavior>();
             targetDestination = targetGameObject.transform;
         }
     }

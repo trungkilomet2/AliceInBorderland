@@ -118,6 +118,10 @@ GameObject:
   - component: {fileID: 3428494969682204606}
   - component: {fileID: 7995484288420096763}
   - component: {fileID: 8119783569727878563}
+  - component: {fileID: 2952249232177266908}
+  - component: {fileID: 3121988667940958593}
+  - component: {fileID: 7062013219215211879}
+  - component: {fileID: 7298881154905949932}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -230,7 +234,87 @@ MonoBehaviour:
   damage: 10
   coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
   exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
+  bossSkillBases:
+  - {fileID: 2952249232177266908}
+  - {fileID: 3121988667940958593}
+  - {fileID: 7062013219215211879}
+  - {fileID: 7298881154905949932}
   target: {fileID: 0}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5
   timeBtwAttack: 2
+  timeBtwAttack2: 2
+  cirleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
+--- !u!114 &2952249232177266908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476602496301372032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28e33c6143ef1f41a367f321e92b376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 2
+  skillDuration: 2
+  skillRange: 10
+  target: {fileID: 0}
+  projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
+  bulletForce: 5
+--- !u!114 &3121988667940958593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476602496301372032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43aed4cda6df2f34dad2ddd939846083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 20
+  skillDuration: 5
+  skillRange: 10
+  target: {fileID: 0}
+  circleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
+--- !u!114 &7062013219215211879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476602496301372032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577c2e09428603641b2d6237e1ce6e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 5
+  skillDuration: 2
+  skillRange: 10
+  target: {fileID: 0}
+  thunderBolt: {fileID: 4426313511499266900, guid: 6af4dcb841ce5ea47be2ec87cadbd2c0, type: 3}
+--- !u!114 &7298881154905949932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476602496301372032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f6f89bc4c962642b48d8dcef300edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 5
+  skillDuration: 2
+  skillRange: 10
+  target: {fileID: 0}
+  J_Boss: {fileID: 0}
