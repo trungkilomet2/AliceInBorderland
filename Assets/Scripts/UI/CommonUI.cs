@@ -63,13 +63,13 @@ public class CommonUI : MonoBehaviour
     public void AddExp(float amount)
     {
         currentExp += amount;
-        if(currentExp >= maxExp)
+        if (currentExp >= maxExp)
         {
             currentExp -= maxExp;
             LevelUp();
         }
         UpdateExpBar();
-    } 
+    }
     public void LevelUp()
     {
         currentLevel++;

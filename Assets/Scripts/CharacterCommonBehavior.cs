@@ -15,7 +15,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private GameObject damageTextPrefab;
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
-    public CommonUI commonUI;
+    private const string ENERMY_WEAPON = "Enemy_Weapon";
+    private CommonUI commonUI;
 
 
     private void Awake()
@@ -35,7 +36,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Start is called before the first frame update
     protected virtual void Start()
-    {   
+    {
         rb = GetComponent<Rigidbody2D>();
         DefaultCommonUI();
     }
@@ -70,6 +71,18 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         {
             Destroy(collision.gameObject);
             commonUI.AddExp(10f);
+        }
+        if (collision.tag == ENERMY_WEAPON)
+        {
+            WeaponBase weaponBase = collision.GetComponent<WeaponBase>();
+            if (weaponBase != null)
+            {
+                TakeDamage(weaponBase.damage);
+                if (!weaponBase.isThought)
+                {
+                    Destroy(collision.gameObject);
+                }
+            }
         }
     }
 
