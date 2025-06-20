@@ -6,9 +6,8 @@ public abstract class BossSkillBase : MonoBehaviour
 {
     public string skillName;
     public float cooldown = 5f;
-    public float skillRange = 10f;
     public float skillDuration = 2f;
-    public float skillDamage = 10f;
+    public float skillRange = 10f;
     public GameObject target;
 
     private float lastUsedTime = -Mathf.Infinity;

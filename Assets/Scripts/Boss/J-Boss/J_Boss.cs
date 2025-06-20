@@ -26,16 +26,26 @@ public class J_Boss : BossBase
     
     void Update()
     {
-        //BossSkillBase skill1 = bossSkillBases[0];
-        //if (Vector3.Distance(transform.position, target.transform.position) < skill1.skillRange)
-        //{
-        //    bossSkillBases[0].UseSkill();
-        //}
+        if(target == null)
+        {
+            return;
+        }
+        BossSkillBase skill1 = bossSkillBases[0];
+        if (Vector3.Distance(transform.position, target.transform.position) < skill1.skillRange)
+        {
+            bossSkillBases[0].UseSkill();
+        }
 
         BossSkillBase skill2 = bossSkillBases[1];
         if (Vector3.Distance(transform.position, target.transform.position) < skill2.skillRange)
         {
             bossSkillBases[1].UseSkill();
+        }
+
+        BossSkillBase skill3 = bossSkillBases[2];
+        if (Vector3.Distance(transform.position, target.transform.position) < skill3.skillRange)
+        {
+            skill3.UseSkill();
         }
     }
 
