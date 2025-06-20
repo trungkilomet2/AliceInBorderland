@@ -16,7 +16,5 @@ public class UpdateData : MonoBehaviour
     public string Name;
     public Sprite icon;
 
-
-
 }
 
