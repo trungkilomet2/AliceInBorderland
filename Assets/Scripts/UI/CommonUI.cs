@@ -26,7 +26,18 @@ public class CommonUI : MonoBehaviour
     private bool isRunning = true;
 
     //Upgrade
-    [SerializeField] List<UpdateData> upgrades;
+
+    // Thong so du lieu cac vu khi can upgrade
+    [SerializeField] List<UpdateData> upgradeData;
+    private UpgradePanelManager upgradePanelManager;
+    private List<UpdateData> selectUpdate;
+    public List<UpdateData> acquireUpdate;
+
+
+    private void Start()
+    {
+        upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
+    }
 
     private void Update()
     {
@@ -70,13 +81,19 @@ public class CommonUI : MonoBehaviour
         {
             currentExp -= maxExp;
             LevelUp();
+            Debug.Log("Da up level");
         }
         UpdateExpBar();
     }
     public void LevelUp()
-    {
+    {   
+        if(selectUpdate == null) { selectUpdate = new List<UpdateData>(); }
+        selectUpdate.Clear();
+        selectUpdate.AddRange(GetUpdates(4));
+
         currentLevel++;
         maxExp *= 1.1f;
+        upgradePanelManager.OpenPanel(GetUpdates(4));
     }
     private void UpdateExpBar()
     {
@@ -90,21 +107,32 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
 
+    public void UpgradeAfterUpLevel(int numberOfChoice)
+    {
+        UpdateData upgradeData = selectUpdate[numberOfChoice];
+        if(acquireUpdate == null)
+        {
+            acquireUpdate = new List<UpdateData>();
+        }
+        acquireUpdate.Add(upgradeData);
+        upgradeData.Equals(upgradeData);
+    }
+
     public List<UpdateData> GetUpdates(int count)
     {
         List<UpdateData> listUpgrade = new List<UpdateData>();
 
-        if(count > upgrades.Count)
+        if (count > upgradeData.Count)
         {
-            count = upgrades.Count;
+            count = upgradeData.Count;
         }
 
-        for(int i = 0; i< count; i++)
+        for (int i = 0; i < count; i++)
         {
-            listUpgrade.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            listUpgrade.Add(upgradeData[Random.Range(0, upgradeData.Count)]);
         }
 
-        return listUpgrade; 
+        return listUpgrade;
     }
 
 }

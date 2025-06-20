@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public GameObject coin;
     public GameObject exp;
     private const float MAX_RATTING_DROPCOIN = 10f;
-    private const float MAX_RATTING_DROPEXP = 50f;
+    private const float MAX_RATTING_DROPEXP = 100f;
 
 
 

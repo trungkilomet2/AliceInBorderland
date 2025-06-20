@@ -9,12 +9,11 @@ public enum UpgradeType
     WeaponUnlock,
     ItemUnlock
 }
-public class UpdateData : MonoBehaviour
+[CreateAssetMenu]
+public class UpdateData : ScriptableObject
 {
-
     public UpgradeType upgradeType;
     public string Name;
     public Sprite icon;
-
 }
 
