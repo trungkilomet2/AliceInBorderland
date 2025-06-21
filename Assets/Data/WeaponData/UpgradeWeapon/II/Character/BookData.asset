@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: Book II
-  icon: {fileID: -357138925, guid: 8bcd2278b8a5aff4f9fb33af2b57ff8a, type: 3}
+  icon: {fileID: 54252980, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
+  weaponData: {fileID: 0}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: SwordData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 2
   Name: Sword I
   icon: {fileID: 242141450, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 025607219468d6a41840a76cf24927ec, type: 2}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: NeckleData
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  icon: {fileID: 0}
+  Name: Neckle III
+  icon: {fileID: 408318474, guid: c356df7227a383a4f837764a13c3b951, type: 3}
+  weaponData: {fileID: 0}
