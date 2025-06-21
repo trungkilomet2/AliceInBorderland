@@ -153,4 +153,8 @@ public class CommonUI : MonoBehaviour
         return listUpgrade;
     }
 
+    public void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpdateData> weaponStages)
+    {
+        this.upgradeData.AddRange(weaponStages);
+    }
 }

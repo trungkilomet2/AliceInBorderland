@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-   //// public Transform weaponObjectsContainer;
+    //// public Transform weaponObjectsContainer;
 
-   // public WeaponData startingWeapon;
+    // public WeaponData startingWeapon;
 
-   // private void Start()
-   // {
-   //     AddWeapon(startingWeapon);
-   // }
+    // private void Start()
+    // {
+    //     AddWeapon(startingWeapon);
+    // }
 
     public void AddWeapon(WeaponData weaponData)
     {
         GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
+
+        CommonUI commonUI = GetComponent<CommonUI>();
+
+        if (commonUI != null)
+        {
+
+            commonUI.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.weaponStages);
+
+        }
 
     }
 

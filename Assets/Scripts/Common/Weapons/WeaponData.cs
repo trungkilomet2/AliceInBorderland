@@ -10,7 +10,8 @@ public class WeaponData : ScriptableObject
     [SerializeField] public int damage;
     [SerializeField] public float timeToAttack;
     public GameObject weaponPrefabs;
+    public List<UpdateData> weaponStages;
 
-    public List<UpdateData> upgrades;
+
 
 }
