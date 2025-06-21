@@ -9,5 +9,8 @@ public class WeaponData : ScriptableObject
     public string WeaponName;
     [SerializeField] public int damage;
     [SerializeField] public float timeToAttack;
-    public GameObject weaponPrefabs; 
+    public GameObject weaponPrefabs;
+
+    public List<UpdateData> upgrades;
+
 }

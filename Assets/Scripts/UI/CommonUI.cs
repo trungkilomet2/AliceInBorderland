@@ -27,12 +27,17 @@ public class CommonUI : MonoBehaviour
 
     //Upgrade
 
-    // Thong so du lieu cac vu khi can upgrade
-    [SerializeField] List<UpdateData> upgradeData;
+    [SerializeField] List<UpdateData> upgradeData; // Luu cac upgrade assest
     private UpgradePanelManager upgradePanelManager;
     private List<UpdateData> selectUpdate;
     public List<UpdateData> acquireUpdate;
 
+    private WeaponManager weaponManager;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+    }
 
     private void Start()
     {
@@ -86,14 +91,13 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
     public void LevelUp()
-    {   
-        if(selectUpdate == null) { selectUpdate = new List<UpdateData>(); }
+    {
+        if (selectUpdate == null) { selectUpdate = new List<UpdateData>(); }
         selectUpdate.Clear();
-        selectUpdate.AddRange(GetUpdates(4));
-
+        selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
-        upgradePanelManager.OpenPanel(GetUpdates(4));
+        upgradePanelManager.OpenPanel(selectUpdate);
     }
     private void UpdateExpBar()
     {
@@ -109,16 +113,30 @@ public class CommonUI : MonoBehaviour
 
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
-        UpdateData upgradeData = selectUpdate[numberOfChoice];
-        if(acquireUpdate == null)
+        UpdateData upgradeChoice = selectUpdate[numberOfChoice];
+        if (acquireUpdate == null)
         {
             acquireUpdate = new List<UpdateData>();
         }
-        acquireUpdate.Add(upgradeData);
-        upgradeData.Equals(upgradeData);
+
+        switch (upgradeChoice.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                break;
+            case UpgradeType.ItemUpgrade:
+                break;
+            case UpgradeType.WeaponUnlock:
+                weaponManager.AddWeapon(upgradeChoice.weaponData);
+                break;
+            case UpgradeType.ItemUnlock:
+                break;
+        }
+
+        acquireUpdate.Add(upgradeChoice);
+        upgradeData.Remove(upgradeChoice);
     }
 
-    public List<UpdateData> GetUpdates(int count)
+    public List<UpdateData> GetRandomUpdatesInUpgradeData(int count)
     {
         List<UpdateData> listUpgrade = new List<UpdateData>();
 
