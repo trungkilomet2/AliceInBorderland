@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Orb
   m_EditorClassIdentifier: 
-  WeaponName: 
-  damage: 0
-  timeToAttack: 0
-  weaponPrefabs: {fileID: 0}
+  WeaponName: Orb I
+  damage: 12
+  timeToAttack: 0.2
+  weaponPrefabs: {fileID: 599874349520697299, guid: cf86890b69516c249b8e70293db42d2e, type: 3}
   weaponStages: []

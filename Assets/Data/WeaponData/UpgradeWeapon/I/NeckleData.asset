@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeType: 2
   Name: Neckle I
   icon: {fileID: 1856926681, guid: c356df7227a383a4f837764a13c3b951, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 1f0902fdbea801043b1c09c5f132d3e7, type: 2}

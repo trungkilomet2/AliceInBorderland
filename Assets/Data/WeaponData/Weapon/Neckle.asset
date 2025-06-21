@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Neckle
   m_EditorClassIdentifier: 
-  WeaponName: 
-  damage: 0
+  WeaponName: Neckle
+  damage: 10
   timeToAttack: 0
-  weaponPrefabs: {fileID: 0}
+  weaponPrefabs: {fileID: 7203877490510949671, guid: 6af6f2786f98b3b43b17078848a277f4, type: 3}
   weaponStages: []
