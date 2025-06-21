@@ -6,11 +6,10 @@ using UnityEngine;
 public class OrbWeapon : MonoBehaviour
 {
     public float damage = 10f;
-    public float pushForce = 999f;
+    public float pushForce = 20f;
     public float damageInterval = 1f;
 
     private float timer;
-    private float timeToAttack = 1f;
 
     private List<GameObject> enemiesInRange = new List<GameObject>();
 
@@ -24,43 +23,45 @@ public class OrbWeapon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        //if (other.CompareTag("Enemy"))
-        //{
-        //    enemiesInRange.RemoveAll(other.gameObject);
-        //}
+        if (other.CompareTag("Enemy"))
+        {
+            enemiesInRange.Remove(other.gameObject);
+        }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-
         for (int i = enemiesInRange.Count - 1; i >= 0; i--)
         {   
             GameObject enemy  = enemiesInRange[i];
-         
-            //   EnemyData data = enemiesInRange[i];
-
             if (enemy == null)
             {
                 enemiesInRange.RemoveAt(i);
                 continue;
             }
-
             timer += Time.deltaTime;
             if (timer >= damageInterval)
             {
                 timer = 0f;
-                KnockBackEnemy(enemy);
+                TakeDame(enemy);
+                KnockBack(enemy);
             }
         }
     }
 
-    private void KnockBackEnemy(GameObject enemy)
+    private void TakeDame(GameObject enemy) 
     {
-        Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        Enemy enemyScript = enemy.GetComponent<Enemy>();
+        enemyScript?.TakeDamage(damage);
+
+    }
+    private void KnockBack(GameObject enemy)
+    {
+        Enemy enemyScript = enemy.GetComponent<Enemy>();
+        if (enemyScript != null)
         {
             Vector2 pushDir = (enemy.transform.position - transform.position).normalized;
-            rb.velocity = pushDir * pushForce;  // đẩy ngay lập tức
+            enemyScript.KnockbackEnemy(pushDir * pushForce);
         }
     }
 

@@ -15,11 +15,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] float hp = 50f;
     [SerializeField] float damage = 10f;
 
+    // Insert By Trung
     public GameObject coin;
     public GameObject exp;
     private const float MAX_RATTING_DROPCOIN = 10f;
     private const float MAX_RATTING_DROPEXP = 100f;
-
+    private bool isKnockedBack = false;
+    private float knockbackTime = 0.2f;
+    private float knockbackTimer = 0f;
 
 
     private void Awake()
@@ -37,9 +40,30 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void KnockbackEnemy(Vector2 force)
+    {
+        isKnockedBack = true;
+        knockbackTimer = knockbackTime;
+        rgb2d.AddForce(force, ForceMode2D.Impulse);
+    }
 
     private void FixedUpdate()
     {
+        if (isKnockedBack)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            if (knockbackTimer <= 0f)
+            {
+                isKnockedBack = false;
+            }
+            return;
+        }
+        if (targetDestination != null)
+        {
+            Vector3 direction1 = (targetDestination.position - transform.position).normalized;
+            rgb2d.velocity = direction1 * speed;
+        }
+
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgb2d.velocity = direction * speed;
     }
@@ -83,7 +107,7 @@ public class Enemy : MonoBehaviour
     {
         float randomDropCoin = UnityEngine.Random.Range(0, 100);
         if (randomDropCoin <= MAX_RATTING_DROPEXP)
-        { 
+        {
             Vector3 localDie = rgb2d.transform.position;
             Instantiate(exp).transform.position = localDie;
         }

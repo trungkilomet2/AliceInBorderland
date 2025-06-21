@@ -6,8 +6,7 @@ using UnityEngine.PlayerLoop;
 public class AbysalWeapon : MonoBehaviour
 {
 
-    public GameObject abysalAttackPrefab;  // Prefab của đạn
-  //  public GameObject abysalImpactPrefab;
+    public GameObject abysalAttackPrefab;
     public float projectileSpeed = 10f;
     public string enemyTag = "Enemy";
     float timeToAttack = 4f;
@@ -28,7 +27,7 @@ public class AbysalWeapon : MonoBehaviour
             if (enemy != null)
             {
                 ShootAt(enemy);
-                timer = timeToAttack; // reset lại timer tại đây để không bắn liên tục
+                timer = timeToAttack;
             }
         }
     }
@@ -58,10 +57,9 @@ public class AbysalWeapon : MonoBehaviour
         if (abysalAttackPrefab != null && target != null)
         {
             Vector2 direction = (target.transform.position - transform.position).normalized;
-            // Tính góc quay
+            // Quay dau dan
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            // Khởi tạo đầu đạn và xoay về hướng enemy
             GameObject projectile = Instantiate(abysalAttackPrefab, transform.position, Quaternion.Euler(0, 0, angle));
 
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
@@ -71,13 +69,5 @@ public class AbysalWeapon : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Attack enemy");
-    }
-
-
-
 
 }
