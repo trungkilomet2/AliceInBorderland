@@ -11,7 +11,7 @@ public class StageEvent
     public string message;
 
     [Header("Enemy Spawn Settings")]
-    public GameObject enemyToSpawn;
+    public EnemyData enemyToSpawn;
     [Range(1, 100)]
     public int count = 1;
 }
