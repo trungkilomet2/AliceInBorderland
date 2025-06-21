@@ -1,29 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class AbysalWeapon : MonoBehaviour
 {
 
-    public GameObject projectilePrefab;  // Prefab của đạn
+    public GameObject abysalAttackPrefab;  // Prefab của đạn
+    public GameObject abysalImpactPrefab;
     public float projectileSpeed = 10f;
-    public float delayBeforeShoot = 2f;
     public string enemyTag = "Enemy";
+    float timeToAttack = 4f;
+    float timer;
+
 
     void Start()
     {
-        StartCoroutine(ShootNearestEnemyAfterDelay());
+        timer = timeToAttack;
     }
 
-    IEnumerator ShootNearestEnemyAfterDelay()
+    void Update()
     {
-        GameObject nearestEnemy = FindNearestEnemy();
-        if (nearestEnemy != null)
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
-            yield return new WaitForSeconds(delayBeforeShoot);
-            ShootAt(nearestEnemy);
+            GameObject enemy = FindNearestEnemy();
+            if (enemy != null)
+            {
+                ShootAt(enemy);
+                timer = timeToAttack; // reset lại timer tại đây để không bắn liên tục
+            }
         }
     }
+
 
     GameObject FindNearestEnemy()
     {
@@ -31,7 +40,6 @@ public class AbysalWeapon : MonoBehaviour
         GameObject nearest = null;
         float shortestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
-
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(currentPosition, enemy.transform.position);
@@ -41,22 +49,32 @@ public class AbysalWeapon : MonoBehaviour
                 nearest = enemy;
             }
         }
-
         return nearest;
     }
 
     void ShootAt(GameObject target)
     {
-        if (projectilePrefab != null && target != null)
+        timer = timeToAttack;
+        if (abysalAttackPrefab != null && target != null)
         {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Vector2 direction = (target.transform.position - transform.position).normalized;
+            // Tính góc quay
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Khởi tạo đầu đạn và xoay về hướng enemy
+            GameObject projectile = Instantiate(abysalAttackPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                Vector2 direction = (target.transform.position - transform.position).normalized;
                 rb.velocity = direction * projectileSpeed;
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Attack enemy");
     }
 
 

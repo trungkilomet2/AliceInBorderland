@@ -10,7 +10,6 @@ public class SwordWeapon : MonoBehaviour
     public GameObject right_Weapon;
     public GameObject left_Weapon;
     private CharacterCommonBehavior characterCommonBehavior;
-    //private Rigidbody2D rigidbody2;
     private GameObject player;
     private Vector3 sizeCharacter;
     private void Start()
