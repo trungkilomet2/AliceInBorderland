@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4796883135526839391}
   - component: {fileID: 292969529015088927}
   - component: {fileID: 6877230115000931437}
+  - component: {fileID: -1768880664246167154}
   m_Layer: 0
   m_Name: Abysal Skill
   m_TagString: Untagged
@@ -180,3 +181,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.86, y: 0.36}
   m_EdgeRadius: 0
+--- !u!114 &-1768880664246167154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4738218337698597349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77595e3ef59306142af02d2cb9e655eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 0.5
