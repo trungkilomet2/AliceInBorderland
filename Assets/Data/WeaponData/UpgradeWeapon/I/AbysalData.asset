@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: AbysalData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 2
   Name: Abysal I
   icon: {fileID: 21300000, guid: 6c8bcec2b8831134fb3ef98b4ace4d90, type: 3}
   weaponData: {fileID: 11400000, guid: 7a5028c772598ca45a622e6eefa71453, type: 2}

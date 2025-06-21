@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: NeckleData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 2
   Name: Neckle I
   icon: {fileID: 1856926681, guid: c356df7227a383a4f837764a13c3b951, type: 3}
   weaponData: {fileID: 0}

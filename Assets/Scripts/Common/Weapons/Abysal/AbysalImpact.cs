@@ -7,6 +7,9 @@ public class AbysalImpact : MonoBehaviour
     public float destroyDelay = 0.5f;
     private Animator animator;
     private bool hasExploded = false;
+    private const string ENEMY_TAG = "Enemy";
+    private const string IMPACT_TRIGGER = "Impact";
+    private const float abysalDamage = 20f;
 
     void Start()
     {
@@ -17,18 +20,18 @@ public class AbysalImpact : MonoBehaviour
     {
         if (hasExploded) return;
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(ENEMY_TAG))
         {
             hasExploded = true;
 
-            animator.SetTrigger("Impact");
+            animator.SetTrigger(IMPACT_TRIGGER);
 
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag(ENEMY_TAG))
             {
-                other.GetComponent<Enemy>()?.TakeDamage(10);
+                other.GetComponent<Enemy>()?.TakeDamage(abysalDamage);
             }
 
             Destroy(gameObject, destroyDelay);
