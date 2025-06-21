@@ -34,11 +34,12 @@ public class Skill4_Warrior : SkillBase
 
         // Tăng sát thương
         weapon = gameObject.GetComponent<WeaponBase>();
+        
 
         weapon.damage = weapon.damage * damageMultiplier;
         // Bắt đầu timer buff
         buffTimer = buffDuration;
-        animator.SetTrigger("isRevive");
+        // animator.SetTrigger("isRevive");
         createExplosion();
     }
 
@@ -61,6 +62,12 @@ public class Skill4_Warrior : SkillBase
         }
 
         // Đếm ngược thời gian buff
+        if (buffTimer > 0 && character.hp <= 0 && skillUsed)
+    {
+        weapon.damage = weapon.damage / damageMultiplier;
+        buffTimer = 0f;
+    }
+
         if (buffTimer > 0)
         {
             buffTimer -= Time.deltaTime;

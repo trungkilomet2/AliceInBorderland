@@ -227,6 +227,7 @@ MonoBehaviour:
   damageMultiplier: 1.5
   buffDuration: 25
   gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
+  revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
 --- !u!1 &3781837170630933094
 GameObject:
   m_ObjectHideFlags: 0
