@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  icon: {fileID: 0}
+  Name: Sword I
+  icon: {fileID: 536560642, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
