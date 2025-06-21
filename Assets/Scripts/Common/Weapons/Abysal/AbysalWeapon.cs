@@ -7,7 +7,7 @@ public class AbysalWeapon : MonoBehaviour
 {
 
     public GameObject abysalAttackPrefab;  // Prefab của đạn
-    public GameObject abysalImpactPrefab;
+  //  public GameObject abysalImpactPrefab;
     public float projectileSpeed = 10f;
     public string enemyTag = "Enemy";
     float timeToAttack = 4f;
