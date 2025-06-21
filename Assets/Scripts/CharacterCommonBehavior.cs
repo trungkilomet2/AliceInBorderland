@@ -19,6 +19,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
 
+    private bool isInvincible = false;
+    private float invincibleEndTime = 0f;
+
 
     private void Awake()
     {
@@ -123,6 +126,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        if (isInvincible) return;
+
         ShowDamageText(damage);
         hp -= damage;
         commonUI.SetCurrentHp(hp);
@@ -150,6 +155,20 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         return rb;
     }
+
+    public void ActiveNeckleItem(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+
+    public void DeactiveNeckleItem()
+    {
+        isInvincible = false;
+    }
+
+
+
     public abstract void Attack();
 
 
