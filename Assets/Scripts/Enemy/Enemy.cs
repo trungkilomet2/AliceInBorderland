@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate()
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
