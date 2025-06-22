@@ -25,6 +25,25 @@ public class CommonUI : MonoBehaviour
     public float currentTime = 0f;
     private bool isRunning = true;
 
+    //Upgrade
+
+    [SerializeField] List<UpdateData> upgradeData; // Luu cac upgrade assest
+    private UpgradePanelManager upgradePanelManager;
+    private List<UpdateData> selectUpdate;
+    public List<UpdateData> acquireUpdate;
+
+    private WeaponManager weaponManager;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+    }
+
+    private void Start()
+    {
+        upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
+    }
+
     private void Update()
     {
         if (!isRunning) return;
@@ -67,13 +86,18 @@ public class CommonUI : MonoBehaviour
         {
             currentExp -= maxExp;
             LevelUp();
+            Debug.Log("Da up level");
         }
         UpdateExpBar();
     }
     public void LevelUp()
     {
+        if (selectUpdate == null) { selectUpdate = new List<UpdateData>(); }
+        selectUpdate.Clear();
+        selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
+        upgradePanelManager.OpenPanel(selectUpdate);
     }
     private void UpdateExpBar()
     {
@@ -87,4 +111,50 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
 
+    public void UpgradeAfterUpLevel(int numberOfChoice)
+    {
+        UpdateData upgradeChoice = selectUpdate[numberOfChoice];
+        if (acquireUpdate == null)
+        {
+            acquireUpdate = new List<UpdateData>();
+        }
+
+        switch (upgradeChoice.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                break;
+            case UpgradeType.ItemUpgrade:
+                break;
+            case UpgradeType.WeaponUnlock:
+                weaponManager.AddWeapon(upgradeChoice.weaponData);
+                break;
+            case UpgradeType.ItemUnlock:
+                break;
+        }
+
+        acquireUpdate.Add(upgradeChoice);
+        upgradeData.Remove(upgradeChoice);
+    }
+
+    public List<UpdateData> GetRandomUpdatesInUpgradeData(int count)
+    {
+        List<UpdateData> listUpgrade = new List<UpdateData>();
+
+        if (count > upgradeData.Count)
+        {
+            count = upgradeData.Count;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            listUpgrade.Add(upgradeData[Random.Range(0, upgradeData.Count)]);
+        }
+
+        return listUpgrade;
+    }
+
+    public void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpdateData> weaponStages)
+    {
+        this.upgradeData.AddRange(weaponStages);
+    }
 }
