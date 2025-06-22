@@ -18,8 +18,8 @@ public class NeckleSpawn : MonoBehaviour
     {
         if (player != null)
         {
-            Vector3 offset = new Vector3(-0.1f, 0.3f, 0);
-            transform.position = player.transform.position + offset;
+           // Vector3 offset = new Vector3(-0.1f, 0.3f, 0);
+            transform.position = player.transform.position ;
             transform.SetParent(player.transform);
         }
     }

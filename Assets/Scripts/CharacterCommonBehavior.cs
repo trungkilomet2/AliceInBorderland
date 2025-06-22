@@ -162,6 +162,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         invincibleEndTime = Time.time + duration;
     }
 
+    public float GetInvincibleEndTime()
+    {
+        return this.invincibleEndTime;
+    }
+
     public void DeactiveNeckleItem()
     {
         isInvincible = false;

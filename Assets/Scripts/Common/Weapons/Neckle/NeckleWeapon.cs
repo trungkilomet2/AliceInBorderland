@@ -9,6 +9,8 @@ public class NeckleWeapon : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2D;
     CharacterCommonBehavior characterCommon;
+    private float neckleWeaponColdown = 15f;
+    private float neckleActiveTiming = 0.8f;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,16 +20,16 @@ public class NeckleWeapon : MonoBehaviour
 
     void Update()
     {
-        // Nếu item đang bị vô hiệu hóa và thời gian đã hết thì bật lại
+        if (!isItemActive && Time.time >= characterCommon.GetInvincibleEndTime())
+        {
+            characterCommon.DeactiveNeckleItem();
+        }
         if (!isItemActive && Time.time >= itemDisableEndTime)
         {
             spriteRenderer.enabled = true;
             collider2D.enabled = true;
             isItemActive = true;
-            characterCommon.DeactiveNeckleItem();
         }
-        Debug.Log("Time : " + Time.time);
-        Debug.Log("TimeDisable : " + itemDisableEndTime);
 
     }
 
@@ -39,12 +41,10 @@ public class NeckleWeapon : MonoBehaviour
         {
             if (characterCommon != null)
             {
-                characterCommon.ActiveNeckleItem(0.5f);
+                characterCommon.ActiveNeckleItem(neckleActiveTiming);
             }
-
             isItemActive = false;
-            itemDisableEndTime = Time.time + 3f;
-
+            itemDisableEndTime = Time.time + neckleWeaponColdown;
             spriteRenderer.enabled = false;
             collider2D.enabled = false;
         }

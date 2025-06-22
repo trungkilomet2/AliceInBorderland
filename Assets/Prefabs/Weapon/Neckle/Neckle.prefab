@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2732917095686126357}
   - component: {fileID: 2177419352590999025}
   - component: {fileID: -7311928711532287833}
-  - component: {fileID: 8827780549623512950}
+  - component: {fileID: -7436660402993579019}
   m_Layer: 0
   m_Name: Neckle
   m_TagString: Untagged
@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 7203877490510949671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5702, y: -0.5921, z: 0}
-  m_LocalScale: {x: 4.679001, y: 4.7007065, z: 1}
+  m_LocalPosition: {x: -1.0343, y: 1.1522, z: 0}
+  m_LocalScale: {x: -6.4388366, y: 6.9112844, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91b098d5c3441b4581d540731050487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8827780549623512950
-CircleCollider2D:
+--- !u!61 &-7436660402993579019
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -193,6 +193,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.19}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.31, y: 0.32}
+    newSize: {x: 0.31, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.44
+  m_Size: {x: 0.31, y: 0.32}
+  m_EdgeRadius: 0
