@@ -3843,7 +3843,7 @@ MonoBehaviour:
   imageEXP: {fileID: 701527121}
   currentLevel: 1
   levelText: {fileID: 1720022057}
-  imageHP: {fileID: 0}
+  imageHP: {fileID: 706363725}
   timerCounter: {fileID: 218877222}
   currentTime: 0
 --- !u!114 &337635494
@@ -255347,7 +255347,7 @@ MonoBehaviour:
   allCharacters:
   - {fileID: 11400000, guid: 5cfd8533e9172934d8a5f095e5cb526e, type: 2}
   - {fileID: 11400000, guid: 3f60d99be2c13ca44a439960adafb1d0, type: 2}
-  - {fileID: 11400000, guid: 5cfd8533e9172934d8a5f095e5cb526e, type: 2}
+  - {fileID: 11400000, guid: 3f6308dccd8068b47823d8f918c9fb6b, type: 2}
   spawnPoint: {fileID: 0}
   virtualCamera: {fileID: 873247520}
   enemiesManager: {fileID: 1714175506}
@@ -255564,6 +255564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemies
       objectReference: {fileID: 0}
+    - target: {fileID: 6307328228838042043, guid: db30a80b476ebb145917d07e0b58cde4, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 5346290424526072831, guid: 39cc5a3e9cc6b3b48ab119690cb3338a, type: 3}
+    - target: {fileID: 6307328228838042043, guid: db30a80b476ebb145917d07e0b58cde4, type: 3}
+      propertyPath: enemyAnimation
+      value: 
+      objectReference: {fileID: 4864162723747201364, guid: a60ca41474fae35428cf8bbdb07f0f64, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

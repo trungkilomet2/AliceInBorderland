@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject enemyAnimation;
+    [SerializeField] EnemyData currentEnemyData;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] GameObject player;
 
@@ -27,12 +29,18 @@ public class EnemiesManager : MonoBehaviour
         enemy = newEnemyPrefab;
     }
 
+    public void SetEnemyData(EnemyData enemyData)
+    {
+        currentEnemyData = enemyData;
+    }
+
     public void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
 
         position += player.transform.position;
 
+        // spawn main object
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
@@ -41,6 +49,33 @@ public class EnemiesManager : MonoBehaviour
             enemyComponent.SetTarget(player);
         }
         newEnemy.transform.parent = transform;
+
+        // spawn sprite object
+        GameObject spriteObject = Instantiate(enemyAnimation);
+        spriteObject.transform.parent = newEnemy.transform;
+        spriteObject.transform.localPosition = Vector3.zero; 
+    }
+
+    public void SpawnEnemy(EnemyData data)
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        // spawn main object
+        GameObject newEnemy = Instantiate(enemy);
+        newEnemy.transform.position = position;
+        Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
+        if (enemyComponent != null)
+        {
+            enemyComponent.SetTarget(player);
+        }
+        newEnemy.transform.parent = transform;
+
+        // spawn sprite object
+        GameObject spriteObject = Instantiate(data.animatedPrefab);
+        spriteObject.transform.parent = newEnemy.transform;
+        spriteObject.transform.localPosition = Vector3.zero;
     }
 
     private Vector3 GenerateRandomPosition()

@@ -100,10 +100,10 @@ TextureImporter:
       name: Dissapear_0
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,7 +111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6dbe85e56313c644bfbe9e6841d8f84
+      spriteID: 799b761ccf4bd5c45ab9fb7e84f63d8c
       internalID: -202459697
       vertices: []
       indices: 
@@ -121,10 +121,10 @@ TextureImporter:
       name: Dissapear_1
       rect:
         serializedVersion: 2
-        x: 193
+        x: 160
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,7 +132,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca8dcecc007d8204dab641b23c0673c0
+      spriteID: 8110e5a374bbca446aa53a6e30135691
       internalID: 2017994478
       vertices: []
       indices: 
@@ -142,10 +142,10 @@ TextureImporter:
       name: Dissapear_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 320
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,7 +153,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 947ec9d43c95b734a950fa5e76a715f9
+      spriteID: 80a474b9806f3504496ac5c4a6079d6c
       internalID: 1032923891
       vertices: []
       indices: 
@@ -163,10 +163,10 @@ TextureImporter:
       name: Dissapear_3
       rect:
         serializedVersion: 2
-        x: 507
+        x: 480
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 545d23654a00fbf45bd64adaa1811bb5
+      spriteID: 61592cc9b65f4104593f2a8514c9e4fa
       internalID: -1618925474
       vertices: []
       indices: 
@@ -184,10 +184,10 @@ TextureImporter:
       name: Dissapear_4
       rect:
         serializedVersion: 2
-        x: 666
+        x: 640
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,7 +195,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479b2d1970dec3d42ba5532e5387a80d
+      spriteID: 94a592e019aa38949a58184e8758cff1
       internalID: -1010245756
       vertices: []
       indices: 
@@ -205,10 +205,10 @@ TextureImporter:
       name: Dissapear_5
       rect:
         serializedVersion: 2
-        x: 827
+        x: 800
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +216,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62a06462db7411d4baf647505b419ac6
+      spriteID: 2063ee89895ebe442b4c03b3051a5e40
       internalID: -1489326119
       vertices: []
       indices: 
@@ -226,10 +226,10 @@ TextureImporter:
       name: Dissapear_6
       rect:
         serializedVersion: 2
-        x: 987
+        x: 960
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10fff109b56ceff4184c321257836fac
+      spriteID: 5b0c934d301f0e3439680cd437a958f8
       internalID: -1538701274
       vertices: []
       indices: 
@@ -247,10 +247,10 @@ TextureImporter:
       name: Dissapear_7
       rect:
         serializedVersion: 2
-        x: 1148
+        x: 1120
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,7 +258,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a26a39d1c5b837c41a07efd9e11a4e1e
+      spriteID: 35753a370b5aa624c8d3e8f414877ae7
       internalID: 254332549
       vertices: []
       indices: 
@@ -268,10 +268,10 @@ TextureImporter:
       name: Dissapear_8
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1280
         y: 0
-        width: 96
-        height: 86
+        width: 160
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,7 +279,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acb89c6c166f8864f945d560f5764173
+      spriteID: 030efd2f1ab41ff4ea0b585f380e4d01
       internalID: 1095618983
       vertices: []
       indices: 
