@@ -103,27 +103,6 @@ public abstract class EnemyBase : MonoBehaviour
                 }
             }
         }
-        else if (other.CompareTag("Projectile"))
-        {
-            var projSkillJ = other.GetComponent<ProjectileSkillJ>();
-            var proj = other.GetComponent<Projectile>();
-            var skill4 = other.GetComponent<Skill4Call>();
-
-            float damage = 0;
-
-            if (projSkillJ != null)
-                damage = projSkillJ.damage;
-            else if (proj != null)
-                damage = proj.damage;
-            else if (skill4 != null)
-                damage = skill4.damage;
-
-            if (damage > 0)
-            {
-                TakeDamage(damage);
-                Destroy(other.gameObject);
-            }
-        }
         else if (other.CompareTag("Player"))
         {
             targetCharacter = other.GetComponent<CharacterCommonBehavior>();
