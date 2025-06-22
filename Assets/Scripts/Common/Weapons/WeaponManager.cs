@@ -16,15 +16,26 @@ public class WeaponManager : MonoBehaviour
     public void AddWeapon(WeaponData weaponData)
     {
         GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
-        Debug.Log("Spawn " + weaponData.weaponPrefabs.name);
+
         CommonUI commonUI = GetComponent<CommonUI>();
 
         if (commonUI != null)
         {
-
             commonUI.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.weaponStages);
-
         }
+    }
+
+    public void UpdateWeapon(WeaponData weaponData)
+    {
+        GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
+
+        CommonUI commonUI = GetComponent<CommonUI>();
+
+        if (commonUI != null)
+        {
+            commonUI.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.weaponStages);
+        }
+
 
     }
 

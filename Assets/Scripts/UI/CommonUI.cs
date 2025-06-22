@@ -111,6 +111,8 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
 
+
+
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
@@ -122,6 +124,7 @@ public class CommonUI : MonoBehaviour
         switch (upgradeChoice.upgradeType)
         {
             case UpgradeType.WeaponUpgrade:
+                weaponManager.UpdateWeapon(upgradeChoice.weaponData);
                 break;
             case UpgradeType.ItemUpgrade:
                 break;
@@ -136,6 +139,16 @@ public class CommonUI : MonoBehaviour
         upgradeData.Remove(upgradeChoice);
     }
 
+    bool CheckDupliCateUpdateData(UpdateData data, List<UpdateData> listUpdate)
+    {
+        foreach (UpdateData updateData in listUpdate)
+        {
+            if (data == updateData) return true;
+        }
+
+        return false;
+    }
+
     public List<UpdateData> GetRandomUpdatesInUpgradeData(int count)
     {
         List<UpdateData> listUpgrade = new List<UpdateData>();
@@ -147,7 +160,14 @@ public class CommonUI : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            listUpgrade.Add(upgradeData[Random.Range(0, upgradeData.Count)]);
+            UpdateData updateData = upgradeData[Random.Range(0, upgradeData.Count)];
+            if (CheckDupliCateUpdateData(updateData, listUpgrade))
+            {
+                i--;
+                continue;
+            }
+
+            listUpgrade.Add(updateData);
         }
 
         return listUpgrade;

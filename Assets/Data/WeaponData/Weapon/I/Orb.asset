@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
-  m_Name: Abysal
+  m_Name: Orb
   m_EditorClassIdentifier: 
-  WeaponName: Abysal I
-  damage: 10
-  timeToAttack: 4
-  weaponPrefabs: {fileID: 2335438606419925575, guid: 3b1ad945ffb7a3f4c87e240ed3c6e9c4, type: 3}
+  WeaponName: Orb I
+  damage: 12
+  timeToAttack: 0.2
+  weaponLevel: 1
+  weaponPrefabs: {fileID: 599874349520697299, guid: cf86890b69516c249b8e70293db42d2e, type: 3}
   weaponStages: []
