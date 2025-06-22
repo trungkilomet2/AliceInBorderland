@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mage_Skill_Attack : MonoBehaviour
+public class Mage_Skill_Attack : WeaponBase
 {
-    public float maxDistance = 20f;
-    private Vector3 startPos;
-
-    void Start()
+    protected override void Start()
     {
-        startPos = transform.position;
+        base.Start();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (Vector3.Distance(transform.position, startPos) > maxDistance)
-        {
-            Destroy(gameObject);
-        }
+        base.Update();
     }
 }
