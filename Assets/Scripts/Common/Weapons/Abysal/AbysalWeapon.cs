@@ -8,7 +8,7 @@ public class AbysalWeapon : MonoBehaviour
 
     public GameObject abysalAttackPrefab;
     public float projectileSpeed = 10f;
-    public string enemyTag = "Enemy";
+    public const string ENEMY_TAG = "Enemy";
     float timeToAttack = 4f;
     float timer;
 
@@ -35,7 +35,7 @@ public class AbysalWeapon : MonoBehaviour
 
     GameObject FindNearestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(ENEMY_TAG);
         GameObject nearest = null;
         float shortestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;

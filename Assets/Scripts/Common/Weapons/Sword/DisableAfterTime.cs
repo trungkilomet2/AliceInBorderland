@@ -1,11 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DisableAfterTime : MonoBehaviour
 {
+    float swordDamage = 50f;
     float timeToDisable = 0.3f;
     float timer;
+    private const string ENEMY_TAG = "Enemy";
     private void OnEnable()
     {
         timer = timeToDisable;
@@ -21,9 +23,12 @@ public class DisableAfterTime : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            Debug.Log("AttackEnemy");
+            enemy?.TakeDamage(swordDamage);
         }
     }
 }

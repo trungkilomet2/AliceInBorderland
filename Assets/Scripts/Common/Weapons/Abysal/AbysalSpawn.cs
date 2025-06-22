@@ -6,10 +6,11 @@ public class AbysalSpawn : MonoBehaviour
 {
 
     private GameObject player;
+    private const string PLAYER_TAG = "Player";
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag(PLAYER_TAG);
     }
 
     void Start()

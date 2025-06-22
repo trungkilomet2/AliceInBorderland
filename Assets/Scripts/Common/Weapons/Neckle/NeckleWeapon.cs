@@ -24,6 +24,7 @@ public class NeckleWeapon : MonoBehaviour
         {
             characterCommon.DeactiveNeckleItem();
         }
+
         if (!isItemActive && Time.time >= itemDisableEndTime)
         {
             spriteRenderer.enabled = true;
@@ -43,10 +44,16 @@ public class NeckleWeapon : MonoBehaviour
             {
                 characterCommon.ActiveNeckleItem(neckleActiveTiming);
             }
-            isItemActive = false;
-            itemDisableEndTime = Time.time + neckleWeaponColdown;
-            spriteRenderer.enabled = false;
-            collider2D.enabled = false;
+            DeactiveWeapon();
         }
     }
+
+    private void DeactiveWeapon()
+    {
+        isItemActive = false;
+        itemDisableEndTime = Time.time + neckleWeaponColdown;
+        spriteRenderer.enabled = false;
+        collider2D.enabled = false;
+    }
+
 }

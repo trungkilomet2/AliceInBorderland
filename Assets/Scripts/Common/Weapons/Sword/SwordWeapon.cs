@@ -22,7 +22,6 @@ public class SwordWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  rigidbody2 = characterCommonBehavior.GetRigidbody2D();
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -51,10 +50,10 @@ public class SwordWeapon : MonoBehaviour
     {
         timer = timeToAttack;
         Vector3 offset = new Vector3(-(sizeCharacter.x + 2f), 0, 0);
-        left_Weapon.transform.position =player.transform.position + offset ;
+        left_Weapon.transform.position = player.transform.position + offset;
         left_Weapon.SetActive(true);
     }
 
-   
+
 
 }

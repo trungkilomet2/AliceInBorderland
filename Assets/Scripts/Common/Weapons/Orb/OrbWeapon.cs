@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class OrbWeapon : MonoBehaviour
 {
-    public float damage = 10f;
+    public float damageOfOrb = 10f;
     public float pushForce = 20f;
     public float damageInterval = 1f;
-
+    private string ENEMY_TAG = "Enemy";
     private float timer;
 
     private List<GameObject> enemiesInRange = new List<GameObject>();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(ENEMY_TAG))
         {
             enemiesInRange.Add(other.GameObject());
         }
@@ -23,7 +23,7 @@ public class OrbWeapon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(ENEMY_TAG))
         {
             enemiesInRange.Remove(other.gameObject);
         }
@@ -43,16 +43,16 @@ public class OrbWeapon : MonoBehaviour
             if (timer >= damageInterval)
             {
                 timer = 0f;
-                TakeDame(enemy);
+                TakeDame(enemy,damageOfOrb);
                 KnockBack(enemy);
             }
         }
     }
 
-    private void TakeDame(GameObject enemy) 
+    private void TakeDame(GameObject enemy,float dameWP) 
     {
         Enemy enemyScript = enemy.GetComponent<Enemy>();
-        enemyScript?.TakeDamage(damage);
+        enemyScript?.TakeDamage(dameWP);
 
     }
     private void KnockBack(GameObject enemy)
