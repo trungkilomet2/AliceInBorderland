@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Abysal
   m_EditorClassIdentifier: 
-  WeaponName: Abysal I
+  WeaponName: Abysal
   damage: 10
   timeToAttack: 4
   weaponLevel: 1
   weaponPrefabs: {fileID: 2335438606419925575, guid: 3b1ad945ffb7a3f4c87e240ed3c6e9c4, type: 3}
-  weaponStages: []
+  nextLevel: {fileID: 0}

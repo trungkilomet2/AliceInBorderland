@@ -11,8 +11,7 @@ public class WeaponData : ScriptableObject
     [SerializeField] public float timeToAttack;
     public int weaponLevel;
     public GameObject weaponPrefabs;
-    public List<UpdateData> weaponStages;
-
+    public UpdateData nextLevel;
     
 
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7767955257429872849}
   - component: {fileID: 1196308203769642949}
   - component: {fileID: 1643254708688675747}
+  - component: {fileID: 2476256736248422397}
   m_Layer: 0
   m_Name: AttackRight
   m_TagString: Untagged
@@ -171,6 +172,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2476256736248422397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234953748007739889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1462a25682fa73b499ce453c7c600c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650712478619076245
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7525783556255156666}
   - component: {fileID: 6866629493076063678}
-  - component: {fileID: -195832558955638374}
   m_Layer: 0
   m_Name: wpn_Sword 2
   m_TagString: Untagged
@@ -220,18 +232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   right_Weapon: {fileID: 234953748007739889}
   left_Weapon: {fileID: 3835093922714162182}
---- !u!114 &-195832558955638374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650712478619076245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1462a25682fa73b499ce453c7c600c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3835093922714162182
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 6557190360268255132}
   - component: {fileID: 3886883713551615780}
   - component: {fileID: 8276419368136307014}
+  - component: {fileID: 4484448514453928007}
   m_Layer: 0
   m_Name: AttackLeft
   m_TagString: Untagged
@@ -403,3 +404,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4484448514453928007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835093922714162182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1462a25682fa73b499ce453c7c600c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

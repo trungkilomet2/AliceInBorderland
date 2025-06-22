@@ -20,24 +20,20 @@ public class Sword2Weapon : MonoBehaviour
         sizeCharacter = player.GetComponent<Collider2D>().bounds.size;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-
             AttackRight();
-            if (Time.deltaTime >= delayAttack)
-                AttackLeft();
+            AttackLeft();
         }
-
     }
 
     void AttackRight()
     {
         timer = timeToAttack;
-        Vector3 offset = new Vector3(sizeCharacter.x + 2f, 0, 0);
+        Vector3 offset = new Vector3(sizeCharacter.x + 4f, 0, 0);
         right_Weapon.transform.position = player.transform.position + offset;
         right_Weapon.SetActive(true);
         delayAttack = Time.deltaTime + delayAttack;
@@ -46,7 +42,7 @@ public class Sword2Weapon : MonoBehaviour
     void AttackLeft()
     {
         timer = timeToAttack;
-        Vector3 offset = new Vector3(-(sizeCharacter.x + 2f), 0, 0);
+        Vector3 offset = new Vector3(-(sizeCharacter.x + 4f), 0, 0);
         left_Weapon.transform.position = player.transform.position + offset;
         left_Weapon.SetActive(true);
     }

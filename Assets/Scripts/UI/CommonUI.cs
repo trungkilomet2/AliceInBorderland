@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,6 +57,7 @@ public class CommonUI : MonoBehaviour
             // Spawn Last Boss -- Joker
         }
         CountTimer();
+
     }
 
     public void CountTimer()
@@ -86,7 +88,6 @@ public class CommonUI : MonoBehaviour
         {
             currentExp -= maxExp;
             LevelUp();
-            Debug.Log("Da up level");
         }
         UpdateExpBar();
     }
@@ -112,6 +113,19 @@ public class CommonUI : MonoBehaviour
     }
 
 
+    public void RemoveLowTierWeapon(WeaponData wpData)
+    {
+        foreach (UpdateData data in acquireUpdate)
+        {
+            if (data.weaponData.WeaponName.Trim().Equals(wpData.WeaponName))
+            {
+                acquireUpdate.Remove(data);
+                RemoveWeaponPrefabFromScene(data.weaponData);
+                break;
+            }
+        }
+    }
+
 
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
@@ -125,6 +139,7 @@ public class CommonUI : MonoBehaviour
         {
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpdateWeapon(upgradeChoice.weaponData);
+                RemoveLowTierWeapon(upgradeChoice.weaponData);
                 break;
             case UpgradeType.ItemUpgrade:
                 break;
@@ -149,6 +164,23 @@ public class CommonUI : MonoBehaviour
         return false;
     }
 
+    public void RemoveWeaponPrefabFromScene(WeaponData wpData)
+    {
+        if (wpData == null || wpData.weaponPrefabs == null) return;
+
+        // Tìm tất cả các object trong scene có cùng prefab
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            // So sánh tên hoặc prefab reference (tuỳ bạn quản lý như thế nào)
+            if (PrefabUtility.GetCorrespondingObjectFromSource(obj) == wpData.weaponPrefabs) // Nếu không dùng được dòng trên (PrefabUtility dùng trong Editor)
+            {
+                Destroy(obj);
+            }
+        }
+    }
+
     public List<UpdateData> GetRandomUpdatesInUpgradeData(int count)
     {
         List<UpdateData> listUpgrade = new List<UpdateData>();
@@ -166,15 +198,13 @@ public class CommonUI : MonoBehaviour
                 i--;
                 continue;
             }
-
             listUpgrade.Add(updateData);
         }
-
         return listUpgrade;
     }
 
-    public void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpdateData> weaponStages)
+    public void AddUpgradesIntoTheListOfAvailableUpgrades(UpdateData weaponStages)
     {
-        this.upgradeData.AddRange(weaponStages);
+        this.upgradeData.Add(weaponStages);
     }
 }
