@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1172560645984776530}
   - component: {fileID: -2367620310733030846}
   - component: {fileID: -4396571342137590553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SkillJProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

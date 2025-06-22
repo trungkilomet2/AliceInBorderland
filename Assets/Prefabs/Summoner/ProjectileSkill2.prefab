@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -82020460669542638}
   - component: {fileID: -2521941058896978663}
   - component: {fileID: 1565744933809016419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProjectileSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
