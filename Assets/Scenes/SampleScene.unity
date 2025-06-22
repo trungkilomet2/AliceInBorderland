@@ -257374,6 +257374,7 @@ GameObject:
   - component: {fileID: 1813645149}
   - component: {fileID: 1813645148}
   - component: {fileID: 1813645150}
+  - component: {fileID: 1813645151}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -257429,6 +257430,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
   enemiesManager: {fileID: 1714175506}
+--- !u!114 &1813645151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813645147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be275eb7b1890b940a2b4397a9c81fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressTimeRate: 30
+  progressPerSplit: 0.2
 --- !u!1 &1870996054
 GameObject:
   m_ObjectHideFlags: 0
@@ -258428,6 +258443,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 5346290424526072831, guid: 39cc5a3e9cc6b3b48ab119690cb3338a, type: 3}
+    - target: {fileID: 6307328228838042043, guid: db30a80b476ebb145917d07e0b58cde4, type: 3}
+      propertyPath: stageProgress
+      value: 
+      objectReference: {fileID: 1813645151}
     - target: {fileID: 6307328228838042043, guid: db30a80b476ebb145917d07e0b58cde4, type: 3}
       propertyPath: enemyAnimation
       value: 
