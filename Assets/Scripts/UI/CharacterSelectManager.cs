@@ -145,6 +145,7 @@ public class CharacterSelectManager : MonoBehaviour
             PlayerPrefs.Save();
 
             SceneManager.LoadScene(gameSceneName);
+
         }
     }
 
