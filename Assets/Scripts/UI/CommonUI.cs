@@ -168,13 +168,11 @@ public class CommonUI : MonoBehaviour
     {
         if (wpData == null || wpData.weaponPrefabs == null) return;
 
-        // Tìm tất cả các object trong scene có cùng prefab
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
 
         foreach (GameObject obj in allObjects)
         {
-            // So sánh tên hoặc prefab reference (tuỳ bạn quản lý như thế nào)
-            if (PrefabUtility.GetCorrespondingObjectFromSource(obj) == wpData.weaponPrefabs) // Nếu không dùng được dòng trên (PrefabUtility dùng trong Editor)
+            if (obj.name == (wpData.weaponPrefabs.gameObject.name + "(Clone)"))
             {
                 Destroy(obj);
             }
