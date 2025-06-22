@@ -35455,6 +35455,8 @@ MonoBehaviour:
   imageHP: {fileID: 0}
   timerCounter: {fileID: 0}
   currentTime: 0
+  upgradeData: []
+  acquireUpdate: []
 --- !u!1 &634224126
 GameObject:
   m_ObjectHideFlags: 0
@@ -35729,7 +35731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7476602496301372032, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8119783569727878563, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: target
@@ -35806,6 +35808,8 @@ MonoBehaviour:
   imageHP: {fileID: 0}
   timerCounter: {fileID: 0}
   currentTime: 0
+  upgradeData: []
+  acquireUpdate: []
 --- !u!114 &662987453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257479,6 +257483,10 @@ PrefabInstance:
     - target: {fileID: 9175874138306762777, guid: 56c8e7a0707690740a9d633236f3e947, type: 3}
       propertyPath: m_Offset.y
       value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175874138306762777, guid: 56c8e7a0707690740a9d633236f3e947, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
