@@ -10,6 +10,7 @@ public class Skill4Call : MonoBehaviour
     private float orbitSpeed = 200f; // độ xoay mỗi giây
     private float currentAngle;
     private Vector3 targetPos;
+    public float damage = 30f;
 
     private enum State { FlyingOut, Orbiting, Exploding, Finished }
     private State state = State.FlyingOut;
@@ -21,6 +22,29 @@ public class Skill4Call : MonoBehaviour
     private Vector3 launchStartPos;    // vị trí bắt đầu launch
 
     private bool readyToExplode = false;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger entered with: " + other.gameObject.name);
+
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("HIT ENEMY!");
+            Enemy enemy = other.GetComponent<Enemy>();
+            EnemyBase enemyB = other.GetComponent<EnemyBase>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                
+            }
+
+            if (enemyB != null)
+            {
+                enemyB.TakeDamage(damage);
+                
+            }
+        }
+    }
 
     public void Initialize(Vector2 dir, Transform playerTransform)
     {

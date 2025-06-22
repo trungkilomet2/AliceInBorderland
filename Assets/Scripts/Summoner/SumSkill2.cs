@@ -10,6 +10,7 @@ public class SumSkill2 : MonoBehaviour
     public float radius = 4f;
     public float duration = 10f;
     public float cooldown = 15f;
+    
 
     [Header("Cooldown UI")]
     public SkillCooldownUI skill2UI; 

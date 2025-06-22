@@ -10,6 +10,7 @@ public class Skill4Controller : MonoBehaviour
     public float maxDistance = 4f;           // Khoảng cách ban đầu để orb bay ra
     int stepSize = 2;
     public SkillCooldownUI skill4UI;
+ 
 
 
     public float cooldownTime = 30f;

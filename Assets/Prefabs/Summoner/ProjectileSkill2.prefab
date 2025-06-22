@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1565744933809016419}
   m_Layer: 8
   m_Name: ProjectileSkill2
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -113450269
-  m_SortingLayer: 9
+  m_SortingLayerID: -1485700305
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 2056498197, guid: 54b7f7af4395b3a4a83ff401367624cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -193,3 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fcfa948c4aa6a41a8f13fb0274ca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 15

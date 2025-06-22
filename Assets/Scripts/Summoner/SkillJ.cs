@@ -10,6 +10,8 @@ public class SkillJ : MonoBehaviour
     private float dragonTimer = 0f;
     private GameObject currentDragon;
     private float dragonDuration = 5f;
+    public float damage = 20f;
+
 
     [Header("Skill Timing")]
     public float cooldownTime = 20f;
@@ -131,6 +133,7 @@ public class SkillJ : MonoBehaviour
             if (fb != null)
             {
                 fb.SetDestroyAfterDistance(origin, maxDistance);
+                fb.damage = this.damage;
             }
         }
     }
