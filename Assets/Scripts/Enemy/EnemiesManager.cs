@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
+    [SerializeField] StageProgress stageProgress;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject enemyAnimation;
     [SerializeField] EnemyData currentEnemyData;
@@ -53,7 +54,7 @@ public class EnemiesManager : MonoBehaviour
         // spawn sprite object
         GameObject spriteObject = Instantiate(enemyAnimation);
         spriteObject.transform.parent = newEnemy.transform;
-        spriteObject.transform.localPosition = Vector3.zero; 
+        spriteObject.transform.localPosition = Vector3.zero;
     }
 
     public void SpawnEnemy(EnemyData data)
@@ -69,6 +70,8 @@ public class EnemiesManager : MonoBehaviour
         if (enemyComponent != null)
         {
             enemyComponent.SetTarget(player);
+            enemyComponent.SetStats(data.stats);
+            enemyComponent.UpdateStatsForProgress(stageProgress.Progress);
         }
         newEnemy.transform.parent = transform;
 
