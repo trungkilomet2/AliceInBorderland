@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 822072816729744640}
   - component: {fileID: 6576965020303432883}
   - component: {fileID: 4354898864419079314}
+  - component: {fileID: 3033916935344588692}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -149,7 +150,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6744297987397367524}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -180,8 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3ebe7ad74eca340ab46c24206c5d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills: []
-  hp: 40
+  skills:
+  - {fileID: 3033916935344588692}
+  hp: 200
   commonUI: {fileID: 0}
   spellPrefab: {fileID: 1520744519247403555, guid: ba7ead42d36477a49b10646e08fd26d1, type: 3}
   spellSpawnPoint: {fileID: 3208863145277326241}
@@ -192,6 +194,10 @@ MonoBehaviour:
   chargedSpellForce: 20
   chargedSpellScale: {x: 5, y: 5, z: 1}
   isChargingBoolParam: IsCharging
+  numberOfProjectiles: 3
+  spreadAngle: 30
+  shotgunSpellForce: 15
+  shotgunSpellScale: {x: 0.7, y: 0.7, z: 1}
 --- !u!61 &4354898864419079314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,3 +243,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 2.375}
   m_EdgeRadius: 0
+--- !u!114 &3033916935344588692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744297987397367524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67538ce8523cabd4f9da595dd8067b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 2
+  skillType: 1
+  indicatorType: 0
+  skillName: Thunder Explosion
+  cooldown: 2
+  skillRange: 10
+  skillWidth: 1
+  skillDuration: 2
+  skillDamage: 50
+  explosionEffectPrefab: {fileID: 4530650046537831044, guid: bc317b6340fa544498c9e8e56713ac91, type: 3}
+  numberOfExplosions: 3
+  randomSpawnRadius: 10
+  minSpawnRadius: 5
+  explosionSize: 1
+  damageTickInterval: 0.5
