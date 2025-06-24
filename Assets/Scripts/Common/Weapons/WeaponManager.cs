@@ -38,20 +38,6 @@ public class WeaponManager : MonoBehaviour
 
 
     }
-
-    public void RemoveLowTierWeapon(WeaponData wpData,ref List<UpdateData> aquireList)
-    {
-        foreach (UpdateData data in aquireList)
-        {
-            if (data.weaponData.WeaponName.Equals(wpData.WeaponName))
-            {
-                aquireList.Remove(data);
-                break;
-            }
-        }
-
-        
-
-    }
+    
 
 }
