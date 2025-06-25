@@ -27,6 +27,8 @@ public class WeaponManager : MonoBehaviour
 
     public void UpdateWeapon(WeaponData weaponData)
     {
+        if (weaponData.nextLevel.Name.Equals("Maxlevel")) return;
+
         GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
 
         CommonUI commonUI = GetComponent<CommonUI>();
