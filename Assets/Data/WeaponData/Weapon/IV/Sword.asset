@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  WeaponName: Sword IV
+  WeaponName: Sword
   damage: 10
   timeToAttack: 3
   weaponLevel: 4
-  weaponPrefabs: {fileID: 0}
-  weaponStages: []
+  weaponPrefabs: {fileID: 5582672586616622069, guid: 9038db2814c50c2438ca2ecf555c0ec3, type: 3}
+  nextLevel: {fileID: 11400000, guid: bdcde77295908b6409237ebbe2f7be3e, type: 2}

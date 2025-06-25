@@ -12,6 +12,8 @@ public class WeaponManager : MonoBehaviour
     // {
     //     AddWeapon(startingWeapon);
     // }
+    const string MAXLEVEL = "Maxlevel";
+
 
     public void AddWeapon(WeaponData weaponData)
     {
@@ -27,9 +29,10 @@ public class WeaponManager : MonoBehaviour
 
     public void UpdateWeapon(WeaponData weaponData)
     {
-        if (weaponData.nextLevel.Name.Equals("Maxlevel")) return;
 
         GameObject weaponObject = Instantiate(weaponData.weaponPrefabs);
+
+        if (weaponData.nextLevel.Name.Equals(MAXLEVEL)) return;
 
         CommonUI commonUI = GetComponent<CommonUI>();
 
@@ -40,6 +43,6 @@ public class WeaponManager : MonoBehaviour
 
 
     }
-    
+
 
 }

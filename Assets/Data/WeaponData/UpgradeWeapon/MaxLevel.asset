@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MaxLevel
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
+  Name: Maxlevel
   icon: {fileID: 0}
   weaponData: {fileID: 0}
