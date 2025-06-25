@@ -57,8 +57,11 @@ public class CommonUI : MonoBehaviour
             // Spawn Last Boss -- Joker
         }
         CountTimer();
+        
+
 
     }
+    
 
     public void CountTimer()
     {
