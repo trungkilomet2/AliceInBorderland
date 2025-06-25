@@ -21,6 +21,13 @@ public class Mage : CharacterCommonBehavior
     public Vector3 chargedSpellScale = new Vector3(2f, 2f, 1f); // Kích thước của đạn sạc (lớn hơn)
     public string isChargingBoolParam = "IsCharging"; // Tên parameter bool cho animation sạc
 
+    // Shotgun Charged Spell Properties
+    [Header("Shotgun Charged Spell Properties")]
+    public int numberOfProjectiles = 3; // Số lượng quả cầu bắn ra khi sạc
+    public float spreadAngle = 30f; // Góc lan tỏa của các quả cầu (tổng cộng)
+    public float shotgunSpellForce = 15f; // Lực bắn cho mỗi viên đạn shotgun
+    public Vector3 shotgunSpellScale = new Vector3(0.7f, 0.7f, 1f); // Kích thước của mỗi viên đạn shotgun
+
     private float _timeBtwBasicSpell = 0f;
     private float _chargeTimer = 0f; // Bộ đếm thời gian giữ chuột
     private bool _isCharging = false; // Cờ hiệu đang giữ chuột
@@ -79,8 +86,8 @@ public class Mage : CharacterCommonBehavior
 
                 if (_chargeTimer >= chargeTimeNeeded)
                 {
-                    // Đã sạc đủ, thực hiện chiêu mạnh
-                    AttackCharged();
+                    // Đã sạc đủ, thực hiện chiêu mạnh (shotgun)
+                    AttackChargedShotgun();
                 }
                 else
                 {
@@ -99,13 +106,10 @@ public class Mage : CharacterCommonBehavior
         }
     }
 
-    // Các hàm AttackBasic, AttackCharged, Attack giữ nguyên
     public void AttackBasic()
     {
         _timeBtwBasicSpell = timeBtwBasicSpell;
 
-
-        // ... (phần còn lại của hàm AttackBasic) ...
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         Vector2 direction = (mouseWorldPos - spellSpawnPoint.position).normalized;
@@ -129,9 +133,8 @@ public class Mage : CharacterCommonBehavior
 
     public void AttackCharged()
     {
-
-
-        // ... (phần còn lại của hàm AttackCharged) ...
+        // Hàm này không còn được gọi trực tiếp nữa, thay bằng AttackChargedShotgun()
+        // Tuy nhiên, bạn có thể giữ nó nếu muốn có cả 2 kiểu tấn công sạc (đơn và shotgun)
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         Vector2 direction = (mouseWorldPos - spellSpawnPoint.position).normalized;
@@ -150,6 +153,41 @@ public class Mage : CharacterCommonBehavior
         else
         {
             Debug.LogWarning("Spell Prefab does not have a Rigidbody2D component!");
+        }
+    }
+
+    // Hàm mới cho chiêu sạc dạng shotgun
+    public void AttackChargedShotgun()
+    {
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+        Vector2 baseDirection = (mouseWorldPos - spellSpawnPoint.position).normalized;
+
+        float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
+
+        // Tính toán góc lệch giữa các viên đạn
+        float angleStep = spreadAngle / (numberOfProjectiles - 1);
+        float startAngle = baseAngle - (spreadAngle / 2);
+
+        for (int i = 0; i < numberOfProjectiles; i++)
+        {
+            float currentAngle = startAngle + (i * angleStep);
+            Vector2 direction = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad));
+
+            GameObject newShotgunSpell = Instantiate(spellPrefab, spellSpawnPoint.position, Quaternion.identity);
+            newShotgunSpell.transform.localScale = shotgunSpellScale; // Thiết lập kích thước cho mỗi viên đạn shotgun
+
+            newShotgunSpell.transform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+
+            Rigidbody2D shotgunSpellRb = newShotgunSpell.GetComponent<Rigidbody2D>();
+            if (shotgunSpellRb != null)
+            {
+                shotgunSpellRb.AddForce(direction * shotgunSpellForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Debug.LogWarning("Spell Prefab does not have a Rigidbody2D component!");
+            }
         }
     }
 
