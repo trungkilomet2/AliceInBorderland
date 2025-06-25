@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed813947da327644b0b8ea7f3517cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6541394114747789036}
+  swordWeapon: {fileID: 6541394114747789036}
   spawnInterval: 3
-  projectileSpeed: 5
+  weaponSpeed: 5
   spawnDistance: 1.5
 --- !u!1 &6541394114747789036
 GameObject:
@@ -61,14 +61,13 @@ GameObject:
   - component: {fileID: 3665626192983935776}
   - component: {fileID: 8693644383729827622}
   - component: {fileID: 5372389072750065887}
-  - component: {fileID: 875868625331915634}
   m_Layer: 0
   m_Name: wpn_Sword3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4108747338076675980
 Transform:
   m_ObjectHideFlags: 0
@@ -81,8 +80,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 11.119521, y: 10.394523, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2917341747945209530}
+  m_Children: []
   m_Father: {fileID: 5203662078372310475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3665626192983935776
@@ -185,47 +183,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &875868625331915634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6541394114747789036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2f44759e956ca42b4d96873d98c420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 2.5
---- !u!1 &8366211371628801398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2917341747945209530}
-  m_Layer: 0
-  m_Name: Sword3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2917341747945209530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8366211371628801398}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.089931935, y: 0.09620451, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4108747338076675980}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

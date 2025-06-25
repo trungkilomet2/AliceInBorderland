@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Sword3 : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public float spawnInterval = 3f;
-    public float projectileSpeed = 5f;
+    public GameObject swordWeapon;
+    public float spawnInterval = 3.5f;
+    public float weaponSpeed = 5f;
     public float spawnDistance = 1.5f;
 
     private Transform player;
     private float timer;
+    private const string PLAYER_TAG = "Player";
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag(PLAYER_TAG).transform;
         timer = spawnInterval;
     }
 
@@ -42,13 +43,16 @@ public class Sword3 : MonoBehaviour
         foreach (Vector2 dir in directions)
         {
             Vector3 spawnPos = player.position + (Vector3)(dir * spawnDistance);
-            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-
+            GameObject proj = Instantiate(swordWeapon, spawnPos, Quaternion.identity);
+            proj.SetActive(true);
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = dir.normalized * projectileSpeed;
+                rb.velocity = dir.normalized * weaponSpeed;
             }
+            
+            Destroy(proj,3f);
+        
         }
     }
 }

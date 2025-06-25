@@ -118,8 +118,11 @@ public class CommonUI : MonoBehaviour
 
     public void RemoveLowTierWeapon(WeaponData wpData)
     {
+        Debug.Log("Check log 1 ");
         foreach (UpdateData data in acquireUpdate)
         {
+            Debug.Log("Check log 2 ");
+
             if (data.weaponData.WeaponName.Trim().Equals(wpData.WeaponName))
             {
                 acquireUpdate.Remove(data);
@@ -172,9 +175,11 @@ public class CommonUI : MonoBehaviour
         if (wpData == null || wpData.weaponPrefabs == null) return;
 
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
-
+        Debug.Log(wpData.name);
+        Debug.Log("_______________________________--");
         foreach (GameObject obj in allObjects)
         {
+            Debug.Log(obj.name);
             if (obj.name == (wpData.weaponPrefabs.gameObject.name + "(Clone)"))
             {
                 Destroy(obj);
