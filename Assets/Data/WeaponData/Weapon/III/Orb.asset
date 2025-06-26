@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Orb
   m_EditorClassIdentifier: 
-  WeaponName: Orb III
+  WeaponName: Orb
   damage: 12
   timeToAttack: 0.2
   weaponLevel: 3
-  weaponPrefabs: {fileID: 0}
-  weaponStages: []
+  weaponPrefabs: {fileID: 8699536629727088671, guid: 208ad9eeec670b249bc08cfac4e5111f, type: 3}
+  nextLevel: {fileID: 11400000, guid: 68b44be0bb2d6ec44b66a7a7a43aa863, type: 2}
