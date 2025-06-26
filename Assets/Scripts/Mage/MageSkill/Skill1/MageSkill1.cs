@@ -1,0 +1,177 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MageSkill1 : SkillBase
+{
+    public GameObject laserAnimationPrefab;
+    public float laserLength = 20f;
+    public float laserVisualWidth = 0.5f;
+    // Đã xóa public LayerMask enemyLayer;
+
+    private GameObject currentLaserInstance;
+    private Vector3 laserOrigin;
+    private Vector2 directionOnSkillActivation; // <<< Thêm biến này để lưu hướng chuột khi skill được kích hoạt
+
+    public override void Awake()
+    {
+        base.Awake();
+
+        skillNum = SkillNum.Skill1;
+        skillType = SkillType.Active;
+        indicatorType = IndicatorType.Arrow;
+
+        cooldown = 8f;
+        skillDuration = 6f;
+        skillRange = laserLength;
+        this.skillWidth = laserVisualWidth;
+    }
+
+    protected override void Activate()
+    {
+        laserOrigin = transform.position;
+
+        // Lấy hướng chuột THỰC TẾ tại thời điểm skill được kích hoạt (nhấn chuột trái)
+        // Đây là hướng mà damage box sẽ sử dụng
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        directionOnSkillActivation = (mouseWorld - transform.position).normalized;
+
+        currentLaserInstance = Instantiate(laserAnimationPrefab, laserOrigin, Quaternion.identity);
+        float scaleFactor = 4f; // hoặc laserLength / chiều_dài_thực_tế_của_prefab
+        currentLaserInstance.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1f);
+
+        // Xoay visual của laser để nó nhìn đúng hướng chuột (có thêm 180 độ nếu prefab cần)
+        float visualAngle = Mathf.Atan2(directionOnSkillActivation.y, directionOnSkillActivation.x) * Mathf.Rad2Deg;
+        visualAngle += 180f; // Vẫn cần thêm 180 độ cho visual nếu prefab của bạn hướng ngược
+        currentLaserInstance.transform.rotation = Quaternion.Euler(0f, 0f, visualAngle);
+
+        // Bắt đầu Coroutine để quản lý thời gian tồn tại của laser
+        StartCoroutine(LaserDurationCoroutine(skillDuration));
+        // Bắt đầu Coroutine để quản lý sát thương liên tục của laser
+        StartCoroutine(LaserDamageCoroutine(skillDuration));
+    }
+
+    public override void Update()
+    {
+        base.Update(); // Quan trọng: Gọi Update của SkillBase để xử lý input và trạng thái isPreparingSkill
+
+        // Logic để visual laser theo chuột CHỈ KHI đang chuẩn bị skill (indicator đang hiện)
+        if (IsPreparingSkill() && skillType == SkillType.Active) // <<< Thay đổi ở đây: gọi hàm IsPreparingSkill()
+        {
+            if (currentLaserInstance != null)
+            {
+                currentLaserInstance.transform.position = transform.position;
+
+                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 direction = mouseWorld - transform.position;
+                direction.z = 0f;
+
+                if (direction.sqrMagnitude > 0.001f)
+                {
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    angle += 180f; // Vẫn cần thêm 180 độ cho visual
+                    currentLaserInstance.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                }
+            }
+        }
+        else if (currentLaserInstance != null && !IsPreparingSkill())
+        {
+            currentLaserInstance.transform.position = transform.position;
+ 
+        }
+    }
+
+    private IEnumerator LaserDurationCoroutine(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (currentLaserInstance != null)
+        {
+            Destroy(currentLaserInstance);
+            currentLaserInstance = null;
+        }
+    }
+
+    private IEnumerator LaserDamageCoroutine(float duration)
+    {
+        float elapsed = 0f;
+        float damageTickRate = 0.1f;
+
+        HashSet<Enemy> enemiesHitThisTick = new HashSet<Enemy>();
+
+        while (elapsed < duration)
+        {
+            if (currentLaserInstance == null) yield break;
+
+            enemiesHitThisTick.Clear();
+
+            // SỬ DỤNG HƯỚNG ĐƯỢC LƯU KHI KÍCH HOẠT SKILL CHO LOGIC SÁT THƯƠNG
+            Vector2 boxDirection = directionOnSkillActivation; // <<< Thay đổi ở đây
+            float boxAngle = Mathf.Atan2(boxDirection.y, boxDirection.x) * Mathf.Rad2Deg; // <<< Tính góc từ hướng đã lưu
+
+            Vector2 boxCenter = (Vector2)transform.position + boxDirection * (skillRange * 0.5f);
+            Vector2 boxSize = new Vector2(skillRange, skillWidth);
+
+            // Log để kiểm tra thông số của hộp (Debug tốt)
+            Debug.Log($"Checking for hits: Center={boxCenter}, Size={boxSize}, Angle={boxAngle}");
+
+            Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, boxAngle); // <<< Sử dụng góc mới
+
+            Debug.Log($"OverlapBoxAll found {hits.Length} colliders.");
+
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.gameObject == gameObject) continue;
+
+                Debug.Log($"Collider hit: {hit.name}, Tag: {hit.tag}");
+
+                if (hit.CompareTag("Enemy"))
+                {
+                    Enemy enemy = hit.GetComponent<Enemy>();
+                    if (enemy != null && !enemiesHitThisTick.Contains(enemy))
+                    {
+                        Debug.Log($"Damage applied to: {enemy.name}");
+                        enemy.TakeDamage(skillDamage);
+                        enemiesHitThisTick.Add(enemy);
+                    }
+                    else if (enemy == null)
+                    {
+                        Debug.LogWarning($"Enemy tag found on {hit.name} but no Enemy component!");
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(damageTickRate);
+            elapsed += damageTickRate;
+        }
+    }
+
+    public override void CancelSkill()
+    {
+        base.CancelSkill();
+        if (currentLaserInstance != null)
+        {
+            Destroy(currentLaserInstance);
+            currentLaserInstance = null;
+        }
+    }
+
+    // (Tùy chọn) Hàm Debug để trực quan hóa vùng OverlapBox trong Scene view
+    void OnDrawGizmos()
+    {
+        if (Application.isPlaying && directionOnSkillActivation != Vector2.zero) // Chỉ vẽ khi có hướng đã lưu
+        {
+            Vector2 boxDirection = directionOnSkillActivation;
+            float boxAngle = Mathf.Atan2(boxDirection.y, boxDirection.x) * Mathf.Rad2Deg;
+
+            Vector2 boxCenter = (Vector2)transform.position + boxDirection * (skillRange * 0.5f);
+            Vector2 boxSize = new Vector2(skillRange, skillWidth);
+
+            Gizmos.color = Color.red;
+            Matrix4x4 originalMatrix = Gizmos.matrix;
+            Gizmos.matrix = Matrix4x4.TRS(boxCenter, Quaternion.Euler(0, 0, boxAngle), Vector3.one);
+            Gizmos.DrawWireCube(Vector3.zero, new Vector3(boxSize.x, boxSize.y, 0.1f));
+            Gizmos.matrix = originalMatrix;
+        }
+    }
+}

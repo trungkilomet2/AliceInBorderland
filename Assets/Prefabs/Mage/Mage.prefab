@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6576965020303432883}
   - component: {fileID: 4354898864419079314}
   - component: {fileID: 3033916935344588692}
+  - component: {fileID: -7879036232216549639}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
+  - {fileID: -7879036232216549639}
   - {fileID: 3033916935344588692}
   hp: 200
   commonUI: {fileID: 0}
@@ -270,3 +272,31 @@ MonoBehaviour:
   minSpawnRadius: 5
   explosionSize: 1
   damageTickInterval: 0.5
+--- !u!114 &-7879036232216549639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744297987397367524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81595d6cec2bd9d499a2f54a1c121376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillType: 0
+  indicatorType: 1
+  skillName: 
+  cooldown: 5
+  skillRange: 5
+  skillWidth: 1
+  skillDuration: 2
+  skillDamage: 10
+  laserAnimationPrefab: {fileID: 5391227790905381595, guid: 9ccd10981372d8c4baf4aadabdc3a4b9, type: 3}
+  laserLength: 20
+  laserVisualWidth: 0.5
+  damagePerSecond: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
