@@ -1812,6 +1812,8 @@ MonoBehaviour:
   imageHP: {fileID: 0}
   timerCounter: {fileID: 1436168107}
   currentTime: 0
+  upgradeData: []
+  acquireUpdate: []
 --- !u!1 &873247519
 GameObject:
   m_ObjectHideFlags: 0
@@ -192281,7 +192283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d60a8372587f945a7d2d381a503428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageProgress: {fileID: 0}
   enemy: {fileID: 8432837178745484709, guid: b99f498a05c6c6c46bb41a6313bbfb9f, type: 3}
+  enemyAnimation: {fileID: 0}
+  currentEnemyData: {fileID: 0}
   spawnArea: {x: 15, y: 10}
   player: {fileID: 1084051702542178643}
 --- !u!4 &2117648783
@@ -192323,6 +192328,10 @@ MonoBehaviour:
   chargedSpellForce: 20
   chargedSpellScale: {x: 5, y: 5, z: 1}
   isChargingBoolParam: IsCharging
+  numberOfProjectiles: 3
+  spreadAngle: 30
+  shotgunSpellForce: 15
+  shotgunSpellScale: {x: 0.7, y: 0.7, z: 1}
 --- !u!1 &1084051702542178643
 GameObject:
   m_ObjectHideFlags: 0

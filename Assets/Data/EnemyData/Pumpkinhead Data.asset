@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pumpkinhead Pithcfork
   animatedPrefab: {fileID: 1947084841349774628, guid: 007c68781ee92b345bc7d57604c026e6, type: 3}
+  stats:
+    hp: 100
+    damage: 15
+    speed: 2

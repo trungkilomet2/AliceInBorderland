@@ -15,8 +15,12 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private GameObject damageTextPrefab;
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
+    public CommonUI commonUI;
+    private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
-    private CommonUI commonUI;
+
+    private bool isInvincible = false;
+    private float invincibleEndTime = 0f;
 
 
     private void Awake()
@@ -94,6 +98,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (moveInput.x != 0)
         {
+            onMovingCharacterHorizontal = moveInput.x;
             if (moveInput.x != 0)
             {
                 Vector3 scale = transform.localScale;
@@ -101,6 +106,16 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                 transform.localScale = scale;
             }
         }
+    }
+
+    public float GetOnMovingCharacterHorizontal()
+    {
+        return this.onMovingCharacterHorizontal;
+    }
+
+    public Vector3 GetMoveInput()
+    {
+        return this.moveInput;
     }
 
     private void UpdateAnimation()
@@ -111,6 +126,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        if (isInvincible) return;
+
         ShowDamageText(damage);
         hp -= damage;
         commonUI.SetCurrentHp(hp);
@@ -133,6 +150,29 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
         dmgText.SetDamage(damage);
     }
+
+    public Rigidbody2D GetRigidbody2D()
+    {
+        return rb;
+    }
+
+    public void ActiveNeckleItem(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+
+    public float GetInvincibleEndTime()
+    {
+        return this.invincibleEndTime;
+    }
+
+    public void DeactiveNeckleItem()
+    {
+        isInvincible = false;
+    }
+
+
 
     public abstract void Attack();
 

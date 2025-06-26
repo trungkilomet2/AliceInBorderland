@@ -3,23 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class EnemyStats
+{
+    public float hp = 50f;
+    public float damage = 10f;
+    public float speed = 1f;
+
+    public EnemyStats(EnemyStats stats)
+    {
+        this.hp = stats.hp;
+        this.damage = stats.damage;
+        this.speed = stats.speed;
+    }
+
+    internal void ApplyProgress(float progress)
+    {
+        this.hp *= progress;
+        this.damage *= progress;
+    }
+}
+
 public class Enemy : MonoBehaviour
 {
     Transform targetDestination;
     GameObject targetGameObject;
     CharacterCommonBehavior targetCharacter;
-    [SerializeField] float speed;
     private GameObject damageTextPrefab;
     Rigidbody2D rgb2d;
 
-    [SerializeField] float hp = 50f;
-    [SerializeField] float damage = 10f;
+    public EnemyStats stats;
 
+    // Insert By Trung
     public GameObject coin;
     public GameObject exp;
     private const float MAX_RATTING_DROPCOIN = 10f;
-    private const float MAX_RATTING_DROPEXP = 50f;
-
+    private const float MAX_RATTING_DROPEXP = 100f;
+    private bool isKnockedBack = false;
+    private float knockbackTime = 0.2f;
+    private float knockbackTimer = 0f;
 
 
     private void Awake()
@@ -37,10 +59,32 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void KnockbackEnemy(Vector2 force)
+    {
+        isKnockedBack = true;
+        knockbackTimer = knockbackTime;
+        rgb2d.AddForce(force, ForceMode2D.Impulse);
+    }
+
     private void FixedUpdate()
     {
+        if (isKnockedBack)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            if (knockbackTimer <= 0f)
+            {
+                isKnockedBack = false;
+            }
+            return;
+        }
+        if (targetDestination != null)
+        {
+            Vector3 direction1 = (targetDestination.position - transform.position).normalized;
+            rgb2d.velocity = direction1 * stats.speed;
+        }
+
         Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rgb2d.velocity = direction * speed;
+        rgb2d.velocity = direction * stats.speed;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -59,8 +103,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         ShowDamageText(damage);
-        hp -= damage;
-        if (hp <= 0)
+        stats.hp -= damage;
+        if (stats.hp <= 0)
         {
             Destroy(gameObject);
             DropCoin();
@@ -82,7 +126,7 @@ public class Enemy : MonoBehaviour
     {
         float randomDropCoin = UnityEngine.Random.Range(0, 100);
         if (randomDropCoin <= MAX_RATTING_DROPEXP)
-        { 
+        {
             Vector3 localDie = rgb2d.transform.position;
             Instantiate(exp).transform.position = localDie;
         }
@@ -107,7 +151,7 @@ public class Enemy : MonoBehaviour
             targetCharacter = other.GetComponent<CharacterCommonBehavior>();
             if (targetCharacter != null)
             {
-                targetCharacter.TakeDamage(damage);
+                targetCharacter.TakeDamage(stats.damage);
             }
         }
     }
@@ -118,5 +162,15 @@ public class Enemy : MonoBehaviour
         GameObject dmgTextObj = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity);
         DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
         dmgText.SetDamage(damage);
+    }
+
+    internal void SetStats(EnemyStats stats)
+    {
+        this.stats = new EnemyStats(stats);
+    }
+
+    internal void UpdateStatsForProgress(float progress)
+    {
+        stats.ApplyProgress(progress);
     }
 }
