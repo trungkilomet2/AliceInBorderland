@@ -198,7 +198,6 @@ MonoBehaviour:
   skills:
   - {fileID: 7696732050759654250}
   hp: 100
-  commonUI: {fileID: 0}
   axe: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   axeSpawnPoint: {fileID: 5270292626708380349}
   timeBtwaxe: 0.2
@@ -222,10 +221,10 @@ MonoBehaviour:
   cooldown: 120
   skillRange: 0
   skillWidth: 0
-  skillDuration: 25
+  skillDuration: 10
   skillDamage: 0
   damageMultiplier: 1.5
-  buffDuration: 25
+  buffDuration: 10
   gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
 --- !u!1 &3781837170630933094
