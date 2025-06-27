@@ -17,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PlayerProjectile
   - 
   - 
   - 
@@ -68,4 +68,10 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3328968647
+    locked: 0
+  - name: PlayerProjectile
+    uniqueID: 4181517027
+    locked: 0
+  - name: Effect
+    uniqueID: 2605797427
     locked: 0
