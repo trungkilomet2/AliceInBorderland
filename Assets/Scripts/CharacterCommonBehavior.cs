@@ -11,7 +11,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public float hp;
     private Vector3 moveInput;
     private Rigidbody2D rb;
-    private Animator animator;
+    protected Animator animator;
     private GameObject damageTextPrefab;
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
@@ -137,7 +137,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0f;
         }
-        animator.SetTrigger("takeHit");
+        animator.SetBool("isHit", true);
+        Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
+    }
+
+    private void ResetHitAnimation()
+    {
+        animator.SetBool("isHit", false);
     }
 
 

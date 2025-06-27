@@ -229,6 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetDestination: {fileID: 0}
+  targetGameObject: {fileID: 0}
+  targetCharacter: {fileID: 0}
   speed: 2
   hp: 300
   damage: 10
@@ -239,12 +242,7 @@ MonoBehaviour:
   - {fileID: 3121988667940958593}
   - {fileID: 7062013219215211879}
   - {fileID: 7298881154905949932}
-  target: {fileID: 0}
-  projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
-  bulletForce: 5
-  timeBtwAttack: 2
-  timeBtwAttack2: 2
-  cirleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
+  isClone: 0
 --- !u!114 &2952249232177266908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +259,6 @@ MonoBehaviour:
   cooldown: 2
   skillDuration: 2
   skillRange: 10
-  target: {fileID: 0}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5
 --- !u!114 &3121988667940958593
@@ -280,7 +277,6 @@ MonoBehaviour:
   cooldown: 20
   skillDuration: 5
   skillRange: 10
-  target: {fileID: 0}
   circleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
 --- !u!114 &7062013219215211879
 MonoBehaviour:
@@ -298,7 +294,6 @@ MonoBehaviour:
   cooldown: 5
   skillDuration: 2
   skillRange: 10
-  target: {fileID: 0}
   thunderBolt: {fileID: 4426313511499266900, guid: 6af4dcb841ce5ea47be2ec87cadbd2c0, type: 3}
 --- !u!114 &7298881154905949932
 MonoBehaviour:
@@ -316,5 +311,5 @@ MonoBehaviour:
   cooldown: 5
   skillDuration: 2
   skillRange: 10
-  target: {fileID: 0}
-  J_Boss: {fileID: 0}
+  J_Boss: {fileID: 7881493978720937603, guid: e1a172e1c6fb6aa4ca517eae1e9b96d1, type: 3}
+  timeRelease: 5
