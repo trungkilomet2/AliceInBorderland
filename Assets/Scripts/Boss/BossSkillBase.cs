@@ -12,6 +12,15 @@ public abstract class BossSkillBase : MonoBehaviour
 
     private float lastUsedTime = -Mathf.Infinity;
 
+    private void Update()
+    {
+        if(target == null)
+        {
+            BossBase bossBase = GetComponent<BossBase>();
+            target = bossBase.targetGameObject;
+        }
+    }
+
     protected virtual void Awake()
     {
         BossBase bossBase = GetComponent<BossBase>();
