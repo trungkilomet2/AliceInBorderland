@@ -7,11 +7,10 @@ public class MageSkill1 : SkillBase
     public GameObject laserAnimationPrefab;
     public float laserLength = 20f;
     public float laserVisualWidth = 0.5f;
-    // Đã xóa public LayerMask enemyLayer;
 
     private GameObject currentLaserInstance;
     private Vector3 laserOrigin;
-    private Vector2 directionOnSkillActivation; // <<< Thêm biến này để lưu hướng chuột khi skill được kích hoạt
+    private Vector2 directionOnSkillActivation; 
 
     public override void Awake()
     {

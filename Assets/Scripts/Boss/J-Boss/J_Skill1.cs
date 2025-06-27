@@ -14,7 +14,6 @@ public class J_Skill1 : BossSkillBase
         Vector2 direction3 = Quaternion.Euler(0, 0, -10) * direction1;
         Vector2 direction4 = Quaternion.Euler(0, 0, 20) * direction1;
         Vector2 direction5 = Quaternion.Euler(0, 0, -20) * direction1;
-
         for (int i = 0; i < 5; i++)
         {
             Vector2 direction;

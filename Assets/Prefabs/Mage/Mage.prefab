@@ -47,6 +47,8 @@ GameObject:
   - component: {fileID: 4354898864419079314}
   - component: {fileID: 3033916935344588692}
   - component: {fileID: -7879036232216549639}
+  - component: {fileID: 6373431026669476663}
+  - component: {fileID: -2029095864288810046}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -185,6 +187,8 @@ MonoBehaviour:
   skills:
   - {fileID: -7879036232216549639}
   - {fileID: 3033916935344588692}
+  - {fileID: 6373431026669476663}
+  - {fileID: -2029095864288810046}
   hp: 200
   commonUI: {fileID: 0}
   spellPrefab: {fileID: 1520744519247403555, guid: ba7ead42d36477a49b10646e08fd26d1, type: 3}
@@ -296,7 +300,54 @@ MonoBehaviour:
   laserAnimationPrefab: {fileID: 5391227790905381595, guid: 9ccd10981372d8c4baf4aadabdc3a4b9, type: 3}
   laserLength: 20
   laserVisualWidth: 0.5
-  damagePerSecond: 5
-  enemyLayer:
+--- !u!114 &6373431026669476663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744297987397367524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c5e0fca266a4c418caa452d46bf988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 1
+  skillType: 0
+  indicatorType: 0
+  skillName: 
+  cooldown: 5
+  skillRange: 10
+  skillWidth: 1
+  skillDuration: 2
+  skillDamage: 10
+  slowZonePrefab: {fileID: 4381659068998476614, guid: a12007bc53cf3ec4793dd5b2f92bd38f, type: 3}
+  slowZoneRadius: 0.5
+  slowPercentage: 0.5
+  damagePerSecond: 1
+  basePrefabColliderRadius: 0.5
+--- !u!114 &-2029095864288810046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744297987397367524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f08614218e01d47942504535ec47e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 3
+  skillType: 0
+  indicatorType: 0
+  skillName: 
+  cooldown: 5
+  skillRange: 10
+  skillWidth: 1
+  skillDuration: 2
+  skillDamage: 10
+  teleportDistance: 10
+  obstaclesLayer:
     serializedVersion: 2
     m_Bits: 0
