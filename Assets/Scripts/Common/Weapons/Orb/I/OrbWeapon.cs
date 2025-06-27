@@ -32,8 +32,8 @@ public class OrbWeapon : MonoBehaviour
     private void Update()
     {
         for (int i = enemiesInRange.Count - 1; i >= 0; i--)
-        {   
-            GameObject enemy  = enemiesInRange[i];
+        {
+            GameObject enemy = enemiesInRange[i];
             if (enemy == null)
             {
                 enemiesInRange.RemoveAt(i);
@@ -43,13 +43,13 @@ public class OrbWeapon : MonoBehaviour
             if (timer >= damageInterval)
             {
                 timer = 0f;
-                TakeDame(enemy,damageOfOrb);
+                TakeDame(enemy, damageOfOrb);
                 KnockBack(enemy);
             }
         }
     }
 
-    private void TakeDame(GameObject enemy,float dameWP) 
+    private void TakeDame(GameObject enemy, float dameWP)
     {
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript?.TakeDamage(dameWP);

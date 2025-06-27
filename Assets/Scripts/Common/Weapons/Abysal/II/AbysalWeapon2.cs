@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class AbysalWeapon : MonoBehaviour
+public class AbysalWeapon2 : MonoBehaviour
 {
 
     public GameObject abysalAttackPrefab;
     public float projectileSpeed = 10f;
     public const string ENEMY_TAG = "Enemy";
-    float timeToAttack = 1f;
+    float timeToAttack = 0.8f;
     float timer;
 
 

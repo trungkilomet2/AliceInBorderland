@@ -6,7 +6,7 @@ public class OrbSpawn : MonoBehaviour
 {
     private GameObject player;
     private const string PLAYER_TAG = "Player";
-    
+
     private void Awake()
     {
         player = GameObject.FindWithTag(PLAYER_TAG);

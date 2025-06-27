@@ -13,14 +13,15 @@ public class NeckleSpawn : MonoBehaviour
     void Start()
     {
         SetChildOfPlayer();
+        gameObject.transform.position = player.transform.position;
     }
 
     void SetChildOfPlayer()
     {
         if (player != null)
         {
-           // Vector3 offset = new Vector3(-0.1f, 0.3f, 0);
-            transform.position = player.transform.position ;
+            // Vector3 offset = new Vector3(-0.1f, 0.3f, 0);
+            transform.position = player.transform.position;
             transform.SetParent(player.transform);
         }
     }
