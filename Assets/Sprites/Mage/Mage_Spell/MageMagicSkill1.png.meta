@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MageMagicSkill1_0
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1630
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd4d9b6ad246fd4b879d53d7438d013
+      internalID: 584481107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_1
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1589
+        width: 180
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28d5d1026ac1414ebf74a4c17cefdf6
+      internalID: -1821473175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_2
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1550
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b721b9d8c999e488ff91986b6a82bd
+      internalID: -2039321990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_3
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 1525
+        width: 310
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4406b8059c9f664884ffce3cdd3ccf4
+      internalID: 2043360526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_4
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1500
+        width: 362
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c9d31db908bfd40b058bb685e20f7d
+      internalID: -1554751897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1008
+        width: 388
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ceb030f44ab93a4d84e98e8b082b99c
+      internalID: 95692411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_6
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1001
+        width: 402
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febc102319d19b94c939ea2c9e4f0ffd
+      internalID: -1224445705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_7
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1001
+        width: 404
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b4f4e7d9465c6408e574623755c409
+      internalID: 1589463839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_8
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 999
+        width: 406
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dd5aa44954bec4b83306805b1a637f
+      internalID: -549451673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_9
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 996
+        width: 410
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760106bb6165d554f8f64e115194b149
+      internalID: -830476261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_10
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 515
+        width: 413
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9df99632d34f14a863368d76972bbb
+      internalID: -1549613529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_11
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 515
+        width: 412
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e7e1f177ff3234e9f9669f2f2299ad
+      internalID: 1817934375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_12
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 516
+        width: 411
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6a76ecf6f9644438899f0d224e912d
+      internalID: 909436233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_13
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 517
+        width: 409
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0270f1a0ef1432d4ebf55c57f83d845f
+      internalID: -1290188649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_14
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 518
+        width: 409
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8929ddf4a82fe7a4d80d1b9cd572a04e
+      internalID: -1890720378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_15
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 39
+        width: 407
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd33aa5e4827774798e30726be41638
+      internalID: 1711094632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_16
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 39
+        width: 408
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27639a95acf9eff4ba7d3ee462bce75a
+      internalID: 1626513417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_17
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 39
+        width: 408
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8523c32871977ba44a528092b39f7c92
+      internalID: 1952812640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_18
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 38
+        width: 408
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb906fb51e48374e9af58c52616decb
+      internalID: 1044284601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicSkill1_19
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 36
+        width: 408
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68fb6fcb6844624389bb004d2f7ed1c
+      internalID: -551411245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +526,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MageMagicSkill1_0: 584481107
+      MageMagicSkill1_1: -1821473175
+      MageMagicSkill1_10: -1549613529
+      MageMagicSkill1_11: 1817934375
+      MageMagicSkill1_12: 909436233
+      MageMagicSkill1_13: -1290188649
+      MageMagicSkill1_14: -1890720378
+      MageMagicSkill1_15: 1711094632
+      MageMagicSkill1_16: 1626513417
+      MageMagicSkill1_17: 1952812640
+      MageMagicSkill1_18: 1044284601
+      MageMagicSkill1_19: -551411245
+      MageMagicSkill1_2: -2039321990
+      MageMagicSkill1_3: 2043360526
+      MageMagicSkill1_4: -1554751897
+      MageMagicSkill1_5: 95692411
+      MageMagicSkill1_6: -1224445705
+      MageMagicSkill1_7: 1589463839
+      MageMagicSkill1_8: -549451673
+      MageMagicSkill1_9: -830476261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
