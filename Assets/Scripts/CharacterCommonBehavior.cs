@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,9 +25,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
-    private float positionRecordInterval = 3f;
+    private float positionRecordInterval = 1.5f;
     private float lastPositionRecordTime = 0f;
-    private const string BLOCK_TAG = "Block";
+    public const string BLOCK_TAG = "Block";
+    public static event Action OnBlockedCollision;
+
 
     private void Awake()
     {
@@ -110,6 +113,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
 
             transform.position = lastSafePosition;
+            OnBlockedCollision?.Invoke();
         }
     }
 
