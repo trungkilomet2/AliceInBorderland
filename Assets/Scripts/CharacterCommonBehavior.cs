@@ -21,6 +21,10 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
+    private bool canDie = false;
+    public void BlockDeath() => canDie = false;
+    public void AllowDeath() => canDie = true;
+    public bool CanDie() => canDie;
 
 
     private void Awake()
@@ -134,6 +138,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
+            if (!CanDie()) return;
             Destroy(gameObject);
             Time.timeScale = 0f;
         }
@@ -160,6 +165,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         isInvincible = true;
         invincibleEndTime = Time.time + duration;
+    }
+    public void ActiveSkillInvincible(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+    public void DeactiveInvincible()
+    {
+        isInvincible = false;
     }
 
     public float GetInvincibleEndTime()
