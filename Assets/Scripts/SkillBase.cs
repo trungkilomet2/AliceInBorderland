@@ -224,4 +224,8 @@ public abstract class SkillBase : MonoBehaviour
     {
         return currentActiveSkill;
     }
+    public bool IsPreparingSkill()
+    {
+        return isPreparingSkill;
+    }
 }

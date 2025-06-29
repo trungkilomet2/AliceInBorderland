@@ -49,4 +49,24 @@ public class Skill1 : SkillBase
 
         isRolling = true;
     }
+
+
+    private void OnEnable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision += StopRolling;
+    }
+
+    private void OnDisable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision -= StopRolling;
+    }
+    private void StopRolling()
+    {
+        if (isRolling)
+        {
+            Debug.Log("Va chạm Block, dừng dash.");
+            isRolling = false;
+            CancelSkill(); 
+        }
+    }
 }

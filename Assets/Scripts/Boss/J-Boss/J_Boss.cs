@@ -49,7 +49,7 @@ public class J_Boss : BossBase
             }
 
             BossSkillBase skill4 = bossSkillBases[3];
-            if (hp == 100f && !isSkill4Used)
+            if (hp < 150f && !isSkill4Used)
             {
                 skill4.UseSkill();
                 isSkill4Used = true;
