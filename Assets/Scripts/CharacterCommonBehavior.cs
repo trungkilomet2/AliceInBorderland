@@ -25,6 +25,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public void BlockDeath() => canDie = false;
     public void AllowDeath() => canDie = true;
     public bool CanDie() => canDie;
+    private Skill1_Warrior skill1;
 
 
     private void Awake()
@@ -130,6 +131,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        skill1 = GetComponent<Skill1_Warrior>();
+        if (skill1 != null)
+        {
+            damage = skill1.OnAbsorbDamage(damage);
+        // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+        if (damage <= 0) return;
+        }
         if (isInvincible) return;
 
         ShowDamageText(damage);
@@ -138,9 +146,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            if (!CanDie()) return;
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            if ( this is Warrior && !CanDie()) return;
+            else
+            {
+                AllowDeath();
+                 Destroy(gameObject);
+                Time.timeScale = 0f;
+            }
+           
         }
         animator.SetTrigger("takeHit");
     }

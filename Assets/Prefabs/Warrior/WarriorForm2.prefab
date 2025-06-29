@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8689872600289230308}
   - component: {fileID: 1760524173380408337}
   - component: {fileID: 5295770871370384346}
+  - component: {fileID: 4572762437175965153}
+  - component: {fileID: 6721216569130168588}
   m_Layer: 0
   m_Name: WarriorForm2
   m_TagString: Player
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 7627623117591143965}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5808211, y: 0.004689008, z: 0}
+  m_LocalPosition: {x: 1.003479, y: -1.6386303, z: 0}
   m_LocalScale: {x: 0.4428274, y: 0.4887276, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -50501098, guid: 44f42483410ff634db8b861d169e9548, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,8 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d474ba9d40f9e44abe27e27e2138ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills: []
-  hp: 200
+  skills:
+  - {fileID: 6721216569130168588}
+  - {fileID: 4572762437175965153}
+  hp: 350
   commonUI: {fileID: 0}
   axe: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
   axeSpawnPoint: {fileID: 2557108921537728738}
@@ -201,6 +205,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4572762437175965153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7627623117591143965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c3bdb084b4931429d817a5596a0417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 4
+  skillType: 1
+  indicatorType: 0
+  skillName: Revenge!!!
+  cooldown: 120
+  skillRange: 0
+  skillWidth: 0
+  skillDuration: 5
+  skillDamage: 0
+  damageMultiplier: 1.5
+  buffDuration: 5
+  sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
+  gameObject: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
+  revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
+  invincibleDuration: 5
+--- !u!114 &6721216569130168588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7627623117591143965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb973b82372c88349bf5344df8d0cbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 2
+  skillType: 1
+  indicatorType: 0
+  skillName: Transformer
+  cooldown: 5
+  skillRange: 0
+  skillWidth: 0
+  skillDuration: 5
+  skillDamage: 0
+  baseWarrior: {fileID: 7627623117591143965}
+  transformedWarriorPrefab: {fileID: 482234283679444079, guid: 1a870e277ab1617488d488d8c6af0cbb, type: 3}
+  transformDuration: 5
+  cooldownTime: 5
+  sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
 --- !u!1 &8285504754963265471
 GameObject:
   m_ObjectHideFlags: 0

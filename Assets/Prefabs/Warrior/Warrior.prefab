@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 100
   m_Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -232,6 +232,7 @@ MonoBehaviour:
   skillDamage: 0
   damageMultiplier: 1.5
   buffDuration: 5
+  sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
   gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
   invincibleDuration: 5
@@ -248,14 +249,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillNum: 0
-  skillType: 0
+  skillType: 1
   indicatorType: 0
-  skillName: 
-  cooldown: 5
+  skillName: Wakanda Shield
+  cooldown: 10
   skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
+  skillWidth: 0
+  skillDuration: 5
+  skillDamage: 0
+  shieldDuration: 5
+  maxAbsorbDamage: 100
+  reflectRadius: 10
+  reflectDamageMultiplier: 1
+  shieldEffectPrefab: {fileID: 5776597383530057440, guid: bccb2d6d921533d4c83e152c2ee60c1f, type: 3}
+  reflectExplosionPrefab: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
 --- !u!114 &8383079234876106963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,9 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b16dbd14643db043bba7a565ddc9f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillNum: 0
+  skillNum: 1
   skillType: 0
-  indicatorType: 0
+  indicatorType: 1
   skillName: 
   cooldown: 5
   skillRange: 10
@@ -292,15 +299,17 @@ MonoBehaviour:
   skillNum: 2
   skillType: 1
   indicatorType: 0
-  skillName: 
+  skillName: Transformer
   cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
+  skillRange: 0
+  skillWidth: 0
+  skillDuration: 5
+  skillDamage: 0
   baseWarrior: {fileID: 482234283679444079}
-  transformedWarrior: {fileID: 7627623117591143965, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-  transformDuration: 0
+  transformedWarriorPrefab: {fileID: 7627623117591143965, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
+  transformDuration: 5
+  cooldownTime: 5
+  sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
 --- !u!1 &3781837170630933094
 GameObject:
   m_ObjectHideFlags: 0

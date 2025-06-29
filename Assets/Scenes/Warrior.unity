@@ -258456,63 +258456,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 475}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &414708156662657158
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 822821717836332949, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7627623117591143965, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-      propertyPath: m_Name
-      value: WarriorForm2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -258525,4 +258468,3 @@ SceneRoots:
   - {fileID: 1551324951}
   - {fileID: 488280844}
   - {fileID: 810723484}
-  - {fileID: 414708156662657158}

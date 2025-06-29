@@ -9,6 +9,7 @@ public class Skill4_Warrior : SkillBase
     private float reviveHp = 0f;
     public float damageMultiplier = 1.5f;  // Tăng sát thương
     public float buffDuration = 45f;       // Hiệu lực buff
+    public SharedWarriorState sharedState;
     private bool skillUsed = false;        // Đảm bảo chỉ dùng 1 lần khi chết
     private float buffTimer = 0f;
     private float originDamage = 0f;
@@ -34,9 +35,10 @@ public class Skill4_Warrior : SkillBase
     }
     protected override void Activate()
     {
-        if (character == null || skillUsed) return;
+        if (character == null || skillUsed || sharedState.hasUsedSkill4) return;
 
         skillUsed = true;
+        sharedState.hasUsedSkill4 = true;
         // Nhân vật bất tử
         isCharacterInvincible = true;
         character.ActiveSkillInvincible(invincibleDuration);
@@ -46,7 +48,7 @@ public class Skill4_Warrior : SkillBase
         character.hp = reviveHp;
 
         // Tăng sát thương
-        
+
         weapon.damage = damageBuff;
         // Bắt đầu timer buff
         buffTimer = buffDuration;
@@ -60,6 +62,11 @@ public class Skill4_Warrior : SkillBase
         reviveHp = character.hp * reviveHpPercent;
         damageBuff = weapon.damage * damageMultiplier;
         originDamage = weapon.damage;
+        if (sharedState.hasUsedSkill4)
+        {
+            character.AllowDeath();
+        }
+
     }
     // Update is called once per frame
     void Update()
@@ -85,7 +92,7 @@ public class Skill4_Warrior : SkillBase
         if (buffTimer > 0 && character.hp <= 0 && skillUsed)
         {
             buffTimer = 0f;
-            weapon.damage = originDamage;  
+            weapon.damage = originDamage;
         }
 
         if (buffTimer > 0)
@@ -95,6 +102,7 @@ public class Skill4_Warrior : SkillBase
             {
                 // Hết thời gian buff → đưa damage về ban đầu
                 weapon.damage = originDamage;
+                sharedState.hasUsedSkill4 = false;
             }
         }
     }
@@ -105,4 +113,5 @@ public class Skill4_Warrior : SkillBase
             Instantiate(revivePrefabs, transform.position, Quaternion.identity);
         }
     }
+
 }
