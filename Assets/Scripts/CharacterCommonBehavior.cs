@@ -25,7 +25,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
-    private float positionRecordInterval = 1.5f;
+    private float positionRecordInterval = 0.5f;
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
