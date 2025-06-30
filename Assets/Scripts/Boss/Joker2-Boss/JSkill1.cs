@@ -1,24 +1,37 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class JSkill1 : BossSkillBase
 {
-
     [Header("Fire Circle")]
     public float circleRadius = 5f;
     public int circleSegments = 100;
     public float circleDrawSpeed = 1f; // vòng lửa vẽ nhanh hay chậm
-    public LineRenderer circleRenderer;
+    
 
     [Header("Fire Star")]
     public float moveSpeed = 2f;
     public GameObject fireZonePrefab;
     public int starPoints = 5;
     public float fireSpawnDistance = 0.5f;
+    [Range(1, 10)]
+    public float starScale = 3f; // Tăng lên để ngôi sao to hơn (ví dụ: 3, 5...)
+
+   
+    public Collider2D playerCol;
 
     private Coroutine runningSkill;
+
+    void Start()
+    {
+        // Tự động tìm Player nếu quên kéo vào Inspector
+        if (playerCol == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null) playerCol = player.GetComponent<Collider2D>();
+        }
+    }
 
     protected override void Activate()
     {
@@ -31,10 +44,11 @@ public class JSkill1 : BossSkillBase
     {
         // 1. Vẽ vòng lửa quanh target
         Vector3 center = target.transform.position;
-        yield return StartCoroutine(DrawFireCircle(center));
+        yield return StartCoroutine(DrawFireCircleWithSprites(center));
 
-        // 2. Tính toán các điểm ngôi sao
-        Vector3[] points = CalculateStarPoints(center, circleRadius, starPoints);
+        // 2. Tính toán các điểm ngôi sao (scale bán kính theo starScale)
+        float scaledRadius = circleRadius * starScale;
+        Vector3[] points = CalculateStarPoints(center, scaledRadius, starPoints);
 
         // 3. Boss bay theo đường ngôi sao, tạo vùng lửa
         yield return StartCoroutine(MoveBossAndSpawnFire(center, points));
@@ -42,27 +56,20 @@ public class JSkill1 : BossSkillBase
         runningSkill = null;
     }
 
-    IEnumerator DrawFireCircle(Vector3 center)
+    IEnumerator DrawFireCircleWithSprites(Vector3 center)
     {
-        if (circleRenderer == null)
-        {
-            circleRenderer = gameObject.AddComponent<LineRenderer>();
-            circleRenderer.positionCount = circleSegments + 1;
-            circleRenderer.useWorldSpace = true;
-            // Add thêm thiết lập LineRenderer tại đây nếu muốn đẹp hơn (material, width, v.v)
-        }
+        float radius = circleRadius * starScale;
 
         for (int i = 0; i <= circleSegments; i++)
         {
-            circleRenderer.SetPosition(i, center);
-        }
+            float angle = (float)i / circleSegments * Mathf.PI * 2;
+            Vector3 pos = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
 
-        for (int seg = 0; seg <= circleSegments; seg++)
-        {
-            float angle = (float)seg / circleSegments * Mathf.PI * 2;
-            Vector3 pos = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * circleRadius;
-            circleRenderer.SetPosition(seg, pos);
-            yield return new WaitForSeconds(1f / (circleSegments * circleDrawSpeed));
+            GameObject flame = Instantiate(fireZonePrefab, pos, Quaternion.identity);
+            flame.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Quay lửa hướng ra ngoài
+            Destroy(flame, 3f); // Tự huỷ
+
+            yield return new WaitForSeconds(1f / (circleSegments * circleDrawSpeed)); // tạo hiệu ứng "vẽ dần"
         }
     }
 
@@ -98,6 +105,9 @@ public class JSkill1 : BossSkillBase
                 {
                     GameObject fire = Instantiate(fireZonePrefab, pos, Quaternion.identity);
                     Destroy(fire, 3f);
+
+                    
+                    
                     lastFirePos = pos;
                 }
                 yield return null;
@@ -105,5 +115,3 @@ public class JSkill1 : BossSkillBase
         }
     }
 }
-
-
