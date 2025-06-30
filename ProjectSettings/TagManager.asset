@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Coin
   - EXP
+  - Block
   layers:
   - Default
   - TransparentFX

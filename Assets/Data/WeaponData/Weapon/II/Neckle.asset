@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
+  m_Name: Neckle
+  m_EditorClassIdentifier: 
+  WeaponName: Neckle
+  damage: 10
+  timeToAttack: 0
+  weaponLevel: 2
+  weaponPrefabs: {fileID: 3726362377060378282, guid: 5c1d48a809e3017439bc34a42e94d5bb, type: 3}
+  nextLevel: {fileID: 11400000, guid: bc4e0ca45c5c4ba428a1d0789b056d58, type: 2}

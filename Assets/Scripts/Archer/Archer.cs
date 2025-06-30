@@ -68,7 +68,5 @@ public class Archer : CharacterCommonBehavior
             Rigidbody2D arrowRb = newArrow.GetComponent<Rigidbody2D>();
             arrowRb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
         }
-
     }
-
 }

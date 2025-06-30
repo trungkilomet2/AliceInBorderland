@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeType: 0
   Name: Sword II
   icon: {fileID: 536560642, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 2840360a1becc964aad09aec168a5acf, type: 2}
