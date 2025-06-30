@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorLevel2 : MonoBehaviour
+public class HelmetLevel4 : MonoBehaviour
 {
     private GameObject player;
     private const string PLAYER_TAG = "Player";
     private CharacterCommonBehavior characterCommonBehavior;
-    private float newCharacterBaseArmorPlus = 5f;
+    private float newCharacterBaseArmorPlus = 2.5f;
     void Start()
     {
         player = GameObject.FindWithTag(PLAYER_TAG);
@@ -16,5 +16,4 @@ public class ArmorLevel2 : MonoBehaviour
         characterCommonBehavior.SetCharacterBaseArmor(baseCharaterArmmor + newCharacterBaseArmorPlus);
         transform.SetParent(player.transform);
     }
-
 }

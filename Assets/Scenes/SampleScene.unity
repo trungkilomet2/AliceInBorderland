@@ -5786,6 +5786,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 77afc5272e669624788c221bd0e3893a, type: 2}
   - {fileID: 11400000, guid: df161eeba26a2134cb31591b3281dad5, type: 2}
   - {fileID: 11400000, guid: 8ce81cb4b27465947b2b215eba468429, type: 2}
+  - {fileID: 11400000, guid: f346a69d41295064182a0bcb38d6a33f, type: 2}
   acquireUpdate: []
   acquireItemUpdate: []
 --- !u!114 &337635494

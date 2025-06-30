@@ -121,10 +121,22 @@ public class CommonUI : MonoBehaviour
     {
         foreach (UpdateData data in acquireUpdate)
         {
-
             if (data.weaponData.WeaponName.Trim().Equals(wpData.WeaponName))
             {
                 acquireUpdate.Remove(data);
+                RemoveWeaponPrefabFromScene(data.weaponData);
+                break;
+            }
+        }
+    }
+
+    public void RemoveLowTierItem(WeaponData itemData)
+    {
+        foreach (UpdateData data in acquireItemUpdate)
+        {
+            if (data.weaponData.WeaponName.Trim().Equals(itemData.WeaponName))
+            {
+                acquireItemUpdate.Remove(data);
                 RemoveWeaponPrefabFromScene(data.weaponData);
                 break;
             }
@@ -149,6 +161,8 @@ public class CommonUI : MonoBehaviour
                 break;
             case UpgradeType.ItemUpgrade:
                 weaponManager.UpdateWeapon(upgradeChoice.weaponData);
+                RemoveLowTierItem(upgradeChoice.weaponData);
+                acquireItemUpdate.Add(upgradeChoice);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
