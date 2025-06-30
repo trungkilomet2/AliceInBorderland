@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeType: 1
   Name: Helmet IV
   icon: {fileID: -1189979613, guid: 1d6fae71fa9205c4bb8b6e1bce5985c4, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: bb5af827ad09c4c46b3be55e98ea9302, type: 2}

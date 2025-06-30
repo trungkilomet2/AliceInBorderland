@@ -33,13 +33,7 @@ public class CommonUI : MonoBehaviour
     private List<UpdateData> selectUpdate;
     public List<UpdateData> acquireUpdate;
     private WeaponManager weaponManager;
-
-    //Update Passive Item
-    public List<UpdateData> selectItemUpdate;
-
-    //Update Rings Item
-    public List<UpdateData> selectRingsUpdate;
-
+    public List<UpdateData> acquireItemUpdate;
 
 
     private void Awake()
@@ -151,19 +145,23 @@ public class CommonUI : MonoBehaviour
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpdateWeapon(upgradeChoice.weaponData);
                 RemoveLowTierWeapon(upgradeChoice.weaponData);
+                acquireUpdate.Add(upgradeChoice);
                 break;
             case UpgradeType.ItemUpgrade:
+                weaponManager.UpdateWeapon(upgradeChoice.weaponData);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
+                acquireUpdate.Add(upgradeChoice);
                 break;
             case UpgradeType.ItemUnlock:
+                weaponManager.AddWeapon(upgradeChoice.weaponData);
+                acquireItemUpdate.Add(upgradeChoice);
                 break;
         }
 
-        acquireUpdate.Add(upgradeChoice);
         upgradeData.Remove(upgradeChoice);
-        FillWeaponUI();
+        LoadUpdateUI();
     }
 
     bool CheckDupliCateUpdateData(UpdateData data, List<UpdateData> listUpdate)
@@ -217,18 +215,28 @@ public class CommonUI : MonoBehaviour
         this.upgradeData.Add(weaponStages);
     }
 
-    private void FillWeaponUI()
+    private void LoadUpdateUI()
     {
         int i = 1;
         foreach (UpdateData updateWP in acquireUpdate)
         {
-
             string WPBD = "WPBD" + i;
             string WPUI = "WPUI/" + WPBD + "/Image";
             Image image = GameObject.Find(WPUI).GetComponent<Image>();
             image.gameObject.SetActive(true);
             image.enabled = true;
             image.sprite = updateWP.icon;
+            i++;
+        }
+        i = 1;
+        foreach (UpdateData updateItem in acquireItemUpdate)
+        {
+            string WPBD = "ItemBD" + i;
+            string WPUI = "ItemUI/" + WPBD + "/Image";
+            Image image = GameObject.Find(WPUI).GetComponent<Image>();
+            image.gameObject.SetActive(true);
+            image.enabled = true;
+            image.sprite = updateItem.icon;
             i++;
         }
 

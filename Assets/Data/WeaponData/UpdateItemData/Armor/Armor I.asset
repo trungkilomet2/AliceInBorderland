@@ -16,5 +16,5 @@ MonoBehaviour:
   damage: 0
   timeToAttack: 0
   weaponLevel: 1
-  weaponPrefabs: {fileID: 2482818220101100208, guid: c932fda2b04694248b0651bdb118e92e, type: 3}
+  weaponPrefabs: {fileID: 6812813912688675991, guid: 63a9e615f49ace44aa987ece1f052c2b, type: 3}
   nextLevel: {fileID: 11400000, guid: 7bf401256e3cd964e9d308e5bc81e4b3, type: 2}

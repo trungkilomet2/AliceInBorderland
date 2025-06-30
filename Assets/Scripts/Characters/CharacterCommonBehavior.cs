@@ -30,6 +30,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
 
+    // Insert By Trung 30.06.2025
+    private float characterBaseArmor = 10f;
 
     private void Awake()
     {
@@ -154,9 +156,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     internal void TakeDamage(float damage)
     {
         if (isInvincible) return;
-
-        ShowDamageText(damage);
-        hp -= damage;
+        float toalDamageTaken = damage - damage * (characterBaseArmor / 100);
+        hp -= toalDamageTaken;
+        ShowDamageText(toalDamageTaken);
         commonUI.SetCurrentHp(hp);
         commonUI.UpdateHealthBar();
         if (hp <= 0)
@@ -205,6 +207,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         isInvincible = false;
     }
 
+    public float GetCharacterBaseArmor()
+    {
+        return this.characterBaseArmor;
+    }
+    public void SetCharacterBaseArmor(float newCharacterBaseArmor)
+    {
+        this.characterBaseArmor = newCharacterBaseArmor;
+    }
 
 
     public abstract void Attack();

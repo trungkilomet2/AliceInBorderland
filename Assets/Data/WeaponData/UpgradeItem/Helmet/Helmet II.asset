@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeType: 1
   Name: Helmet II
   icon: {fileID: -1650978991, guid: 1d6fae71fa9205c4bb8b6e1bce5985c4, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: bebf7626f12c6524cac8d15d2a62837d, type: 2}
