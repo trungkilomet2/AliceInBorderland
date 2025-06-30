@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
-  m_Name: Helmet II
+  m_Name: MaxLevel
   m_EditorClassIdentifier: 
-  upgradeType: 1
-  Name: Helmet II
-  icon: {fileID: -1650978991, guid: 1d6fae71fa9205c4bb8b6e1bce5985c4, type: 3}
+  upgradeType: 0
+  Name: Maxlevel
+  icon: {fileID: 0}
   weaponData: {fileID: 0}

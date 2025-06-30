@@ -32,8 +32,15 @@ public class CommonUI : MonoBehaviour
     private UpgradePanelManager upgradePanelManager;
     private List<UpdateData> selectUpdate;
     public List<UpdateData> acquireUpdate;
-
     private WeaponManager weaponManager;
+
+    //Update Passive Item
+    public List<UpdateData> selectItemUpdate;
+
+    //Update Rings Item
+    public List<UpdateData> selectRingsUpdate;
+
+
 
     private void Awake()
     {
@@ -57,11 +64,11 @@ public class CommonUI : MonoBehaviour
             // Spawn Last Boss -- Joker
         }
         CountTimer();
-        
+
 
 
     }
-    
+
 
     public void CountTimer()
     {
@@ -118,10 +125,8 @@ public class CommonUI : MonoBehaviour
 
     public void RemoveLowTierWeapon(WeaponData wpData)
     {
-        Debug.Log("Check log 1 ");
         foreach (UpdateData data in acquireUpdate)
         {
-            Debug.Log("Check log 2 ");
 
             if (data.weaponData.WeaponName.Trim().Equals(wpData.WeaponName))
             {
@@ -158,6 +163,7 @@ public class CommonUI : MonoBehaviour
 
         acquireUpdate.Add(upgradeChoice);
         upgradeData.Remove(upgradeChoice);
+        FillWeaponUI();
     }
 
     bool CheckDupliCateUpdateData(UpdateData data, List<UpdateData> listUpdate)
@@ -175,11 +181,8 @@ public class CommonUI : MonoBehaviour
         if (wpData == null || wpData.weaponPrefabs == null) return;
 
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
-        Debug.Log(wpData.name);
-        Debug.Log("_______________________________--");
         foreach (GameObject obj in allObjects)
         {
-            Debug.Log(obj.name);
             if (obj.name == (wpData.weaponPrefabs.gameObject.name + "(Clone)"))
             {
                 Destroy(obj);
@@ -213,4 +216,22 @@ public class CommonUI : MonoBehaviour
     {
         this.upgradeData.Add(weaponStages);
     }
+
+    private void FillWeaponUI()
+    {
+        int i = 1;
+        foreach (UpdateData updateWP in acquireUpdate)
+        {
+
+            string WPBD = "WPBD" + i;
+            string WPUI = "WPUI/" + WPBD + "/Image";
+            Image image = GameObject.Find(WPUI).GetComponent<Image>();
+            image.gameObject.SetActive(true);
+            image.enabled = true;
+            image.sprite = updateWP.icon;
+            i++;
+        }
+
+    }
+
 }
