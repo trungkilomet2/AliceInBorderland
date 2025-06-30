@@ -67,7 +67,7 @@ public class CharacterSelectManager : MonoBehaviour
         if (startButton != null)
         {
             startButton.onClick.AddListener(StartGame);
-            startButton.interactable = false; 
+            startButton.interactable = false;
         }
     }
 
