@@ -1,10 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum CharacterName
+{
+    [EnumMember(Value = "Archer")]
+    Archer,
+    [EnumMember(Value = "Mage")]
+    Mage,
+    [EnumMember(Value = "Warrior")]
+    Warrior,
+    [EnumMember(Value = "Summoner")]
+    Summoner
+}
 
 public class CommonUI : MonoBehaviour
 {
@@ -36,6 +48,7 @@ public class CommonUI : MonoBehaviour
     public List<UpdateData> acquireItemUpdate;
 
 
+
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
@@ -44,6 +57,29 @@ public class CommonUI : MonoBehaviour
     private void Start()
     {
         upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
+    }
+
+    void UpdateWeaponCharacterByCharacterSelecting()
+    {
+        string characterName = PlayerPrefs.GetString("SelectedCharacter");
+
+        if (characterName == CharacterName.Archer.ToString())
+        {
+
+        }
+        else if (characterName == CharacterName.Mage.ToString())
+        {
+
+        }
+        else if (characterName == CharacterName.Warrior.ToString())
+        {
+
+        }
+        else if (characterName == CharacterName.Summoner.ToString())
+        {
+
+        }
+
     }
 
     private void Update()
