@@ -214,4 +214,15 @@ public abstract class SkillBase : MonoBehaviour
     }
 
     protected abstract void Activate();
+
+
+    // Add: 22/06/2025 |Quang Anh|  Hệ thống biết được kỹ năng nào đang được người chơi "chọn"
+    public static SkillBase GetCurrentActiveSkill()
+    {
+        return currentActiveSkill;
+    }
+    public bool IsPreparingSkill()
+    {
+        return isPreparingSkill;
+    }
 }
