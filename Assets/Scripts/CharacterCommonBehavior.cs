@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public float hp;
     private Vector3 moveInput;
     private Rigidbody2D rb;
-    private Animator animator;
+    protected Animator animator;
     private GameObject damageTextPrefab;
     private const string COIN_TAG = "Coin";
     private const string EXP_TAG = "EXP";
@@ -21,6 +22,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
+
+    // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
+    private Vector3 lastSafePosition;
+    private float positionRecordInterval = 0.5f;
+    private float lastPositionRecordTime = 0f;
+    public const string BLOCK_TAG = "Block";
+    public static event Action OnBlockedCollision;
 
 
     private void Awake()
@@ -43,6 +51,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         DefaultCommonUI();
+
+        // Add 28.06/2025 |Quang Anh|  Ghi lại vị trí an toàn ban đầu
+        lastSafePosition = transform.position;
     }
 
     // Update is called once per frame
@@ -51,6 +62,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         Move();
         UpdateAnimation();
         commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
+
+        // Add 28.06/2025 |Quang Anh| Ghi lại vị trí an toàn mỗi 3 giây
+        if (Time.time - lastPositionRecordTime >= positionRecordInterval)
+        {
+            lastSafePosition = transform.position;
+            lastPositionRecordTime = Time.time;
+        }
 
         // Use the new skill input handling flow
         if (skills != null && skills.Length > 0 && skills[0] != null)
@@ -66,6 +84,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.tag == COIN_TAG)
         {
             Destroy(collision.gameObject);
@@ -74,7 +93,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         if (collision.tag == EXP_TAG)
         {
             Destroy(collision.gameObject);
-            commonUI.AddExp(10f);
+            commonUI.AddExp(30f);
         }
         if (collision.tag == ENERMY_WEAPON)
         {
@@ -87,6 +106,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
             }
+        }
+        // Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
+        if (collision.CompareTag(BLOCK_TAG))
+        {
+            Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
+
+            transform.position = lastSafePosition;
+            OnBlockedCollision?.Invoke();
         }
     }
 
@@ -137,7 +164,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0f;
         }
-        animator.SetTrigger("takeHit");
+        animator.SetBool("isHit", true);
+        Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
+    }
+
+    private void ResetHitAnimation()
+    {
+        animator.SetBool("isHit", false);
     }
 
 

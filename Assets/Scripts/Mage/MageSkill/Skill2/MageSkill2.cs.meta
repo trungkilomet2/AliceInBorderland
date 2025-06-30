@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 34c5e0fca266a4c418caa452d46bf988
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - slowZonePrefab: {fileID: 4381659068998476614, guid: a12007bc53cf3ec4793dd5b2f92bd38f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
