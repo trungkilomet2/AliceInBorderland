@@ -340993,9 +340993,9 @@ MonoBehaviour:
   coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
   exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
   bossSkillBases:
-  - {fileID: 1357119016}
+  - {fileID: 1357119028}
   - {fileID: 1357119024}
-  - {fileID: 0}
+  - {fileID: 1357119016}
   - {fileID: 0}
   isClone: 0
 --- !u!50 &1357119021
@@ -341193,6 +341193,28 @@ MonoBehaviour:
   balloonPrefab: {fileID: 3570067419269194875, guid: dca21dbf371809747a8d9a3f8cc09b00, type: 3}
   balloonRadius: 3
   balloonDuration: 1.5
+--- !u!114 &1357119028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357119015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c137376e6c8269540935c5862efb9d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Hell Fire
+  cooldown: 5
+  skillDuration: 2
+  skillRange: 10
+  ProJSkill3: {fileID: 7169399024243376734, guid: 9db8e38c41833004c872b982af887b92, type: 3}
+  projectileSpeed: 8
+  projectileLifetime: 5
+  spreadAngle: 90
+  projectilesPerWave: 050000000a0000000f000000
+  intervalBetweenWaves: 2
 --- !u!1 &1459067798
 GameObject:
   m_ObjectHideFlags: 0
@@ -341429,6 +341451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1538875317081591986, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1357119024}
+    - targetCorrespondingSourceObject: {fileID: 1538875317081591986, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1357119028}
   m_SourcePrefab: {fileID: 100100000, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}
 --- !u!1 &1554581255
 GameObject:
