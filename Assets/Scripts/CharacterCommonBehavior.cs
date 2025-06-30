@@ -93,7 +93,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         if (collision.tag == EXP_TAG)
         {
             Destroy(collision.gameObject);
-            commonUI.AddExp(10f);
+            commonUI.AddExp(30f);
         }
         if (collision.tag == ENERMY_WEAPON)
         {

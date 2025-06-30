@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeType: 0
   Name: Orb IV
   icon: {fileID: 21300000, guid: cdff886ffe45675489f7d17a452bc30a, type: 3}
+  weaponData: {fileID: 11400000, guid: 2ce446c5f76472943836b37cb97fcb82, type: 2}
