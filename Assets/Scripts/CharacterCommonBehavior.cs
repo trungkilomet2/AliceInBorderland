@@ -19,6 +19,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public CommonUI commonUI;
     private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
+    public AudioClip attackSound;
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
@@ -34,6 +35,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
+    public float damageReductionMultiplier = 1f;
+
+    //audio
+    [HideInInspector]
+    public AudioManager audioManager;
 
     // Insert By Trung 30.06.2025
     private float characterBaseArmor = 10f;
@@ -42,6 +48,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void DefaultCommonUI()
@@ -94,11 +101,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (collision.tag == COIN_TAG)
         {
+            audioManager.PlayCoinSound();
             Destroy(collision.gameObject);
             // Xu ly add them playprefabs
         }
         if (collision.tag == EXP_TAG)
         {
+            audioManager.PlayCoinSound();
             Destroy(collision.gameObject);
             commonUI.AddExp(30f);
         }
@@ -164,8 +173,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         if (skill1 != null)
         {
             damage = skill1.OnAbsorbDamage(damage);
-        // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
-        if (damage <= 0) return;
+            // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+            if (damage <= 0) return;
         }
         if (isInvincible) return;
         float toalDamageTaken = damage - damage * (characterBaseArmor / 100);
@@ -175,14 +184,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            if ( this is Warrior && !CanDie()) return;
+            audioManager.PlayGameOverSound();
+            if (this is Warrior && !CanDie()) return;
             else
             {
                 AllowDeath();
-                 Destroy(gameObject);
+                Destroy(gameObject);
                 Time.timeScale = 0f;
             }
-           
+
         }
         animator.SetBool("isHit", true);
         Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds

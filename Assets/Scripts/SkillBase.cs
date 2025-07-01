@@ -4,6 +4,7 @@ using UnityEngineInternal;
 public enum IndicatorType { Circle, Arrow }
 public enum SkillNum { Skill1, Skill2, Skill3, Skill4, Passive }
 public enum SkillType { Active, Passive }
+
 public abstract class SkillBase : MonoBehaviour
 {
     public SkillNum skillNum;
@@ -15,6 +16,7 @@ public abstract class SkillBase : MonoBehaviour
     public float skillWidth = 1f;
     public float skillDuration = 2f;
     public float skillDamage = 10f;
+    public AudioClip skillSound;
 
     protected float currentCooldown = 0f;
     protected bool isCoolingDown = false;
@@ -26,6 +28,7 @@ public abstract class SkillBase : MonoBehaviour
     private GameObject rangeIndicatorPrefab;
     private KeyCode key;
     private bool isPreparingSkill = false;
+    private AudioManager audioManager;
 
     //Insert By Trung 01.07.2025
     private bool isSkillFirstActive = false;
@@ -38,6 +41,7 @@ public abstract class SkillBase : MonoBehaviour
 
     public virtual void Awake()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         rangeIndicatorPrefab = Resources.Load<GameObject>("Prefabs/RangeIndicator");
         if (indicatorType == IndicatorType.Arrow)
         {
@@ -217,6 +221,10 @@ public abstract class SkillBase : MonoBehaviour
         currentCooldown = cooldown;
         isPreparingSkill = false;
         currentActiveSkill = null;
+        if(skillSound != null && audioManager != null)
+        {
+            audioManager.PlaySoundClip(skillSound);
+        }
     }
 
     public virtual void CancelSkill()

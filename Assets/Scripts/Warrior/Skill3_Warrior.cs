@@ -5,95 +5,76 @@ using Cinemachine;
 
 public class Skill3_Warrior : SkillBase
 {
-    public GameObject baseWarrior;            // nhân vật hiện tại
-    public GameObject transformedWarriorPrefab; // Prefab nhân vật mới
-    public float transformDuration = 10f;
-
     public float cooldownTime = 5f;
     private float lastUsedTime = -Mathf.Infinity;
 
-    private float transformEndTime = 0f;
-    private bool isTransformed = false;
-    private GameObject spawnedTransformedWarrior; // nhân vật mới đã được tạo
-    private EnemiesManager enemiesManager;
-    private CharacterCommonBehavior baseBehavior;
-    private CharacterCommonBehavior form2Behavior;
     public SharedWarriorState sharedWarriorState;
+
+    // === Quản lý các phần cần thay đổi ===
+    public Sprite form1Sprite;
+    public Sprite form2Sprite;
+
+    public RuntimeAnimatorController form1Animator;
+    public RuntimeAnimatorController form2Animator;
+
+    public GameObject weaponForm1;
+    public GameObject weaponForm2;
+
+    private bool isForm1 = true;
+
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private WeaponBase weapon;
+    private Warrior warrior;
+    public GameObject changeFormEffectPrefab;
+
+    public override void Awake()
+    {
+        base.Awake();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        weapon = GetComponent<WeaponBase>();
+        warrior = GetComponent<Warrior>();
+    }
 
     protected override void Activate()
     {
         if (sharedWarriorState != null && sharedWarriorState.hasUsedSkill4)
-        {
             return;
-        }
 
         if (Time.time < sharedWarriorState.skill3LastUsedTime + cooldownTime)
             return;
 
         sharedWarriorState.skill3LastUsedTime = Time.time;
-        // nếu đang cooldown → không cho dùng
-        if (isTransformed || transformedWarriorPrefab == null || baseWarrior == null) return;
+        Instantiate(changeFormEffectPrefab, transform.position, Quaternion.identity);
 
-        // Spawn nhân vật mới
-        spawnedTransformedWarrior = Instantiate(
-            transformedWarriorPrefab,
-            baseWarrior.transform.position,
-            Quaternion.identity
-        );
-
-        Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
-        foreach (Enemy enemy in enemies)
+        // === Chuyển đổi giữa form 1 và form 2 ===
+        if (isForm1)
         {
-            enemy.SetTarget(spawnedTransformedWarrior);
+            // Sang form 2
+            spriteRenderer.sprite = form2Sprite;
+            animator.runtimeAnimatorController = form2Animator;
+
+            weaponForm1.SetActive(false);
+            weaponForm2.SetActive(true);
+            warrior.axe = weaponForm2;
+            warrior.moveSpeed = 3f;
+            warrior.damageReductionMultiplier = 0.7f;
+        }
+        else
+        {
+            // Quay về form 1
+            spriteRenderer.sprite = form1Sprite;
+            animator.runtimeAnimatorController = form1Animator;
+
+            weaponForm2.SetActive(false);
+            weaponForm1.SetActive(true);
+            warrior.axe = weaponForm1;
+            warrior.moveSpeed = 4f;
+            warrior.damageReductionMultiplier = 1f;
         }
 
-        enemiesManager = FindObjectOfType<EnemiesManager>();
-        if (enemiesManager != null)
-        {
-            enemiesManager.SetPlayer(spawnedTransformedWarrior);
-        }
-
-        CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
-
-        if (vcam != null)
-        {
-            vcam.Follow = spawnedTransformedWarrior.transform;
-            vcam.LookAt = spawnedTransformedWarrior.transform;
-        }
-
-        // Lấy hp hiện tại của form 1
-        baseBehavior = baseWarrior.GetComponent<CharacterCommonBehavior>();
-        form2Behavior = spawnedTransformedWarrior.GetComponent<CharacterCommonBehavior>();
-
-        if (baseBehavior != null && form2Behavior != null)
-        {
-            form2Behavior.hp = baseBehavior.hp; // Gán lại máu
-        }
-
-        // Tắt nhân vật gốc
-
-        Destroy(baseWarrior);
-        transformEndTime = Time.time + transformDuration;
-        isTransformed = true;
+        isForm1 = !isForm1;
     }
-
-
-
-    void Update()
-    {
-        base.Update();
-        if (isTransformed && Time.time >= transformEndTime)
-        {
-            // Quay về nhân vật gốc
-            baseWarrior.transform.position = spawnedTransformedWarrior.transform.position;
-            baseWarrior.SetActive(true);
-
-            // Xoá nhân vật mới
-            Destroy(spawnedTransformedWarrior);
-
-            isTransformed = false;
-        }
-    }
-
-
 }
+

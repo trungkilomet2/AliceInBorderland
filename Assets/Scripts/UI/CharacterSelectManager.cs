@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelectManager : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class CharacterSelectManager : MonoBehaviour
     private List<CharacterCard> characterCards = new List<CharacterCard>();
     private CharacterCard selectedCard;
     private CharacterData selectedCharacterData;
+   
+    //sound
+    private CharSelectionAudioManager charSelectionAudioManager;
+
+
+    private void Awake()
+    {
+        charSelectionAudioManager = FindObjectOfType<CharSelectionAudioManager>();
+    }
 
     void Start()
     {
@@ -96,6 +106,8 @@ public class CharacterSelectManager : MonoBehaviour
         selectedCharacterData = card.characterData;
         card.SetSelected(true);
 
+        charSelectionAudioManager.PlayClickOptionSound();
+
         // Update character info panel
         UpdateCharacterInfo();
 
@@ -141,12 +153,17 @@ public class CharacterSelectManager : MonoBehaviour
     {
         if (selectedCharacterData != null)
         {
-            PlayerPrefs.SetString("SelectedCharacter", selectedCharacterData.name);
-            PlayerPrefs.Save();
-
-            SceneManager.LoadScene(gameSceneName);
-
+            charSelectionAudioManager.PlayGameStartSound();
+            StartCoroutine(StartGameAfterDelay(2f));
         }
+    }
+    private IEnumerator StartGameAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayerPrefs.SetString("SelectedCharacter", selectedCharacterData.name);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene(gameSceneName);
     }
 
     // Public methods for external access

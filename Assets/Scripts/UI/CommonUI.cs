@@ -50,10 +50,12 @@ public class CommonUI : MonoBehaviour
     private SkillBase[] skillBase;
     private GameObject player;
 
+    private AudioManager audioManager;
 
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     private void Start()
@@ -223,6 +225,9 @@ public class CommonUI : MonoBehaviour
                 break;
         }
 
+
+        audioManager.PlayChooseItemSound();
+        acquireUpdate.Add(upgradeChoice);
         upgradeData.Remove(upgradeChoice);
         LoadUpdateUI();
     }

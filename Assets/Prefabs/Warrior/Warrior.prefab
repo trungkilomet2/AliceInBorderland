@@ -205,6 +205,7 @@ MonoBehaviour:
   - {fileID: 7696732050759654250}
   hp: 200
   commonUI: {fileID: 0}
+  damageReductionMultiplier: 1
   axe: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   axeSpawnPoint: {fileID: 5270292626708380349}
   timeBtwaxe: 0.2
@@ -305,11 +306,15 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 0
   skillDamage: 0
-  baseWarrior: {fileID: 482234283679444079}
-  transformedWarriorPrefab: {fileID: 7627623117591143965, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-  transformDuration: 0
   cooldownTime: 5
   sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
+  form1Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
+  form2Sprite: {fileID: -50501098, guid: 44f42483410ff634db8b861d169e9548, type: 3}
+  form1Animator: {fileID: 9100000, guid: e2b890dd45477ae44a614f2009086ae2, type: 2}
+  form2Animator: {fileID: 9100000, guid: 06a1eb7dd5d0fd84783d73e80e33e7ca, type: 2}
+  weaponForm1: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
+  weaponForm2: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
+  changeFormEffectPrefab: {fileID: 7763796434052523897, guid: 4900363678256c64e9242cabbe66a1e3, type: 3}
 --- !u!1 &3781837170630933094
 GameObject:
   m_ObjectHideFlags: 0

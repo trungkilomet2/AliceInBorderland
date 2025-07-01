@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1760524173380408337}
   - component: {fileID: 5295770871370384346}
   - component: {fileID: 4572762437175965153}
-  - component: {fileID: 6721216569130168588}
   m_Layer: 0
   m_Name: WarriorForm2
   m_TagString: Player
@@ -104,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
-  - {fileID: 6721216569130168588}
+  - {fileID: 0}
   - {fileID: 4572762437175965153}
   hp: 350
   commonUI: {fileID: 0}
@@ -232,32 +231,6 @@ MonoBehaviour:
   gameObject: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
   revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
   invincibleDuration: 5
---- !u!114 &6721216569130168588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7627623117591143965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb973b82372c88349bf5344df8d0cbc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 2
-  skillType: 1
-  indicatorType: 0
-  skillName: Transformer
-  cooldown: 5
-  skillRange: 0
-  skillWidth: 0
-  skillDuration: 0
-  skillDamage: 0
-  baseWarrior: {fileID: 7627623117591143965}
-  transformedWarriorPrefab: {fileID: 482234283679444079, guid: 1a870e277ab1617488d488d8c6af0cbb, type: 3}
-  transformDuration: 0
-  cooldownTime: 5
-  sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
 --- !u!1 &8285504754963265471
 GameObject:
   m_ObjectHideFlags: 0
