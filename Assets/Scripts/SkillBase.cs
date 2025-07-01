@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public enum IndicatorType { Circle, Arrow }
-public enum SkillNum { Skill1, Skill2, Skill3, Skill4 }
+public enum SkillNum { Skill1, Skill2, Skill3, Skill4, Passive }
 public enum SkillType { Active, Passive }
 public abstract class SkillBase : MonoBehaviour
 {
@@ -54,6 +54,9 @@ public abstract class SkillBase : MonoBehaviour
                 break;
             case SkillNum.Skill4:
                 key = KeyCode.Alpha4;
+                break;
+                case SkillNum.Passive:
+                key = KeyCode.None;
                 break;
             default:
                 key = KeyCode.None; // Default to no key

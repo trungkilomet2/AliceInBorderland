@@ -22,6 +22,11 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
+    private bool canDie = false;
+    public void BlockDeath() => canDie = false;
+    public void AllowDeath() => canDie = true;
+    public bool CanDie() => canDie;
+    private Skill1_Warrior skill1;
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
@@ -155,6 +160,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        skill1 = GetComponent<Skill1_Warrior>();
+        if (skill1 != null)
+        {
+            damage = skill1.OnAbsorbDamage(damage);
+        // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+        if (damage <= 0) return;
+        }
         if (isInvincible) return;
         float toalDamageTaken = damage - damage * (characterBaseArmor / 100);
         hp -= toalDamageTaken;
@@ -163,8 +175,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            if ( this is Warrior && !CanDie()) return;
+            else
+            {
+                AllowDeath();
+                 Destroy(gameObject);
+                Time.timeScale = 0f;
+            }
+           
         }
         animator.SetBool("isHit", true);
         Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
@@ -195,6 +213,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         isInvincible = true;
         invincibleEndTime = Time.time + duration;
+    }
+    public void ActiveSkillInvincible(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+    public void DeactiveInvincible()
+    {
+        isInvincible = false;
     }
 
     public float GetInvincibleEndTime()
