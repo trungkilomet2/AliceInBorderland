@@ -62,6 +62,9 @@ TagManager:
   - name: Indicator
     uniqueID: 2526292859
     locked: 0
+  - name: Fx
+    uniqueID: 2154593765
+    locked: 0
   - name: Player
     uniqueID: 2160160567
     locked: 0
