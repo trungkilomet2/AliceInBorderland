@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Skill4
   m_EditorClassIdentifier: 
-  WeaponName: Archer 4
+  WeaponName: Archer
   damage: 0
   timeToAttack: 0
   weaponLevel: 0

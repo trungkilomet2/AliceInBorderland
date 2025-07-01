@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -46,7 +47,7 @@ public class CommonUI : MonoBehaviour
     private WeaponManager weaponManager;
     public List<UpdateData> acquireItemUpdate;
 
-    private SkillBase skillBase;
+    private SkillBase[] skillBase;
     private GameObject player;
 
 
@@ -58,28 +59,33 @@ public class CommonUI : MonoBehaviour
     private void Start()
     {
         upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
+        UpdateWeaponCharacterByCharacterSelecting();
     }
 
     void UpdateWeaponCharacterByCharacterSelecting()
     {
         string characterName = PlayerPrefs.GetString("SelectedCharacter");
+        StringBuilder sources = new StringBuilder();
+        sources.Append("Data/Characters/");
 
         if (characterName == CharacterName.Archer.ToString())
         {
-
+            sources.Append("BowData");
         }
         else if (characterName == CharacterName.Mage.ToString())
         {
-
+            sources.Append("BookData");
         }
         else if (characterName == CharacterName.Warrior.ToString())
         {
-
+            sources.Append("HarmerData");
         }
         else if (characterName == CharacterName.Summoner.ToString())
         {
-
+            sources.Append("StaffData");
         }
+        UpdateData data = Resources.Load<UpdateData>(sources.ToString());
+        upgradeData.Add(data);
 
     }
 
@@ -212,6 +218,8 @@ public class CommonUI : MonoBehaviour
             case UpgradeType.SkillUpgrade:
                 weaponManager.UnlockNextLevelSKill(upgradeChoice.weaponData);
                 SkillUpdateByLevel(upgradeChoice);
+                RemoveLowTierWeapon(upgradeChoice.weaponData);
+                acquireUpdate.Add(upgradeChoice);
                 break;
         }
 
@@ -222,19 +230,39 @@ public class CommonUI : MonoBehaviour
     void SkillUpdateByLevel(UpdateData updateData)
     {
         player = GameObject.FindWithTag("Player");
-        skillBase = player.GetComponent<SkillBase>();
-        Debug.Log(updateData.Name);
+        skillBase = player.GetComponents<SkillBase>();
+
+        SkillNum numberOfSkill = SkillNum.Passive;
+
         if (updateData.Name.Split(" ")[1].Equals("I"))
         {
-            Debug.Log("***************************************************************************");
-            skillBase.ActiveSkillFirst();
+            numberOfSkill = SkillNum.Skill1;
         }
         else if (updateData.Name.Split(" ")[1].Equals("II"))
         {
-            skillBase.ActiveSkillSecond();
+            numberOfSkill = SkillNum.Skill2;
+        }
+        else if (updateData.Name.Split(" ")[1].Equals("III"))
+        {
+            numberOfSkill = SkillNum.Skill3;
+        }
+        else if (updateData.Name.Split(" ")[1].Equals("IV"))
+        {
+            numberOfSkill = SkillNum.Skill4;
         }
 
+        Debug.Log(numberOfSkill);
+        foreach (SkillBase skill in skillBase)
+        {
+            Debug.Log(numberOfSkill == skill.skillNum);
+            if (numberOfSkill == skill.skillNum)
+            {
+                skill.UnlockSkillBySkillNum(numberOfSkill);
+            }
 
+
+
+        }
 
     }
 

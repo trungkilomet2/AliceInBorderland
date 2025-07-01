@@ -5669,8 +5669,7 @@ MonoBehaviour:
   imageHP: {fileID: 706363725}
   timerCounter: {fileID: 218877222}
   currentTime: 0
-  upgradeData:
-  - {fileID: 11400000, guid: 8f7e31200cd917f40b8db2846648bb59, type: 2}
+  upgradeData: []
   acquireUpdate: []
   acquireItemUpdate: []
 --- !u!114 &337635494
