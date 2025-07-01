@@ -1360,6 +1360,7 @@ MonoBehaviour:
   effectAudioSource: {fileID: 1393685218}
   backgroundClip: {fileID: 8300000, guid: 18624e9ad05df2144a8954eb32bfc5a8, type: 3}
   clickOptionClip: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
+  gameStartClip: {fileID: 8300000, guid: bb19794b24e9f314180e6d98b42b2051, type: 3}
 --- !u!4 &984777841
 Transform:
   m_ObjectHideFlags: 0
