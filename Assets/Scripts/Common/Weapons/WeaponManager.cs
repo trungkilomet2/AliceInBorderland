@@ -40,7 +40,16 @@ public class WeaponManager : MonoBehaviour
         {
             commonUI.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.nextLevel);
         }
+    }
 
+    public void UnlockNextLevelSKill(WeaponData weaponData)
+    {
+        CommonUI commonUI = GetComponent<CommonUI>();
+
+        if (commonUI != null)
+        {
+            commonUI.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.nextLevel);
+        }
 
     }
 

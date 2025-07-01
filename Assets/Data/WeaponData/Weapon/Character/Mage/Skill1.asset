@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f5e6988a2218542a3dfd4496c77ade, type: 3}
   m_Name: Skill1
   m_EditorClassIdentifier: 
-  WeaponName: Archer 1
+  WeaponName: Mage 1
   damage: 0
   timeToAttack: 0
   weaponLevel: 0
   weaponPrefabs: {fileID: 3625367318075495125, guid: 317d7d8729155e34c97c603ca6a6ea0a, type: 3}
-  nextLevel: {fileID: 11400000, guid: 1c6aadaea8887684690ed560c7728960, type: 2}
+  nextLevel: {fileID: 11400000, guid: 5f5bf4a8be372164c91e5d69844d3b54, type: 2}

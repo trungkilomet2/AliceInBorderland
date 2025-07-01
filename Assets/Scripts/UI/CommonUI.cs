@@ -39,7 +39,6 @@ public class CommonUI : MonoBehaviour
     private bool isRunning = true;
 
     //Upgrade
-
     [SerializeField] List<UpdateData> upgradeData; // Luu cac upgrade assest
     private UpgradePanelManager upgradePanelManager;
     private List<UpdateData> selectUpdate;
@@ -47,6 +46,8 @@ public class CommonUI : MonoBehaviour
     private WeaponManager weaponManager;
     public List<UpdateData> acquireItemUpdate;
 
+    private SkillBase skillBase;
+    private GameObject player;
 
 
     private void Awake()
@@ -208,10 +209,33 @@ public class CommonUI : MonoBehaviour
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
                 acquireItemUpdate.Add(upgradeChoice);
                 break;
+            case UpgradeType.SkillUpgrade:
+                weaponManager.UnlockNextLevelSKill(upgradeChoice.weaponData);
+                SkillUpdateByLevel(upgradeChoice);
+                break;
         }
 
         upgradeData.Remove(upgradeChoice);
         LoadUpdateUI();
+    }
+
+    void SkillUpdateByLevel(UpdateData updateData)
+    {
+        player = GameObject.FindWithTag("Player");
+        skillBase = player.GetComponent<SkillBase>();
+        Debug.Log(updateData.Name);
+        if (updateData.Name.Split(" ")[1].Equals("I"))
+        {
+            Debug.Log("***************************************************************************");
+            skillBase.ActiveSkillFirst();
+        }
+        else if (updateData.Name.Split(" ")[1].Equals("II"))
+        {
+            skillBase.ActiveSkillSecond();
+        }
+
+
+
     }
 
     bool CheckDupliCateUpdateData(UpdateData data, List<UpdateData> listUpdate)

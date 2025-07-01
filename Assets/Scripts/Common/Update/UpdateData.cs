@@ -7,7 +7,8 @@ public enum UpgradeType
     WeaponUpgrade,
     ItemUpgrade,
     WeaponUnlock,
-    ItemUnlock
+    ItemUnlock,
+    SkillUpgrade
 }
 [CreateAssetMenu]
 public class UpdateData : ScriptableObject
@@ -16,7 +17,6 @@ public class UpdateData : ScriptableObject
     public string Name;
     public Sprite icon;
     public WeaponData weaponData;
-
 
 }
 
