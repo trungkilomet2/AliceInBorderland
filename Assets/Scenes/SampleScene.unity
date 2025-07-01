@@ -5630,10 +5630,10 @@ MonoBehaviour:
   timerCounter: {fileID: 218877222}
   currentTime: 0
   upgradeData:
+  - {fileID: 11400000, guid: ae51389a44c34c74a92c7b8e1ca9a802, type: 2}
   - {fileID: 11400000, guid: 60e3773e27b872044a4fdb2997491d8a, type: 2}
   - {fileID: 11400000, guid: 77afc5272e669624788c221bd0e3893a, type: 2}
   - {fileID: 11400000, guid: df161eeba26a2134cb31591b3281dad5, type: 2}
-  - {fileID: 11400000, guid: ae51389a44c34c74a92c7b8e1ca9a802, type: 2}
   acquireUpdate: []
 --- !u!114 &337635494
 MonoBehaviour:

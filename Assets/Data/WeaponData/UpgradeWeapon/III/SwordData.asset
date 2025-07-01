@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeType: 0
   Name: Sword III
   icon: {fileID: -261985662, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 94c6229d6d465db4483505e43702e2f8, type: 2}

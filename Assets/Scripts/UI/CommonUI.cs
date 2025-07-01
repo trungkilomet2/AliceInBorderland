@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,7 +57,11 @@ public class CommonUI : MonoBehaviour
             // Spawn Last Boss -- Joker
         }
         CountTimer();
+        
+
+
     }
+    
 
     public void CountTimer()
     {
@@ -86,7 +91,6 @@ public class CommonUI : MonoBehaviour
         {
             currentExp -= maxExp;
             LevelUp();
-            Debug.Log("Da up level");
         }
         UpdateExpBar();
     }
@@ -111,6 +115,24 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
 
+
+    public void RemoveLowTierWeapon(WeaponData wpData)
+    {
+        Debug.Log("Check log 1 ");
+        foreach (UpdateData data in acquireUpdate)
+        {
+            Debug.Log("Check log 2 ");
+
+            if (data.weaponData.WeaponName.Trim().Equals(wpData.WeaponName))
+            {
+                acquireUpdate.Remove(data);
+                RemoveWeaponPrefabFromScene(data.weaponData);
+                break;
+            }
+        }
+    }
+
+
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
@@ -122,6 +144,8 @@ public class CommonUI : MonoBehaviour
         switch (upgradeChoice.upgradeType)
         {
             case UpgradeType.WeaponUpgrade:
+                weaponManager.UpdateWeapon(upgradeChoice.weaponData);
+                RemoveLowTierWeapon(upgradeChoice.weaponData);
                 break;
             case UpgradeType.ItemUpgrade:
                 break;
@@ -136,6 +160,33 @@ public class CommonUI : MonoBehaviour
         upgradeData.Remove(upgradeChoice);
     }
 
+    bool CheckDupliCateUpdateData(UpdateData data, List<UpdateData> listUpdate)
+    {
+        foreach (UpdateData updateData in listUpdate)
+        {
+            if (data == updateData) return true;
+        }
+
+        return false;
+    }
+
+    public void RemoveWeaponPrefabFromScene(WeaponData wpData)
+    {
+        if (wpData == null || wpData.weaponPrefabs == null) return;
+
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+        Debug.Log(wpData.name);
+        Debug.Log("_______________________________--");
+        foreach (GameObject obj in allObjects)
+        {
+            Debug.Log(obj.name);
+            if (obj.name == (wpData.weaponPrefabs.gameObject.name + "(Clone)"))
+            {
+                Destroy(obj);
+            }
+        }
+    }
+
     public List<UpdateData> GetRandomUpdatesInUpgradeData(int count)
     {
         List<UpdateData> listUpgrade = new List<UpdateData>();
@@ -147,14 +198,19 @@ public class CommonUI : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            listUpgrade.Add(upgradeData[Random.Range(0, upgradeData.Count)]);
+            UpdateData updateData = upgradeData[Random.Range(0, upgradeData.Count)];
+            if (CheckDupliCateUpdateData(updateData, listUpgrade))
+            {
+                i--;
+                continue;
+            }
+            listUpgrade.Add(updateData);
         }
-
         return listUpgrade;
     }
 
-    public void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpdateData> weaponStages)
+    public void AddUpgradesIntoTheListOfAvailableUpgrades(UpdateData weaponStages)
     {
-        this.upgradeData.AddRange(weaponStages);
+        this.upgradeData.Add(weaponStages);
     }
 }
