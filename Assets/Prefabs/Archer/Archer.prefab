@@ -143,6 +143,8 @@ MonoBehaviour:
   - {fileID: 8274900416447067520}
   hp: 50
   commonUI: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: b0dbf3cab9d3c6646901b5f3c8061e6f, type: 3}
+  audioManager: {fileID: 0}
   arrow: {fileID: 8875036098252759429, guid: 95510d04de5f5c141b93d44b340dea52, type: 3}
   arrowSpawnPoint: {fileID: 1999351418892819015}
   timeBtwArrow: 0.2

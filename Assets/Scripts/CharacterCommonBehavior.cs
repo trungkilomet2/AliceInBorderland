@@ -19,6 +19,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public CommonUI commonUI;
     private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
+    public AudioClip attackSound;
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
@@ -36,7 +37,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public static event Action OnBlockedCollision;
 
     //audio
-    private AudioManager audioManager;
+    [HideInInspector]
+    public AudioManager audioManager;
 
 
     private void Awake()
