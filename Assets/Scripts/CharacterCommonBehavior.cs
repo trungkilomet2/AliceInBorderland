@@ -19,9 +19,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public CommonUI commonUI;
     private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
+    public AudioClip attackSound;
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
+    private bool canDie = false;
+    public void BlockDeath() => canDie = false;
+    public void AllowDeath() => canDie = true;
+    public bool CanDie() => canDie;
+    private Skill1_Warrior skill1;
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
@@ -29,12 +35,18 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
+    public float damageReductionMultiplier = 1f;
+
+    //audio
+    [HideInInspector]
+    public AudioManager audioManager;
 
 
     private void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void DefaultCommonUI()
@@ -87,11 +99,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (collision.tag == COIN_TAG)
         {
+            audioManager.PlayCoinSound();
             Destroy(collision.gameObject);
             // Xu ly add them playprefabs
         }
         if (collision.tag == EXP_TAG)
         {
+            audioManager.PlayCoinSound();
             Destroy(collision.gameObject);
             commonUI.AddExp(30f);
         }
@@ -153,16 +167,30 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        skill1 = GetComponent<Skill1_Warrior>();
+        if (skill1 != null)
+        {
+            damage = skill1.OnAbsorbDamage(damage);
+        // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+        if (damage <= 0) return;
+        }
         if (isInvincible) return;
-
+        damage *= damageReductionMultiplier;
         ShowDamageText(damage);
         hp -= damage;
         commonUI.SetCurrentHp(hp);
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            audioManager.PlayGameOverSound();
+            if ( this is Warrior && !CanDie()) return;
+            else
+            {
+                AllowDeath();
+                 Destroy(gameObject);
+                Time.timeScale = 0f;
+            }
+           
         }
         animator.SetBool("isHit", true);
         Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
@@ -193,6 +221,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         isInvincible = true;
         invincibleEndTime = Time.time + duration;
+    }
+    public void ActiveSkillInvincible(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+    public void DeactiveInvincible()
+    {
+        isInvincible = false;
     }
 
     public float GetInvincibleEndTime()
