@@ -223,7 +223,7 @@ public abstract class SkillBase : MonoBehaviour
         currentActiveSkill = null;
         if(skillSound != null && audioManager != null)
         {
-            audioManager.PlaySoundClip(skillSound);
+            audioManager?.PlaySoundClip(skillSound);
         }
     }
 

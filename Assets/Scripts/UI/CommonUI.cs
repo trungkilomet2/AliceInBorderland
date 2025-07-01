@@ -226,8 +226,7 @@ public class CommonUI : MonoBehaviour
         }
 
 
-        audioManager.PlayChooseItemSound();
-        acquireUpdate.Add(upgradeChoice);
+        audioManager?.PlayChooseItemSound();
         upgradeData.Remove(upgradeChoice);
         LoadUpdateUI();
     }

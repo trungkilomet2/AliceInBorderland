@@ -101,13 +101,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (collision.tag == COIN_TAG)
         {
-            audioManager.PlayCoinSound();
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
             // Xu ly add them playprefabs
         }
         if (collision.tag == EXP_TAG)
         {
-            audioManager.PlayCoinSound();
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
             commonUI.AddExp(30f);
         }
@@ -184,7 +184,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            audioManager.PlayGameOverSound();
+            audioManager?.PlayGameOverSound();
             if (this is Warrior && !CanDie()) return;
             else
             {

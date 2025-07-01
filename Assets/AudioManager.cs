@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioClip backgroundClip;
     [SerializeField] private AudioClip coinClip;
-    
+
     [SerializeField] private AudioClip clickItemClip;
     [SerializeField] private AudioClip gameoverClip;
     [SerializeField] private AudioClip victoryClip;
@@ -25,30 +25,48 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBackGroundMusic()
     {
-        backgroundAudioSource.clip = backgroundClip;
-        backgroundAudioSource.Play();
+        if (backgroundAudioSource != null)
+        {
+            backgroundAudioSource.clip = backgroundClip;
+            backgroundAudioSource.Play();
+        }
     }
 
     public void PlayCoinSound()
     {
-        effectAudioSource.PlayOneShot(coinClip);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.PlayOneShot(coinClip);
+        }
     }
     public void PlayChooseItemSound()
     {
-        effectAudioSource.PlayOneShot(clickItemClip);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.PlayOneShot(clickItemClip);
+        }
     }
 
     public void PlayGameOverSound()
     {
-        effectAudioSource.PlayOneShot(gameoverClip);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.PlayOneShot(gameoverClip);
+        }
     }
     public void PlayVictorySound()
     {
-        effectAudioSource.PlayOneShot(victoryClip);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.PlayOneShot(victoryClip);
+        }
     }
 
     public void PlaySoundClip(AudioClip sound)
     {
-        effectAudioSource.PlayOneShot(sound);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.PlayOneShot(sound);
+        }
     }
 }
