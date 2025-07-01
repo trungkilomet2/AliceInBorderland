@@ -34,6 +34,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
+    public float damageReductionMultiplier = 1f;
 
 
     private void Awake()
@@ -166,7 +167,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         if (damage <= 0) return;
         }
         if (isInvincible) return;
-
+        damage *= damageReductionMultiplier;
         ShowDamageText(damage);
         hp -= damage;
         commonUI.SetCurrentHp(hp);
