@@ -41,6 +41,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     [HideInInspector]
     public AudioManager audioManager;
 
+    // Insert By Trung 30.06.2025
+    private float characterBaseArmor = 10f;
 
     private void Awake()
     {
@@ -99,13 +101,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         if (collision.tag == COIN_TAG)
         {
-            audioManager.PlayCoinSound();
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
             // Xu ly add them playprefabs
         }
         if (collision.tag == EXP_TAG)
         {
-            audioManager.PlayCoinSound();
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
             commonUI.AddExp(30f);
         }
@@ -171,26 +173,26 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         if (skill1 != null)
         {
             damage = skill1.OnAbsorbDamage(damage);
-        // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
-        if (damage <= 0) return;
+            // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+            if (damage <= 0) return;
         }
         if (isInvincible) return;
-        damage *= damageReductionMultiplier;
-        ShowDamageText(damage);
-        hp -= damage;
+        float toalDamageTaken = damage - damage * (characterBaseArmor / 100);
+        hp -= toalDamageTaken;
+        ShowDamageText(toalDamageTaken);
         commonUI.SetCurrentHp(hp);
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            audioManager.PlayGameOverSound();
-            if ( this is Warrior && !CanDie()) return;
+            audioManager?.PlayGameOverSound();
+            if (this is Warrior && !CanDie()) return;
             else
             {
                 AllowDeath();
-                 Destroy(gameObject);
+                Destroy(gameObject);
                 Time.timeScale = 0f;
             }
-           
+
         }
         animator.SetBool("isHit", true);
         Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
@@ -242,6 +244,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         isInvincible = false;
     }
 
+    public float GetCharacterBaseArmor()
+    {
+        return this.characterBaseArmor;
+    }
+    public void SetCharacterBaseArmor(float newCharacterBaseArmor)
+    {
+        this.characterBaseArmor = newCharacterBaseArmor;
+    }
 
 
     public abstract void Attack();

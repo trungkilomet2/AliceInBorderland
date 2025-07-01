@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: BookData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Book II
   icon: {fileID: 54252980, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 918a268cddcb2fe4ba99ddc24ce7c34c, type: 2}

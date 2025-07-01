@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-        audioManager.PlayClickOptionSound();
+        audioManager?.PlayClickOptionSound();
         StartCoroutine(LoadSceneAfterDelay(1f));
     }
 
@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        audioManager.PlayClickOptionSound();
+        audioManager?.PlayClickOptionSound();
         Application.Quit();
     }
 }

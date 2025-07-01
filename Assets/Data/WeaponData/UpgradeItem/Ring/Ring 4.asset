@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: Ring 4
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 3
   Name: Bright Ring
   icon: {fileID: -660375032, guid: 46e117994a027c84584c8ad2e70f4b47, type: 3}
+  weaponData: {fileID: 0}
