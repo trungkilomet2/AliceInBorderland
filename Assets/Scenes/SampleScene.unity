@@ -5623,6 +5623,7 @@ MonoBehaviour:
   effectAudioSource: {fileID: 1092075783}
   backgroundClip: {fileID: 8300000, guid: 18624e9ad05df2144a8954eb32bfc5a8, type: 3}
   coinClip: {fileID: 8300000, guid: 2ade6374d2c9b5d40b92b50e4779658e, type: 3}
+  clickOptionClip: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
   clickItemClip: {fileID: 8300000, guid: bb19794b24e9f314180e6d98b42b2051, type: 3}
   gameoverClip: {fileID: 8300000, guid: 96c54b358d52b1841ac3c8e4158f5bea, type: 3}
   victoryClip: {fileID: 8300000, guid: 8aaf779f526f24543b7313c577e34572, type: 3}

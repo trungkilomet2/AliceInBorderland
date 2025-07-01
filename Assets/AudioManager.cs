@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioClip backgroundClip;
     [SerializeField] private AudioClip coinClip;
+    
     [SerializeField] private AudioClip clickItemClip;
     [SerializeField] private AudioClip gameoverClip;
     [SerializeField] private AudioClip victoryClip;
