@@ -9,59 +9,63 @@ public class SumSkill2 : SkillBase
     public int projectileCount = 7;
     public float radius = 4f;
     public float duration = 10f;
-    public float cooldown = 15f;
-    
 
-    [Header("Cooldown UI")]
-    public SkillCooldownUI skill2UI; 
-
-    private bool skillActive = false;
-    private float cooldownTimer = 0f;
-
+    // Danh sách để quản lý các projectile đang active
     private List<GameObject> activeProjectiles = new List<GameObject>();
 
-    void Update()
+    // Gán các thuộc tính kế thừa (gán đúng nút/phím & loại)
+    public override void Awake()
     {
-        // Cooldown logic
-        if (cooldownTimer > 0)
-            cooldownTimer -= Time.deltaTime;
+        base.Awake();
+        skillNum = SkillNum.Skill2;            // Kích hoạt phím 2
+        skillType = SkillType.Active;           // Chủ động
+        skillName = "SumSkill2 - Vòng đạn";     // Tên
+        cooldown = 15f;
+        skillRange = radius;                    // Có thể tùy chỉnh
+        skillWidth = 2f;
+        skillDuration = duration;
+        skillDamage = 10f;                      // Nếu có damage riêng, thay tại đây
+    }
 
-        // Skill activation
-        if (!skillActive && cooldownTimer <= 0f && IsSkill2Pressed())
+    public override void Update()
+    {
+        base.Update();
+        // Không cần xử lý gì thêm, hệ thống base đã xử lý cooldown và trigger
+    }
+
+    public override void HandleSkillInput()
+    {
+        base.HandleSkillInput();
+        // Không cần xử lý gì thêm, hệ thống base đã xử lý phím
+    }
+
+    // Hàm Activate được hệ thống gọi khi xác nhận dùng skill (bấm phím & click chuột trái)
+    protected override void Activate()
+    {
+        // Lấy vị trí triển khai skill theo chỉ thị chuột (vòng tròn)
+        Vector3 castPos = transform.position;
+        if (indicatorInstance != null)
         {
-            ActivateSkill();
+            castPos = indicatorInstance.transform.position;
         }
-    }
 
-    bool IsSkill2Pressed()
-    {
-        return Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2);
-    }
-
-    void ActivateSkill()
-    {
-        skillActive = true;
-        cooldownTimer = cooldown;
-
-        // Trigger cooldown UI
-        skill2UI?.TriggerCooldown(cooldown);
+        activeProjectiles.Clear();
 
         for (int i = 0; i < projectileCount; i++)
         {
             float angle = i * Mathf.PI * 2 / projectileCount;
             Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
 
-            GameObject proj = Instantiate(ProjectileSkill2, transform.position + offset, Quaternion.identity);
+            GameObject proj = Instantiate(ProjectileSkill2, castPos + offset, Quaternion.identity);
 
-            // Ignore collision with self
+            // Ignore va chạm với player
             Collider2D projCol = proj.GetComponent<Collider2D>();
             Collider2D playerCol = GetComponent<Collider2D>();
             if (projCol != null && playerCol != null)
             {
                 Physics2D.IgnoreCollision(projCol, playerCol);
             }
-
-            // Ignore collision with other projectiles of this skill
+            // Ignore va chạm với các projectile khác cùng skill
             foreach (var existing in activeProjectiles)
             {
                 Collider2D c1 = existing.GetComponent<Collider2D>();
@@ -71,22 +75,26 @@ public class SumSkill2 : SkillBase
                 }
             }
 
-            // Gọi hàm khởi tạo nếu có
+            // Khởi tạo projectile (nếu có logic riêng)
             ProjectileSkill2 projScript = proj.GetComponent<ProjectileSkill2>();
             if (projScript != null)
             {
                 projScript.Initialize(this.transform, angle, radius);
+                // Nếu có damage kế thừa
+                if (projScript.GetType().GetProperty("damage") != null)
+                    projScript.damage = skillDamage;
             }
 
             activeProjectiles.Add(proj);
         }
 
+        // Kết thúc skill sau duration
         StartCoroutine(EndSkillAfterDuration());
     }
 
     IEnumerator EndSkillAfterDuration()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(skillDuration);
 
         foreach (var proj in activeProjectiles)
         {
@@ -94,6 +102,5 @@ public class SumSkill2 : SkillBase
         }
 
         activeProjectiles.Clear();
-        skillActive = false;
     }
 }

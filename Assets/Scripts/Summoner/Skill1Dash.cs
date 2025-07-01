@@ -1,65 +1,103 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class Skill1Dash : SkillBase
 {
-    public float dashForce = 15f;
-    public float dashDuration = 0.2f;
-    public float dashCooldown = 4f;
+    public float dashSpeed = 20f;
+    public float dashDistance = 7f;
 
-    private Rigidbody2D rb;
     private bool isDashing = false;
-    private float cooldownTimer = 0f;
-
-    public SkillCooldownUI skill1UI;
-
-    private Vector2 lastMoveDir;
+    private Vector3 dashTarget;
+    private Vector2 dashDirection;
+    private Animator animator;
 
     [Header("Ghost Effect")]
     public GhostImage ghostEffect;
 
-    void Start()
+    public override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        base.Awake();
+        skillNum = SkillNum.Skill1;
+        skillType = SkillType.Active;
+        indicatorType = IndicatorType.Arrow;
+        skillName = "Dash";
+        cooldown = 4f;
+        skillRange = dashDistance;
+        skillWidth = 1f;
+        skillDuration = dashDistance / dashSpeed;
+        skillDamage = 0f;
     }
 
-    void Update()
+    public override void Update()
     {
-        if (cooldownTimer > 0f)
-            cooldownTimer -= Time.deltaTime;
+        base.Update();
 
-
-        // Lưu hướng di chuyển cuối cùng
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (input != Vector2.zero)
+        if (isDashing)
         {
-            lastMoveDir = input.normalized;
-        }
-
-        // Kích hoạt dash
-        if ((Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) && !isDashing && cooldownTimer <= 0f)
-        {
-            StartCoroutine(Dash());
-            skill1UI.TriggerCooldown(dashCooldown);
+            transform.position = Vector3.MoveTowards(transform.position, dashTarget, dashSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, dashTarget) < 0.1f)
+            {
+                isDashing = false;
+            }
         }
     }
 
-    IEnumerator Dash()
+    protected override void Activate()
     {
-        isDashing = true;
-        cooldownTimer = dashCooldown;
 
         if (ghostEffect != null)
         {
-            StartCoroutine(ghostEffect.SpawnGhosts(dashDuration)); // Gọi hiệu ứng ghost song song
+            StartCoroutine(ghostEffect.SpawnGhosts(skillDuration));
+        }
+        if (isDashing) return;
+
+        // Lấy hướng dash từ indicator nếu có, ngược lại lấy hướng chuột (PC)
+        Vector2 dashDir = Vector2.right;
+
+        if (indicatorInstance != null)
+        {
+            // Có thể dùng hướng (indicatorInstance.position - player.position) nếu indicator là object di chuyển
+            // Hoặc transform.right nếu indicator chỉ là mũi tên quay quanh player
+            dashDir = (indicatorInstance.transform.position - transform.position).normalized;
+            if (dashDir.sqrMagnitude < 0.01f)
+                dashDir = indicatorInstance.transform.right.normalized;
+        }
+        else
+        {
+            // Nếu không có indicator, lấy hướng chuột (PC)
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorld.z = 0;
+            dashDir = (mouseWorld - transform.position).normalized;
         }
 
-        rb.velocity = lastMoveDir * dashForce;
+        dashDirection = dashDir;
+        dashTarget = transform.position + (Vector3)(dashDirection * skillRange);
 
-        yield return new WaitForSeconds(dashDuration);
+        // Play dash animation nếu có
+        if (animator != null)
+            animator.SetTrigger("roll");
 
-        rb.velocity = Vector2.zero; // Reset tốc độ sau khi dash
+        isDashing = true;
+    }
 
-        isDashing = false;
+    private void OnEnable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision += StopDash;
+    }
+
+    private void OnDisable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision -= StopDash;
+    }
+
+    private void StopDash()
+    {
+        if (isDashing)
+        {
+            Debug.Log("Va chạm Block, dừng dash.");
+            isDashing = false;
+            CancelSkill();
+        }
     }
 }

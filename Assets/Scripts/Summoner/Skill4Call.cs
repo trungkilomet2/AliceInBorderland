@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill4Call : SkillBase
+public class Skill4Call : MonoBehaviour
 {
     private Transform player;
     private Vector2 shootDir;

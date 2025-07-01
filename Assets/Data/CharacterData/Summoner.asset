@@ -15,13 +15,11 @@ MonoBehaviour:
   characterName: Summoner
   characterSprite: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
   characterPortrait: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
-  description: An experienced summoner, gained through a time of adventurous exploration
-    with an intense desire to conquer the heights of power, is doing their utmost
-    to save their loved ones from the cruel threats posed by outsiders who abruptly
-    endanger the existence of the world in which they reside.
-  health: 100
+  description: A master of Summon, the Summoner Will Summon and Use the power of
+    ancient creature of the world  devastate enemies from afar.
+  health: 200
   speed: 3.5
-  damage: 15
+  damage: 20
   weaponName: Basic Weapon
   isLocked: 0
-  characterPrefab: {fileID: 4306024334269457102, guid: 56c8e7a0707690740a9d633236f3e947, type: 3}
+  characterPrefab: {fileID: 1672598209208808701, guid: 56c8e7a0707690740a9d633236f3e947, type: 3}
