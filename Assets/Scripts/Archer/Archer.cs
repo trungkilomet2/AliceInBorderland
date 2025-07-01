@@ -24,11 +24,15 @@ public class Archer : CharacterCommonBehavior
         }
     }
     // Insert By Trung
-    
+
 
 
     public override void Attack()
     {
+        if (attackSound != null && audioManager != null)
+        {
+            audioManager.PlaySoundClip(attackSound);
+        }
         _timeBtwArrow = timeBtwArrow;
 
         // Lấy vị trí chuột trên màn hình và chuyển sang tọa độ thế giới
