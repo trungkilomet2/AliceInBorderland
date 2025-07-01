@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillJ : MonoBehaviour
+public class SkillJ : SkillBase
 {
     [Header("Dragon Skill Settings")]
     public GameObject DraSkillJ;

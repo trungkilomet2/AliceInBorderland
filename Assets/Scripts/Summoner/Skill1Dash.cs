@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Skill1Dash : MonoBehaviour
+public class Skill1Dash : SkillBase
 {
     public float dashForce = 15f;
     public float dashDuration = 0.2f;

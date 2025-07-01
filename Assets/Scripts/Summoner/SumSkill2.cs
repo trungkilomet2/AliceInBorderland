@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SumSkill2 : MonoBehaviour
+public class SumSkill2 : SkillBase
 {
     [Header("Skill 2 Settings")]
     public GameObject ProjectileSkill2;
