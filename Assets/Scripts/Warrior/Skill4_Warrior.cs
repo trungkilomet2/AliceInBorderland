@@ -23,7 +23,6 @@ public class Skill4_Warrior : SkillBase
     private Enemy enemy;
     private bool isCharacterInvincible = false;
     public float invincibleDuration = 3f;
-    private float InvincibleCd = 3f;
     private float CharacterInvincibleEndTime = 0f;
 
     public override void Awake()

@@ -303,11 +303,11 @@ MonoBehaviour:
   cooldown: 5
   skillRange: 0
   skillWidth: 0
-  skillDuration: 5
+  skillDuration: 0
   skillDamage: 0
   baseWarrior: {fileID: 482234283679444079}
   transformedWarriorPrefab: {fileID: 7627623117591143965, guid: 8ecc399e4b0c9b1499c074dfce1ad096, type: 3}
-  transformDuration: 5
+  transformDuration: 0
   cooldownTime: 5
   sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
 --- !u!1 &3781837170630933094

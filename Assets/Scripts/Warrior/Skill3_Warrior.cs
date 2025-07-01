@@ -26,13 +26,12 @@ public class Skill3_Warrior : SkillBase
         {
             return;
         }
-        else
-        {
-            // nếu đang cooldown → không cho dùng
-        if (Time.time < lastUsedTime + cooldownTime) return;
 
-        // bắt đầu cooldown
-        lastUsedTime = Time.time;
+        if (Time.time < sharedWarriorState.skill3LastUsedTime + cooldownTime)
+            return;
+
+        sharedWarriorState.skill3LastUsedTime = Time.time;
+        // nếu đang cooldown → không cho dùng
         if (isTransformed || transformedWarriorPrefab == null || baseWarrior == null) return;
 
         // Spawn nhân vật mới
@@ -76,11 +75,9 @@ public class Skill3_Warrior : SkillBase
         Destroy(baseWarrior);
         transformEndTime = Time.time + transformDuration;
         isTransformed = true;
-        }
-        
-
-
     }
+
+
 
     void Update()
     {
@@ -97,4 +94,6 @@ public class Skill3_Warrior : SkillBase
             isTransformed = false;
         }
     }
+
+
 }
