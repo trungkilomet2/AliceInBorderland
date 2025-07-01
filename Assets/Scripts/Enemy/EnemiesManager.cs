@@ -72,6 +72,8 @@ public class EnemiesManager : MonoBehaviour
             enemyComponent.SetTarget(player);
             enemyComponent.SetStats(data.stats);
             enemyComponent.UpdateStatsForProgress(stageProgress.Progress);
+
+            enemyComponent.SetEnemyData(data);
         }
         newEnemy.transform.parent = transform;
 
