@@ -271,9 +271,9 @@ MonoBehaviour:
   cooldown: 2
   skillRange: 10
   skillWidth: 1
-  skillDuration: 2
+  skillDuration: 10
   skillDamage: 50
-  skillSound: {fileID: 0}
+  skillSound: {fileID: 8300000, guid: e755b48b88de9cb49b5dc514ff381c47, type: 3}
   explosionEffectPrefab: {fileID: 4530650046537831044, guid: bc317b6340fa544498c9e8e56713ac91, type: 3}
   numberOfExplosions: 5
   randomSpawnRadius: 10
@@ -301,7 +301,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 10
-  skillSound: {fileID: 8300000, guid: b117a499ed8e8174ebc57237e100eefb, type: 3}
+  skillSound: {fileID: 8300000, guid: 4067a3a5e951c4d49b3234bede4f75a3, type: 3}
   laserAnimationPrefab: {fileID: 5391227790905381595, guid: 9ccd10981372d8c4baf4aadabdc3a4b9, type: 3}
   laserLength: 20
   laserVisualWidth: 0.5
@@ -354,7 +354,4 @@ MonoBehaviour:
   skillDuration: 2
   skillDamage: 10
   skillSound: {fileID: 8300000, guid: bd2607266c4a3534fb4a081cfd6739b4, type: 3}
-  teleportDistance: 10
-  obstaclesLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  rollSpeed: 40
