@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Warp Skull
   animatedPrefab: {fileID: 1980643258048920060, guid: f5f33167901592f4da92a483768c9ea3, type: 3}
   stats:
-    hp: 150
-    damage: 30
+    hp: 20
+    damage: 7
     speed: 1
   isRanged: 1
   bulletPrefab: {fileID: 3237083912806007981, guid: 8b3d776e064f36c41984d98de16958bc, type: 3}

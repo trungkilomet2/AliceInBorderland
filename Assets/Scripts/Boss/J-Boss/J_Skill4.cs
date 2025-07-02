@@ -8,16 +8,19 @@ public class J_Skill4 : BossSkillBase
     public float timeRelease = 5f;
     protected override void Activate()
     {
-        float range = 20f;
-        Vector3 randomPosition = new Vector3(
-            Random.Range(-range, range),
-            Random.Range(-range, range),
+        float offsetRange = 3f;
+        Vector3 randomOffset = new Vector3(
+            Random.Range(-offsetRange, offsetRange),
+            Random.Range(-offsetRange, offsetRange),
             0f
         );
 
+        Vector3 spawnPosition = transform.position + randomOffset;
+
         J_Boss bossPrefab = J_Boss.GetComponent<J_Boss>();
-        J_Boss bossSpawned = Instantiate(bossPrefab, randomPosition, Quaternion.identity);
+        J_Boss bossSpawned = Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
         bossSpawned.SetTarget(target);
         bossSpawned.isClone = true;
     }
+
 }

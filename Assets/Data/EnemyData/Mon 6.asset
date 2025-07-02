@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Clawed Abomination
   animatedPrefab: {fileID: 3125605313794594635, guid: daa1a324f2eaabf4c87a357f79435292, type: 3}
   stats:
-    hp: 300
-    damage: 30
+    hp: 25
+    damage: 8
     speed: 5
   isRanged: 0
   bulletPrefab: {fileID: 0}

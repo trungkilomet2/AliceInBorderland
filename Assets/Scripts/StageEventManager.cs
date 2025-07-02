@@ -1,58 +1,110 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StageEventManager : MonoBehaviour
 {
-    [SerializeField] StageData stageData;
-    [SerializeField] EnemiesManager enemiesManager;
-    [SerializeField] float spawnInterval = 2f;
-    [SerializeField] float stageDuration = 120f; // mỗi stage 3 phút
+    [SerializeField] private StageData stageData;
+    [SerializeField] private EnemiesManager enemiesManager;
+    [SerializeField] private float stageDuration = 120f;
+    [SerializeField] private float spawnInterval = 2f;
 
-    CommonUI commonUI;
-    int currentStageIndex = -1;
-    float stageStartTime;
-    float nextSpawnTime;
+    private CommonUI commonUI;
+    private int currentStageIndex = -1;
+    private float stageStartTime;
+    private float nextSpawnTime;
+    private float totalGameTime = 0f;
 
-    StageEvent currentStage;
-    Dictionary<EnemyData, int> currentEnemyCounts = new Dictionary<EnemyData, int>();
+    private StageEventBase currentStage;
+    private Dictionary<EnemyData, int> currentEnemyCounts = new Dictionary<EnemyData, int>();
+    private bool bossSpawned = false;
+
+    private GameObject player;
+
+    private bool isBossStage = false;
+    private bool bossDefeated = false;
 
     private void Awake()
     {
         commonUI = FindObjectOfType<CommonUI>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        // Bắt đầu stage mới nếu chưa có hoặc hết thời gian
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            if (player == null) return;
+        }
+
+        totalGameTime += Time.deltaTime;
+
+        // Thay đổi spawnInterval theo thời gian chơi
+        if (totalGameTime >= 540f)
+            spawnInterval = 0.2f;
+        else if (totalGameTime >= 360f)
+            spawnInterval = 0.5f;
+        else if (totalGameTime >= 180f)
+            spawnInterval = 1f;
+        else
+            spawnInterval = 2f;
+
+        // Nếu boss đã bị diệt thì sang stage ngay
+        if (isBossStage && bossDefeated)
+        {
+            AdvanceToNextStage();
+            return;
+        }
+
+        // Nếu stage hết thời gian thì chuyển stage
         if (currentStageIndex == -1 || Time.time - stageStartTime >= stageDuration)
         {
-            currentStageIndex++;
-            if (currentStageIndex >= stageData.stageEvents.Count)
-            {
-                Debug.Log("Tất cả các stage đã hoàn thành.");
-                enabled = false;
-                return;
-            }
-
-            StartNewStage();
+            AdvanceToNextStage();
+            return;
         }
 
         if (Time.time >= nextSpawnTime)
         {
-            foreach (var enemyConfig in currentStage.enemiesToSpawn)
+            if (currentStage is StageEvent enemyStage)
             {
-                if (!currentEnemyCounts.ContainsKey(enemyConfig.enemyData))
-                    currentEnemyCounts[enemyConfig.enemyData] = 0;
-
-                if (currentEnemyCounts[enemyConfig.enemyData] < enemyConfig.maxCount)
+                foreach (var enemyConfig in enemyStage.enemiesToSpawn)
                 {
-                    enemiesManager.SpawnEnemy(enemyConfig.enemyData);
-                    currentEnemyCounts[enemyConfig.enemyData]++;
+                    if (!currentEnemyCounts.ContainsKey(enemyConfig.enemyData))
+                        currentEnemyCounts[enemyConfig.enemyData] = 0;
+
+                    if (currentEnemyCounts[enemyConfig.enemyData] < enemyConfig.maxCount)
+                    {
+                        enemiesManager.SpawnEnemy(enemyConfig.enemyData);
+                        currentEnemyCounts[enemyConfig.enemyData]++;
+                    }
+                }
+
+                nextSpawnTime = Time.time + spawnInterval;
+            }
+            else if (currentStage is BossStageEvent bossStage)
+            {
+                if (!bossSpawned && bossStage.bossPrefab != null)
+                {
+                    enemiesManager.SpawnBoss(bossStage.bossPrefab);
+                    bossSpawned = true;
+                    Debug.Log("👑 Boss đã xuất hiện!");
                 }
             }
-            nextSpawnTime = Time.time + spawnInterval;
         }
+    }
+
+    private void AdvanceToNextStage()
+    {
+        currentStageIndex++;
+        if (currentStageIndex >= stageData.stageEvents.Count)
+        {
+            Debug.Log("🎉 Tất cả các stage đã hoàn thành.");
+            enabled = false;
+            return;
+        }
+
+        StartNewStage();
     }
 
     private void StartNewStage()
@@ -60,16 +112,29 @@ public class StageEventManager : MonoBehaviour
         currentStage = stageData.stageEvents[currentStageIndex];
         stageStartTime = Time.time;
         nextSpawnTime = Time.time + spawnInterval;
-
+        bossSpawned = false;
+        bossDefeated = false;
         currentEnemyCounts.Clear();
 
-        Debug.Log($"🎯 Bắt đầu Stage {currentStageIndex + 1}: {currentStage.message}");
+        isBossStage = currentStage is BossStageEvent;
+
+        Debug.Log($"🚩 Bắt đầu Stage {currentStageIndex + 1}: {currentStage.message}");
     }
 
     public void OnEnemyDeath(EnemyData data)
     {
         if (currentEnemyCounts.ContainsKey(data))
+        {
             currentEnemyCounts[data]--;
+        }
+    }
+
+    internal void OnBossDeath()
+    {
+        if (isBossStage)
+        {
+            bossDefeated = true;
+            Debug.Log("✅ Boss đã bị tiêu diệt!");
+        }
     }
 }
-

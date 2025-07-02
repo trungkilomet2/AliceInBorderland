@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Crimson Slaad
   animatedPrefab: {fileID: 7850797873821489654, guid: fb420de29b78eeb4b8b3121b50ffeabf, type: 3}
   stats:
-    hp: 400
-    damage: 40
+    hp: 50
+    damage: 10
     speed: 6
   isRanged: 0
   bulletPrefab: {fileID: 0}

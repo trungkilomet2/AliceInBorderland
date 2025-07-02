@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Vector3 spawnPosition = spawnPoint != null ? spawnPoint.position : Vector3.zero;
-        Quaternion spawnRotation = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
+        Vector3 spawnPosition = new Vector3(-2.45f, -17.15f, 0f);
+        Quaternion spawnRotation = Quaternion.identity;
 
         GameObject spawnedPlayer = Instantiate(selectedCharacter.characterPrefab, spawnPosition, spawnRotation);
 

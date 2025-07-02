@@ -366640,8 +366640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be275eb7b1890b940a2b4397a9c81fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressTimeRate: 30
-  progressPerSplit: 0.2
+  progressTimeRate: 10
+  progressPerSplit: 0.5
 --- !u!1 &1870996054
 GameObject:
   m_ObjectHideFlags: 0

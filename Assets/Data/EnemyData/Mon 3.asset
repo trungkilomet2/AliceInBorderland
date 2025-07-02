@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Floating Eye
   animatedPrefab: {fileID: 2515778605925962419, guid: 7937355e6e4d3d043a5017016b314231, type: 3}
   stats:
-    hp: 100
-    damage: 25
+    hp: 7
+    damage: 5
     speed: 1
   isRanged: 1
   bulletPrefab: {fileID: 3237083912806007981, guid: a53211d0c34c5234a8a5a9eb2ed6e886, type: 3}
