@@ -123,6 +123,10 @@ public class Mage : CharacterCommonBehavior
         Rigidbody2D spellRb = newSpell.GetComponent<Rigidbody2D>();
         if (spellRb != null)
         {
+            if (attackSound != null && audioManager != null)
+            {
+                audioManager.PlaySoundClip(attackSound);
+            }
             spellRb.AddForce(direction * basicSpellForce, ForceMode2D.Impulse);
         }
         else
@@ -148,6 +152,7 @@ public class Mage : CharacterCommonBehavior
         Rigidbody2D chargedSpellRb = newChargedSpell.GetComponent<Rigidbody2D>();
         if (chargedSpellRb != null)
         {
+
             chargedSpellRb.AddForce(direction * chargedSpellForce, ForceMode2D.Impulse);
         }
         else
@@ -182,6 +187,10 @@ public class Mage : CharacterCommonBehavior
             Rigidbody2D shotgunSpellRb = newShotgunSpell.GetComponent<Rigidbody2D>();
             if (shotgunSpellRb != null)
             {
+                if (attackSound != null && audioManager != null)
+                {
+                    audioManager.PlaySoundClip(attackSound);
+                }
                 shotgunSpellRb.AddForce(direction * shotgunSpellForce, ForceMode2D.Impulse);
             }
             else

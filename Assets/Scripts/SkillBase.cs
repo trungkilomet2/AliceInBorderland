@@ -270,6 +270,10 @@ public abstract class SkillBase : MonoBehaviour
 
     }
 
-    
+    public  AudioManager GetAudio()
+    {
+        return audioManager;
+    }
+
 
 }

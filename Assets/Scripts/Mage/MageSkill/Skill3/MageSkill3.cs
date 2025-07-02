@@ -23,6 +23,11 @@ public class MageSkill3 : SkillBase
     protected override void Activate()
     {
         StartCoroutine(SummonRandomExplosions());
+
+        if (skillSound != null && GetAudio() != null)
+        {
+            GetAudio()?.PlaySoundClip(skillSound);
+        }
     }
 
     private IEnumerator SummonRandomExplosions()
