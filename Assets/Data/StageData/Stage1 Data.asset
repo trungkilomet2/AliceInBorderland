@@ -13,15 +13,33 @@ MonoBehaviour:
   m_Name: Stage1 Data
   m_EditorClassIdentifier: 
   stageEvents:
-  - time: 5
-    message: 
-    enemyToSpawn: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
-    count: 3
-  - time: 10
-    message: 
-    enemyToSpawn: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
-    count: 10
-  - time: 15
-    message: 
-    enemyToSpawn: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
-    count: 25
+  - message: Stage 1
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+  - message: Stage 2
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
+      maxCount: 50
+  - message: Stage 3
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: b439e8b5eaadc13479b80c737cd03c9f, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: f7883897e707f5a4996ed67e15702430, type: 2}
+      maxCount: 50
+  - message: Stage 4
+    enemiesToSpawn: []
+  - message: Stage 5
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: 54098c0ac4cd47148a2b1802e39ac01c, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: f7883897e707f5a4996ed67e15702430, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: b439e8b5eaadc13479b80c737cd03c9f, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
