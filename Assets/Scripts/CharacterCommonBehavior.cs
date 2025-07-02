@@ -45,6 +45,10 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     // Insert By Trung 30.06.2025
     private float characterBaseArmor = 10f;
 
+    [HideInInspector] 
+    public bool isDashing = false; 
+
+
     private void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
@@ -124,13 +128,40 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                 }
             }
         }
-        // Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
-        if (collision.CompareTag(BLOCK_TAG))
-        {
-            Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
+        //// Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
+        //if (collision.CompareTag(BLOCK_TAG))
+        //{
+        //    Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
 
-            transform.position = lastSafePosition;
-            OnBlockedCollision?.Invoke();
+        //    //transform.position = lastSafePosition;
+        //    OnBlockedCollision?.Invoke();
+        //}
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(BLOCK_TAG))
+        {
+            Debug.Log("==> Đã va chạm Block (Collision).");
+
+            // THAY ĐỔI MỚI: CHỈ QUAY LẠI VỊ TRÍ AN TOÀN NẾU ĐANG DASHING
+            if (isDashing)
+            {
+                Debug.Log("Dash vào Block, quay lại vị trí cũ.");
+                transform.position = lastSafePosition;
+                OnBlockedCollision?.Invoke(); // Gọi event để MageSkill4 dừng dash
+                // Đảm bảo nhân vật dừng hẳn sau khi dịch chuyển tức thời
+                if (rb != null)
+                {
+                    rb.velocity = Vector2.zero;
+                }
+            }
+            else
+            {
+                // Nếu không đang dash, để va chạm vật lý tự nhiên xử lý.
+                // Nhân vật sẽ bị chặn lại bởi tường.
+                Debug.Log("Va chạm Block khi không dash. Chỉ chặn lại.");
+            }
         }
     }
 
@@ -138,19 +169,19 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+        rb.velocity = moveInput.normalized * moveSpeed;
 
         if (moveInput.x != 0)
         {
             onMovingCharacterHorizontal = moveInput.x;
-            if (moveInput.x != 0)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x = moveInput.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-                transform.localScale = scale;
-            }
+
+            Vector3 scale = transform.localScale;
+            scale.x = moveInput.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
+
 
     public float GetOnMovingCharacterHorizontal()
     {

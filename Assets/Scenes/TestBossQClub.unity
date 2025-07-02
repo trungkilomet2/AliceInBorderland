@@ -61895,6 +61895,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017872490}
   m_CullTransparentMesh: 1
+--- !u!114 &1018573190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3121325237292797089, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+  m_PrefabInstance: {fileID: 1474571781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe94d67e99fad264aaa47d8254cb9a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023356705
 GameObject:
   m_ObjectHideFlags: 0
@@ -177988,6 +177999,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453846492}
   m_CullTransparentMesh: 1
+--- !u!1001 &1474571781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2288887050056122945, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_Name
+      value: Q_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365030138149568990, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586431901779446674, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: hp
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586431901779446674, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586431901779446674, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: bossSkillBases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586431901779446674, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: bossSkillBases.Array.data[0]
+      value: 
+      objectReference: {fileID: 1018573190}
+    - target: {fileID: 8578942576990025184, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578942576990025184, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
 --- !u!1 &1487537354
 GameObject:
   m_ObjectHideFlags: 0
@@ -398628,8 +398720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
   enemiesManager: {fileID: 1714175506}
-  spawnInterval: 2
   stageDuration: 120
+  spawnInterval: 2
 --- !u!114 &1813645151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399873,3 +399965,4 @@ SceneRoots:
   - {fileID: 1764865728681800766}
   - {fileID: 337635497}
   - {fileID: 1185362443}
+  - {fileID: 1474571781}
