@@ -78,7 +78,6 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        Move();
         UpdateAnimation();
         commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
 
@@ -101,6 +100,12 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        Move(); // GỌI Ở ĐÂY mới chuẩn vật lý
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -167,10 +172,12 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     protected virtual void Move()
     {
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = moveInput.normalized * moveSpeed;
+        Vector2 targetPosition = rb.position + (Vector2)(moveInput.normalized * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(targetPosition);
+
 
         if (moveInput.x != 0)
         {
