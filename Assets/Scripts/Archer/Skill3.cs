@@ -27,7 +27,12 @@ public class Skill3 : SkillBase
             if (time >= skillDuration)
             {
                 archer.isSkill3Active = false;
-                time = 0f; 
+                time = 0f;
+                if (effectInstance != null)
+                {
+                    Destroy(effectInstance);
+                    effectInstance = null;
+                }
             }
             
         }
