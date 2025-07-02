@@ -4251,6 +4251,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df161eeba26a2134cb31591b3281dad5, type: 2}
   - {fileID: 11400000, guid: ae51389a44c34c74a92c7b8e1ca9a802, type: 2}
   acquireUpdate: []
+  acquireItemUpdate: []
 --- !u!114 &337635494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36253,6 +36254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1419719742341763180, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6e1288e383e4c64c845b9c92e75dc86, type: 3}
     - target: {fileID: 3542306459489529892, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.057354
@@ -36297,10 +36302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
-    - target: {fileID: 5849900501808394066, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
-      propertyPath: attackSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b0dbf3cab9d3c6646901b5f3c8061e6f, type: 3}
+    - target: {fileID: 8285860307898521780, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
+      propertyPath: cooldown
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -257553,6 +257558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
   enemiesManager: {fileID: 1714175506}
+  stageDuration: 120
+  spawnInterval: 2
 --- !u!114 &1813645151
 MonoBehaviour:
   m_ObjectHideFlags: 0
