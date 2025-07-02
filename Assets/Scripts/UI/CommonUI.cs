@@ -67,28 +67,60 @@ public class CommonUI : MonoBehaviour
     void UpdateWeaponCharacterByCharacterSelecting()
     {
         string characterName = PlayerPrefs.GetString("SelectedCharacter");
-        StringBuilder sources = new StringBuilder();
-        sources.Append("Data/Characters/");
+        StringBuilder sourcesSkillUpdate = new StringBuilder();
+        sourcesSkillUpdate.Append("Data/Characters/");
+
+        StringBuilder sourceSkillUpdateImage = new StringBuilder();
+        sourceSkillUpdateImage.Append("SkillUI/");
 
         if (characterName == CharacterName.Archer.ToString())
         {
-            sources.Append("BowData");
+            sourcesSkillUpdate.Append("BowData");
         }
         else if (characterName == CharacterName.Mage.ToString())
         {
-            sources.Append("BookData");
+            sourcesSkillUpdate.Append("BookData");
+            sourceSkillUpdateImage.Append("Mage/");
         }
         else if (characterName == CharacterName.Warrior.ToString())
         {
-            sources.Append("HarmerData");
+            sourcesSkillUpdate.Append("HarmerData");
         }
         else if (characterName == CharacterName.Summoner.ToString())
         {
-            sources.Append("StaffData");
+            sourcesSkillUpdate.Append("StaffData");
         }
-        UpdateData data = Resources.Load<UpdateData>(sources.ToString());
+        UpdateData data = Resources.Load<UpdateData>(sourcesSkillUpdate.ToString());
         upgradeData.Add(data);
 
+        LoadImageSkillByCharacterSelect(sourceSkillUpdateImage);
+
+    }
+
+    void LoadImageSkillByCharacterSelect(StringBuilder sourceSkillUI)
+    {
+        for (int i = 1; i <= 4; i++)
+        {
+            StringBuilder imageSource = new StringBuilder();
+            imageSource.Append(sourceSkillUI);
+            string SkillNaming = "Skill" + i;
+            Sprite skillNum = Resources.Load<Sprite>(imageSource.Append(SkillNaming).ToString());
+            string skillBorderObjectNumber = "SkillBorder" + i;
+            string skillImageNumber = "Skill" + i;
+            string skillImageSource = skillBorderObjectNumber + "/" + skillImageNumber;
+            Image imageSkill = GameObject.Find(skillImageSource).GetComponent<Image>();
+            imageSkill.gameObject.SetActive(true);
+            imageSkill.enabled = true;
+            imageSkill.sprite = skillNum;
+            GameObject borderObject;
+            DeactiveSkillBorderObject(out borderObject, skillBorderObjectNumber);
+        }
+    }
+
+    void DeactiveSkillBorderObject(out GameObject borderObject, string nameBorderObjectNumber)
+    {
+        borderObject = GameObject.Find(nameBorderObjectNumber);
+        borderObject.SetActive(false);
     }
 
     private void Update()
@@ -103,9 +135,6 @@ public class CommonUI : MonoBehaviour
             // Spawn Last Boss -- Joker
         }
         CountTimer();
-
-
-
     }
 
 
@@ -241,21 +270,25 @@ public class CommonUI : MonoBehaviour
         if (updateData.Name.Split(" ")[1].Equals("I"))
         {
             numberOfSkill = SkillNum.Skill1;
+            DisplaySkillUI(1);
         }
         else if (updateData.Name.Split(" ")[1].Equals("II"))
         {
             numberOfSkill = SkillNum.Skill2;
+            DisplaySkillUI(2);
         }
         else if (updateData.Name.Split(" ")[1].Equals("III"))
         {
             numberOfSkill = SkillNum.Skill3;
+            DisplaySkillUI(3);
+
         }
         else if (updateData.Name.Split(" ")[1].Equals("IV"))
         {
             numberOfSkill = SkillNum.Skill4;
+            DisplaySkillUI(4);
         }
 
-        Debug.Log(numberOfSkill);
         foreach (SkillBase skill in skillBase)
         {
             Debug.Log(numberOfSkill == skill.skillNum);
@@ -263,9 +296,6 @@ public class CommonUI : MonoBehaviour
             {
                 skill.UnlockSkillBySkillNum(numberOfSkill);
             }
-
-
-
         }
 
     }
@@ -347,5 +377,25 @@ public class CommonUI : MonoBehaviour
         }
 
     }
+
+    void DisplaySkillUI(int numberBorderSkill)
+    {
+        string numberSkillBorder = "SkillBorder" + numberBorderSkill;
+        Transform skillUI = GameObject.Find("SkillUI").transform;
+        Transform skillBorder = FindInactiveChild(skillUI, numberSkillBorder);
+        skillBorder.gameObject.SetActive(true);
+    }
+    Transform FindInactiveChild(Transform parent, string name)
+    {
+        foreach (Transform child in parent.GetComponentsInChildren<Transform>(true))
+        {
+            if (child.name == name)
+                return child;
+        }
+        return null;
+    }
+
+
+
 
 }
