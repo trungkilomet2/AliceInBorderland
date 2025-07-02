@@ -63,10 +63,22 @@ public abstract class EnemyBase : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            DropCoin();
-            DropEXP();
+            OnDeath();
         }
+    }
+
+    protected virtual void OnDeath()
+    {
+        // Gọi về StageEventManager nếu là boss
+        StageEventManager stageManager = FindObjectOfType<StageEventManager>();
+        if (stageManager != null)
+        {
+            stageManager.OnBossDeath();
+        }
+
+        DropCoin();
+        DropEXP();
+        Destroy(gameObject);
     }
     // insert by Trung
     public void DropCoin()

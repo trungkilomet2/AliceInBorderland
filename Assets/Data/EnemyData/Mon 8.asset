@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Fungal
   animatedPrefab: {fileID: 1615831202881230950, guid: 43365d2f8fa69c2488b79a50599f4c5f, type: 3}
   stats:
-    hp: 350
-    damage: 35
+    hp: 30
+    damage: 10
     speed: 5
   isRanged: 0
   bulletPrefab: {fileID: 0}

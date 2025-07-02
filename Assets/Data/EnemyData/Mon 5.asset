@@ -15,6 +15,9 @@ MonoBehaviour:
   Name: Foul Gouger
   animatedPrefab: {fileID: 5760537895192495692, guid: 4c5edf5151c297646807db04a01e52b2, type: 3}
   stats:
-    hp: 250
-    damage: 25
+    hp: 23
+    damage: 8
     speed: 5
+  isRanged: 0
+  bulletPrefab: {fileID: 0}
+  fireRate: 2

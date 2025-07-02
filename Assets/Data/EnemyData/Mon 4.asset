@@ -15,6 +15,9 @@ MonoBehaviour:
   Name: Grinning Gremlin
   animatedPrefab: {fileID: 6846812698658933890, guid: c8d244780d325dc4ca555c966b8e864d, type: 3}
   stats:
-    hp: 200
-    damage: 20
+    hp: 20
+    damage: 7
     speed: 4
+  isRanged: 0
+  bulletPrefab: {fileID: 0}
+  fireRate: 2
