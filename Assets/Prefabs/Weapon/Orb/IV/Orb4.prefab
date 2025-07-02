@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2318205764998659979}
   - component: {fileID: 2224886089462371562}
   - component: {fileID: 4293798235279454176}
-  - component: {fileID: 5362247422912475581}
   - component: {fileID: 7421507083170674319}
   - component: {fileID: 1163853585355469643}
   m_Layer: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1485700305
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1393376815, guid: 73ba0a4fd0cbdc244a2a186a4e9279f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,33 +124,6 @@ MonoBehaviour:
   damageOfOrb: 10
   pushForce: 20
   damageInterval: 1
---- !u!50 &5362247422912475581
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708653037654389179}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &7421507083170674319
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -274,7 +246,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 441590636, guid: 73ba0a4fd0cbdc244a2a186a4e9279f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -382,7 +354,6 @@ GameObject:
   - component: {fileID: 8457091796130635319}
   - component: {fileID: 7054687838646214155}
   - component: {fileID: 2846861062563625708}
-  - component: {fileID: 5551742058042381968}
   - component: {fileID: 8154639203706319989}
   - component: {fileID: 1985556752980380}
   m_Layer: 0
@@ -446,7 +417,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1694995200, guid: 73ba0a4fd0cbdc244a2a186a4e9279f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -515,33 +486,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!50 &5551742058042381968
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5500704726327195987}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &8154639203706319989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +524,6 @@ GameObject:
   - component: {fileID: 3439246207304839587}
   - component: {fileID: 3911840791086185140}
   - component: {fileID: 4076533756995858882}
-  - component: {fileID: 9196760836708546203}
   - component: {fileID: 760615582090883365}
   - component: {fileID: 8779792477659987827}
   - component: {fileID: 4871240244239986750}
@@ -645,7 +588,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 506597846, guid: 73ba0a4fd0cbdc244a2a186a4e9279f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -679,33 +622,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &9196760836708546203
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8119126066780419120}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &760615582090883365
 CircleCollider2D:
   m_ObjectHideFlags: 0

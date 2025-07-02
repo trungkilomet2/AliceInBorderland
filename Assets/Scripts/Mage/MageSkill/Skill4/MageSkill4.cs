@@ -10,10 +10,12 @@ public class MageSkill4 : SkillBase
     private Vector3 rollTarget;
     private Vector2 rollDirection;
     private Animator animator;
+    private CharacterCommonBehavior characterCommonBehavior; // THÊM MỚI: Tham chiếu đến CharacterCommonBehavior
 
     public override void Awake()
     {
         animator = GetComponent<Animator>();
+        characterCommonBehavior = GetComponent<CharacterCommonBehavior>(); // Lấy tham chiếu
         base.Awake();
     }
 
@@ -27,6 +29,11 @@ public class MageSkill4 : SkillBase
             if (Vector3.Distance(transform.position, rollTarget) < 0.1f)
             {
                 isRolling = false;
+                // THAY ĐỔI: Tắt isDashing khi dash kết thúc tự nhiên
+                if (characterCommonBehavior != null)
+                {
+                    characterCommonBehavior.isDashing = false;
+                }
             }
         }
     }
@@ -45,8 +52,12 @@ public class MageSkill4 : SkillBase
             animator.SetTrigger("roll");
 
         isRolling = true;
+        // THAY ĐỔI: Bật isDashing khi dash bắt đầu
+        if (characterCommonBehavior != null)
+        {
+            characterCommonBehavior.isDashing = true;
+        }
     }
-
 
     private void OnEnable()
     {
@@ -57,6 +68,7 @@ public class MageSkill4 : SkillBase
     {
         CharacterCommonBehavior.OnBlockedCollision -= StopRolling;
     }
+
     private void StopRolling()
     {
         if (isRolling)
@@ -64,6 +76,11 @@ public class MageSkill4 : SkillBase
             Debug.Log("Va chạm Block, dừng dash.");
             isRolling = false;
             CancelSkill();
+            // THAY ĐỔI: Tắt isDashing khi dash bị dừng do va chạm
+            if (characterCommonBehavior != null)
+            {
+                characterCommonBehavior.isDashing = false;
+            }
         }
     }
 }
