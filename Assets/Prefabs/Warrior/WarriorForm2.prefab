@@ -107,6 +107,10 @@ MonoBehaviour:
   - {fileID: 4572762437175965153}
   hp: 350
   commonUI: {fileID: 0}
+  attackSound: {fileID: 0}
+  damageReductionMultiplier: 1
+  audioManager: {fileID: 0}
+  isDashing: 0
   axe: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
   axeSpawnPoint: {fileID: 2557108921537728738}
   timeBtwaxe: 0.2
@@ -134,7 +138,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -225,6 +229,7 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 5
   skillDamage: 0
+  skillSound: {fileID: 0}
   damageMultiplier: 1.5
   buffDuration: 5
   sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
