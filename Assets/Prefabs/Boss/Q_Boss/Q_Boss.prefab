@@ -198,7 +198,7 @@ MonoBehaviour:
   targetGameObject: {fileID: 0}
   targetCharacter: {fileID: 0}
   speed: 3
-  hp: 150
+  hp: 450
   damage: 20
   coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
   exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
