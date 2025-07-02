@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b403814b3c1071a4dac74978c8e85857, type: 3}
+  m_Name: Mon 3
+  m_EditorClassIdentifier: 
+  Name: Floating Eye
+  animatedPrefab: {fileID: 2515778605925962419, guid: 7937355e6e4d3d043a5017016b314231, type: 3}
+  stats:
+    hp: 100
+    damage: 25
+    speed: 1
+  isRanged: 1
+  bulletPrefab: {fileID: 3237083912806007981, guid: a53211d0c34c5234a8a5a9eb2ed6e886, type: 3}
+  fireRate: 2

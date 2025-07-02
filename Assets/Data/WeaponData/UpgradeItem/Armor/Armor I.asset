@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: Armor I
   m_EditorClassIdentifier: 
-  upgradeType: 1
+  upgradeType: 3
   Name: Armor I
   icon: {fileID: -1929916957, guid: 77972de6762c98b49b74c2df34de06e0, type: 3}
+  weaponData: {fileID: 11400000, guid: 99148752e22b65c4d9f5539d93a1e37a, type: 2}

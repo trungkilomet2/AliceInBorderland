@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81747091baed424caba3d5303663bd1, type: 3}
+  m_Name: Stage Data
+  m_EditorClassIdentifier: 
+  stageEvents:
+  - message: Stage 1
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+  - message: Stage 2
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
+      maxCount: 50
+  - message: Stage 3
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: b439e8b5eaadc13479b80c737cd03c9f, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: f7883897e707f5a4996ed67e15702430, type: 2}
+      maxCount: 50
+  - message: Stage 4 (Boss)
+    enemiesToSpawn: []
+  - message: Stage 5
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: 54098c0ac4cd47148a2b1802e39ac01c, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: f7883897e707f5a4996ed67e15702430, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: b439e8b5eaadc13479b80c737cd03c9f, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+  - message: Stage 6
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: cd48b7026afa3be48b25088d538a4975, type: 2}
+      maxCount: 50
+  - message: Stage 7
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: cd48b7026afa3be48b25088d538a4975, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1e31d575ce12fe243a0be6b28be0a1e0, type: 2}
+      maxCount: 15
+  - message: Stage 8 (Boss)
+    enemiesToSpawn: []
+  - message: Stage 9
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: ea0ab561689e3a040be7a2ebab066df5, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1dd0ac3e8185c5949b1f11f1b50adda0, type: 2}
+      maxCount: 15
+  - message: Stage 10
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: ea0ab561689e3a040be7a2ebab066df5, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1dd0ac3e8185c5949b1f11f1b50adda0, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: cd48b7026afa3be48b25088d538a4975, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1e31d575ce12fe243a0be6b28be0a1e0, type: 2}
+      maxCount: 15
+  - message: Stage 11
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: dd53f468b177ed54bb4bb405c1aa1a14, type: 2}
+      maxCount: 50
+  - message: Stage 12
+    enemiesToSpawn:
+    - enemyData: {fileID: 11400000, guid: dd53f468b177ed54bb4bb405c1aa1a14, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1dd0ac3e8185c5949b1f11f1b50adda0, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: ea0ab561689e3a040be7a2ebab066df5, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 1e31d575ce12fe243a0be6b28be0a1e0, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: cd48b7026afa3be48b25088d538a4975, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: 54098c0ac4cd47148a2b1802e39ac01c, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: f7883897e707f5a4996ed67e15702430, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: b439e8b5eaadc13479b80c737cd03c9f, type: 2}
+      maxCount: 15
+    - enemyData: {fileID: 11400000, guid: a3e6f911f03598548a08821fd8df0611, type: 2}
+      maxCount: 50
+    - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
+      maxCount: 50
+  - message: Stage 13 (Joker)
+    enemiesToSpawn: []

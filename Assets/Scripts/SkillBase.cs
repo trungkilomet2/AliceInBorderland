@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngineInternal;
 
 public enum IndicatorType { Circle, Arrow }
 public enum SkillNum { Skill1, Skill2, Skill3, Skill4, Passive }
@@ -8,7 +9,7 @@ public abstract class SkillBase : MonoBehaviour
 {
     public SkillNum skillNum;
     public SkillType skillType = SkillType.Active;
-    public IndicatorType indicatorType = IndicatorType.Circle; 
+    public IndicatorType indicatorType = IndicatorType.Circle;
     public string skillName;
     public float cooldown = 5f;
     public float skillRange = 10f;
@@ -29,6 +30,12 @@ public abstract class SkillBase : MonoBehaviour
     private bool isPreparingSkill = false;
     private AudioManager audioManager;
 
+    //Insert By Trung 01.07.2025
+    private bool isSkillFirstActive = false;
+    private bool isSkillSecondActive = false;
+    private bool isSkillThirdActive = false;
+    private bool isSkillFourthActive = false;
+
     // Static field to track if any skill is being prepared or executed
     private static SkillBase currentActiveSkill = null;
 
@@ -45,27 +52,31 @@ public abstract class SkillBase : MonoBehaviour
             indicatorPrefab = Resources.Load<GameObject>("Prefabs/CircleIndicator");
         }
 
-        switch(skillNum)
-        {
-            case SkillNum.Skill1:
-                key = KeyCode.Alpha1;
-                break;
-            case SkillNum.Skill2:
-                key = KeyCode.Alpha2;
-                break;
-            case SkillNum.Skill3:
-                key = KeyCode.Alpha3;
-                break;
-            case SkillNum.Skill4:
-                key = KeyCode.Alpha4;
-                break;
-                case SkillNum.Passive:
-                key = KeyCode.None;
-                break;
-            default:
-                key = KeyCode.None; // Default to no key
-                break;
-        }
+        //switch (skillNum)
+        //{
+        //    case SkillNum.Skill1:
+        //        if (isSkillFirstActive)
+        //            key = KeyCode.Alpha1;
+        //        break;
+        //    case SkillNum.Skill2:
+        //        if (isSkillSecondActive)
+        //            key = KeyCode.Alpha2;
+        //        break;
+        //    case SkillNum.Skill3:
+        //        if (isSkillThirdActive)
+        //            key = KeyCode.Alpha3;
+        //        break;
+        //    case SkillNum.Skill4:
+        //        if (isSkillFourthActive)
+        //            key = KeyCode.Alpha4;
+        //        break;
+        //    case SkillNum.Passive:
+        //        key = KeyCode.None;
+        //        break;
+        //    default:
+        //        key = KeyCode.None; // Default to no key
+        //        break;
+        //}
     }
 
     public virtual void HandleSkillInput()
@@ -212,7 +223,7 @@ public abstract class SkillBase : MonoBehaviour
         currentActiveSkill = null;
         if(skillSound != null && audioManager != null)
         {
-            audioManager.PlaySoundClip(skillSound);
+            audioManager?.PlaySoundClip(skillSound);
         }
     }
 
@@ -236,4 +247,35 @@ public abstract class SkillBase : MonoBehaviour
     {
         return isPreparingSkill;
     }
+    
+    
+    //Insert By Trung 01.07.2025
+    public void UnlockSkillBySkillNum(SkillNum skillNum)
+    {
+        switch (skillNum)
+        {
+            case SkillNum.Skill1:
+                    key = KeyCode.Alpha1;
+                break;
+            case SkillNum.Skill2:
+                    key = KeyCode.Alpha2;
+                break;
+            case SkillNum.Skill3:
+                    key = KeyCode.Alpha3;
+                break;
+            case SkillNum.Skill4:
+                    key = KeyCode.Alpha4;
+                break;
+            case SkillNum.Passive:
+                key = KeyCode.None;
+                break;
+            default:
+                key = KeyCode.None; // Default to no key
+                break;
+        }
+
+    }
+
+    
+
 }
