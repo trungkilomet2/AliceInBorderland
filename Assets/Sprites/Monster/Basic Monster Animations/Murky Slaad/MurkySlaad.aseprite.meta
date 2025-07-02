@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 547d70a0a92c6fb449e08b83f3a65088
+guid: 125407f75484a3a43a9d1760e10ec1ea
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638870510453817473
+  platformSettingsDirtyTick: 638870524949787392
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -124,16 +124,16 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Frame_0
     originalName: 
-    pivot: {x: 0.45454547, y: 0}
+    pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
+      width: 13
       height: 14
-    spriteID: 301d1c818718fe64ea42156536ba8e8f
+    spriteID: 070020d2cb906334b95ee5ffcac558ea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,16 +144,16 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Frame_1
     originalName: 
-    pivot: {x: 0.45454547, y: -0.071428575}
+    pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 26
-      width: 11
-      height: 14
-    spriteID: 85e4d040b2b2ebe4e9601c3c07512e63
+      width: 13
+      height: 13
+    spriteID: 3634330315a822444bcb11d2a3a0e26b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -164,16 +164,16 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 26}
   - name: Frame_2
     originalName: 
-    pivot: {x: 0.45454547, y: -0.14285715}
+    pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 23
-      y: 4
-      width: 11
-      height: 14
-    spriteID: e58dbca3f91109d4cb218b50c7b3dfe3
+      x: 4
+      y: 47
+      width: 13
+      height: 13
+    spriteID: 5e0b3f3c80346304384e34dddfdc9751
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,19 +181,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 23, y: 4}
+    uvTransform: {x: 4, y: 47}
   - name: Frame_3
     originalName: 
-    pivot: {x: 0.45454547, y: -0.071428575}
+    pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 23
-      y: 26
-      width: 11
-      height: 14
-    spriteID: 16acd76092f68c74687a0e57e613821b
+      x: 25
+      y: 4
+      width: 13
+      height: 13
+    spriteID: 6ec6a0df16b86924a82a8ddf3cf1b538
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,17 +201,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 23, y: 26}
+    uvTransform: {x: 25, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 884290281
+      value0: 463393263
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: WarpSkull
+    name: MurkySlaad
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -220,38 +220,38 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
+        x: 1
         y: 0
-        width: 11
+        width: 13
         height: 14
-      spriteId: 301d1c818718fe64ea42156536ba8e8f
+      spriteId: 070020d2cb906334b95ee5ffcac558ea
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 1
-        width: 11
-        height: 14
-      spriteId: 85e4d040b2b2ebe4e9601c3c07512e63
+        x: 1
+        y: 0
+        width: 13
+        height: 13
+      spriteId: 3634330315a822444bcb11d2a3a0e26b
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 2
-        width: 11
-        height: 14
-      spriteId: e58dbca3f91109d4cb218b50c7b3dfe3
+        x: 1
+        y: 0
+        width: 13
+        height: 13
+      spriteId: 5e0b3f3c80346304384e34dddfdc9751
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 1
-        width: 11
-        height: 14
-      spriteId: 16acd76092f68c74687a0e57e613821b
+        x: 1
+        y: 0
+        width: 13
+        height: 13
+      spriteId: 6ec6a0df16b86924a82a8ddf3cf1b538
     linkedCells: []
     parentIndex: -1
   platformSettings:
