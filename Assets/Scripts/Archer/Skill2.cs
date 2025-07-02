@@ -18,7 +18,6 @@ public class Skill2 : SkillBase
         base.Update();
     }
 
-
     protected override void Activate()
     {
         Vector3 damagePosition = skillTransform.position;

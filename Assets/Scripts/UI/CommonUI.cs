@@ -76,6 +76,7 @@ public class CommonUI : MonoBehaviour
         if (characterName == CharacterName.Archer.ToString())
         {
             sourcesSkillUpdate.Append("BowData");
+            sourceSkillUpdateImage.Append("Archer/");
         }
         else if (characterName == CharacterName.Mage.ToString())
         {
@@ -85,10 +86,12 @@ public class CommonUI : MonoBehaviour
         else if (characterName == CharacterName.Warrior.ToString())
         {
             sourcesSkillUpdate.Append("HarmerData");
+            sourceSkillUpdateImage.Append("Warrior/");
         }
         else if (characterName == CharacterName.Summoner.ToString())
         {
             sourcesSkillUpdate.Append("StaffData");
+            sourceSkillUpdateImage.Append("Summoner/");
         }
         UpdateData data = Resources.Load<UpdateData>(sourcesSkillUpdate.ToString());
         upgradeData.Add(data);
