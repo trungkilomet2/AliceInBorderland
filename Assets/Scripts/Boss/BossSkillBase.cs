@@ -38,7 +38,7 @@ public abstract class BossSkillBase : MonoBehaviour
         return Time.time >= lastUsedTime + cooldown;
     }
 
-    public void UseSkill()
+    public bool UseSkill()
     {
         if (IsReady())
         {
@@ -48,6 +48,11 @@ public abstract class BossSkillBase : MonoBehaviour
             {
                 audioManager.PlaySoundClip(skillSound);
             }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

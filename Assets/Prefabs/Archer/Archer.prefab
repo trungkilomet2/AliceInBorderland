@@ -312,7 +312,8 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 5
   skillDamage: 10
-  skillSound: {fileID: 0}
+  skillSound: {fileID: 8300000, guid: e6e1288e383e4c64c845b9c92e75dc86, type: 3}
+  effect: {fileID: 4699594267056170701, guid: e57b64a510e448241ba423009326fe4d, type: 3}
 --- !u!114 &8274900416447067520
 MonoBehaviour:
   m_ObjectHideFlags: 0

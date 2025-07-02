@@ -280,9 +280,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2952249232177266908, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 718335d94fe3d744987ba589370c34a3, type: 3}
+    - target: {fileID: 3121988667940958593, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a5ed088898a92f641add309b0915c34f, type: 3}
     - target: {fileID: 3238795044292812432, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.56
+      value: -28.5
       objectReference: {fileID: 0}
     - target: {fileID: 3238795044292812432, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -320,6 +328,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7062013219215211879, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fe6cae990881d740acd0844f582c69a, type: 3}
+    - target: {fileID: 7298881154905949932, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 963c8b48c4b145147aef089e642da491, type: 3}
     - target: {fileID: 7476602496301372032, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_Name
       value: Boss
