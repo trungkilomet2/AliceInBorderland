@@ -111,25 +111,20 @@ public class MageSkill1 : SkillBase
             Vector2 boxCenter = (Vector2)transform.position + boxDirection * (skillRange * 0.5f);
             Vector2 boxSize = new Vector2(skillRange, skillWidth);
 
-            // Log để kiểm tra thông số của hộp (Debug tốt)
-            Debug.Log($"Checking for hits: Center={boxCenter}, Size={boxSize}, Angle={boxAngle}");
 
             Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, boxAngle); // <<< Sử dụng góc mới
 
-            Debug.Log($"OverlapBoxAll found {hits.Length} colliders.");
 
             foreach (Collider2D hit in hits)
             {
                 if (hit.gameObject == gameObject) continue;
 
-                Debug.Log($"Collider hit: {hit.name}, Tag: {hit.tag}");
 
                 if (hit.CompareTag("Enemy"))
                 {
                     Enemy enemy = hit.GetComponent<Enemy>();
                     if (enemy != null && !enemiesHitThisTick.Contains(enemy))
                     {
-                        Debug.Log($"Damage applied to: {enemy.name}");
                         enemy.TakeDamage(skillDamage);
                         enemiesHitThisTick.Add(enemy);
                     }

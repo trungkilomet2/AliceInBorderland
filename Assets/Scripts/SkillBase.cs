@@ -30,12 +30,6 @@ public abstract class SkillBase : MonoBehaviour
     private bool isPreparingSkill = false;
     private AudioManager audioManager;
 
-    //Insert By Trung 01.07.2025
-    private bool isSkillFirstActive = false;
-    private bool isSkillSecondActive = false;
-    private bool isSkillThirdActive = false;
-    private bool isSkillFourthActive = false;
-
     // Static field to track if any skill is being prepared or executed
     private static SkillBase currentActiveSkill = null;
 
@@ -276,6 +270,10 @@ public abstract class SkillBase : MonoBehaviour
 
     }
 
-    
+    public  AudioManager GetAudio()
+    {
+        return audioManager;
+    }
+
 
 }
