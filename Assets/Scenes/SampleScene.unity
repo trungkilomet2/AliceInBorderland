@@ -5833,9 +5833,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 233969987}
-  - component: {fileID: 233969989}
   - component: {fileID: 233969988}
   - component: {fileID: 227734845}
+  - component: {fileID: 233969989}
   m_Layer: 5
   m_Name: ItemBD1
   m_TagString: Untagged
@@ -5860,7 +5860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.26, y: 20.92}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 53.1, y: 53.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233969988
@@ -5875,15 +5875,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundAudioSource: {fileID: 1893366438}
-  effectAudioSource: {fileID: 1092075783}
-  backgroundClip: {fileID: 8300000, guid: 18624e9ad05df2144a8954eb32bfc5a8, type: 3}
-  coinClip: {fileID: 8300000, guid: 2ade6374d2c9b5d40b92b50e4779658e, type: 3}
-  clickItemClip: {fileID: 8300000, guid: bb19794b24e9f314180e6d98b42b2051, type: 3}
-  gameoverClip: {fileID: 8300000, guid: 96c54b358d52b1841ac3c8e4158f5bea, type: 3}
-  victoryClip: {fileID: 8300000, guid: 8aaf779f526f24543b7313c577e34572, type: 3}
---- !u!4 &263766876
-Transform:
+--- !u!222 &233969989
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

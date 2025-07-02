@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 547d70a0a92c6fb449e08b83f3a65088
+guid: 0c2d04c79018ea741ba2488be9735100
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 24
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638870510453817473
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -124,16 +124,16 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Frame_0
     originalName: 
-    pivot: {x: 0.45454547, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
-      height: 14
-    spriteID: 301d1c818718fe64ea42156536ba8e8f
+      width: 14
+      height: 16
+    spriteID: 58be9f7cc8d893949a42ae14b587b766
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,16 +144,16 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Frame_1
     originalName: 
-    pivot: {x: 0.45454547, y: -0.071428575}
+    pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 26
-      width: 11
-      height: 14
-    spriteID: 85e4d040b2b2ebe4e9601c3c07512e63
+      y: 28
+      width: 13
+      height: 15
+    spriteID: 86a683589fd9cb94191471cbf74bd365
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,19 +161,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 26}
+    uvTransform: {x: 4, y: 28}
   - name: Frame_2
     originalName: 
-    pivot: {x: 0.45454547, y: -0.14285715}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 23
+      x: 26
       y: 4
-      width: 11
-      height: 14
-    spriteID: e58dbca3f91109d4cb218b50c7b3dfe3
+      width: 14
+      height: 16
+    spriteID: 1d23550b11ad03246977b164fce99787
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,19 +181,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 23, y: 4}
+    uvTransform: {x: 26, y: 4}
   - name: Frame_3
     originalName: 
-    pivot: {x: 0.45454547, y: -0.071428575}
+    pivot: {x: 0.4615385, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 23
-      y: 26
-      width: 11
-      height: 14
-    spriteID: 16acd76092f68c74687a0e57e613821b
+      x: 25
+      y: 28
+      width: 13
+      height: 15
+    spriteID: 20e8d6c5a0121d044972471d32306ace
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,17 +201,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 23, y: 26}
+    uvTransform: {x: 25, y: 28}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 884290281
+      value0: 2690393450
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: WarpSkull
+    name: StoneTroll
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -220,38 +220,38 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
+        x: 1
         y: 0
-        width: 11
-        height: 14
-      spriteId: 301d1c818718fe64ea42156536ba8e8f
+        width: 14
+        height: 16
+      spriteId: 58be9f7cc8d893949a42ae14b587b766
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 1
-        width: 11
-        height: 14
-      spriteId: 85e4d040b2b2ebe4e9601c3c07512e63
+        x: 1
+        y: 0
+        width: 13
+        height: 15
+      spriteId: 86a683589fd9cb94191471cbf74bd365
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 2
-        width: 11
-        height: 14
-      spriteId: e58dbca3f91109d4cb218b50c7b3dfe3
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: 1d23550b11ad03246977b164fce99787
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 1
-        width: 11
-        height: 14
-      spriteId: 16acd76092f68c74687a0e57e613821b
+        x: 2
+        y: 0
+        width: 13
+        height: 15
+      spriteId: 20e8d6c5a0121d044972471d32306ace
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -259,30 +259,6 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
