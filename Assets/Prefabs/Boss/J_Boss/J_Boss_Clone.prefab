@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1188529476, guid: fed768f4bdb6e6647beb9493243e2271, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -253,5 +253,6 @@ MonoBehaviour:
   cooldown: 2
   skillDuration: 2
   skillRange: 10
+  skillSound: {fileID: 8300000, guid: 718335d94fe3d744987ba589370c34a3, type: 3}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5
