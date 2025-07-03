@@ -16,3 +16,5 @@ MonoBehaviour:
   Name: Harmer I
   icon: {fileID: -295880339, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 8b311808fe203334aba80e936ab2aa16, type: 2}
+  description: 'Creates an energy shield that absorbs damage and gains back (Damage
+    : ???)'

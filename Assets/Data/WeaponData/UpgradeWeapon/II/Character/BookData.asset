@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Book II
   icon: {fileID: 54252980, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
   weaponData: {fileID: 11400000, guid: 918a268cddcb2fe4ba99ddc24ce7c34c, type: 2}
+  description: 'Creates an area and slows enemies within it (Damage: 0.5)'
