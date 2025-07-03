@@ -96,42 +96,61 @@ public class MageSkill1 : SkillBase
         float elapsed = 0f;
         float damageTickRate = 0.1f;
 
-        HashSet<Enemy> enemiesHitThisTick = new HashSet<Enemy>();
+        // Sử dụng hai HashSet riêng biệt để theo dõi hai loại địch đã bị trúng trong tick này
+        HashSet<Enemy> enemiesHitInCurrentTick = new HashSet<Enemy>();
+        HashSet<EnemyBase> enemyBasesHitInCurrentTick = new HashSet<EnemyBase>(); // Đổi tên cho rõ ràng hơn
 
         while (elapsed < duration)
         {
             if (currentLaserInstance == null) yield break;
 
-            enemiesHitThisTick.Clear();
+            // Xóa danh sách kẻ địch đã bị trúng trong tick này cho tick mới
+            enemiesHitInCurrentTick.Clear();
+            enemyBasesHitInCurrentTick.Clear();
 
-            Vector2 boxDirection = directionOnSkillActivation; 
-            float boxAngle = Mathf.Atan2(boxDirection.y, boxDirection.x) * Mathf.Rad2Deg; // <<< Tính góc từ hướng đã lưu
+            Vector2 boxDirection = directionOnSkillActivation;
+            float boxAngle = Mathf.Atan2(boxDirection.y, boxDirection.x) * Mathf.Rad2Deg;
 
             Vector2 boxCenter = (Vector2)transform.position + boxDirection * (skillRange * 0.5f);
             Vector2 boxSize = new Vector2(skillRange, skillWidth);
 
-
-            Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, boxAngle); // <<< Sử dụng góc mới
-
+            Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, boxAngle);
 
             foreach (Collider2D hit in hits)
             {
-                if (hit.gameObject == gameObject) continue;
+                if (hit.gameObject == gameObject) continue; // Bỏ qua chính người chơi
 
-
-                if (hit.CompareTag("Enemy"))
+                if (hit.CompareTag("Enemy")) // Vẫn sử dụng tag "Enemy" cho cả hai loại
                 {
+                    // Cố gắng lấy component Enemy
                     Enemy enemy = hit.GetComponent<Enemy>();
-                    EnemyBase enemyBase = hit.GetComponent<EnemyBase>();
-                    if (enemy != null && !enemiesHitThisTick.Contains(enemy))
+                    if (enemy != null)
                     {
-                        enemy.TakeDamage(skillDamage);
-                        enemyBase.TakeDamage(skillDamage); 
-                        enemiesHitThisTick.Add(enemy);
+                        if (!enemiesHitInCurrentTick.Contains(enemy))
+                        {
+                            // Gây sát thương nếu đây là Enemy và chưa bị trúng trong tick này
+                            enemy.TakeDamage(skillDamage);
+                            enemiesHitInCurrentTick.Add(enemy);
+                        }
+                        // Bỏ qua phần kiểm tra EnemyBase nếu đã xử lý như một Enemy
+                        continue; // Rất quan trọng để tránh xử lý một GameObject 2 lần
                     }
-                    else if (enemy == null)
+
+                    // Nếu không phải Enemy, thử lấy component EnemyBase
+                    EnemyBase enemyBase = hit.GetComponent<EnemyBase>();
+                    if (enemyBase != null)
                     {
-                        Debug.LogWarning($"Enemy tag found on {hit.name} but no Enemy component!");
+                        if (!enemyBasesHitInCurrentTick.Contains(enemyBase))
+                        {
+                            // Gây sát thương nếu đây là EnemyBase và chưa bị trúng trong tick này
+                            enemyBase.TakeDamage(skillDamage);
+                            enemyBasesHitInCurrentTick.Add(enemyBase);
+                        }
+                    }
+                    else
+                    {
+                        // Trường hợp GameObject có tag "Enemy" nhưng không có Enemy hoặc EnemyBase component
+                        Debug.LogWarning($"GameObject with tag 'Enemy' on {hit.name} does not have an Enemy or EnemyBase component!");
                     }
                 }
             }
