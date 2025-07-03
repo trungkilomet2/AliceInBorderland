@@ -75,4 +75,9 @@ public class PauseUIManager : MonoBehaviour
         Time.timeScale = 0f; // Pause the game
         audioManager.PlayGameOverSound(); // Play game over sound
     }
+
+    public void SoundVolume()
+    {
+        audioManager.ChangeSoundVolume(0.1f);
+    }
 }
