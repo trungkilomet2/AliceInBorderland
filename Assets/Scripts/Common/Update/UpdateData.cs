@@ -17,7 +17,7 @@ public class UpdateData : ScriptableObject
     public string Name;
     public Sprite icon;
     public WeaponData weaponData;
-    [TextArea(3, 10)]
+    [TextArea(4, 10)]
     public string description;
 
 }

@@ -405,12 +405,15 @@ public class CommonUI : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             UpdateData updateData = upgradeData[Random.Range(0, upgradeData.Count)];
+
             if (CheckDupliCateUpdateData(updateData, listUpgrade))
             {
                 i--;
+                updateData = null;
                 continue;
             }
-            equipmentTooltips[i].SetEquipmentInfo(updateData.weaponData.name.ToString());
+
+            equipmentTooltips[count-1-i].SetEquipmentInfo(updateData.description);
             listUpgrade.Add(updateData);
         }
         return listUpgrade;
