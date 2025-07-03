@@ -7,6 +7,7 @@ public class BunnyProjectile : MonoBehaviour
     public float lifeTime = 2f;
     private Vector3 direction;
     private float timeAlive = 0f;
+    public bool IsRunning { get; private set; } = false;
 
     public void Init(Vector3 dir)
     {
@@ -14,7 +15,7 @@ public class BunnyProjectile : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
         transform.position += direction * moveSpeed * Time.deltaTime;
         timeAlive += Time.deltaTime;
         if (timeAlive >= lifeTime)
