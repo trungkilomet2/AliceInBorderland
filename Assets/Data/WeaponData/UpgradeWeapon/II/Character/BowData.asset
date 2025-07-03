@@ -16,3 +16,5 @@ MonoBehaviour:
   Name: Bow II
   icon: {fileID: 152475283, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 9219d32585420994abbae77e4ffc4661, type: 2}
+  description: 'Creates an area and shoots arrows that deal area damage (Damage :
+    10)'
