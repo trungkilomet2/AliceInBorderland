@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Staff IV
   icon: {fileID: -20950076, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: e1bb623cac59b6442ba4b6f03d54e3a2, type: 2}
+  description: 'Creates small sparks and then explodes (Damage : 30)'

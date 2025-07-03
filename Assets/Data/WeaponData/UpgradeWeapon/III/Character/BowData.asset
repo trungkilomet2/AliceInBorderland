@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Bow III
   icon: {fileID: -1456879828, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: b304036974eafa4459008024376e333e, type: 2}
+  description: 'Shoots 3 arrows in a period of time (Damage: 10 x 3)'

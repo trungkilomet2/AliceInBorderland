@@ -16,3 +16,5 @@ MonoBehaviour:
   Name: Harmer IV
   icon: {fileID: -1228158467, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 97b1569834a38ab45abd28d798f78819, type: 2}
+  description: 'When out of blood will explode and be incapacitated for a few seconds
+    (Damage: 999)'
