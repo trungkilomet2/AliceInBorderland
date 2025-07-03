@@ -15,10 +15,10 @@ MonoBehaviour:
   characterName: Warrior
   characterSprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
   characterPortrait: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
-  description: A master of arcane arts, the Mage harnesses elemental power to devastate
-    enemies from afar.
+  description: A fierce melee fighter, the Warrior relies on strength and resilience
+    to crush foes.
   health: 200
-  speed: 3.5
+  speed: 5
   damage: 20
   weaponName: Basic Weapon
   isLocked: 0

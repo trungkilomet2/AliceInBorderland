@@ -17,7 +17,7 @@ MonoBehaviour:
   stats:
     hp: 25
     damage: 8
-    speed: 5
+    speed: 4
   isRanged: 0
   bulletPrefab: {fileID: 0}
   fireRate: 2

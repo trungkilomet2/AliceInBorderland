@@ -11,8 +11,8 @@ public class StageProgress : MonoBehaviour
         commonUI = FindObjectOfType<CommonUI>();
     }
 
-    [SerializeField] float progressTimeRate = 10f;
-    [SerializeField] float progressPerSplit = 0.5f;
+    [SerializeField] float progressTimeRate = 20f;
+    [SerializeField] float progressPerSplit = 0.2f;
 
     public float Progress
     {
