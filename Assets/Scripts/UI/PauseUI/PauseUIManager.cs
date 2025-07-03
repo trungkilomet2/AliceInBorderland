@@ -14,6 +14,7 @@ public class PauseUIManager : MonoBehaviour
     private GameOverManager gameOverManager;
     private CommonUI commonUI;
     private AudioManager audioManager;
+    private bool canPause = true;   
 
     private void Awake()
     {
@@ -25,21 +26,28 @@ public class PauseUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (canPause)
         {
-            Debug.Log(gameOverManager.isGameOver);
-            if (pauseMenuUI.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if (pauseMenuUI.activeInHierarchy)
+                {
 
-                pauseMenuUI.SetActive(false);
-                Time.timeScale = 1f;
-            }
-            else
-            {
-                pauseMenuUI.SetActive(true);
-                Time.timeScale = 0f; // Pause the game
+                    pauseMenuUI.SetActive(false);
+                    Time.timeScale = 1f;
+                }
+                else
+                {
+                    pauseMenuUI.SetActive(true);
+                    Time.timeScale = 0f; // Pause the game
+                }
             }
         }
+    }
+
+    public void SetCanPause(bool changePause)
+    {
+        this.canPause = changePause;
     }
 
     private void OnApplicationPause(bool pause)
