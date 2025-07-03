@@ -16,8 +16,12 @@ public class Joker_Boss : BossBase
         {
             return;
         }
+        Vector3 bossPos = transform.position;
+        Vector3 playerPos = targetGameObject.transform.position;
 
-        
+        bool facingLeft = bossPos.x > playerPos.x;
+        GetComponent<SpriteRenderer>().flipX = facingLeft;
+
         BossSkillBase skill1 = bossSkillBases[0];
         if (Vector3.Distance(transform.position, targetGameObject.transform.position) < skill1.skillRange)
         {

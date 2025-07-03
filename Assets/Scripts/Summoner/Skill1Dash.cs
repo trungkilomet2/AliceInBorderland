@@ -7,15 +7,18 @@ public class Skill1Dash : SkillBase
     public float dashDistance = 7f;
 
     private bool isDashing = false;
+
     private Vector3 dashTarget;
     private Vector2 dashDirection;
     private Animator animator;
+    private CharacterCommonBehavior characterCommonBehavior;
 
     [Header("Ghost Effect")]
     public GhostImage ghostEffect;
 
     public override void Awake()
     {
+        characterCommonBehavior = GetComponent<CharacterCommonBehavior>();
         animator = GetComponent<Animator>();
         base.Awake();
         skillNum = SkillNum.Skill1;
@@ -39,7 +42,12 @@ public class Skill1Dash : SkillBase
             if (Vector3.Distance(transform.position, dashTarget) < 0.1f)
             {
                 isDashing = false;
+                if (characterCommonBehavior != null)
+                {
+                    characterCommonBehavior.isDashing = false;
+                }
             }
+
         }
     }
 
@@ -52,20 +60,19 @@ public class Skill1Dash : SkillBase
         }
         if (isDashing) return;
 
-        // Lấy hướng dash từ indicator nếu có, ngược lại lấy hướng chuột (PC)
+      
         Vector2 dashDir = Vector2.right;
 
         if (indicatorInstance != null)
         {
-            // Có thể dùng hướng (indicatorInstance.position - player.position) nếu indicator là object di chuyển
-            // Hoặc transform.right nếu indicator chỉ là mũi tên quay quanh player
+            
             dashDir = (indicatorInstance.transform.position - transform.position).normalized;
             if (dashDir.sqrMagnitude < 0.01f)
                 dashDir = indicatorInstance.transform.right.normalized;
         }
         else
         {
-            // Nếu không có indicator, lấy hướng chuột (PC)
+            
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = 0;
             dashDir = (mouseWorld - transform.position).normalized;
@@ -74,11 +81,15 @@ public class Skill1Dash : SkillBase
         dashDirection = dashDir;
         dashTarget = transform.position + (Vector3)(dashDirection * skillRange);
 
-        // Play dash animation nếu có
+        
         if (animator != null)
             animator.SetTrigger("roll");
 
         isDashing = true;
+        if (characterCommonBehavior != null)
+        {
+            characterCommonBehavior.isDashing = true;
+        }
     }
 
     private void OnEnable()
@@ -98,6 +109,11 @@ public class Skill1Dash : SkillBase
             Debug.Log("Va chạm Block, dừng dash.");
             isDashing = false;
             CancelSkill();
+            if (characterCommonBehavior != null)
+            {
+                characterCommonBehavior.isDashing = false;
+            }
         }
     }
-}
+    }
+
