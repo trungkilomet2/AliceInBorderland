@@ -1,0 +1,2571 @@
+fileFormatVersion: 2
+guid: 3cf1945c5bc32ed4d9b3db24ac5d8fa0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 579
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5577ebd0903ff546b0f83d88ac981cf
+      internalID: -1880825639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 579
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572022ac0a917124ba079ba802144fc3
+      internalID: 1328153886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 579
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c9fea811171f54f98cd7ed6f5f0022
+      internalID: -2049492453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 579
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cba1c448224dea40a08d2bc8a61899f
+      internalID: 1750735966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 579
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541aba7456432134ca752d8f2ac3165e
+      internalID: -1119510022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 579
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985a614bce2a1e747906056c8d10d6d1
+      internalID: -2106467214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 579
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59204a20877cdb949b016f441e929dd1
+      internalID: -521408867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 578
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a227efd37bfea4444a0a9a5b7813fc68
+      internalID: 93423158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 578
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88847f39dd2ac549be46b2502e97808
+      internalID: -549321870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 578
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b7825ea9e00024a911aacc314bf636
+      internalID: 583528426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 540
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2acefabf1cb0b4e8fc6402098e14b1
+      internalID: -1431423942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 540
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8889bffecf428f4d81d93b6c6ca7dd1
+      internalID: -1921660163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 540
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aae02a2537a9474c918f87160c866b2
+      internalID: -1150236895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d1a971e1c49594aa037ca5bc3925b1
+      internalID: 329716514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 540
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c522e02dc2662046a09b15283cfcb5a
+      internalID: -431998621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c383329ae49c2cc45930fdcdff25220d
+      internalID: -378835716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8c3e41dbd9d5d48b6bf148f7b22e0a
+      internalID: -634237893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40da8bd94a31d0419a40a4e234adba7
+      internalID: -1583354956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1611eeb7d6826c4d936178510b1dd13
+      internalID: -1936499244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 540
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7264169c5c212a40a41c640168dcc41
+      internalID: -610822945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 498
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1476b12f73b6ee4f98efdf57f9db382
+      internalID: 328010921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 498
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ca382b66a8e314b814206ecf3f0b07
+      internalID: 2076091352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 498
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d9303b4cfc61f419beceae9b9d386e
+      internalID: -1703887200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 498
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c058d2fe0591b94e85939684b69c340
+      internalID: 876743798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 498
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbae6ded37b32cb40b8f11194bfdd938
+      internalID: -1758907874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 444
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9746411406f1374eb8c9e6d6eef0df1
+      internalID: 1048665522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 444
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360825ec3da4f774dab66793133fdb64
+      internalID: -1200594844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 444
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11021fa5cd9ed549819699f073ea2bd
+      internalID: 1258130588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 444
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64330a615151c6f48a80f3bbf6d4c302
+      internalID: -1391984540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 444
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cec5e0d9460034c9e181ae6e887534
+      internalID: 1908461356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 444
+        width: 45
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d7b4ec90fd8d149bcb92271c57a244
+      internalID: -269803680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 444
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ea3caee82bf404b86dce3706e8ac64
+      internalID: 869588142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 444
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee88f68037faea242b5c925326fe9752
+      internalID: 293740309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 444
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8688772db44709d4c9b8b36988c4e686
+      internalID: 1520662007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 392
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1863d8daa2c47c40a7e3fb17ff8c26a
+      internalID: 1901214491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 392
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f714378ad31b2147a89482bf39a7d2d
+      internalID: 2143019273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 392
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c8f895c6d784f4e938bd2fca1e4234
+      internalID: -1053887689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 392
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769b15a835b9ff740be253fb36f1e2c3
+      internalID: -295313029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 391
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ad0b17efa3c054cb25c601c4e0031f
+      internalID: 791034026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 392
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc31f931ad3a9364088abb25ae18f58f
+      internalID: 1829167915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 391
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbd94975fb0ad547980d2af75dcb20e
+      internalID: -2071952634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 392
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8e84c5e6098884ba41b0e46c5bab63
+      internalID: 477331612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 338
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394d47fc857cbf84b82e979cb82f4f32
+      internalID: -480026045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 338
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5e1b35e65bfa24fb5f5d32bbf1a845
+      internalID: 2026623466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_51
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 338
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994d3ea0ce60a0e48860fa10b45603f3
+      internalID: -102024398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_52
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 339
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28500e3f4b71f14384068b5bcc06163
+      internalID: -2095282568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_53
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 338
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f702e67e18994634fa99ea4bc42b2032
+      internalID: -1068736787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_54
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 338
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601228755de7be842a3e51a42b9e479f
+      internalID: 662417131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 338
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42e3403ca64a0041b9369cd3d787fde
+      internalID: 1952000680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_56
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 285
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e97458c0cd28048a9f94ea608119a6
+      internalID: 339358667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_57
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 284
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c1c446e29d8fa4cb05c348c9ac307d
+      internalID: 653005840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_58
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 284
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbccb6e4ea1d1d04ba59415921de6dc2
+      internalID: 896393900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_59
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 284
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a009502080b197044a84f6011f0a5d7b
+      internalID: -279856225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_60
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 284
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49f11dbec598054c9f11e6ec27ab4d5
+      internalID: 953397592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_61
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 284
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a319bbc7139d34ebbf6643cfb2f6bc
+      internalID: -622233028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_62
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 282
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf13d041aa0b876439e049adb08f06c6
+      internalID: 1114981521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_63
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 285
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593e9d4bfdc2ae447a16fa03b5a20db1
+      internalID: -1580108218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_68
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 218
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd78c4435ad2ee4380e0eff7c66dac4
+      internalID: -434285533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_69
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2dfa392c83636408c63522bbde5ab6
+      internalID: -1681995848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_70
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 218
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0f631aa42c54c40981e50a95a642dc
+      internalID: -408846899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_71
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 218
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e86d4559a07a7479f9b6ff432c6a92
+      internalID: -1501567056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_72
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 218
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cd7447e13bb8e4a9eaeea76b0a5b1c
+      internalID: -1929929821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_73
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 218
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaccc5ce6e861d34099c1a946abff418
+      internalID: -2079843642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_74
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 218
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f742c4355eadb42bfc0da2c26edbd9
+      internalID: -330482582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_75
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 218
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1265ad586cbf6fa4a966d322230a400e
+      internalID: -1880251453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_76
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 218
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ebcd60a6f115241bc957cf9fedfa96
+      internalID: -944270128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_77
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 174
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a17ff081c7547489be4f98c819f692
+      internalID: -355689632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_78
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 175
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312bfa928fe0a0d4787114220caed643
+      internalID: 628678836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_79
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 175
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6062e66ea06ee924a840795fdd4fd493
+      internalID: -1044080837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_80
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 175
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe2bc4ec05649e41b8f2985c5fe4287
+      internalID: -855107332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_81
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 175
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22884115a2f3734459c5a6e57de9e3ac
+      internalID: 405405014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_82
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 175
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3789e7dd01b275c499f8398bfbfc57e4
+      internalID: 2092769829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_83
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 175
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b020aea404bfe9643888650fd20fda19
+      internalID: -1130337747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_84
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 175
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5418e39e9f9fe44a1b5d422fa36467
+      internalID: -1315236526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_85
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 175
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd89908bb8f29445b28332a557bc9a4
+      internalID: -1953100746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_86
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 175
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e583cb0788cc7cc4895ec52dfad06913
+      internalID: -1466287303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_87
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 133
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dfa3d344e034941af66087d01e98f5
+      internalID: -1956158148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_88
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 133
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db822817a3cefee4a8fc6b2988863aac
+      internalID: -479628959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_89
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 133
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16883371778059e48aff56762101f891
+      internalID: 1641683104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_90
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 133
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcdeb928b68e2248b67b43efb0c1026
+      internalID: 1472585498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_91
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 133
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ab29f069ee1ae46a945018b6922d76
+      internalID: 186305821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_92
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 133
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58456bb521d29ca48a3b8bc4352b31fc
+      internalID: 1535312448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_93
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 133
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452ff948b7b1fbe4f94a8171b8d2a90e
+      internalID: -103439945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_94
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 133
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38978ae11db45d44b73679bb120ce54
+      internalID: -2095539086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_98
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 96
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275904892ba7c76438445dda9f26df5d
+      internalID: 1173367718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_99
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 97
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2185ab313e888d44984a9dc276a65885
+      internalID: 770114091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_100
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 97
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b07cd92041ac97468b5afd89ff01665
+      internalID: -517208052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_102
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 75
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feef3022543eb0e49b1dfe48b7b615aa
+      internalID: 94258896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_103
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 75
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c593a47ee7cb743ac10ebc949c23ab
+      internalID: -459729180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_104
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 75
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ae938cd896fa44bb1f2f2f06c5a89d
+      internalID: 81589666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_105
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 75
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f2cb07b68ffea40acc96b9057d749c
+      internalID: 1698846438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 75
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7c549deb907b14282a56380898039a
+      internalID: -1344069348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_107
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 74
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a12fd743a747646a2164dbb8e1b667
+      internalID: 768819203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_108
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 74
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e2655ff6ca09a4e9c3a8b0235bb006
+      internalID: 1718603289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_109
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 75
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ab16fb9083aca4c94d3e5b46600243
+      internalID: 1938383048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_110
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 75
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852b7ca8283acbd449631497a5524013
+      internalID: -1134600780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_111
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 31
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea180c74124c1604bb4b5ded832dfecc
+      internalID: 335257544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_112
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 31
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fa23a8dff2c194e9c2345520535ccd
+      internalID: -1122204277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_113
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 52
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3ca65a07acd904fb6bc24be6bbb065
+      internalID: -1254328881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_114
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 53
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d9d4cf6fc136e47933be1928aab70f
+      internalID: -1864492297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_115
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 53
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a6e0f903faaf541b5bf205041b4a9e
+      internalID: 386886659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_116
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 53
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f85412d5bcba4409efcc613d6c0ef4
+      internalID: -862833079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_117
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 29
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7f3a0ff53b14c41bf2720711ff0017
+      internalID: 234474444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_118
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 31
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c680d6c2cb0e54980a226b9f4a0bc6
+      internalID: -950106759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_119
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 30
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b43391899ea3e4b934fd08a1c64968
+      internalID: 1345270565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_120
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 29
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9990f65a272160478aab150930beb74
+      internalID: 114621638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_121
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 20
+        width: 111
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b620bfdd83c6844bc756fcc4244c14
+      internalID: -1407805306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_122
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 8
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0311009cf09e77249835e2c4d4a1cca3
+      internalID: -1628829569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_123
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 8
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56252735e1a653a4bb3d67fc0259e91f
+      internalID: -1508013880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_124
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 8
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7cd140a18077e41ab10970637ffeef
+      internalID: -447587714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summoner-removebg-preview_125
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 8
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6c37f0105358c4dabd7896b9811683
+      internalID: 100295165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Summoner-removebg-preview_0: -1321556408
+      Summoner-removebg-preview_1: 272888351
+      Summoner-removebg-preview_10: -549321870
+      Summoner-removebg-preview_100: -517208052
+      Summoner-removebg-preview_101: 616017072
+      Summoner-removebg-preview_102: 94258896
+      Summoner-removebg-preview_103: -459729180
+      Summoner-removebg-preview_104: 81589666
+      Summoner-removebg-preview_105: 1698846438
+      Summoner-removebg-preview_106: -1344069348
+      Summoner-removebg-preview_107: 768819203
+      Summoner-removebg-preview_108: 1718603289
+      Summoner-removebg-preview_109: 1938383048
+      Summoner-removebg-preview_11: 583528426
+      Summoner-removebg-preview_110: -1134600780
+      Summoner-removebg-preview_111: 335257544
+      Summoner-removebg-preview_112: -1122204277
+      Summoner-removebg-preview_113: -1254328881
+      Summoner-removebg-preview_114: -1864492297
+      Summoner-removebg-preview_115: 386886659
+      Summoner-removebg-preview_116: -862833079
+      Summoner-removebg-preview_117: 234474444
+      Summoner-removebg-preview_118: -950106759
+      Summoner-removebg-preview_119: 1345270565
+      Summoner-removebg-preview_12: -1431423942
+      Summoner-removebg-preview_120: 114621638
+      Summoner-removebg-preview_121: -1407805306
+      Summoner-removebg-preview_122: -1628829569
+      Summoner-removebg-preview_123: -1508013880
+      Summoner-removebg-preview_124: -447587714
+      Summoner-removebg-preview_125: 100295165
+      Summoner-removebg-preview_13: -1921660163
+      Summoner-removebg-preview_14: -1150236895
+      Summoner-removebg-preview_15: 329716514
+      Summoner-removebg-preview_16: -431998621
+      Summoner-removebg-preview_17: -378835716
+      Summoner-removebg-preview_18: -634237893
+      Summoner-removebg-preview_19: -1583354956
+      Summoner-removebg-preview_2: -1880825639
+      Summoner-removebg-preview_20: -1936499244
+      Summoner-removebg-preview_21: -610822945
+      Summoner-removebg-preview_22: 328010921
+      Summoner-removebg-preview_23: 2076091352
+      Summoner-removebg-preview_24: -1703887200
+      Summoner-removebg-preview_25: 876743798
+      Summoner-removebg-preview_26: -1758907874
+      Summoner-removebg-preview_27: -332841073
+      Summoner-removebg-preview_28: 1048665522
+      Summoner-removebg-preview_29: -1200594844
+      Summoner-removebg-preview_3: 1328153886
+      Summoner-removebg-preview_30: 1258130588
+      Summoner-removebg-preview_31: 1460161199
+      Summoner-removebg-preview_32: -1391984540
+      Summoner-removebg-preview_33: 1908461356
+      Summoner-removebg-preview_34: 449471796
+      Summoner-removebg-preview_35: -269803680
+      Summoner-removebg-preview_36: 869588142
+      Summoner-removebg-preview_37: -1766215027
+      Summoner-removebg-preview_38: 293740309
+      Summoner-removebg-preview_39: 1520662007
+      Summoner-removebg-preview_4: -2049492453
+      Summoner-removebg-preview_40: -71180337
+      Summoner-removebg-preview_41: 1901214491
+      Summoner-removebg-preview_42: 2143019273
+      Summoner-removebg-preview_43: -1053887689
+      Summoner-removebg-preview_44: -295313029
+      Summoner-removebg-preview_45: 791034026
+      Summoner-removebg-preview_46: 1829167915
+      Summoner-removebg-preview_47: -2071952634
+      Summoner-removebg-preview_48: 477331612
+      Summoner-removebg-preview_49: -480026045
+      Summoner-removebg-preview_5: 1750735966
+      Summoner-removebg-preview_50: 2026623466
+      Summoner-removebg-preview_51: -102024398
+      Summoner-removebg-preview_52: -2095282568
+      Summoner-removebg-preview_53: -1068736787
+      Summoner-removebg-preview_54: 662417131
+      Summoner-removebg-preview_55: 1952000680
+      Summoner-removebg-preview_56: 339358667
+      Summoner-removebg-preview_57: 653005840
+      Summoner-removebg-preview_58: 896393900
+      Summoner-removebg-preview_59: -279856225
+      Summoner-removebg-preview_6: -1119510022
+      Summoner-removebg-preview_60: 953397592
+      Summoner-removebg-preview_61: -622233028
+      Summoner-removebg-preview_62: 1114981521
+      Summoner-removebg-preview_63: -1580108218
+      Summoner-removebg-preview_64: -1802532910
+      Summoner-removebg-preview_65: 947178926
+      Summoner-removebg-preview_66: -1305236445
+      Summoner-removebg-preview_67: 1603778533
+      Summoner-removebg-preview_68: -434285533
+      Summoner-removebg-preview_69: -1681995848
+      Summoner-removebg-preview_7: -2106467214
+      Summoner-removebg-preview_70: -408846899
+      Summoner-removebg-preview_71: -1501567056
+      Summoner-removebg-preview_72: -1929929821
+      Summoner-removebg-preview_73: -2079843642
+      Summoner-removebg-preview_74: -330482582
+      Summoner-removebg-preview_75: -1880251453
+      Summoner-removebg-preview_76: -944270128
+      Summoner-removebg-preview_77: -355689632
+      Summoner-removebg-preview_78: 628678836
+      Summoner-removebg-preview_79: -1044080837
+      Summoner-removebg-preview_8: -521408867
+      Summoner-removebg-preview_80: -855107332
+      Summoner-removebg-preview_81: 405405014
+      Summoner-removebg-preview_82: 2092769829
+      Summoner-removebg-preview_83: -1130337747
+      Summoner-removebg-preview_84: -1315236526
+      Summoner-removebg-preview_85: -1953100746
+      Summoner-removebg-preview_86: -1466287303
+      Summoner-removebg-preview_87: -1956158148
+      Summoner-removebg-preview_88: -479628959
+      Summoner-removebg-preview_89: 1641683104
+      Summoner-removebg-preview_9: 93423158
+      Summoner-removebg-preview_90: 1472585498
+      Summoner-removebg-preview_91: 186305821
+      Summoner-removebg-preview_92: 1535312448
+      Summoner-removebg-preview_93: -103439945
+      Summoner-removebg-preview_94: -2095539086
+      Summoner-removebg-preview_95: -1684707849
+      Summoner-removebg-preview_96: 1109277252
+      Summoner-removebg-preview_97: 1886565875
+      Summoner-removebg-preview_98: 1173367718
+      Summoner-removebg-preview_99: 770114091
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
