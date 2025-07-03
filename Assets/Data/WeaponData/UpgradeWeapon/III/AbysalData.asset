@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Abysal III
   icon: {fileID: 1260815582, guid: 9234df4478f101b479499158cf4bb65f, type: 3}
   weaponData: {fileID: 11400000, guid: d456984e3571b9647bc862743b5f4d24, type: 2}
+  description: CoolDown -0.2s

@@ -16,3 +16,5 @@ MonoBehaviour:
   Name: Harmer III
   icon: {fileID: -925854895, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 5cabddefcb16c054489ed8342fe2b6d8, type: 2}
+  description: Transform into a warrior, increase armor, reduce damage (Damage +
+    5)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using TMPro;
@@ -115,10 +116,12 @@ public class CommonUI : MonoBehaviour
     void FindEquipmentToolTip()
     {
         equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true);
-
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true)
+                               .OrderBy(e => e.name)
+                               .ToArray();
         foreach (EquipmentTooltip e in equipmentTooltips)
         {
-            Debug.Log("1");
+            Debug.Log("Equipment Tooltip Found: " + e.name);
         }
 
     }
@@ -158,7 +161,6 @@ public class CommonUI : MonoBehaviour
         {
             currentTime = maxTimeInSeconds;
             isRunning = false;
-            // Spawn Last Boss -- Joker
         }
         CountTimer();
     }
