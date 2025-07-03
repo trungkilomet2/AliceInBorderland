@@ -410,7 +410,7 @@ public class CommonUI : MonoBehaviour
                 i--;
                 continue;
             }
-            equipmentTooltips[i].SetEquipmentInfo(updateData.weaponData.name.ToString());
+            // equipmentTooltips[i].SetEquipmentInfo(updateData.weaponData.name.ToString());
             listUpgrade.Add(updateData);
         }
         return listUpgrade;
