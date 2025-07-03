@@ -49,6 +49,8 @@ public class CommonUI : MonoBehaviour
 
     private SkillBase[] skillBase;
     private GameObject player;
+    bool isUpdateSkill = false;
+
 
     private AudioManager audioManager;
 
@@ -179,7 +181,10 @@ public class CommonUI : MonoBehaviour
         selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
-        upgradePanelManager.OpenPanel(selectUpdate);
+        if(upgradeData.Count > 0)
+        {
+            upgradePanelManager.OpenPanel(selectUpdate);
+        }
     }
     private void UpdateExpBar()
     {
@@ -219,7 +224,19 @@ public class CommonUI : MonoBehaviour
         }
     }
 
-    void FullItemRemove()
+    void RemoveSkillUpdate()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.SkillUpgrade)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
+
+    }
+
+    void RemoveItemUnused()
     {
         for (int i = 0; i < upgradeData.Count; i++)
         {
@@ -232,7 +249,6 @@ public class CommonUI : MonoBehaviour
     }
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
-        bool isUpdateSkill;
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
         if (acquireUpdate == null)
         {
@@ -271,7 +287,14 @@ public class CommonUI : MonoBehaviour
 
         if (acquireUpdate.Count == 4)
         {
-            FullItemRemove();
+            if(isUpdateSkill)
+            {
+                RemoveItemUnused();
+            }
+            else
+            {
+                RemoveSkillUpdate();
+            }
         }
 
         audioManager?.PlayChooseItemSound();
