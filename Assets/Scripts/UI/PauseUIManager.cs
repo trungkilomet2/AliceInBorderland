@@ -10,18 +10,15 @@ public class PauseUIManager : MonoBehaviour
     // Pause Menu
     [SerializeField] private GameObject pauseMenuUI;
 
-    //Game Over Menu
-    [SerializeField] private GameObject gameOverMenuUI;
-    [SerializeField] private TextMeshProUGUI timeScore;
 
-
+    private GameOverManager gameOverManager;
     private CommonUI commonUI;
     private AudioManager audioManager;
 
     private void Awake()
     {
         pauseMenuUI.SetActive(false);
-        gameOverMenuUI.SetActive(false);
+        gameOverManager = FindObjectOfType<GameOverManager>();
         audioManager = FindObjectOfType<AudioManager>();
         commonUI = FindObjectOfType<CommonUI>();
     }
@@ -30,10 +27,12 @@ public class PauseUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log(gameOverManager.isGameOver);
             if (pauseMenuUI.activeInHierarchy)
             {
+
                 pauseMenuUI.SetActive(false);
-                Time.timeScale = 1f; // Resume the game
+                Time.timeScale = 1f;
             }
             else
             {
@@ -45,7 +44,10 @@ public class PauseUIManager : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        pauseMenuUI.SetActive(pause);
+        if (gameOverManager != null && !gameOverManager.isGameOver)
+        {
+            pauseMenuUI.SetActive(pause);
+        }
     }
 
     public void ResumeGame()
@@ -68,13 +70,6 @@ public class PauseUIManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void GameOver()
-    {
-        timeScore = commonUI.timerCounter; // Get the time score from CommonUI
-        gameOverMenuUI.SetActive(true);
-        Time.timeScale = 0f; // Pause the game
-        audioManager.PlayGameOverSound(); // Play game over sound
-    }
 
     public void SoundVolume()
     {

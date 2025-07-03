@@ -47,6 +47,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Insert By Trung 30.06.2025
     private float characterBaseArmor = 10f;
+    private GameOverManager gameOverManager;
 
     [HideInInspector] 
     public bool isDashing = false; 
@@ -57,6 +58,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
         audioManager = FindAnyObjectByType<AudioManager>();
+        gameOverManager = FindAnyObjectByType<GameOverManager>();
     }
 
     public void DefaultCommonUI()
@@ -232,7 +234,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             {
                 AllowDeath();
                 Destroy(gameObject);
-                pauseUIManager.GameOver();
+                //pauseUIManager.GameOver();
+
+                gameOverManager.TriggerGameOver(); 
             }
 
         }

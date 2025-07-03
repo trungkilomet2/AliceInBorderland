@@ -14,6 +14,7 @@ public abstract class BossSkillBase : MonoBehaviour
 
     private AudioManager audioManager;
     private float lastUsedTime = -Mathf.Infinity;
+    public bool IsRunning { get; protected set; } = false;
 
     protected void Update()
     {
@@ -40,7 +41,7 @@ public abstract class BossSkillBase : MonoBehaviour
 
     public bool UseSkill()
     {
-        if (IsReady())
+        if (IsReady() && !IsRunning)
         {
             Activate();
             lastUsedTime = Time.time;

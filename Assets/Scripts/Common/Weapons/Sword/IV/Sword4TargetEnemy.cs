@@ -12,9 +12,12 @@ public class Sword4TargetEnemy : MonoBehaviour
     private const string ENEMY_TAG = "Enemy";
     public GameObject hoverObject;
 
+    public float attackCooldown = 1f;
+    private float lastAttackTime;
+    private float swordDamage = 15f;
+
     void Start()
     {
-
         player = GameObject.FindGameObjectWithTag(PLAYER_TAG);
         hoverObject.transform.position = player.transform.position;
         hoverObject.transform.SetParent(player.transform);
@@ -22,13 +25,17 @@ public class Sword4TargetEnemy : MonoBehaviour
 
     void Update()
     {
-
         GameObject nearestEnemy = FindNearestEnemy();
         if (nearestEnemy != null)
         {
             damagePrefab.SetActive(true);
             damagePrefab.transform.position = nearestEnemy.transform.position;
-            nearestEnemy.GetComponent<Enemy>().TakeDamage(10f);
+
+            if (Time.time - lastAttackTime >= attackCooldown)
+            {
+                nearestEnemy.GetComponent<Enemy>().TakeDamage(swordDamage);
+                lastAttackTime = Time.time;
+            }
         }
         else
         {
@@ -36,13 +43,13 @@ public class Sword4TargetEnemy : MonoBehaviour
         }
     }
 
-
     GameObject FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(ENEMY_TAG);
         GameObject nearest = null;
         float shortestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
+
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(currentPosition, enemy.transform.position);
@@ -54,7 +61,4 @@ public class Sword4TargetEnemy : MonoBehaviour
         }
         return nearest;
     }
-
-
-
 }
