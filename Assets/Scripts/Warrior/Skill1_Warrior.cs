@@ -77,9 +77,15 @@ public class Skill1_Warrior : SkillBase
         foreach (Collider2D col in enemies)
         {
             Enemy enemy = col.GetComponent<Enemy>();
+            EnemyBase enemyBase = col.GetComponent<EnemyBase>();
             if (enemy != null)
             {
                 enemy.TakeDamage(absorbedDamage * reflectDamageMultiplier);
+                
+            }
+            if (enemyBase != null)
+            {
+                enemyBase.TakeDamage(absorbedDamage * reflectDamageMultiplier);
             }
         }
 

@@ -106,8 +106,7 @@ public class CommonUI : MonoBehaviour
 
     void FindEquipmentToolTip()
     {
-        List<EquipmentTooltip> result = new List<EquipmentTooltip>();
-        equipmentTooltips = Resources.FindObjectsOfTypeAll<EquipmentTooltip>();
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true);
 
         foreach (EquipmentTooltip e in equipmentTooltips)
         {
@@ -412,8 +411,8 @@ public class CommonUI : MonoBehaviour
                 updateData = null;
                 continue;
             }
-
-            equipmentTooltips[count-1-i].SetEquipmentInfo(updateData.description);
+            Debug.Log("Update Data: " + updateData.Name);
+            equipmentTooltips[i].SetEquipmentInfo(updateData.description);
             listUpgrade.Add(updateData);
         }
         return listUpgrade;

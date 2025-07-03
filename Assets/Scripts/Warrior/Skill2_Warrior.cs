@@ -15,10 +15,14 @@ public class Skill2_Warrior : SkillBase
     private bool isDashing = false;
     private Vector3 dashTarget;
     private Collider2D col;
+    private CharacterCommonBehavior characterCommonBehavior;
+    private Collider2D myCollider;
 
     void Start()
     {
         col = GetComponent<Collider2D>();
+        characterCommonBehavior = GetComponent<CharacterCommonBehavior>();
+        myCollider = GetComponent<Collider2D>();
     }
 
 
@@ -48,30 +52,59 @@ public class Skill2_Warrior : SkillBase
     }
 
     private IEnumerator MoveCloneThenDash(GameObject clone, Vector3 target)
+{
+    const float stopDist      = 0.1f;   // Khoảng cách coi như “đã tới”
+    const float maxDashTime   = 2f;     // Thoát khẩn nếu kẹt
+    const float checkRadius   = 0.3f;   // Bán kính quét va chạm
+    float elapsed = 0f;
+    bool  blocked = false;
+
+    // ──────────────────────────────────────────────────────────
+    while (clone && Vector3.Distance(clone.transform.position, target) > stopDist && elapsed < maxDashTime)
     {
-        float stopDistance = 0.1f; // Khoảng cách dừng
-        float maxDuration = 2f;    // Thoát nếu kẹt
-        float elapsed = 0f;
-
-        while (Vector3.Distance(clone.transform.position, target) > stopDistance && elapsed < maxDuration)
+        /* 1️⃣ Kiểm tra xem clone sắp chạm tường (tag "Block") */
+        Collider2D[] hits = Physics2D.OverlapCircleAll(clone.transform.position, checkRadius);
+        foreach (var h in hits)
         {
-            Vector3 dir = (target - clone.transform.position).normalized;
-            clone.transform.position += dir * cloneSpeed * Time.deltaTime;
-            elapsed += Time.deltaTime;
-            yield return null;
+            if (h.CompareTag("Block"))
+            {
+                blocked = true;
+                break;
+            }
         }
+        if (blocked) break;
 
-        // Đảm bảo clone chạm vị trí chính xác
-        clone.transform.position = target;
+        /* 2️⃣ Di chuyển clone */
+        Vector3 dir = (target - clone.transform.position).normalized;
+        clone.transform.position += dir * cloneSpeed * Time.deltaTime;
 
-        dashTarget = clone.transform.position;
-        Destroy(clone);
-
-        // Start dash
-        isDashing = true;
-        if (col != null) col.enabled = false;
-        StartCoroutine(DashToTarget());
+        elapsed += Time.deltaTime;
+        yield return null;
     }
+    // ──────────────────────────────────────────────────────────
+
+    /* Nếu chạm tường hoặc clone mất -> huỷ clone & KHÔNG dash */
+    if (blocked || clone == null)
+    {
+        if (clone) Destroy(clone);
+        yield break;
+    }
+
+    /* Ép clone đứng chính xác mục tiêu */
+    clone.transform.position = target;
+    dashTarget = clone.transform.position;
+    Destroy(clone);
+
+    /* Bắt đầu dash nhân vật */
+    isDashing = true;
+    characterCommonBehavior.isDashing = true;
+    if (myCollider) myCollider.enabled = false;
+    yield return StartCoroutine(DashToTarget());
+
+    // (DashToTarget kết thúc sẽ bật lại collider & flag)
+}
+
+
 
 
     private IEnumerator DashToTarget()
@@ -112,14 +145,51 @@ public class Skill2_Warrior : SkillBase
         foreach (var col in aoeHits)
         {
             Enemy enemy = col.GetComponent<Enemy>();
+            EnemyBase enemyBase = col.GetComponent<EnemyBase>();
+            BossBase boss = col.GetComponent<BossBase>();
             if (enemy != null)
             {
                 enemy.TakeDamage(explosionDamage);
             }
+            if (enemyBase != null)
+            {
+                enemyBase.TakeDamage(explosionDamage);
+            }
+            if (boss != null)
+            {
+                boss.TakeDamage(explosionDamage);
+            }
+                
         }
 
         isDashing = false;
+        characterCommonBehavior.isDashing = false;
         if (col != null) col.enabled = true;
+    }
+
+    private void OnEnable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision += StopRolling;
+    }
+
+    private void OnDisable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision -= StopRolling;
+    }
+
+    private void StopRolling()
+    {
+        if (isDashing)
+        {
+            Debug.Log("Va chạm Block, dừng dash.");
+            isDashing = false;
+            CancelSkill();
+            // THAY ĐỔI: Tắt isDashing khi dash bị dừng do va chạm
+            if (characterCommonBehavior != null)
+            {
+                characterCommonBehavior.isDashing = false;
+            }
+        }
     }
 }
 

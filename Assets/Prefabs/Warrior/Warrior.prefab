@@ -293,10 +293,10 @@ MonoBehaviour:
   skillDamage: 10
   skillSound: {fileID: 0}
   warriorClonePrefab: {fileID: 5917533558749019282, guid: 38b9bdafacd6335409e816a33d8d2b83, type: 3}
-  cloneSpeed: 20
-  dashSpeed: 15
+  cloneSpeed: 30
+  dashSpeed: 25
   damageOnPath: 20
-  explosionDamage: 50
+  explosionDamage: 100
   explosionEffect: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
 --- !u!114 &7275985448688403063
 MonoBehaviour:

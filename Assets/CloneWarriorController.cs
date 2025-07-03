@@ -12,11 +12,19 @@ public class CloneWarriorController : MonoBehaviour
     private Vector2 dashDirection;
     private float timer = 0f;
     private Warrior originalWarrior;
+    private SkillBase skillBase;
+    private bool isDashing = false;
+    private CharacterCommonBehavior characterCommonBehavior;
 
     public void StartDash(Vector2 dir, Warrior origin)
     {
         dashDirection = dir.normalized;
         originalWarrior = origin;
+    }
+    void Start()
+    {
+        skillBase = GetComponent<SkillBase>();
+        characterCommonBehavior = GetComponent<CharacterCommonBehavior>();
     }
 
     void Update()
@@ -47,6 +55,31 @@ public class CloneWarriorController : MonoBehaviour
         {
             // Gây damage ở đây nếu cần
             col.GetComponent<Enemy>()?.TakeDamage(explosionDamage * 0.5f);
+        }
+    }
+
+    private void OnEnable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision += StopRolling;
+    }
+
+    private void OnDisable()
+    {
+        CharacterCommonBehavior.OnBlockedCollision -= StopRolling;
+    }
+
+    private void StopRolling()
+    {
+        if (isDashing)
+        {
+            Debug.Log("Va chạm Block, dừng dash.");
+            isDashing = false;
+            skillBase.CancelSkill();
+            // THAY ĐỔI: Tắt isDashing khi dash bị dừng do va chạm
+            if (characterCommonBehavior != null)
+            {
+                characterCommonBehavior.isDashing = false;
+            }
         }
     }
 }
