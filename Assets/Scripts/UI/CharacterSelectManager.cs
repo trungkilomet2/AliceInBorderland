@@ -40,6 +40,7 @@ public class CharacterSelectManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         charSelectionAudioManager = FindObjectOfType<CharSelectionAudioManager>();
     }
 

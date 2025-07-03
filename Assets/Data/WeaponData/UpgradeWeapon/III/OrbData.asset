@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Orb III
   icon: {fileID: 21300000, guid: 868b8508663865a44b652eb423470a33, type: 3}
   weaponData: {fileID: 11400000, guid: 29843b59b0c755f418c3e9931ae0b767, type: 2}
+  description: Increase range

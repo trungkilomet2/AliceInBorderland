@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using TMPro;
@@ -51,6 +52,7 @@ public class CommonUI : MonoBehaviour
     private GameObject player;
     bool isUpdateSkill = false;
     private EquipmentTooltip[] equipmentTooltips;
+    private PauseUIManager pauseUIManager;
 
 
     private AudioManager audioManager;
@@ -59,6 +61,7 @@ public class CommonUI : MonoBehaviour
     {
         weaponManager = GetComponent<WeaponManager>();
         audioManager = FindAnyObjectByType<AudioManager>();
+        pauseUIManager = FindAnyObjectByType<PauseUIManager>();
     }
 
     private void Start()
@@ -115,10 +118,12 @@ public class CommonUI : MonoBehaviour
     void FindEquipmentToolTip()
     {
         equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true);
-
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true)
+                               .OrderBy(e => e.name)
+                               .ToArray();
         foreach (EquipmentTooltip e in equipmentTooltips)
         {
-            Debug.Log("1");
+            Debug.Log("Equipment Tooltip Found: " + e.name);
         }
 
     }
@@ -158,7 +163,6 @@ public class CommonUI : MonoBehaviour
         {
             currentTime = maxTimeInSeconds;
             isRunning = false;
-            // Spawn Last Boss -- Joker
         }
         CountTimer();
     }
@@ -205,6 +209,7 @@ public class CommonUI : MonoBehaviour
         if (upgradeData.Count > 0)
         {
             upgradePanelManager.OpenPanel(selectUpdate);
+            pauseUIManager.SetCanPause(false);
         }
     }
     private void UpdateExpBar()
@@ -317,7 +322,7 @@ public class CommonUI : MonoBehaviour
                 RemoveSkillUpdate();
             }
         }
-
+        pauseUIManager.SetCanPause(true);
         audioManager?.PlayChooseItemSound();
         upgradeData.Remove(upgradeChoice);
         LoadUpdateUI();
