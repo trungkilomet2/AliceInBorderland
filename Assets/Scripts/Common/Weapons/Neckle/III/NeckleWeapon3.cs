@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeckleWeapon : MonoBehaviour
+public class NeckleWeapon3 : MonoBehaviour
 {
     private bool isItemActive = true;
     private float itemDisableEndTime = 0f;
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2D;
     CharacterCommonBehavior characterCommon;
-    private float neckleWeaponColdown = 15f;
-    private float neckleActiveTiming = 1f;
+    private float neckleWeaponColdown = 12f;
+    private float neckleActiveTiming = 3f;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
