@@ -42,6 +42,9 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     [HideInInspector]
     public AudioManager audioManager;
 
+    //pause
+    private PauseUIManager pauseUIManager;
+
     // Insert By Trung 30.06.2025
     private float characterBaseArmor = 10f;
     private GameOverManager gameOverManager;
@@ -75,6 +78,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         // Add 28.06/2025 |Quang Anh|  Ghi lại vị trí an toàn ban đầu
         lastSafePosition = transform.position;
+        pauseUIManager = FindAnyObjectByType<PauseUIManager>();
     }
 
     // Update is called once per frame
@@ -225,13 +229,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            audioManager?.PlayGameOverSound();
             if (this is Warrior && !CanDie()) return;
             else
             {
                 AllowDeath();
                 Destroy(gameObject);
-                Time.timeScale = 0f;
+                //pauseUIManager.GameOver();
+
                 gameOverManager.TriggerGameOver(); 
             }
 

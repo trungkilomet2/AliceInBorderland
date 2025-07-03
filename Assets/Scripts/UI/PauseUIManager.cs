@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
+
+public class PauseUIManager : MonoBehaviour
+{
+    // Pause Menu
+    [SerializeField] private GameObject pauseMenuUI;
+
+
+    private GameOverManager gameOverManager;
+    private CommonUI commonUI;
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        pauseMenuUI.SetActive(false);
+        gameOverManager = FindObjectOfType<GameOverManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+        commonUI = FindObjectOfType<CommonUI>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log(gameOverManager.isGameOver);
+            if (pauseMenuUI.activeInHierarchy)
+            {
+
+                pauseMenuUI.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                pauseMenuUI.SetActive(true);
+                Time.timeScale = 0f; // Pause the game
+            }
+        }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (gameOverManager != null && !gameOverManager.isGameOver)
+        {
+            pauseMenuUI.SetActive(pause);
+        }
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f; // Resume the game
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
+    public void SoundVolume()
+    {
+        audioManager.ChangeSoundVolume(0.1f);
+    }
+}
