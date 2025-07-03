@@ -467,7 +467,9 @@ public class CommonUI : MonoBehaviour
         return null;
     }
 
-
-
+    public float GetMaxHp()
+    {
+        return maxHP;
+    }
 
 }
