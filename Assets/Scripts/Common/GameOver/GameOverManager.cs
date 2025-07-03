@@ -46,7 +46,7 @@ public class GameOverManager : MonoBehaviour
         gameOverGroup.interactable = true;
         isGameOver = true;
 
-        timeScore = commonUI.timerCounter; // Get the time score from CommonUI
+        timeScore.text = commonUI.currentTime.ToString("F0") + "s";
         audioManager.PlayGameOverSound(); // Play game over sound
         Time.timeScale = 0f; // Pause the game
     }
