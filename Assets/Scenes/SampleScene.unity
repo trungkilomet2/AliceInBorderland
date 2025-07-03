@@ -398644,7 +398644,7 @@ MonoBehaviour:
   stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
   enemiesManager: {fileID: 1714175506}
   stageDuration: 120
-  spawnInterval: 2
+  spawnInterval: 0.5
 --- !u!114 &1813645151
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,7 +137,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -205,7 +205,10 @@ MonoBehaviour:
   - {fileID: 7696732050759654250}
   hp: 200
   commonUI: {fileID: 0}
+  attackSound: {fileID: 0}
   damageReductionMultiplier: 1
+  audioManager: {fileID: 0}
+  isDashing: 0
   axe: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   axeSpawnPoint: {fileID: 5270292626708380349}
   timeBtwaxe: 0.2
@@ -231,6 +234,7 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 5
   skillDamage: 0
+  skillSound: {fileID: 0}
   damageMultiplier: 1.5
   buffDuration: 5
   sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
@@ -258,6 +262,7 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 5
   skillDamage: 0
+  skillSound: {fileID: 0}
   shieldDuration: 5
   maxAbsorbDamage: 100
   reflectRadius: 10
@@ -285,6 +290,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 0}
 --- !u!114 &7275985448688403063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +312,7 @@ MonoBehaviour:
   skillWidth: 0
   skillDuration: 0
   skillDamage: 0
+  skillSound: {fileID: 0}
   cooldownTime: 5
   sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
   form1Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
