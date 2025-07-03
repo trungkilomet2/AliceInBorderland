@@ -66,7 +66,7 @@ public class StageEventManager : MonoBehaviour
 
         if (Time.time >= nextSpawnTime)
         {
-            if (currentStage is StageEvent enemyStage)
+            if (currentStage is EnemyStageEvent enemyStage)
             {
                 foreach (var enemyConfig in enemyStage.enemiesToSpawn)
                 {

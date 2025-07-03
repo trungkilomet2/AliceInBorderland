@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5baf92be1b8265b4e8ac799abcbe59d0, type: 3}
   m_Name: Stage 6
-  m_EditorClassIdentifier: Assembly-CSharp::StageEvent
+  m_EditorClassIdentifier: 
   message: Stage 6
   enemiesToSpawn:
-  - enemyData: {fileID: 11400000, guid: 1e31d575ce12fe243a0be6b28be0a1e0, type: 2}
-    maxCount: 15
   - enemyData: {fileID: 11400000, guid: cd48b7026afa3be48b25088d538a4975, type: 2}
     maxCount: 50
+  - enemyData: {fileID: 11400000, guid: 1e31d575ce12fe243a0be6b28be0a1e0, type: 2}
+    maxCount: 15

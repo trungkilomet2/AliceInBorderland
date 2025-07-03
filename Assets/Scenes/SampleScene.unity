@@ -398626,7 +398626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a8f33247eeeac46946f17c9b1bad35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
+  stageData: {fileID: 11400000, guid: 89971f7334bb9a44aa12a78e7f4733fb, type: 2}
   enemiesManager: {fileID: 1714175506}
   stageDuration: 120
   spawnInterval: 0.5
