@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BearProjectile : MonoBehaviour
+public class BearProjectile : Joker_Boss
 {
     public float homingTime = 7f;
     public float moveSpeed = 4f;
@@ -16,6 +16,12 @@ public class BearProjectile : MonoBehaviour
 
     void Update()
     {
+
+
+        Vector3 bearPos = transform.position;
+        Vector3 playerPos = targetGameObject.transform.position;
+        bool facingLeft = bearPos.x > playerPos.x;
+        GetComponent<SpriteRenderer>().flipX = facingLeft;
         timer -= Time.deltaTime;
         if (player != null)
         {
