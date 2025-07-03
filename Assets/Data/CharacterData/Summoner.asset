@@ -15,10 +15,10 @@ MonoBehaviour:
   characterName: Summoner
   characterSprite: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
   characterPortrait: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
-  description: A master of Summon, the Summoner Will Summon and Use the power of
-    ancient creature of the world  devastate enemies from afar.
+  description: A master of summoning, the Summoner calls ancient creatures to devastate
+    enemies.
   health: 200
-  speed: 3.5
+  speed: 5
   damage: 20
   weaponName: Basic Weapon
   isLocked: 0
