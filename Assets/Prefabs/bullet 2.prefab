@@ -164,3 +164,4 @@ MonoBehaviour:
   speed: 7
   damage: 10
   direction: {x: 0, y: 0, z: 0}
+  lifetime: 7
