@@ -27,6 +27,8 @@ public class GameOverManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverGroup.alpha = 0f;
+        gameOverGroup.blocksRaycasts = true;
+        gameOverGroup.interactable = true;
         isGameOver = true;
     }
 
