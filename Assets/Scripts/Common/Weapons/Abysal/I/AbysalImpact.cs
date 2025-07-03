@@ -33,6 +33,7 @@ public class AbysalImpact : MonoBehaviour
             if (other.CompareTag(ENEMY_TAG))
             {
                 other.GetComponent<Enemy>()?.TakeDamage(abysalDamage);
+                other.GetComponent<EnemyBase>()?.TakeDamage(abysalDamage);
             }
 
             Destroy(gameObject, destroyDelay);
