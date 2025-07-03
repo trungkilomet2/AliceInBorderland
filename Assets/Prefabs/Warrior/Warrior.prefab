@@ -286,7 +286,7 @@ MonoBehaviour:
   skillType: 0
   indicatorType: 1
   skillName: Telecanesis
-  cooldown: 0
+  cooldown: 5
   skillRange: 10
   skillWidth: 1
   skillDuration: 2

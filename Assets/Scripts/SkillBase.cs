@@ -47,31 +47,31 @@ public abstract class SkillBase : MonoBehaviour
             indicatorPrefab = Resources.Load<GameObject>("Prefabs/CircleIndicator");
         }
 
-        switch (skillNum)
-        {
-           case SkillNum.Skill1:
+        // switch (skillNum)
+        // {
+        //    case SkillNum.Skill1:
                
-                   key = KeyCode.Alpha1;
-               break;
-           case SkillNum.Skill2:
+        //            key = KeyCode.Alpha1;
+        //        break;
+        //    case SkillNum.Skill2:
                
-                   key = KeyCode.Alpha2;
-               break;
-           case SkillNum.Skill3:
+        //            key = KeyCode.Alpha2;
+        //        break;
+        //    case SkillNum.Skill3:
                
-                   key = KeyCode.Alpha3;
-               break;
-           case SkillNum.Skill4:
+        //            key = KeyCode.Alpha3;
+        //        break;
+        //    case SkillNum.Skill4:
                
-                   key = KeyCode.Alpha4;
-               break;
-           case SkillNum.Passive:
-               key = KeyCode.None;
-               break;
-           default:
-               key = KeyCode.None; // Default to no key
-               break;
-        }
+        //            key = KeyCode.Alpha4;
+        //        break;
+        //    case SkillNum.Passive:
+        //        key = KeyCode.None;
+        //        break;
+        //    default:
+        //        key = KeyCode.None; // Default to no key
+        //        break;
+        // }
     }
 
     public virtual void HandleSkillInput()
