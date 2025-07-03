@@ -96,8 +96,11 @@ public class MageSkill3 : SkillBase
                 if (hitCollider.CompareTag("Enemy"))
                 {
                     Enemy enemy = hitCollider.GetComponent<Enemy>();
+                    EnemyBase enemyBase = hitCollider.GetComponent<EnemyBase>();
+
                     if (enemy != null && !enemiesHitThisTick.Contains(enemy))
                     {
+                        enemyBase.TakeDamage(skillDamage);
                         enemy.TakeDamage(skillDamage);
                         enemiesHitThisTick.Add(enemy);
                     }

@@ -104,8 +104,7 @@ public class MageSkill1 : SkillBase
 
             enemiesHitThisTick.Clear();
 
-            // SỬ DỤNG HƯỚNG ĐƯỢC LƯU KHI KÍCH HOẠT SKILL CHO LOGIC SÁT THƯƠNG
-            Vector2 boxDirection = directionOnSkillActivation; // <<< Thay đổi ở đây
+            Vector2 boxDirection = directionOnSkillActivation; 
             float boxAngle = Mathf.Atan2(boxDirection.y, boxDirection.x) * Mathf.Rad2Deg; // <<< Tính góc từ hướng đã lưu
 
             Vector2 boxCenter = (Vector2)transform.position + boxDirection * (skillRange * 0.5f);
@@ -123,9 +122,11 @@ public class MageSkill1 : SkillBase
                 if (hit.CompareTag("Enemy"))
                 {
                     Enemy enemy = hit.GetComponent<Enemy>();
+                    EnemyBase enemyBase = hit.GetComponent<EnemyBase>();
                     if (enemy != null && !enemiesHitThisTick.Contains(enemy))
                     {
                         enemy.TakeDamage(skillDamage);
+                        enemyBase.TakeDamage(skillDamage); 
                         enemiesHitThisTick.Add(enemy);
                     }
                     else if (enemy == null)

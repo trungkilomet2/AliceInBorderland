@@ -108,6 +108,7 @@ public class MageSkill2 : SkillBase
                 if (hit.CompareTag("Enemy"))
                 {
                     Enemy enemy = hit.GetComponent<Enemy>();
+                    EnemyBase enemyBase = hit.GetComponent<EnemyBase>();
                     if (enemy != null)
                     {
                         currentTickEnemies.Add(enemy);
@@ -120,7 +121,8 @@ public class MageSkill2 : SkillBase
                         }
 
                         if (damagePerSecond > 0f)
-                            enemy.TakeDamage(damagePerSecond * tickRate);
+                        enemyBase.TakeDamage(damagePerSecond * tickRate);
+                        enemy.TakeDamage(damagePerSecond * tickRate);
                     }
                 }
             }
