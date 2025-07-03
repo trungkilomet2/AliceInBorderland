@@ -84,4 +84,19 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("soundVolume", currentVolume);
     }
+
+    public void ChangeEffectVolume(float _change)
+    {
+        float currentVolume = PlayerPrefs.GetFloat("effectVolume");
+        currentVolume += _change;
+
+        if (currentVolume > 1)
+            currentVolume = 0;
+        else if (currentVolume < 0)
+            currentVolume = 1;
+
+        backgroundAudioSource.volume = currentVolume;
+
+        PlayerPrefs.SetFloat("effectVolume", currentVolume);
+    }
 }

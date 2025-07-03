@@ -73,6 +73,11 @@ public class PauseUIManager : MonoBehaviour
 
     public void SoundVolume()
     {
-        audioManager.ChangeSoundVolume(0.1f);
+        audioManager.ChangeSoundVolume(0.2f);
+    }
+
+    public void EffectVolume()
+    {
+        audioManager.ChangeEffectVolume(0.2f);
     }
 }
