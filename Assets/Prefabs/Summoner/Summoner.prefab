@@ -179,7 +179,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.33, y: 2.5}
+    oldSize: {x: 0.65, y: 0.99}
     newSize: {x: 2.33, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillNum: 2
   skillType: 1
-  indicatorType: 0
+  indicatorType: 1
   skillName: 
   cooldown: 5
   skillRange: 10
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillNum: 1
   skillType: 1
-  indicatorType: 0
+  indicatorType: 1
   skillName: 
   cooldown: 15
   skillRange: 40
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillNum: 3
   skillType: 1
-  indicatorType: 0
+  indicatorType: 1
   skillName: 
   cooldown: 5
   skillRange: 10
