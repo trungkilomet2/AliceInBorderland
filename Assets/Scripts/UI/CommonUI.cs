@@ -106,8 +106,7 @@ public class CommonUI : MonoBehaviour
 
     void FindEquipmentToolTip()
     {
-        List<EquipmentTooltip> result = new List<EquipmentTooltip>();
-        equipmentTooltips = Resources.FindObjectsOfTypeAll<EquipmentTooltip>();
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true);
 
         foreach (EquipmentTooltip e in equipmentTooltips)
         {
@@ -405,12 +404,15 @@ public class CommonUI : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             UpdateData updateData = upgradeData[Random.Range(0, upgradeData.Count)];
+
             if (CheckDupliCateUpdateData(updateData, listUpgrade))
             {
                 i--;
+                updateData = null;
                 continue;
             }
-            // equipmentTooltips[i].SetEquipmentInfo(updateData.weaponData.name.ToString());
+            Debug.Log("Update Data: " + updateData.Name);
+            equipmentTooltips[i].SetEquipmentInfo(updateData.description);
             listUpgrade.Add(updateData);
         }
         return listUpgrade;
