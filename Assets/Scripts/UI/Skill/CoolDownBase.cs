@@ -18,7 +18,7 @@ public abstract class CoolDownBase : MonoBehaviour
     {
         if (cooldownImage != null)
         {
-            cooldownImage.fillAmount = 1f;
+            cooldownImage.fillAmount = 0f;
             Debug.Log("Da fill Amount");
         }
     }
@@ -29,6 +29,7 @@ public abstract class CoolDownBase : MonoBehaviour
         if (isCoolingDown)
         {
             currentCooldown -= Time.deltaTime;
+            Debug.Log("Current Cooldown: " + currentCooldown);
             UpdateCooldownUI();
 
             if (currentCooldown <= 0f)
