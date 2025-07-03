@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - EXP
   - Block
+  - Enemy_Weapon
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - PlayerProjectile
+  - BossProjectile
   - 
   - 
   - 
@@ -72,4 +73,13 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3328968647
+    locked: 0
+  - name: PlayerProjectile
+    uniqueID: 4181517027
+    locked: 0
+  - name: Effect
+    uniqueID: 2605797427
+    locked: 0
+  - name: BossProjectile
+    uniqueID: 287420879
     locked: 0
