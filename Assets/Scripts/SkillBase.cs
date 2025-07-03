@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngineInternal;
 
 public enum IndicatorType { Circle, Arrow }
@@ -273,6 +274,15 @@ public abstract class SkillBase : MonoBehaviour
     public  AudioManager GetAudio()
     {
         return audioManager;
+    }
+
+    public float GetCurrentCooldown()
+    {
+        return this.currentCooldown;
+    }
+    public bool GetIsCoolingDown()
+    {
+        return this.isCoolingDown;
     }
 
 

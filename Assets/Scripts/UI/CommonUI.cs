@@ -267,7 +267,6 @@ public class CommonUI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         skillBase = player.GetComponents<SkillBase>();
-
         SkillNum numberOfSkill = SkillNum.Passive;
 
         if (updateData.Name.Split(" ")[1].Equals("I"))
@@ -294,11 +293,25 @@ public class CommonUI : MonoBehaviour
 
         foreach (SkillBase skill in skillBase)
         {
-            Debug.Log(numberOfSkill == skill.skillNum);
+
             if (numberOfSkill == skill.skillNum)
             {
+                float cooldownTime;
                 skill.UnlockSkillBySkillNum(numberOfSkill);
+                cooldownTime = skill.GetCurrentCooldown();
+                if (skill.GetIsCoolingDown())
+                {
+                    FindSkillCoolDown(numberOfSkill);
+                }
             }
+        }
+    }
+    void FindSkillCoolDown(SkillNum numberOfSkill)
+    {
+        if (numberOfSkill == SkillNum.Skill1)
+        {
+            CoolDownSkill1 coolDownSkill1 = FindAnyObjectByType<CoolDownSkill1>();
+            coolDownSkill1.StartCooldown();
         }
 
     }
