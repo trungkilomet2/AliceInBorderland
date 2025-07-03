@@ -13,7 +13,7 @@ public class SumSkill2 : SkillBase
     // Danh sách để quản lý các projectile đang active
     private List<GameObject> activeProjectiles = new List<GameObject>();
 
-    // Gán các thuộc tính kế thừa (gán đúng nút/phím & loại)
+    
     public override void Awake()
     {
         base.Awake();
@@ -30,19 +30,19 @@ public class SumSkill2 : SkillBase
     public override void Update()
     {
         base.Update();
-        // Không cần xử lý gì thêm, hệ thống base đã xử lý cooldown và trigger
+        
     }
 
     public override void HandleSkillInput()
     {
         base.HandleSkillInput();
-        // Không cần xử lý gì thêm, hệ thống base đã xử lý phím
+        
     }
 
     // Hàm Activate được hệ thống gọi khi xác nhận dùng skill (bấm phím & click chuột trái)
     protected override void Activate()
     {
-        // Lấy vị trí triển khai skill theo chỉ thị chuột (vòng tròn)
+        
         Vector3 castPos = transform.position;
         if (indicatorInstance != null)
         {

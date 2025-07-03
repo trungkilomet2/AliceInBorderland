@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OrbWeapon : MonoBehaviour
 {
-    public float damageOfOrb = 10f;
+    public float damageOfOrb = 12f;
     public float pushForce = 20f;
     public float damageInterval = 1f;
     private string ENEMY_TAG = "Enemy";
