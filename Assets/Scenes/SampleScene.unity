@@ -475,6 +475,7 @@ MonoBehaviour:
   - {fileID: 949578521}
   - {fileID: 241797328}
   moveArrowSound: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
+  clickSound: {fileID: 0}
 --- !u!114 &61442491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402241,6 +402242,7 @@ MonoBehaviour:
   - {fileID: 2046777150}
   - {fileID: 40642285}
   moveArrowSound: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
+  clickSound: {fileID: 8300000, guid: bb19794b24e9f314180e6d98b42b2051, type: 3}
 --- !u!114 &1991961390
 MonoBehaviour:
   m_ObjectHideFlags: 0
