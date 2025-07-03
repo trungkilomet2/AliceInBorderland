@@ -7,6 +7,7 @@ public class SelectionArrow : MonoBehaviour
 {
     [SerializeField] private RectTransform[] options;
     [SerializeField] private AudioClip moveArrowSound;
+    [SerializeField] private AudioClip clickSound;
     private RectTransform rect;
     private int currentIndex = 0;
 
@@ -53,6 +54,7 @@ public class SelectionArrow : MonoBehaviour
     private void Interact()
     {
         options[currentIndex].GetComponent<Button>().onClick.Invoke();
+        audioManager.PlaySoundClip(clickSound);
     }
 
 }
