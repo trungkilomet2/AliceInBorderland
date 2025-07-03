@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stage 10 (Joker)
   m_EditorClassIdentifier: 
   message: Stage 10 (Joker)
-  bossPrefab: {fileID: 7655666251203725423, guid: bf3b4433c7543944e869a00fca0274cd, type: 3}
+  bossPrefab: {fileID: 7655666251203725423, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}

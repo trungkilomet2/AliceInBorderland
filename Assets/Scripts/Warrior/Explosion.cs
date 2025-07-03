@@ -8,9 +8,18 @@ public class Explosion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
+        EnemyBase enemy1 = collision.GetComponent<EnemyBase>();
         if (collision.CompareTag("Enemy"))
         {
-            enemy.TakeDamage(damage);
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            if (enemy1 != null)
+            {
+                enemy1.TakeDamage(damage);
+            }
+            
         }
     }
     public void DestroyExplosion()

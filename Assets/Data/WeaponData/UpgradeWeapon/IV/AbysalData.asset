@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Abysal IV
   icon: {fileID: -540735930, guid: 9234df4478f101b479499158cf4bb65f, type: 3}
   weaponData: {fileID: 11400000, guid: 1072794f37eef924cacd37fa4a2eef09, type: 2}
+  description: CoolDown -0.2s

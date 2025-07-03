@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         audioManager = FindAnyObjectByType<MainMenuAudioManager>();
     }
     

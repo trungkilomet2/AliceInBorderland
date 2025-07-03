@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Armor I
   icon: {fileID: -1929916957, guid: 77972de6762c98b49b74c2df34de06e0, type: 3}
   weaponData: {fileID: 11400000, guid: 99148752e22b65c4d9f5539d93a1e37a, type: 2}
+  description: + 2.5 Armor

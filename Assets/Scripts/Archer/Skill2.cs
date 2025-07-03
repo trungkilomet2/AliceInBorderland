@@ -46,6 +46,12 @@ public class Skill2 : SkillBase
                     {
                         enemy.TakeDamage(skillDamage);
                     }
+
+                    BossBase boss = hitCollider.GetComponent<BossBase>();
+                    if (boss != null)
+                    {
+                        boss.TakeDamage(skillDamage);
+                    }
                 }
             }
             yield return new WaitForSeconds(damageInterval);

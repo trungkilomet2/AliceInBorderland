@@ -21,6 +21,8 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         PlayBackGroundMusic();
+        ChangeSoundVolume(1);
+        ChangeEffectVolume(1);
     }
 
     public void PlayBackGroundMusic()
@@ -68,5 +70,35 @@ public class AudioManager : MonoBehaviour
         {
             effectAudioSource.PlayOneShot(sound);
         }
+    }
+
+    public void ChangeSoundVolume(float _change)
+    {
+        float currentVolume = PlayerPrefs.GetFloat("soundVolume", 1);
+        currentVolume += _change;
+
+        if (currentVolume > 1)
+            currentVolume = 0;
+        else if (currentVolume < 0)
+            currentVolume = 1;
+
+        backgroundAudioSource.volume = currentVolume;
+
+        PlayerPrefs.SetFloat("soundVolume", currentVolume);
+    }
+
+    public void ChangeEffectVolume(float _change)
+    {
+        float currentVolume = PlayerPrefs.GetFloat("effectVolume", 1);
+        currentVolume += _change;
+
+        if (currentVolume > 1)
+            currentVolume = 0;
+        else if (currentVolume < 0)
+            currentVolume = 1;
+
+        effectAudioSource.volume = currentVolume;
+
+        PlayerPrefs.SetFloat("effectVolume", currentVolume);
     }
 }

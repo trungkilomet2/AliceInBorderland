@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Sword IV
   icon: {fileID: -336120748, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 13223fa4b06163d47b64c8c2dd7d6fde, type: 2}
+  description: 'Attack nearest enemy every 1 second (Damage: 15)'

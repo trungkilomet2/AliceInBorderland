@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Staff II
   icon: {fileID: 53662087, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: 075aba3fd4f5fb74087134d439ab309e, type: 2}
+  description: 'Creates an area with sparks rotating around it (Damage : 15)'

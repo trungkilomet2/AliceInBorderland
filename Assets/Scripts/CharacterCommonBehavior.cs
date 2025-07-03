@@ -31,7 +31,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
-    private float positionRecordInterval = 0.5f;
+    private float positionRecordInterval = 1f;
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
@@ -42,11 +42,18 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     [HideInInspector]
     public AudioManager audioManager;
 
+    //pause
+    private PauseUIManager pauseUIManager;
+
     // Insert By Trung 30.06.2025
     private float characterBaseArmor = 10f;
+    private GameOverManager gameOverManager;
 
-    [HideInInspector] 
-    public bool isDashing = false; 
+    [HideInInspector]
+    public bool isDashing = false;
+
+    // THÊM: Lượng HP hồi phục khi nhặt coin
+    public float healAmountPerCoin = 10f;
 
 
     private void Awake()
@@ -54,6 +61,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
         audioManager = FindAnyObjectByType<AudioManager>();
+        gameOverManager = FindAnyObjectByType<GameOverManager>();
     }
 
     public void DefaultCommonUI()
@@ -73,6 +81,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         // Add 28.06/2025 |Quang Anh|  Ghi lại vị trí an toàn ban đầu
         lastSafePosition = transform.position;
+        pauseUIManager = FindAnyObjectByType<PauseUIManager>();
     }
 
     // Update is called once per frame
@@ -113,7 +122,8 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         {
             audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
-            // Xu ly add them playprefabs
+            // THAY ĐỔI MỚI: Hồi phục HP khi nhặt Coin
+            Heal(healAmountPerCoin);
         }
         if (collision.tag == EXP_TAG)
         {
@@ -134,13 +144,13 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             }
         }
         //// Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
-        //if (collision.CompareTag(BLOCK_TAG))
-        //{
-        //    Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
+        ////if (collision.CompareTag(BLOCK_TAG))
+        ////{
+        ////    Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
 
-        //    //transform.position = lastSafePosition;
-        //    OnBlockedCollision?.Invoke();
-        //}
+        ////    //transform.position = lastSafePosition;
+        ////    OnBlockedCollision?.Invoke();
+        ////}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -223,13 +233,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            audioManager?.PlayGameOverSound();
             if (this is Warrior && !CanDie()) return;
             else
             {
                 AllowDeath();
                 Destroy(gameObject);
-                Time.timeScale = 0f;
+                //pauseUIManager.GameOver();
+
+                gameOverManager.TriggerGameOver();
             }
 
         }
@@ -240,6 +251,26 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private void ResetHitAnimation()
     {
         animator.SetBool("isHit", false);
+    }
+
+    // THÊM: Hàm hồi phục HP
+    public void Heal(float amount)
+    {
+        hp += amount;
+        // Đảm bảo HP không vượt quá HP tối đa
+        // Giả sử commonUI.maxHp đã được thiết lập đúng
+        if (commonUI != null && hp > commonUI.GetMaxHp())
+        {
+            hp = commonUI.GetMaxHp();
+        }
+        // Hiển thị số lượng HP hồi phục
+        ShowDamageText(amount);
+        // Cập nhật thanh máu trên UI
+        if (commonUI != null)
+        {
+            commonUI.SetCurrentHp(hp);
+            commonUI.UpdateHealthBar();
+        }
     }
 
 
@@ -291,7 +322,6 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     {
         this.characterBaseArmor = newCharacterBaseArmor;
     }
-
 
     public abstract void Attack();
 

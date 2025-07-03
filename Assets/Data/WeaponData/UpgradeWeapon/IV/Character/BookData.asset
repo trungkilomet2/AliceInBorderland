@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Book IV
   icon: {fileID: 1051680791, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
   weaponData: {fileID: 11400000, guid: 3c3f81e4abded6a46a963b11d887c7b8, type: 2}
+  description: 'Fly forward quickly (Damage : 0)'

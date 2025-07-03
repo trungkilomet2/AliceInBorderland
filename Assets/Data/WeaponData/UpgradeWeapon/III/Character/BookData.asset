@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Book III
   icon: {fileID: 750745152, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
   weaponData: {fileID: 11400000, guid: d9fffc9534117bb4ebb90cc8de895fdd, type: 2}
+  description: 'Creates 5 random lightning bolts around the player (Damage : 50)'

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using TMPro;
@@ -49,6 +50,10 @@ public class CommonUI : MonoBehaviour
 
     private SkillBase[] skillBase;
     private GameObject player;
+    bool isUpdateSkill = false;
+    private EquipmentTooltip[] equipmentTooltips;
+    private PauseUIManager pauseUIManager;
+
 
     private AudioManager audioManager;
 
@@ -56,12 +61,14 @@ public class CommonUI : MonoBehaviour
     {
         weaponManager = GetComponent<WeaponManager>();
         audioManager = FindAnyObjectByType<AudioManager>();
+        pauseUIManager = FindAnyObjectByType<PauseUIManager>();
     }
 
     private void Start()
     {
         upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
         UpdateWeaponCharacterByCharacterSelecting();
+        FindEquipmentToolTip();
     }
 
     void UpdateWeaponCharacterByCharacterSelecting()
@@ -69,7 +76,7 @@ public class CommonUI : MonoBehaviour
         string characterName = PlayerPrefs.GetString("SelectedCharacter");
         StringBuilder sourcesSkillUpdate = new StringBuilder();
         sourcesSkillUpdate.Append("Data/Characters/");
-
+        StringBuilder descriptionOfWeaponI = new StringBuilder();
         StringBuilder sourceSkillUpdateImage = new StringBuilder();
         sourceSkillUpdateImage.Append("SkillUI/");
 
@@ -77,26 +84,47 @@ public class CommonUI : MonoBehaviour
         {
             sourcesSkillUpdate.Append("BowData");
             sourceSkillUpdateImage.Append("Archer/");
+            descriptionOfWeaponI.Append("Roll forward quickly (Damage : 0)");
         }
         else if (characterName == CharacterName.Mage.ToString())
         {
             sourcesSkillUpdate.Append("BookData");
             sourceSkillUpdateImage.Append("Mage/");
+            descriptionOfWeaponI.Append("Fires an energy beam that destroys enemies (Damage: 10)");
+
         }
         else if (characterName == CharacterName.Warrior.ToString())
         {
             sourcesSkillUpdate.Append("HarmerData");
             sourceSkillUpdateImage.Append("Warrior/");
+            descriptionOfWeaponI.Append("Creates an energy shield that absorbs damage and gains back (Damage : ???)");
+
         }
         else if (characterName == CharacterName.Summoner.ToString())
         {
             sourcesSkillUpdate.Append("StaffData");
             sourceSkillUpdateImage.Append("Summoner/");
+            descriptionOfWeaponI.Append("Fly forward quickly (Damage : 0)");
+
         }
         UpdateData data = Resources.Load<UpdateData>(sourcesSkillUpdate.ToString());
+        data.description = descriptionOfWeaponI.ToString();
         upgradeData.Add(data);
 
         LoadImageSkillByCharacterSelect(sourceSkillUpdateImage);
+
+    }
+
+    void FindEquipmentToolTip()
+    {
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true);
+        equipmentTooltips = GameObject.FindObjectsOfType<EquipmentTooltip>(true)
+                               .OrderBy(e => e.name)
+                               .ToArray();
+        foreach (EquipmentTooltip e in equipmentTooltips)
+        {
+            Debug.Log("Equipment Tooltip Found: " + e.name);
+        }
 
     }
 
@@ -135,7 +163,6 @@ public class CommonUI : MonoBehaviour
         {
             currentTime = maxTimeInSeconds;
             isRunning = false;
-            // Spawn Last Boss -- Joker
         }
         CountTimer();
     }
@@ -179,7 +206,11 @@ public class CommonUI : MonoBehaviour
         selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
-        upgradePanelManager.OpenPanel(selectUpdate);
+        if (upgradeData.Count > 0)
+        {
+            upgradePanelManager.OpenPanel(selectUpdate);
+            pauseUIManager.SetCanPause(false);
+        }
     }
     private void UpdateExpBar()
     {
@@ -192,7 +223,6 @@ public class CommonUI : MonoBehaviour
         maxExp = max;
         UpdateExpBar();
     }
-
 
     public void RemoveLowTierWeapon(WeaponData wpData)
     {
@@ -220,7 +250,29 @@ public class CommonUI : MonoBehaviour
         }
     }
 
+    void RemoveSkillUpdate()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.SkillUpgrade)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
 
+    }
+
+    void RemoveItemUnused()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.WeaponUnlock)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
+
+    }
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
@@ -244,6 +296,7 @@ public class CommonUI : MonoBehaviour
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+
                 break;
             case UpgradeType.ItemUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
@@ -254,10 +307,22 @@ public class CommonUI : MonoBehaviour
                 SkillUpdateByLevel(upgradeChoice);
                 RemoveLowTierWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+                isUpdateSkill = true;
                 break;
         }
 
-
+        if (acquireUpdate.Count == 4)
+        {
+            if (isUpdateSkill)
+            {
+                RemoveItemUnused();
+            }
+            else
+            {
+                RemoveSkillUpdate();
+            }
+        }
+        pauseUIManager.SetCanPause(true);
         audioManager?.PlayChooseItemSound();
         upgradeData.Remove(upgradeChoice);
         LoadUpdateUI();
@@ -267,7 +332,6 @@ public class CommonUI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         skillBase = player.GetComponents<SkillBase>();
-
         SkillNum numberOfSkill = SkillNum.Passive;
 
         if (updateData.Name.Split(" ")[1].Equals("I"))
@@ -294,11 +358,25 @@ public class CommonUI : MonoBehaviour
 
         foreach (SkillBase skill in skillBase)
         {
-            Debug.Log(numberOfSkill == skill.skillNum);
+
             if (numberOfSkill == skill.skillNum)
             {
+                float cooldownTime;
                 skill.UnlockSkillBySkillNum(numberOfSkill);
+                cooldownTime = skill.GetCurrentCooldown();
+                if (skill.GetIsCoolingDown())
+                {
+                    FindSkillCoolDown(numberOfSkill);
+                }
             }
+        }
+    }
+    void FindSkillCoolDown(SkillNum numberOfSkill)
+    {
+        if (numberOfSkill == SkillNum.Skill1)
+        {
+            CoolDownSkill1 coolDownSkill1 = FindAnyObjectByType<CoolDownSkill1>();
+            coolDownSkill1.StartCooldown();
         }
 
     }
@@ -339,11 +417,17 @@ public class CommonUI : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             UpdateData updateData = upgradeData[Random.Range(0, upgradeData.Count)];
+
             if (CheckDupliCateUpdateData(updateData, listUpgrade))
             {
                 i--;
+                updateData = null;
                 continue;
             }
+            Debug.Log("Update Data: " + updateData.Name);
+            Debug.Log("Update Data: " + updateData.description);
+            equipmentTooltips[i].SetEquipmentInfo(updateData.description);
+            equipmentTooltips[i].SetEquipmentName(updateData.Name);
             listUpgrade.Add(updateData);
         }
         return listUpgrade;
@@ -398,7 +482,9 @@ public class CommonUI : MonoBehaviour
         return null;
     }
 
-
-
+    public float GetMaxHp()
+    {
+        return maxHP;
+    }
 
 }
