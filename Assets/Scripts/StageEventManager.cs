@@ -66,17 +66,17 @@ public class StageEventManager : MonoBehaviour
 
         if (Time.time >= nextSpawnTime)
         {
-            if (currentStage is StageEvent enemyStage)
+            if (currentStage is EnemyStageEvent enemyStage)
             {
                 foreach (var enemyConfig in enemyStage.enemiesToSpawn)
                 {
                     if (!currentEnemyCounts.ContainsKey(enemyConfig.enemyData))
                         currentEnemyCounts[enemyConfig.enemyData] = 0;
 
-                    if (currentEnemyCounts[enemyConfig.enemyData] < enemyConfig.maxCount)
+                    int aliveCount = GetAliveEnemyCount(enemyConfig.enemyData);
+                    if (aliveCount < enemyConfig.maxCount)
                     {
                         enemiesManager.SpawnEnemy(enemyConfig.enemyData);
-                        currentEnemyCounts[enemyConfig.enemyData]++;
                     }
                 }
 
@@ -136,5 +136,19 @@ public class StageEventManager : MonoBehaviour
             bossDefeated = true;
             Debug.Log("✅ Boss đã bị tiêu diệt!");
         }
+    }
+
+    private int GetAliveEnemyCount(EnemyData data)
+    {
+        int count = 0;
+        Enemy[] allEnemies = FindObjectsOfType<Enemy>();
+        foreach (var e in allEnemies)
+        {
+            if (e != null && e.enemyData == data)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }

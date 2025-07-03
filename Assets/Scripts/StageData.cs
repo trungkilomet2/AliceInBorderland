@@ -11,13 +11,6 @@ public class EnemySpawnConfig
     public int maxCount;
 }
 
-[CreateAssetMenu(fileName = "EnemyStageEvent", menuName = "Stage/EnemyStageEvent")]
-public class StageEvent : StageEventBase
-{
-    [Header("Enemy Spawn Settings")]
-    public List<EnemySpawnConfig> enemiesToSpawn;
-}
-
 [CreateAssetMenu]
 public class StageData : ScriptableObject
 {
