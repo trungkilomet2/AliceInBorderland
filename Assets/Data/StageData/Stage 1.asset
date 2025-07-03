@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
   m_Name: Stage 1
-  m_EditorClassIdentifier: Assembly-CSharp::StageEvent
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStageEvent
   message: Stage 1
   enemiesToSpawn:
   - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
