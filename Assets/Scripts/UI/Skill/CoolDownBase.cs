@@ -28,7 +28,7 @@ public abstract class CoolDownBase : MonoBehaviour
         CheckSkillActive();
         if (isCoolingDown)
         {
-            currentCooldown -= Time.deltaTime;
+            currentCooldown -= Time.time;
             Debug.Log("Current Cooldown: " + currentCooldown);
             UpdateCooldownUI();
 
