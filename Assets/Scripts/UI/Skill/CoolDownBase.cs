@@ -43,7 +43,7 @@ public abstract class CoolDownBase : MonoBehaviour
         isCoolingDown = true;
         currentCooldown = cooldownTime;
         if (cooldownImage != null)
-            cooldownImage.fillAmount = 1f;
+            cooldownImage.fillAmount = 0f;
     }
 
     protected virtual void UpdateCooldownUI()
