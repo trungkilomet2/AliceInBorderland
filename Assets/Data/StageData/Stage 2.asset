@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5baf92be1b8265b4e8ac799abcbe59d0, type: 3}
   m_Name: Stage 2
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyStageEvent
+  m_EditorClassIdentifier: 
   message: Stage 2
   enemiesToSpawn:
   - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
