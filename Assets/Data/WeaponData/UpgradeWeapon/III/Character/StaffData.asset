@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Staff III
   icon: {fileID: -340096036, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: df542c57ba1ab5744addfa8fc7fb8fbe, type: 2}
+  description: 'Summons a dragon and breathes fire 3 times (Damage : 20)'
