@@ -6143,6 +6143,56 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &945444001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 945444003}
+  - component: {fileID: 945444002}
+  m_Layer: 0
+  m_Name: IntroAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &945444002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945444001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8477e63fd8ab0f44b38e84944f38097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudioSource: {fileID: 1586897116}
+  effectAudioSource: {fileID: 2125657212}
+  backgroundClip: {fileID: 8300000, guid: 18624e9ad05df2144a8954eb32bfc5a8, type: 3}
+  clickOptionClip: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
+--- !u!4 &945444003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945444001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.686037, y: -5.0014095, z: 122.54382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1586897117}
+  - {fileID: 2125657213}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004247817
 GameObject:
   m_ObjectHideFlags: 0
@@ -225945,6 +225995,134 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1586897115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586897117}
+  - component: {fileID: 1586897116}
+  m_Layer: 0
+  m_Name: BackgroundAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1586897116
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586897115}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1586897117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586897115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 945444003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681582861
 GameObject:
   m_ObjectHideFlags: 0
@@ -393733,62 +393911,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &35712150768734613
-MonoBehaviour:
+--- !u!1 &2125657211
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672598208716455121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de43cc43f98a161488e5e2a686e9f92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 3
-  skillType: 1
-  indicatorType: 1
-  skillName: 
-  cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: c318ad7f5938a8442ae73946809aabb7, type: 3}
-  Skill4Projectile: {fileID: 7879851878674333946, guid: 6a2b4b2592862ab4289aecc3ee4f3add, type: 3}
-  firePoint: {fileID: 7312249985433733998}
-  delayBetweenOrbs: 0.3
-  maxDistance: 4
-  totalOrbs: 12
-  explodeDelay: 1
---- !u!114 &125381750828908920
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125657213}
+  - component: {fileID: 2125657212}
+  m_Layer: 0
+  m_Name: EffectAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2125657212
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482234284782342181}
+  m_GameObject: {fileID: 2125657211}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afe73660d6bd1c45be5a5708aba8f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 0
-  skillType: 1
-  indicatorType: 0
-  skillName: Wakanda Shield
-  cooldown: 10
-  skillRange: 10
-  skillWidth: 0
-  skillDuration: 5
-  skillDamage: 0
-  skillSound: {fileID: 8300000, guid: 223513f2917faa645bf59d9d16ad74ed, type: 3}
-  shieldDuration: 5
-  maxAbsorbDamage: 100
-  reflectRadius: 10
-  reflectDamageMultiplier: 1
-  shieldEffectPrefab: {fileID: 5776597383530057440, guid: bccb2d6d921533d4c83e152c2ee60c1f, type: 3}
-  reflectExplosionPrefab: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2125657213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125657211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 945444003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &153009084348286713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393817,11 +394067,6 @@ GameObject:
   - component: {fileID: 5393127901495034584}
   - component: {fileID: 6292515284909256752}
   - component: {fileID: 3805353570420729094}
-  - component: {fileID: 3021552192885298468}
-  - component: {fileID: 7696732049723991840}
-  - component: {fileID: 125381750828908920}
-  - component: {fileID: 8383079235928151193}
-  - component: {fileID: 7275985449698917949}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -393944,54 +394189,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1344335804787158437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6744297987818798520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81595d6cec2bd9d499a2f54a1c121376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 0
-  skillType: 0
-  indicatorType: 1
-  skillName: 
-  cooldown: 5
-  skillRange: 5
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: 4067a3a5e951c4d49b3234bede4f75a3, type: 3}
-  laserAnimationPrefab: {fileID: 5391227790905381595, guid: 9ccd10981372d8c4baf4aadabdc3a4b9, type: 3}
-  laserLength: 20
-  laserVisualWidth: 0.5
---- !u!114 &1419719741698303171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419206120905994800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d646b5d7820ac4b8f92d932dc51378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 2
-  skillType: 1
-  indicatorType: 0
-  skillName: 3Arrow
-  cooldown: 15
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 5
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: e6e1288e383e4c64c845b9c92e75dc86, type: 3}
-  effect: {fileID: 4699594267056170701, guid: e57b64a510e448241ba423009326fe4d, type: 3}
 --- !u!212 &1540841713688162525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -394057,10 +394254,6 @@ GameObject:
   - component: {fileID: 4496990323728508962}
   - component: {fileID: 5556267257354965887}
   - component: {fileID: 3482743474031242692}
-  - component: {fileID: 3693985821311715868}
-  - component: {fileID: 7562542660850423044}
-  - component: {fileID: 5878351654809363075}
-  - component: {fileID: 35712150768734613}
   - component: {fileID: 6932063836258073219}
   - component: {fileID: 3661475903712294257}
   - component: {fileID: 153009084348286713}
@@ -394253,8 +394446,6 @@ GameObject:
   - component: {fileID: 5751311403220268670}
   - component: {fileID: 8578942577433168372}
   - component: {fileID: 6410317555410134304}
-  - component: {fileID: 5586431901434869638}
-  - component: {fileID: 3121325237889314997}
   m_Layer: 0
   m_Name: Q_Boss
   m_TagString: Enemy
@@ -394292,117 +394483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7679408996409119381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2952249231451407957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496918213641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28e33c6143ef1f41a367f321e92b376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: 
-  cooldown: 2
-  skillDuration: 2
-  skillRange: 10
-  skillSound: {fileID: 8300000, guid: 718335d94fe3d744987ba589370c34a3, type: 3}
-  projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
-  bulletForce: 5
---- !u!114 &3021552192885298468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482234284782342181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08d474ba9d40f9e44abe27e27e2138ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skills:
-  - {fileID: 125381750828908920}
-  - {fileID: 8383079235928151193}
-  - {fileID: 7275985449698917949}
-  - {fileID: 7696732049723991840}
-  hp: 200
-  commonUI: {fileID: 0}
-  attackSound: {fileID: 0}
-  damageReductionMultiplier: 1
-  audioManager: {fileID: 0}
-  isDashing: 0
-  axe: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
-  axeSpawnPoint: {fileID: 5270292627803932407}
-  timeBtwaxe: 0.2
-  bulletForce: 9
---- !u!114 &3033916934922964168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6744297987818798520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67538ce8523cabd4f9da595dd8067b2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 2
-  skillType: 1
-  indicatorType: 0
-  skillName: Thunder Explosion
-  cooldown: 2
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 10
-  skillDamage: 50
-  skillSound: {fileID: 8300000, guid: e755b48b88de9cb49b5dc514ff381c47, type: 3}
-  explosionEffectPrefab: {fileID: 4530650046537831044, guid: bc317b6340fa544498c9e8e56713ac91, type: 3}
-  numberOfExplosions: 5
-  randomSpawnRadius: 10
-  minSpawnRadius: 5
-  explosionSize: 1
-  damageTickInterval: 0.5
---- !u!114 &3121325237889314997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2288887050096639573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe94d67e99fad264aaa47d8254cb9a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Death dash
-  cooldown: 5
-  skillDuration: 2
-  skillRange: 20
-  skillSound: {fileID: 8300000, guid: 9ea17cc129d6af74ca71a596db14b03c, type: 3}
-  dashSpeed: 10
-  dashDistance: 20
---- !u!114 &3121988668657907464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496918213641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43aed4cda6df2f34dad2ddd939846083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: 
-  cooldown: 20
-  skillDuration: 5
-  skillRange: 10
-  skillSound: {fileID: 8300000, guid: a5ed088898a92f641add309b0915c34f, type: 3}
-  circleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
 --- !u!4 &3208863145669462269
 Transform:
   m_ObjectHideFlags: 0
@@ -394628,33 +394708,6 @@ MonoBehaviour:
   dashSpeed: 20
   dashDistance: 7
   ghostEffect: {fileID: 153009084348286713}
---- !u!114 &3693985821311715868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672598208716455121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52d3f54a2993d042a38896cad5f04fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skills:
-  - {fileID: 3661475903712294257}
-  - {fileID: 5878351654809363075}
-  - {fileID: 7562542660850423044}
-  - {fileID: 35712150768734613}
-  hp: 100
-  commonUI: {fileID: 0}
-  attackSound: {fileID: 8300000, guid: 79fe242e50211984faaf896bb5d2b9f3, type: 3}
-  damageReductionMultiplier: 1
-  audioManager: {fileID: 0}
-  isDashing: 0
-  projectile: {fileID: 1002380445795179338, guid: 74dd24a2986f3d24081306289d3556a1, type: 3}
-  projectileSpawnPoint: {fileID: 7312249985433733998}
-  timeBtwProjectile: 0.5
-  bulletForce: 9
 --- !u!1 &3781837171709576748
 GameObject:
   m_ObjectHideFlags: 0
@@ -394803,14 +394856,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3542306458846315659}
   - component: {fileID: 7484309142845101686}
-  - component: {fileID: 5849900501373656061}
   - component: {fileID: 3324124810112787391}
   - component: {fileID: 1771409685674628841}
   - component: {fileID: 5185281130472123681}
-  - component: {fileID: 4495567932050828288}
-  - component: {fileID: 8285860307392687131}
-  - component: {fileID: 1419719741698303171}
-  - component: {fileID: 8274900416083624239}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player
@@ -394836,29 +394884,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4495567932050828288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419206120905994800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb36b8510d8de54ea4ca29258a994f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 0
-  skillType: 0
-  indicatorType: 1
-  skillName: Roll
-  cooldown: 5
-  skillRange: 7
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 0
-  skillSound: {fileID: 8300000, guid: 1e468900b334f284e907df293b7c89c6, type: 3}
-  rollSpeed: 20
 --- !u!95 &4496990323728508962
 Animator:
   serializedVersion: 5
@@ -395170,28 +395195,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5586431901434869638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2288887050096639573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2d7a7261f26174ba65597e77af37c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetDestination: {fileID: 0}
-  targetGameObject: {fileID: 0}
-  targetCharacter: {fileID: 0}
-  speed: 3
-  hp: 4444
-  damage: 13
-  coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
-  exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
-  bossSkillBases:
-  - {fileID: 3121325237889314997}
 --- !u!95 &5751311403220268670
 Animator:
   serializedVersion: 5
@@ -395265,60 +395268,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5849900501373656061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419206120905994800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8866c03f3fc5fda4392f244f347ce1a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skills:
-  - {fileID: 4495567932050828288}
-  - {fileID: 8285860307392687131}
-  - {fileID: 1419719741698303171}
-  - {fileID: 8274900416083624239}
-  hp: 50
-  commonUI: {fileID: 0}
-  attackSound: {fileID: 8300000, guid: d8181b47697c8aa4fa01e7d6dddf8883, type: 3}
-  damageReductionMultiplier: 1
-  audioManager: {fileID: 0}
-  isDashing: 0
-  arrow: {fileID: 8875036098252759429, guid: 95510d04de5f5c141b93d44b340dea52, type: 3}
-  arrowSpawnPoint: {fileID: 1999351419662839528}
-  timeBtwArrow: 0.2
-  bulletForce: 9
-  isSkill3Active: 0
---- !u!114 &5878351654809363075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672598208716455121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d9387aca8e0974fa9b341053293f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 1
-  skillType: 1
-  indicatorType: 1
-  skillName: 
-  cooldown: 15
-  skillRange: 40
-  skillWidth: 4
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: a3243c5089847894da57e0ecbabd1621, type: 3}
-  ProjectileSkill2: {fileID: 8300917025823649898, guid: a519a78b94e7440418cb14bd3ff53370, type: 3}
-  projectileCount: 7
-  radius: 4
-  duration: 10
 --- !u!212 &5956212811969679284
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -395425,59 +395374,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6373431026256433259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6744297987818798520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34c5e0fca266a4c418caa452d46bf988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 1
-  skillType: 0
-  indicatorType: 0
-  skillName: 
-  cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: 7abc031d66178f14fae5c1a9977892fa, type: 3}
-  slowZonePrefab: {fileID: 4381659068998476614, guid: a12007bc53cf3ec4793dd5b2f92bd38f, type: 3}
-  slowZoneRadius: 0.5
-  slowPercentage: 0.5
-  damagePerSecond: 1
-  basePrefabColliderRadius: 0.5
---- !u!114 &6390783774889588945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655666249664033528}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83341dfcd11dd074cb0bb527676bda94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Fire Star
-  cooldown: 10
-  skillDuration: 2
-  skillRange: 10
-  skillSound: {fileID: 8300000, guid: 3de8b141e744321428b7153c3c624a18, type: 3}
-  circleRadius: 5
-  circleSegments: 100
-  circleDrawSpeed: 1
-  moveSpeed: 2
-  fireZonePrefab: {fileID: 6809220729237691414, guid: 264cf749c7416034d8e0da6669c1d48f, type: 3}
-  starPoints: 5
-  fireSpawnDistance: 0.5
-  starScale: 2
-  playerCol: {fileID: 0}
 --- !u!61 &6410317555410134304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -395523,42 +395419,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.75}
   m_EdgeRadius: 0
---- !u!114 &6576965020150306799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6744297987818798520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3ebe7ad74eca340ab46c24206c5d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skills:
-  - {fileID: 1344335804787158437}
-  - {fileID: 3033916934922964168}
-  - {fileID: 6373431026256433259}
-  - {fileID: 7194276172949643422}
-  hp: 200
-  commonUI: {fileID: 0}
-  attackSound: {fileID: 8300000, guid: 3cbdd8195f62ae64aa58886b20492bf9, type: 3}
-  damageReductionMultiplier: 1
-  audioManager: {fileID: 0}
-  isDashing: 0
-  spellPrefab: {fileID: 1520744519247403555, guid: ba7ead42d36477a49b10646e08fd26d1, type: 3}
-  spellSpawnPoint: {fileID: 3208863145669462269}
-  timeBtwBasicSpell: 0.5
-  basicSpellForce: 10
-  basicSpellScale: {x: 1, y: 1, z: 1}
-  chargeTimeNeeded: 1
-  chargedSpellForce: 20
-  chargedSpellScale: {x: 5, y: 5, z: 1}
-  isChargingBoolParam: IsCharging
-  numberOfProjectiles: 3
-  spreadAngle: 30
-  shotgunSpellForce: 15
-  shotgunSpellScale: {x: 0.7, y: 0.7, z: 1}
 --- !u!1 &6744297987818798520
 GameObject:
   m_ObjectHideFlags: 0
@@ -395571,12 +395431,7 @@ GameObject:
   - component: {fileID: 1540841713688162525}
   - component: {fileID: 5436857993523492837}
   - component: {fileID: 822072816882937436}
-  - component: {fileID: 6576965020150306799}
   - component: {fileID: 4354898864832122830}
-  - component: {fileID: 3033916934922964168}
-  - component: {fileID: 1344335804787158437}
-  - component: {fileID: 6373431026256433259}
-  - component: {fileID: 7194276172949643422}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -395697,97 +395552,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &7062013219696753646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496918213641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577c2e09428603641b2d6237e1ce6e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: 
-  cooldown: 5
-  skillDuration: 2
-  skillRange: 10
-  skillSound: {fileID: 8300000, guid: 1fe6cae990881d740acd0844f582c69a, type: 3}
-  thunderBolt: {fileID: 4426313511499266900, guid: 6af4dcb841ce5ea47be2ec87cadbd2c0, type: 3}
---- !u!114 &7194276172949643422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6744297987818798520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65f08614218e01d47942504535ec47e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 3
-  skillType: 0
-  indicatorType: 1
-  skillName: 
-  cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: bd2607266c4a3534fb4a081cfd6739b4, type: 3}
-  rollSpeed: 40
---- !u!114 &7275985449698917949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482234284782342181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb973b82372c88349bf5344df8d0cbc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 2
-  skillType: 1
-  indicatorType: 0
-  skillName: Transformer
-  cooldown: 5
-  skillRange: 0
-  skillWidth: 0
-  skillDuration: 0
-  skillDamage: 0
-  skillSound: {fileID: 0}
-  cooldownTime: 5
-  sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
-  form1Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
-  form2Sprite: {fileID: -50501098, guid: 44f42483410ff634db8b861d169e9548, type: 3}
-  form1Animator: {fileID: 9100000, guid: e2b890dd45477ae44a614f2009086ae2, type: 2}
-  form2Animator: {fileID: 9100000, guid: 06a1eb7dd5d0fd84783d73e80e33e7ca, type: 2}
-  weaponForm1: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
-  weaponForm2: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
-  changeFormEffectPrefab: {fileID: 7763796434052523897, guid: 4900363678256c64e9242cabbe66a1e3, type: 3}
---- !u!114 &7298881153878589541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496918213641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f6f89bc4c962642b48d8dcef300edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: 
-  cooldown: 5
-  skillDuration: 2
-  skillRange: 10
-  skillSound: {fileID: 8300000, guid: 963c8b48c4b145147aef089e642da491, type: 3}
-  J_Boss: {fileID: 7881493978720937603, guid: e1a172e1c6fb6aa4ca517eae1e9b96d1, type: 3}
-  timeRelease: 5
 --- !u!4 &7312249985433733998
 Transform:
   m_ObjectHideFlags: 0
@@ -395814,11 +395578,6 @@ GameObject:
   - component: {fileID: 3238795044740798489}
   - component: {fileID: 3428494970306384183}
   - component: {fileID: 7995484287827930226}
-  - component: {fileID: 8119783569815155498}
-  - component: {fileID: 2952249231451407957}
-  - component: {fileID: 3121988668657907464}
-  - component: {fileID: 7062013219696753646}
-  - component: {fileID: 7298881153878589541}
   m_Layer: 0
   m_Name: Boss (1)
   m_TagString: Enemy
@@ -395878,38 +395637,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7562542660850423044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672598208716455121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca2877de0c45dd4eb4a1624b27e8f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 2
-  skillType: 1
-  indicatorType: 1
-  skillName: 
-  cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: 82bb0a947ddba744cb500abbfa34d14b, type: 3}
-  DraSkillJ: {fileID: 5396958551519356291, guid: e72a0f212143a5941ac0a8e925efb2a6, type: 3}
-  SkillJProjectile: {fileID: 8377119443779928800, guid: e8b426a66f2f0d349b335fd66a2e09e2, type: 3}
-  dragonDuration: 5
-  bulletForce: 10
-  delayBetweenWaves: 2
-  waveCounts: 050000000a0000000f000000
-  waveDistances:
-  - 5
-  - 10
-  - 15
 --- !u!1 &7655666249664033528
 GameObject:
   m_ObjectHideFlags: 0
@@ -395921,7 +395648,6 @@ GameObject:
   - component: {fileID: 8353672342407987684}
   - component: {fileID: 2114890036983018155}
   - component: {fileID: 5508199775467103370}
-  - component: {fileID: 6390783774889588945}
   - component: {fileID: 1955350271704327210}
   - component: {fileID: 6318364969655304928}
   - component: {fileID: 7747211108296513432}
@@ -395952,34 +395678,6 @@ Transform:
   - {fileID: 2926045705165406680}
   m_Father: {fileID: 229638120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7696732049723991840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482234284782342181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c3bdb084b4931429d817a5596a0417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 4
-  skillType: 1
-  indicatorType: 0
-  skillName: Revenge!!!
-  cooldown: 120
-  skillRange: 0
-  skillWidth: 0
-  skillDuration: 5
-  skillDamage: 0
-  skillSound: {fileID: 0}
-  damageMultiplier: 1.5
-  buffDuration: 5
-  sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
-  gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
-  revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
-  invincibleDuration: 5
 --- !u!82 &7711569559804024991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -396207,79 +395905,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8119783569815155498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476602496918213641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 289217fc1c8493549ba3f71e4f399d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetDestination: {fileID: 0}
-  targetGameObject: {fileID: 0}
-  targetCharacter: {fileID: 0}
-  speed: 2
-  hp: 2000
-  damage: 11
-  coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
-  exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
-  bossSkillBases:
-  - {fileID: 2952249231451407957}
-  - {fileID: 3121988668657907464}
-  - {fileID: 7062013219696753646}
-  - {fileID: 7298881153878589541}
-  isClone: 0
---- !u!114 &8274900416083624239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419206120905994800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6526b7fcbeb40e745ba5ad74572a621e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 3
-  skillType: 0
-  indicatorType: 1
-  skillName: Ultimate
-  cooldown: 20
-  skillRange: 20
-  skillWidth: 5
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: cde2a1941d4e36749b40de03caf15288, type: 3}
-  arrow: {fileID: 1625995219848691303, guid: bfa77853b882b614c822d09a793bf080, type: 3}
-  bulletForce: 5
---- !u!114 &8285860307392687131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419206120905994800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 214088d074f3ed044b19b25abfef33eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 1
-  skillType: 0
-  indicatorType: 0
-  skillName: RainOfArrows
-  cooldown: 10
-  skillRange: 10
-  skillWidth: 7
-  skillDuration: 5
-  skillDamage: 10
-  skillSound: {fileID: 8300000, guid: 981a47bdc354cb246a6b3b288134a434, type: 3}
-  skillEffect: {fileID: 6713793583759663239, guid: 4c717abdb56aa634195a3ae3aa7bf605, type: 3}
 --- !u!114 &8301355132537027689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396318,34 +395943,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 331398553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8383079235928151193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482234284782342181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b16dbd14643db043bba7a565ddc9f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillNum: 1
-  skillType: 0
-  indicatorType: 1
-  skillName: Telecanesis
-  cooldown: 5
-  skillRange: 10
-  skillWidth: 1
-  skillDuration: 2
-  skillDamage: 10
-  skillSound: {fileID: 0}
-  warriorClonePrefab: {fileID: 5917533558749019282, guid: 38b9bdafacd6335409e816a33d8d2b83, type: 3}
-  cloneSpeed: 20
-  dashSpeed: 15
-  damageOnPath: 20
-  explosionDamage: 50
-  explosionEffect: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
 --- !u!4 &8496625895287063582
 Transform:
   m_ObjectHideFlags: 0
@@ -396418,3 +396015,4 @@ SceneRoots:
   - {fileID: 229638120}
   - {fileID: 331398553}
   - {fileID: 1004247818}
+  - {fileID: 945444003}
