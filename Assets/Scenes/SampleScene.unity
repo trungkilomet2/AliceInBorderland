@@ -7078,7 +7078,7 @@ MonoBehaviour:
   currentLevel: 1
   levelText: {fileID: 1720022057}
   imageHP: {fileID: 706363725}
-  timerCounter: {fileID: 0}
+  timerCounter: {fileID: 218877222}
   currentTime: 0
   upgradeData:
   - {fileID: 11400000, guid: ae51389a44c34c74a92c7b8e1ca9a802, type: 2}
@@ -180471,6 +180471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeScore: {fileID: 1880875892}
   gameOverGroup: {fileID: 565890133}
+  isGameOver: 0
 --- !u!1 &1565787264
 GameObject:
   m_ObjectHideFlags: 0
