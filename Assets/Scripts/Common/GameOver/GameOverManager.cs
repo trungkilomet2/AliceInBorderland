@@ -38,6 +38,8 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
+    
+
     public void TriggerGameOver()
     {
         Time.timeScale = 0f;
