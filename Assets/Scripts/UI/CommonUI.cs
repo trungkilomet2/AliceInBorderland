@@ -193,7 +193,6 @@ public class CommonUI : MonoBehaviour
         UpdateExpBar();
     }
 
-
     public void RemoveLowTierWeapon(WeaponData wpData)
     {
         foreach (UpdateData data in acquireUpdate)
@@ -220,9 +219,20 @@ public class CommonUI : MonoBehaviour
         }
     }
 
+    void FullItemRemove()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.WeaponUnlock)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
 
+    }
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
+        bool isUpdateSkill;
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
         if (acquireUpdate == null)
         {
@@ -244,6 +254,7 @@ public class CommonUI : MonoBehaviour
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+
                 break;
             case UpgradeType.ItemUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
@@ -254,9 +265,14 @@ public class CommonUI : MonoBehaviour
                 SkillUpdateByLevel(upgradeChoice);
                 RemoveLowTierWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+                isUpdateSkill = true;
                 break;
         }
 
+        if (acquireUpdate.Count == 4)
+        {
+            FullItemRemove();
+        }
 
         audioManager?.PlayChooseItemSound();
         upgradeData.Remove(upgradeChoice);
