@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CoolDownSkill1 : CoolDownBase
+public class CoolDownSkill4 : CoolDownBase
 {
     GameObject player;
     SkillBase[] skillBase;
@@ -30,7 +30,7 @@ public class CoolDownSkill1 : CoolDownBase
     {
         player = GameObject.FindWithTag("Player");
         skillBase = player?.GetComponents<SkillBase>();
-        SkillNum numberOfSkill = SkillNum.Skill1;
+        SkillNum numberOfSkill = SkillNum.Skill4;
         skillBase = skillBase?.OrderBy(skill => skill.skillNum).ToArray();
 
         foreach (SkillBase skill in skillBase)

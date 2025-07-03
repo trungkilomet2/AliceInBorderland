@@ -1,37 +1,34 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class CoolDownBase : MonoBehaviour
 {
     [Header("Cooldown Settings")]
-    public float cooldownTime = 5f; // Thời gian hồi chiêu
+    public float cooldownTime = 999f; // Thời gian hồi chiêu
     protected float currentCooldown = 0f;
     protected bool isCoolingDown = false;
-
+    
     [Header("UI")]
-    public Image cooldownImage; // Image có fill
-
-    GameObject player;
-    SkillBase[] skillBase;
+    public Image cooldownImage; // Image có fill 
 
     protected virtual void Start()
     {
         if (cooldownImage != null)
         {
             cooldownImage.fillAmount = 0f;
-            Debug.Log("Da fill Amount");
         }
     }
 
     protected virtual void Update()
     {
         CheckSkillActive();
+       // CheckingPlayer();
         if (isCoolingDown)
         {
-            currentCooldown -= Time.time;
-            Debug.Log("Current Cooldown: " + currentCooldown);
+            currentCooldown -= Time.deltaTime;
+         //  Debug.Log("Current Cooldown: " + currentCooldown);
             UpdateCooldownUI();
-
             if (currentCooldown <= 0f)
             {
                 EndCooldown();
@@ -40,11 +37,12 @@ public abstract class CoolDownBase : MonoBehaviour
     }
 
     public virtual void StartCooldown()
-    {
+    {   
         isCoolingDown = true;
         currentCooldown = cooldownTime;
+        Debug.Log(currentCooldown);
         if (cooldownImage != null)
-            cooldownImage.fillAmount = 0f;
+            cooldownImage.fillAmount = 1f;
     }
 
     protected virtual void UpdateCooldownUI()
@@ -67,24 +65,9 @@ public abstract class CoolDownBase : MonoBehaviour
     {
         return isCoolingDown;
     }
-    public void CheckSkillActive()
-    {
-        player = GameObject.FindWithTag("Player");
-        skillBase = player?.GetComponents<SkillBase>();
-        SkillNum numberOfSkill = SkillNum.Skill1;
-        foreach (SkillBase skill in skillBase)
-        {
-            if (numberOfSkill == skill.skillNum)
-            {
-                float cooldownTime;
-                skill.UnlockSkillBySkillNum(numberOfSkill);
-                cooldownTime = skill.GetCurrentCooldown();
-                if (skill.GetIsCoolingDown())
-                {
-                    StartCooldown();
-                }
-            }
-        }
-    }
+
+
+    public abstract void CheckSkillActive();
+
 
 }
