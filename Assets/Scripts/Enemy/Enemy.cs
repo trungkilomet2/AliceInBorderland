@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rgb2d;
 
     public EnemyStats stats;
-    [SerializeField] private EnemyData enemyData;
+    [SerializeField] public EnemyData enemyData;
 
     // Insert By Trung
     public GameObject coin;

@@ -16,9 +16,11 @@ public class JSkill1 : BossSkillBase
     public int starPoints = 5;
     public float fireSpawnDistance = 0.5f;
     [Range(1, 10)]
-    public float starScale = 3f; // Tăng lên để ngôi sao to hơn (ví dụ: 3, 5...)
+    public float starScale = 3f;
 
-   
+    public bool IsRunning { get; private set; } = false;
+
+
     public Collider2D playerCol;
 
     private Coroutine runningSkill;
@@ -42,6 +44,7 @@ public class JSkill1 : BossSkillBase
 
     IEnumerator SkillRoutine()
     {
+        IsRunning = true;
         // 1. Vẽ vòng lửa quanh target
         Vector3 center = target.transform.position;
         yield return StartCoroutine(DrawFireCircleWithSprites(center));
@@ -52,7 +55,7 @@ public class JSkill1 : BossSkillBase
 
         // 3. Boss bay theo đường ngôi sao, tạo vùng lửa
         yield return StartCoroutine(MoveBossAndSpawnFire(center, points));
-
+        IsRunning = false;
         runningSkill = null;
     }
 

@@ -49,6 +49,8 @@ public class CommonUI : MonoBehaviour
 
     private SkillBase[] skillBase;
     private GameObject player;
+    bool isUpdateSkill = false;
+
 
     private AudioManager audioManager;
 
@@ -179,7 +181,10 @@ public class CommonUI : MonoBehaviour
         selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
-        upgradePanelManager.OpenPanel(selectUpdate);
+        if(upgradeData.Count > 0)
+        {
+            upgradePanelManager.OpenPanel(selectUpdate);
+        }
     }
     private void UpdateExpBar()
     {
@@ -192,7 +197,6 @@ public class CommonUI : MonoBehaviour
         maxExp = max;
         UpdateExpBar();
     }
-
 
     public void RemoveLowTierWeapon(WeaponData wpData)
     {
@@ -220,7 +224,29 @@ public class CommonUI : MonoBehaviour
         }
     }
 
+    void RemoveSkillUpdate()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.SkillUpgrade)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
 
+    }
+
+    void RemoveItemUnused()
+    {
+        for (int i = 0; i < upgradeData.Count; i++)
+        {
+            if (upgradeData[i].upgradeType == UpgradeType.WeaponUnlock)
+            {
+                upgradeData.Remove(upgradeData[i]);
+            }
+        }
+
+    }
     public void UpgradeAfterUpLevel(int numberOfChoice)
     {
         UpdateData upgradeChoice = selectUpdate[numberOfChoice];
@@ -244,6 +270,7 @@ public class CommonUI : MonoBehaviour
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+
                 break;
             case UpgradeType.ItemUnlock:
                 weaponManager.AddWeapon(upgradeChoice.weaponData);
@@ -254,9 +281,21 @@ public class CommonUI : MonoBehaviour
                 SkillUpdateByLevel(upgradeChoice);
                 RemoveLowTierWeapon(upgradeChoice.weaponData);
                 acquireUpdate.Add(upgradeChoice);
+                isUpdateSkill = true;
                 break;
         }
 
+        if (acquireUpdate.Count == 4)
+        {
+            if(isUpdateSkill)
+            {
+                RemoveItemUnused();
+            }
+            else
+            {
+                RemoveSkillUpdate();
+            }
+        }
 
         audioManager?.PlayChooseItemSound();
         upgradeData.Remove(upgradeChoice);

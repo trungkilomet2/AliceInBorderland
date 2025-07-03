@@ -207,6 +207,10 @@ MonoBehaviour:
   - {fileID: 35712150842087865}
   hp: 100
   commonUI: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 79fe242e50211984faaf896bb5d2b9f3, type: 3}
+  damageReductionMultiplier: 1
+  audioManager: {fileID: 0}
+  isDashing: 0
   projectile: {fileID: 1002380445795179338, guid: 74dd24a2986f3d24081306289d3556a1, type: 3}
   projectileSpawnPoint: {fileID: 7312249985641595714}
   timeBtwProjectile: 0.5
@@ -232,6 +236,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: 82bb0a947ddba744cb500abbfa34d14b, type: 3}
   DraSkillJ: {fileID: 5396958551519356291, guid: e72a0f212143a5941ac0a8e925efb2a6, type: 3}
   SkillJProjectile: {fileID: 8377119443779928800, guid: e8b426a66f2f0d349b335fd66a2e09e2, type: 3}
   dragonDuration: 5
@@ -259,10 +264,11 @@ MonoBehaviour:
   indicatorType: 0
   skillName: 
   cooldown: 15
-  skillRange: 10
-  skillWidth: 1
+  skillRange: 40
+  skillWidth: 4
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: a3243c5089847894da57e0ecbabd1621, type: 3}
   ProjectileSkill2: {fileID: 8300917025823649898, guid: a519a78b94e7440418cb14bd3ff53370, type: 3}
   projectileCount: 7
   radius: 4
@@ -288,6 +294,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: c318ad7f5938a8442ae73946809aabb7, type: 3}
   Skill4Projectile: {fileID: 7879851878674333946, guid: 6a2b4b2592862ab4289aecc3ee4f3add, type: 3}
   firePoint: {fileID: 7312249985641595714}
   delayBetweenOrbs: 0.3
@@ -428,6 +435,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: a4577f23d34d5374995cb4c3adc6be87, type: 3}
   dashSpeed: 20
   dashDistance: 7
   ghostEffect: {fileID: 153009084119584469}

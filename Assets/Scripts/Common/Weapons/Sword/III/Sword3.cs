@@ -50,9 +50,9 @@ public class Sword3 : MonoBehaviour
             {
                 rb.velocity = dir.normalized * weaponSpeed;
             }
-            
-            Destroy(proj,3f);
-        
+
+            Destroy(proj, 3f);
+
         }
     }
 }

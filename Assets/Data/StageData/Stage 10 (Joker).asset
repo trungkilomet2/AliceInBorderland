@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba2477e7383df84fbffbf1b7059a570, type: 3}
-  m_Name: Stage 9 (Joker)
+  m_Name: Stage 10 (Joker)
   m_EditorClassIdentifier: 
-  message: Stage 9 (Joker)
-  bossPrefab: {fileID: 2288887050056122945, guid: 29dd10dd852a25943a9f5d9d684b9c47, type: 3}
+  message: Stage 10 (Joker)
+  bossPrefab: {fileID: 7655666251203725423, guid: bf3b4433c7543944e869a00fca0274cd, type: 3}
