@@ -9,6 +9,8 @@ TagManager:
   - Coin
   - EXP
   - Block
+  - Enemy_Weapon
+  - Clone
   layers:
   - Default
   - TransparentFX

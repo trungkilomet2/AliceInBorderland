@@ -35,6 +35,13 @@ public class Skill3_Warrior : SkillBase
         animator = GetComponent<Animator>();
         weapon = GetComponent<WeaponBase>();
         warrior = GetComponent<Warrior>();
+        
+    }
+    void Start()
+    {
+        weaponForm2.SetActive(false);
+        weaponForm1.SetActive(true);
+        warrior.axe = weaponForm1;
     }
 
     protected override void Activate()
