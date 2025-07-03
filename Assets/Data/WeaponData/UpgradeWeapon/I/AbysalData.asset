@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Abysal I
   icon: {fileID: 21300000, guid: 6c8bcec2b8831134fb3ef98b4ace4d90, type: 3}
   weaponData: {fileID: 11400000, guid: 7a5028c772598ca45a622e6eefa71453, type: 2}
+  description: 'Slash forward to destroy (Damage: 50)'

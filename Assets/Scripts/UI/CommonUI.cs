@@ -50,6 +50,7 @@ public class CommonUI : MonoBehaviour
     private SkillBase[] skillBase;
     private GameObject player;
     bool isUpdateSkill = false;
+    private EquipmentTooltip[] equipmentTooltips;
 
 
     private AudioManager audioManager;
@@ -64,6 +65,7 @@ public class CommonUI : MonoBehaviour
     {
         upgradePanelManager = FindAnyObjectByType<UpgradePanelManager>();
         UpdateWeaponCharacterByCharacterSelecting();
+        FindEquipmentToolTip();
     }
 
     void UpdateWeaponCharacterByCharacterSelecting()
@@ -99,6 +101,18 @@ public class CommonUI : MonoBehaviour
         upgradeData.Add(data);
 
         LoadImageSkillByCharacterSelect(sourceSkillUpdateImage);
+
+    }
+
+    void FindEquipmentToolTip()
+    {
+        List<EquipmentTooltip> result = new List<EquipmentTooltip>();
+        equipmentTooltips = Resources.FindObjectsOfTypeAll<EquipmentTooltip>();
+
+        foreach (EquipmentTooltip e in equipmentTooltips)
+        {
+            Debug.Log("1");
+        }
 
     }
 
@@ -181,7 +195,7 @@ public class CommonUI : MonoBehaviour
         selectUpdate.AddRange(GetRandomUpdatesInUpgradeData(4));
         currentLevel++;
         maxExp *= 1.1f;
-        if(upgradeData.Count > 0)
+        if (upgradeData.Count > 0)
         {
             upgradePanelManager.OpenPanel(selectUpdate);
         }
@@ -287,7 +301,7 @@ public class CommonUI : MonoBehaviour
 
         if (acquireUpdate.Count == 4)
         {
-            if(isUpdateSkill)
+            if (isUpdateSkill)
             {
                 RemoveItemUnused();
             }
@@ -396,6 +410,7 @@ public class CommonUI : MonoBehaviour
                 i--;
                 continue;
             }
+            equipmentTooltips[i].SetEquipmentInfo(updateData.weaponData.name.ToString());
             listUpgrade.Add(updateData);
         }
         return listUpgrade;
