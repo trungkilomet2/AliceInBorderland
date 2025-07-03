@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Staff I
   icon: {fileID: 1249623635, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
   weaponData: {fileID: 11400000, guid: c053860af4b72a94da249b2da2ae589b, type: 2}
+  description: 'Fly forward quickly (Damage : 0)'

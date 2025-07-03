@@ -4,10 +4,10 @@ using UnityEngine.UI;
 using TMPro;
 
 public class EquipmentTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-{   
+{
     private string equimmentName; // Tên thiết bị
     private string equipmentInfo; // Thông tin sẽ hiển thị
-    
+
     public TextMeshProUGUI tooltipText; // Text bên trong panel
     public TextMeshProUGUI tooltipName; // Text bên trong panel
 
@@ -20,7 +20,12 @@ public class EquipmentTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void SetEquipmentInfo(string info)
     {
-        equipmentInfo = info;
+        this.equipmentInfo = info;
+    }
+
+    public void SetEquipmentName(string name)
+    {
+        this.equimmentName = name;
     }
 
     public void OnPointerExit(PointerEventData eventData)

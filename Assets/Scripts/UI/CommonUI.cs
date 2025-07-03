@@ -73,7 +73,7 @@ public class CommonUI : MonoBehaviour
         string characterName = PlayerPrefs.GetString("SelectedCharacter");
         StringBuilder sourcesSkillUpdate = new StringBuilder();
         sourcesSkillUpdate.Append("Data/Characters/");
-
+        StringBuilder descriptionOfWeaponI = new StringBuilder();
         StringBuilder sourceSkillUpdateImage = new StringBuilder();
         sourceSkillUpdateImage.Append("SkillUI/");
 
@@ -81,23 +81,31 @@ public class CommonUI : MonoBehaviour
         {
             sourcesSkillUpdate.Append("BowData");
             sourceSkillUpdateImage.Append("Archer/");
+            descriptionOfWeaponI.Append("Roll forward quickly (Damage : 0)");
         }
         else if (characterName == CharacterName.Mage.ToString())
         {
             sourcesSkillUpdate.Append("BookData");
             sourceSkillUpdateImage.Append("Mage/");
+            descriptionOfWeaponI.Append("Fires an energy beam that destroys enemies (Damage: 10)");
+
         }
         else if (characterName == CharacterName.Warrior.ToString())
         {
             sourcesSkillUpdate.Append("HarmerData");
             sourceSkillUpdateImage.Append("Warrior/");
+            descriptionOfWeaponI.Append("Creates an energy shield that absorbs damage and gains back (Damage : ???)");
+
         }
         else if (characterName == CharacterName.Summoner.ToString())
         {
             sourcesSkillUpdate.Append("StaffData");
             sourceSkillUpdateImage.Append("Summoner/");
+            descriptionOfWeaponI.Append("Fly forward quickly (Damage : 0)");
+
         }
         UpdateData data = Resources.Load<UpdateData>(sourcesSkillUpdate.ToString());
+        data.description = descriptionOfWeaponI.ToString();
         upgradeData.Add(data);
 
         LoadImageSkillByCharacterSelect(sourceSkillUpdateImage);
@@ -412,7 +420,9 @@ public class CommonUI : MonoBehaviour
                 continue;
             }
             Debug.Log("Update Data: " + updateData.Name);
+            Debug.Log("Update Data: " + updateData.description);
             equipmentTooltips[i].SetEquipmentInfo(updateData.description);
+            equipmentTooltips[i].SetEquipmentName(updateData.Name);
             listUpgrade.Add(updateData);
         }
         return listUpgrade;

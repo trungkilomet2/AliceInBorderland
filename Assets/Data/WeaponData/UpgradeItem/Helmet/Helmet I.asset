@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Helmet I
   icon: {fileID: 24253075, guid: 1d6fae71fa9205c4bb8b6e1bce5985c4, type: 3}
   weaponData: {fileID: 11400000, guid: 6383ea11954b85c46b59a175d4db2936, type: 2}
+  description: + 2.5 Armor
