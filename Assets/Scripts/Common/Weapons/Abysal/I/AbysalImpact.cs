@@ -10,6 +10,7 @@ public class AbysalImpact : MonoBehaviour
     private const string ENEMY_TAG = "Enemy";
     private const string IMPACT_TRIGGER = "Impact";
     private const float abysalDamage = 20f;
+    private const float destroyAfterTime = 5f;
 
     void Start()
     {
@@ -35,6 +36,9 @@ public class AbysalImpact : MonoBehaviour
             }
 
             Destroy(gameObject, destroyDelay);
+        } else
+        {
+            Destroy(gameObject, destroyAfterTime);
         }
     }
 }
