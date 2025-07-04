@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: StaffData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Staff II
   icon: {fileID: 53662087, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 075aba3fd4f5fb74087134d439ab309e, type: 2}
+  description: 'Creates an area with sparks rotating around it (Damage : 15)'

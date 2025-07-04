@@ -20,7 +20,6 @@ public abstract class EnemyBase : MonoBehaviour
     private const float MAX_RATTING_DROPEXP = 50f;
 
 
-
     protected virtual void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
@@ -29,6 +28,9 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (targetDestination == null)
+            return;
+
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgb2d.velocity = direction * speed;
     }
@@ -40,6 +42,12 @@ public abstract class EnemyBase : MonoBehaviour
         {
             targetCharacter = targetGameObject.GetComponent<CharacterCommonBehavior>();
             targetDestination = targetGameObject.transform;
+            Debug.Log($"{gameObject.name} đã gán target: {targetGameObject.name}");
+
+        }
+        else
+        {
+            Debug.LogWarning($"{gameObject.name} KHÔNG tìm thấy target với tag Player!");
         }
     }
 
@@ -63,10 +71,22 @@ public abstract class EnemyBase : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            DropCoin();
-            DropEXP();
+            OnDeath();
         }
+    }
+
+    protected virtual void OnDeath()
+    {
+        // Gọi về StageEventManager nếu là boss
+        StageEventManager stageManager = FindObjectOfType<StageEventManager>();
+        if (stageManager != null)
+        {
+            stageManager.OnBossDeath();
+        }
+
+        DropCoin();
+        DropEXP();
+        Destroy(gameObject);
     }
     // insert by Trung
     public void DropCoin()
@@ -120,4 +140,7 @@ public abstract class EnemyBase : MonoBehaviour
         DamageText dmgText = dmgTextObj.GetComponent<DamageText>();
         dmgText.SetDamage(damage);
     }
+
+    protected virtual void Start() { }
+
 }

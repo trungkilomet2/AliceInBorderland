@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: BowData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Bow IV
   icon: {fileID: -673393109, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 29da6c5dac6197749be497d13f0b8eca, type: 2}
+  description: 'Fires a fireball that damages enemies it touches (Damage : 50)'

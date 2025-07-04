@@ -111,7 +111,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 100
   m_Sprite: {fileID: 1609942367, guid: 539e031982022e64aa066577bdb52b3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,8 +141,13 @@ MonoBehaviour:
   - {fileID: 8285860307898521780}
   - {fileID: 1419719742341763180}
   - {fileID: 8274900416447067520}
-  hp: 50
+  hp: 100
   commonUI: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: d8181b47697c8aa4fa01e7d6dddf8883, type: 3}
+  damageReductionMultiplier: 1
+  audioManager: {fileID: 0}
+  isDashing: 0
+  healAmountPerCoin: 10
   arrow: {fileID: 8875036098252759429, guid: 95510d04de5f5c141b93d44b340dea52, type: 3}
   arrowSpawnPoint: {fileID: 1999351418892819015}
   timeBtwArrow: 0.2
@@ -171,9 +176,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1771409686109102662
 BoxCollider2D:
@@ -262,6 +267,7 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 2
   skillDamage: 0
+  skillSound: {fileID: 8300000, guid: 1e468900b334f284e907df293b7c89c6, type: 3}
   rollSpeed: 20
 --- !u!114 &8285860307898521780
 MonoBehaviour:
@@ -279,11 +285,12 @@ MonoBehaviour:
   skillType: 0
   indicatorType: 0
   skillName: RainOfArrows
-  cooldown: 0
+  cooldown: 10
   skillRange: 10
   skillWidth: 7
   skillDuration: 5
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: 981a47bdc354cb246a6b3b288134a434, type: 3}
   skillEffect: {fileID: 6713793583759663239, guid: 4c717abdb56aa634195a3ae3aa7bf605, type: 3}
 --- !u!114 &1419719742341763180
 MonoBehaviour:
@@ -306,6 +313,8 @@ MonoBehaviour:
   skillWidth: 1
   skillDuration: 5
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: e6e1288e383e4c64c845b9c92e75dc86, type: 3}
+  effect: {fileID: 4699594267056170701, guid: e57b64a510e448241ba423009326fe4d, type: 3}
 --- !u!114 &8274900416447067520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,5 +336,6 @@ MonoBehaviour:
   skillWidth: 5
   skillDuration: 2
   skillDamage: 10
+  skillSound: {fileID: 8300000, guid: cde2a1941d4e36749b40de03caf15288, type: 3}
   arrow: {fileID: 1625995219848691303, guid: bfa77853b882b614c822d09a793bf080, type: 3}
   bulletForce: 5

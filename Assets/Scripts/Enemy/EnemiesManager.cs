@@ -72,6 +72,8 @@ public class EnemiesManager : MonoBehaviour
             enemyComponent.SetTarget(player);
             enemyComponent.SetStats(data.stats);
             enemyComponent.UpdateStatsForProgress(stageProgress.Progress);
+
+            enemyComponent.SetEnemyData(data);
         }
         newEnemy.transform.parent = transform;
 
@@ -100,4 +102,21 @@ public class EnemiesManager : MonoBehaviour
 
         return position;
     }
+
+    public void SpawnBoss(GameObject bossPrefab)
+    {
+        Vector3 position = GenerateRandomPosition();
+        position += player.transform.position;
+
+        GameObject boss = Instantiate(bossPrefab);
+        boss.transform.position = position;
+        boss.transform.parent = transform;
+
+        EnemyBase bossComponent = boss.GetComponent<EnemyBase>();
+        if (bossComponent != null)
+        {
+            bossComponent.SetTarget(player);
+        }
+    }
+
 }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: BookData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Book IV
   icon: {fileID: 1051680791, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 3c3f81e4abded6a46a963b11d887c7b8, type: 2}
+  description: 'Fly forward quickly (Damage : 0)'

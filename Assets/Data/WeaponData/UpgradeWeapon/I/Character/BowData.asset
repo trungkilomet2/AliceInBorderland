@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: BowData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Bow I
-  icon: {fileID: -1456879828, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  icon: {fileID: -1568612061, guid: dada414d146376b419e8e490b8a5ae0c, type: 3}
+  weaponData: {fileID: 11400000, guid: 6930660dbdb8a1c41b578fd5455ff9a0, type: 2}
+  description: 'Roll forward quickly (Damage : 0)'

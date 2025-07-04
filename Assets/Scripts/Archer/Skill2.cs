@@ -18,7 +18,6 @@ public class Skill2 : SkillBase
         base.Update();
     }
 
-
     protected override void Activate()
     {
         Vector3 damagePosition = skillTransform.position;
@@ -46,6 +45,12 @@ public class Skill2 : SkillBase
                     if (enemy != null)
                     {
                         enemy.TakeDamage(skillDamage);
+                    }
+
+                    BossBase boss = hitCollider.GetComponent<BossBase>();
+                    if (boss != null)
+                    {
+                        boss.TakeDamage(skillDamage);
                     }
                 }
             }

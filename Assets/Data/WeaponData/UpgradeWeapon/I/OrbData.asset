@@ -16,3 +16,5 @@ MonoBehaviour:
   Name: Orb I
   icon: {fileID: 21300000, guid: feefe73d811aa904fa9dbab0ca6c9321, type: 3}
   weaponData: {fileID: 11400000, guid: d7e7f46e4f87af843bc7df9fd4769f19, type: 2}
+  description: 'Creates a protective circle for the player to help push monsters
+    away and increase item pickup range (Damage: 10)'

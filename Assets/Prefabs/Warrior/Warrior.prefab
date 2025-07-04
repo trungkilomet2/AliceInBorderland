@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 3805353571507771724}
   - component: {fileID: 3021552191773485422}
   - component: {fileID: 7696732050759654250}
+  - component: {fileID: 125381751856201010}
+  - component: {fileID: 8383079234876106963}
+  - component: {fileID: 7275985448688403063}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -36,6 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5270292626708380349}
+  - {fileID: 2926045704130149778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5762608959690875605
@@ -77,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 100
   m_Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,10 +138,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3805353571507771724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,9 +200,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
+  - {fileID: 125381751856201010}
+  - {fileID: 8383079234876106963}
+  - {fileID: 7275985448688403063}
   - {fileID: 7696732050759654250}
-  hp: 100
+  hp: 200
   commonUI: {fileID: 0}
+  attackSound: {fileID: 0}
+  damageReductionMultiplier: 1
+  audioManager: {fileID: 0}
+  isDashing: 0
   axe: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   axeSpawnPoint: {fileID: 5270292626708380349}
   timeBtwaxe: 0.2
@@ -215,19 +226,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c3bdb084b4931429d817a5596a0417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillNum: 3
+  skillNum: 4
   skillType: 1
   indicatorType: 0
   skillName: Revenge!!!
   cooldown: 120
   skillRange: 0
   skillWidth: 0
-  skillDuration: 25
+  skillDuration: 5
   skillDamage: 0
+  skillSound: {fileID: 0}
   damageMultiplier: 1.5
-  buffDuration: 25
+  buffDuration: 5
+  sharedState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
   gameObject: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
   revivePrefabs: {fileID: 2822145569493080675, guid: a9a0022b61b84f64799352cbc8632bb4, type: 3}
+  invincibleDuration: 5
+--- !u!114 &125381751856201010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482234283679444079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afe73660d6bd1c45be5a5708aba8f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillType: 1
+  indicatorType: 0
+  skillName: Wakanda Shield
+  cooldown: 10
+  skillRange: 10
+  skillWidth: 0
+  skillDuration: 5
+  skillDamage: 0
+  skillSound: {fileID: 8300000, guid: 223513f2917faa645bf59d9d16ad74ed, type: 3}
+  shieldDuration: 5
+  maxAbsorbDamage: 100
+  reflectRadius: 10
+  reflectDamageMultiplier: 1
+  shieldEffectPrefab: {fileID: 5776597383530057440, guid: bccb2d6d921533d4c83e152c2ee60c1f, type: 3}
+  reflectExplosionPrefab: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
+--- !u!114 &8383079234876106963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482234283679444079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b16dbd14643db043bba7a565ddc9f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 1
+  skillType: 0
+  indicatorType: 1
+  skillName: Telecanesis
+  cooldown: 5
+  skillRange: 10
+  skillWidth: 1
+  skillDuration: 2
+  skillDamage: 10
+  skillSound: {fileID: 0}
+  warriorClonePrefab: {fileID: 5917533558749019282, guid: 38b9bdafacd6335409e816a33d8d2b83, type: 3}
+  cloneSpeed: 30
+  dashSpeed: 25
+  damageOnPath: 20
+  explosionDamage: 100
+  explosionEffect: {fileID: 8527791670732156377, guid: 2eab02b854a57c94e8a36005346fda11, type: 3}
+--- !u!114 &7275985448688403063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482234283679444079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb973b82372c88349bf5344df8d0cbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 2
+  skillType: 1
+  indicatorType: 0
+  skillName: Transformer
+  cooldown: 5
+  skillRange: 0
+  skillWidth: 0
+  skillDuration: 0
+  skillDamage: 0
+  skillSound: {fileID: 0}
+  cooldownTime: 5
+  sharedWarriorState: {fileID: 11400000, guid: bd754a0de2d4014408b01986836d00a3, type: 2}
+  form1Sprite: {fileID: -1757359894, guid: 4b32a1e5713065847b0a6d213aa8bf78, type: 3}
+  form2Sprite: {fileID: -50501098, guid: 44f42483410ff634db8b861d169e9548, type: 3}
+  form1Animator: {fileID: 9100000, guid: e2b890dd45477ae44a614f2009086ae2, type: 2}
+  form2Animator: {fileID: 9100000, guid: 06a1eb7dd5d0fd84783d73e80e33e7ca, type: 2}
+  weaponForm1: {fileID: 3258307440512676410, guid: c955bf8959406a04cae728b0dde3c79f, type: 3}
+  weaponForm2: {fileID: 201968702831417168, guid: 38bf4750c489c234e99cf37885f462dc, type: 3}
+  changeFormEffectPrefab: {fileID: 7763796434052523897, guid: 4900363678256c64e9242cabbe66a1e3, type: 3}
 --- !u!1 &3781837170630933094
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,3 +360,144 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7679408997420150495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8549901919249906399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2926045704130149778}
+  - component: {fileID: 7711569560915715285}
+  - component: {fileID: 2014271449621966247}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2926045704130149778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549901919249906399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7679408997420150495}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7711569560915715285
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549901919249906399}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2014271449621966247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549901919249906399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68f3384c9d11084dbfd6f7023746460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

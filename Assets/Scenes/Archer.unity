@@ -280,9 +280,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2952249232177266908, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 718335d94fe3d744987ba589370c34a3, type: 3}
+    - target: {fileID: 3121988667940958593, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a5ed088898a92f641add309b0915c34f, type: 3}
     - target: {fileID: 3238795044292812432, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.56
+      value: -28.5
       objectReference: {fileID: 0}
     - target: {fileID: 3238795044292812432, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -320,6 +328,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7062013219215211879, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fe6cae990881d740acd0844f582c69a, type: 3}
+    - target: {fileID: 7298881154905949932, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 963c8b48c4b145147aef089e642da491, type: 3}
     - target: {fileID: 7476602496301372032, guid: b9f1eff41ae33304ba39e4b611df18e3, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -4251,6 +4267,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df161eeba26a2134cb31591b3281dad5, type: 2}
   - {fileID: 11400000, guid: ae51389a44c34c74a92c7b8e1ca9a802, type: 2}
   acquireUpdate: []
+  acquireItemUpdate: []
 --- !u!114 &337635494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36253,6 +36270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1419719742341763180, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
+      propertyPath: skillSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6e1288e383e4c64c845b9c92e75dc86, type: 3}
     - target: {fileID: 3542306459489529892, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.057354
@@ -36296,6 +36317,10 @@ PrefabInstance:
     - target: {fileID: 4419206121676326559, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
       propertyPath: m_Name
       value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285860307898521780, guid: 604842fa83f669445a3940e5e72d2382, type: 3}
+      propertyPath: cooldown
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -257500,7 +257525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1813645148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257549,6 +257574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 2d94030874174b34a95c50f25aaa4853, type: 2}
   enemiesManager: {fileID: 1714175506}
+  stageDuration: 120
+  spawnInterval: 2
 --- !u!114 &1813645151
 MonoBehaviour:
   m_ObjectHideFlags: 0

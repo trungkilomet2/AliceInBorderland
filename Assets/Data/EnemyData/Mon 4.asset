@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b403814b3c1071a4dac74978c8e85857, type: 3}
+  m_Name: Mon 4
+  m_EditorClassIdentifier: 
+  Name: Grinning Gremlin
+  animatedPrefab: {fileID: 6846812698658933890, guid: c8d244780d325dc4ca555c966b8e864d, type: 3}
+  stats:
+    hp: 20
+    damage: 7
+    speed: 2
+  isRanged: 0
+  bulletPrefab: {fileID: 0}
+  fireRate: 2

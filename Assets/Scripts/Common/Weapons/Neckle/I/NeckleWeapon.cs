@@ -10,7 +10,7 @@ public class NeckleWeapon : MonoBehaviour
     private Collider2D collider2D;
     CharacterCommonBehavior characterCommon;
     private float neckleWeaponColdown = 15f;
-    private float neckleActiveTiming = 0.8f;
+    private float neckleActiveTiming = 1f;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

@@ -27,12 +27,13 @@ public class EnemyStats
 public class Enemy : MonoBehaviour
 {
     Transform targetDestination;
-    GameObject targetGameObject;
+    public GameObject targetGameObject;
     CharacterCommonBehavior targetCharacter;
     private GameObject damageTextPrefab;
     Rigidbody2D rgb2d;
 
     public EnemyStats stats;
+    [SerializeField] public EnemyData enemyData;
 
     // Insert By Trung
     public GameObject coin;
@@ -42,6 +43,12 @@ public class Enemy : MonoBehaviour
     private bool isKnockedBack = false;
     private float knockbackTime = 0.2f;
     private float knockbackTimer = 0f;
+
+    [SerializeField] private bool isRanged;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float fireRate = 2f;
+    private float fireCooldown = 0f;
+
 
 
     private void Awake()
@@ -106,11 +113,32 @@ public class Enemy : MonoBehaviour
         stats.hp -= damage;
         if (stats.hp <= 0)
         {
-            Destroy(gameObject);
-            DropCoin();
-            DropEXP();
+            OnDeath();
         }
     }
+
+    private void OnDeath()
+    {
+        StageEventManager stageManager = FindObjectOfType<StageEventManager>();
+        if (stageManager != null && enemyData != null)
+        {
+            stageManager.OnEnemyDeath(enemyData);
+        }
+
+        DropCoin();
+        DropEXP();
+
+        Destroy(gameObject);
+    }
+
+    public void SetEnemyData(EnemyData data)
+    {
+        this.enemyData = data;
+        this.isRanged = data.isRanged;
+        this.bulletPrefab = data.bulletPrefab;
+        this.fireRate = data.fireRate;
+    }
+
     // insert by Trung
     public void DropCoin()
     {
@@ -173,4 +201,33 @@ public class Enemy : MonoBehaviour
     {
         stats.ApplyProgress(progress);
     }
+
+    private void Update()
+    {
+        if (isRanged && targetGameObject != null)
+        {
+            fireCooldown -= Time.deltaTime;
+            if (fireCooldown <= 0f)
+            {
+                Fire();
+                fireCooldown = fireRate;
+            }
+        }
+    }
+
+    private void Fire()
+    {
+        if (bulletPrefab == null || targetGameObject == null) return;
+
+        Vector3 dir = (targetGameObject.transform.position - transform.position).normalized;
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.direction = dir;
+            bulletScript.damage = stats.damage;
+        }
+    }
+
 }

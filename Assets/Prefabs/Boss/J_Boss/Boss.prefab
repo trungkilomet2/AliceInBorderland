@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2134806729
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1188529476, guid: fed768f4bdb6e6647beb9493243e2271, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -233,8 +233,8 @@ MonoBehaviour:
   targetGameObject: {fileID: 0}
   targetCharacter: {fileID: 0}
   speed: 2
-  hp: 300
-  damage: 10
+  hp: 2000
+  damage: 11
   coin: {fileID: 730796426629851537, guid: 0cd17f16753129f418c9eab59564e76c, type: 3}
   exp: {fileID: 4805415854228861339, guid: 7beafdbf960d77e44adb6f99f253d1fd, type: 3}
   bossSkillBases:
@@ -259,6 +259,7 @@ MonoBehaviour:
   cooldown: 2
   skillDuration: 2
   skillRange: 10
+  skillSound: {fileID: 8300000, guid: 718335d94fe3d744987ba589370c34a3, type: 3}
   projectile: {fileID: 163690441322364419, guid: abe51b725f02c21438d18dab67befe73, type: 3}
   bulletForce: 5
 --- !u!114 &3121988667940958593
@@ -277,6 +278,7 @@ MonoBehaviour:
   cooldown: 20
   skillDuration: 5
   skillRange: 10
+  skillSound: {fileID: 8300000, guid: a5ed088898a92f641add309b0915c34f, type: 3}
   circleFlame: {fileID: 429778352178748539, guid: 038b1b150a4de794491c95cab45eadd1, type: 3}
 --- !u!114 &7062013219215211879
 MonoBehaviour:
@@ -294,6 +296,7 @@ MonoBehaviour:
   cooldown: 5
   skillDuration: 2
   skillRange: 10
+  skillSound: {fileID: 8300000, guid: 1fe6cae990881d740acd0844f582c69a, type: 3}
   thunderBolt: {fileID: 4426313511499266900, guid: 6af4dcb841ce5ea47be2ec87cadbd2c0, type: 3}
 --- !u!114 &7298881154905949932
 MonoBehaviour:
@@ -311,5 +314,6 @@ MonoBehaviour:
   cooldown: 5
   skillDuration: 2
   skillRange: 10
+  skillSound: {fileID: 8300000, guid: 963c8b48c4b145147aef089e642da491, type: 3}
   J_Boss: {fileID: 7881493978720937603, guid: e1a172e1c6fb6aa4ca517eae1e9b96d1, type: 3}
   timeRelease: 5

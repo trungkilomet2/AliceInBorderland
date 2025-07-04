@@ -20,15 +20,20 @@ public class Archer : CharacterCommonBehavior
         _timeBtwArrow -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _timeBtwArrow < 0)
         {
+            animator.SetTrigger("attack");
             Attack();
         }
     }
     // Insert By Trung
-    
+
 
 
     public override void Attack()
     {
+        if (attackSound != null && audioManager != null)
+        {
+            audioManager.PlaySoundClip(attackSound);
+        }
         _timeBtwArrow = timeBtwArrow;
 
         // Lấy vị trí chuột trên màn hình và chuyển sang tọa độ thế giới

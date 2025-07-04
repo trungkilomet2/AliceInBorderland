@@ -30,5 +30,7 @@ public class DisableAfterTime : MonoBehaviour
         {
             enemy?.TakeDamage(swordDamage);
         }
+        EnemyBase enemy2 = collision.GetComponent<EnemyBase>();
+        enemy2?.TakeDamage(swordDamage);
     }
 }

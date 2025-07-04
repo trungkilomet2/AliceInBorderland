@@ -1,19 +1,23 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngineInternal;
 
 public enum IndicatorType { Circle, Arrow }
-public enum SkillNum { Skill1, Skill2, Skill3, Skill4 }
+public enum SkillNum { Skill1, Skill2, Skill3, Skill4, Passive }
 public enum SkillType { Active, Passive }
+
 public abstract class SkillBase : MonoBehaviour
 {
     public SkillNum skillNum;
     public SkillType skillType = SkillType.Active;
-    public IndicatorType indicatorType = IndicatorType.Circle; 
+    public IndicatorType indicatorType = IndicatorType.Circle;
     public string skillName;
     public float cooldown = 5f;
     public float skillRange = 10f;
     public float skillWidth = 1f;
     public float skillDuration = 2f;
     public float skillDamage = 10f;
+    public AudioClip skillSound;
 
     protected float currentCooldown = 0f;
     protected bool isCoolingDown = false;
@@ -25,12 +29,14 @@ public abstract class SkillBase : MonoBehaviour
     private GameObject rangeIndicatorPrefab;
     private KeyCode key;
     private bool isPreparingSkill = false;
+    private AudioManager audioManager;
 
     // Static field to track if any skill is being prepared or executed
     private static SkillBase currentActiveSkill = null;
 
     public virtual void Awake()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         rangeIndicatorPrefab = Resources.Load<GameObject>("Prefabs/RangeIndicator");
         if (indicatorType == IndicatorType.Arrow)
         {
@@ -41,24 +47,31 @@ public abstract class SkillBase : MonoBehaviour
             indicatorPrefab = Resources.Load<GameObject>("Prefabs/CircleIndicator");
         }
 
-        switch(skillNum)
-        {
-            case SkillNum.Skill1:
-                key = KeyCode.Alpha1;
-                break;
-            case SkillNum.Skill2:
-                key = KeyCode.Alpha2;
-                break;
-            case SkillNum.Skill3:
-                key = KeyCode.Alpha3;
-                break;
-            case SkillNum.Skill4:
-                key = KeyCode.Alpha4;
-                break;
-            default:
-                key = KeyCode.None; // Default to no key
-                break;
-        }
+        // switch (skillNum)
+        // {
+        //    case SkillNum.Skill1:
+               
+        //            key = KeyCode.Alpha1;
+        //        break;
+        //    case SkillNum.Skill2:
+               
+        //            key = KeyCode.Alpha2;
+        //        break;
+        //    case SkillNum.Skill3:
+               
+        //            key = KeyCode.Alpha3;
+        //        break;
+        //    case SkillNum.Skill4:
+               
+        //            key = KeyCode.Alpha4;
+        //        break;
+        //    case SkillNum.Passive:
+        //        key = KeyCode.None;
+        //        break;
+        //    default:
+        //        key = KeyCode.None; // Default to no key
+        //        break;
+        // }
     }
 
     public virtual void HandleSkillInput()
@@ -83,6 +96,10 @@ public abstract class SkillBase : MonoBehaviour
         // Passive skill: activate immediately, no indicator
         if (skillType == SkillType.Passive && !isCoolingDown && Input.GetKeyDown(key))
         {
+            if (skillSound != null && audioManager != null)
+            {
+                audioManager?.PlaySoundClip(skillSound);
+            }
             currentActiveSkill = this;
             Activate();
             isCoolingDown = true;
@@ -203,6 +220,10 @@ public abstract class SkillBase : MonoBehaviour
         currentCooldown = cooldown;
         isPreparingSkill = false;
         currentActiveSkill = null;
+        if (skillSound != null && audioManager != null)
+        {
+            audioManager?.PlaySoundClip(skillSound);
+        }
     }
 
     public virtual void CancelSkill()
@@ -225,4 +246,48 @@ public abstract class SkillBase : MonoBehaviour
     {
         return isPreparingSkill;
     }
+
+
+    //Insert By Trung 01.07.2025
+    public void UnlockSkillBySkillNum(SkillNum skillNum)
+    {
+        switch (skillNum)
+        {
+            case SkillNum.Skill1:
+                key = KeyCode.Alpha1;
+                break;
+            case SkillNum.Skill2:
+                key = KeyCode.Alpha2;
+                break;
+            case SkillNum.Skill3:
+                key = KeyCode.Alpha3;
+                break;
+            case SkillNum.Skill4:
+                key = KeyCode.Alpha4;
+                break;
+            case SkillNum.Passive:
+                key = KeyCode.None;
+                break;
+            default:
+                key = KeyCode.None; // Default to no key
+                break;
+        }
+
+    }
+
+    public AudioManager GetAudio()
+    {
+        return audioManager;
+    }
+
+    public float GetCurrentCooldown()
+    {
+        return this.currentCooldown;
+    }
+    public bool GetIsCoolingDown()
+    {
+        return this.isCoolingDown;
+    }
+
+
 }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb19a6e03eb6e479a65a5a92c421e5, type: 3}
   m_Name: BookData
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   Name: Book I
   icon: {fileID: 734353238, guid: 3715511d5a2153c408dbe68290a07462, type: 3}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 70c77069480fbf442b669130eeb63d08, type: 2}
+  description: 'Fires an energy beam that destroys enemies (Damage: 10)'

@@ -19,22 +19,49 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     public CommonUI commonUI;
     private float onMovingCharacterHorizontal;
     private const string ENERMY_WEAPON = "Enemy_Weapon";
+    public AudioClip attackSound;
 
     private bool isInvincible = false;
     private float invincibleEndTime = 0f;
+    private bool canDie = false;
+    public void BlockDeath() => canDie = false;
+    public void AllowDeath() => canDie = true;
+    public bool CanDie() => canDie;
+    private Skill1_Warrior skill1;
 
     // Add 28.06/2025 |Quang Anh|  Lưu vị trí an toàn để tránh bị kẹt trong Block
     private Vector3 lastSafePosition;
-    private float positionRecordInterval = 0.5f;
+    private float positionRecordInterval = 1f;
     private float lastPositionRecordTime = 0f;
     public const string BLOCK_TAG = "Block";
     public static event Action OnBlockedCollision;
+
+    public float damageReductionMultiplier = 1f;
+
+    //audio
+    [HideInInspector]
+    public AudioManager audioManager;
+
+    //pause
+    private PauseUIManager pauseUIManager;
+
+    // Insert By Trung 30.06.2025
+    private float characterBaseArmor = 10f;
+    private GameOverManager gameOverManager;
+
+    [HideInInspector]
+    public bool isDashing = false;
+
+    // THÊM: Lượng HP hồi phục khi nhặt coin
+    public float healAmountPerCoin = 10f;
 
 
     private void Awake()
     {
         damageTextPrefab = Resources.Load<GameObject>("Prefabs/DamageText"); // Load the damage text prefab from Resources folder
         animator = GetComponent<Animator>();
+        audioManager = FindAnyObjectByType<AudioManager>();
+        gameOverManager = FindAnyObjectByType<GameOverManager>();
     }
 
     public void DefaultCommonUI()
@@ -54,12 +81,12 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
         // Add 28.06/2025 |Quang Anh|  Ghi lại vị trí an toàn ban đầu
         lastSafePosition = transform.position;
+        pauseUIManager = FindAnyObjectByType<PauseUIManager>();
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        Move();
         UpdateAnimation();
         commonUI.levelText.text = "Level: " + commonUI.currentLevel.ToString();
 
@@ -82,18 +109,27 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        Move(); // GỌI Ở ĐÂY mới chuẩn vật lý
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.tag == COIN_TAG)
         {
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
-            // Xu ly add them playprefabs
+            // THAY ĐỔI MỚI: Hồi phục HP khi nhặt Coin
+            Heal(healAmountPerCoin);
         }
         if (collision.tag == EXP_TAG)
         {
+            audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
-            commonUI.AddExp(30f);
+            commonUI.AddExp(8.8f);
         }
         if (collision.tag == ENERMY_WEAPON)
         {
@@ -107,33 +143,62 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
                 }
             }
         }
-        // Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
-        if (collision.CompareTag(BLOCK_TAG))
-        {
-            Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
+        //// Add 28.06/2025 |Quang Anh| === Thêm xử lý Block ===
+        ////if (collision.CompareTag(BLOCK_TAG))
+        ////{
+        ////    Debug.Log("==> Đã chạm Block. Quay lại vị trí cũ.");
 
-            transform.position = lastSafePosition;
-            OnBlockedCollision?.Invoke();
+        ////    //transform.position = lastSafePosition;
+        ////    OnBlockedCollision?.Invoke();
+        ////}
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(BLOCK_TAG))
+        {
+            Debug.Log("==> Đã va chạm Block (Collision).");
+
+            // THAY ĐỔI MỚI: CHỈ QUAY LẠI VỊ TRÍ AN TOÀN NẾU ĐANG DASHING
+            if (isDashing)
+            {
+                Debug.Log("Dash vào Block, quay lại vị trí cũ.");
+                transform.position = lastSafePosition;
+                OnBlockedCollision?.Invoke(); // Gọi event để MageSkill4 dừng dash
+                // Đảm bảo nhân vật dừng hẳn sau khi dịch chuyển tức thời
+                if (rb != null)
+                {
+                    rb.velocity = Vector2.zero;
+                }
+            }
+            else
+            {
+                // Nếu không đang dash, để va chạm vật lý tự nhiên xử lý.
+                // Nhân vật sẽ bị chặn lại bởi tường.
+                Debug.Log("Va chạm Block khi không dash. Chỉ chặn lại.");
+            }
         }
     }
 
     protected virtual void Move()
     {
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+
+        Vector2 targetPosition = rb.position + (Vector2)(moveInput.normalized * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(targetPosition);
+
 
         if (moveInput.x != 0)
         {
             onMovingCharacterHorizontal = moveInput.x;
-            if (moveInput.x != 0)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x = moveInput.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-                transform.localScale = scale;
-            }
+
+            Vector3 scale = transform.localScale;
+            scale.x = moveInput.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
+
 
     public float GetOnMovingCharacterHorizontal()
     {
@@ -153,16 +218,31 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        skill1 = GetComponent<Skill1_Warrior>();
+        if (skill1 != null)
+        {
+            damage = skill1.OnAbsorbDamage(damage);
+            // Nếu damage bị phản lại toàn bộ, bạn có thể return nếu muốn
+            if (damage <= 0) return;
+        }
         if (isInvincible) return;
-
-        ShowDamageText(damage);
-        hp -= damage;
+        float toalDamageTaken = damage - damage * (characterBaseArmor / 100);
+        hp -= toalDamageTaken;
+        ShowDamageText(toalDamageTaken);
         commonUI.SetCurrentHp(hp);
         commonUI.UpdateHealthBar();
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            if (this is Warrior && !CanDie()) return;
+            else
+            {
+                AllowDeath();
+                Destroy(gameObject);
+                //pauseUIManager.GameOver();
+
+                gameOverManager.TriggerGameOver();
+            }
+
         }
         animator.SetBool("isHit", true);
         Invoke("ResetHitAnimation", 0.5f); // Reset hit animation after 0.5 seconds
@@ -171,6 +251,26 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
     private void ResetHitAnimation()
     {
         animator.SetBool("isHit", false);
+    }
+
+    // THÊM: Hàm hồi phục HP
+    public void Heal(float amount)
+    {
+        hp += amount;
+        // Đảm bảo HP không vượt quá HP tối đa
+        // Giả sử commonUI.maxHp đã được thiết lập đúng
+        if (commonUI != null && hp > commonUI.GetMaxHp())
+        {
+            hp = commonUI.GetMaxHp();
+        }
+        // Hiển thị số lượng HP hồi phục
+        ShowDamageText(amount);
+        // Cập nhật thanh máu trên UI
+        if (commonUI != null)
+        {
+            commonUI.SetCurrentHp(hp);
+            commonUI.UpdateHealthBar();
+        }
     }
 
 
@@ -194,6 +294,15 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         isInvincible = true;
         invincibleEndTime = Time.time + duration;
     }
+    public void ActiveSkillInvincible(float duration)
+    {
+        isInvincible = true;
+        invincibleEndTime = Time.time + duration;
+    }
+    public void DeactiveInvincible()
+    {
+        isInvincible = false;
+    }
 
     public float GetInvincibleEndTime()
     {
@@ -205,7 +314,14 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         isInvincible = false;
     }
 
-
+    public float GetCharacterBaseArmor()
+    {
+        return this.characterBaseArmor;
+    }
+    public void SetCharacterBaseArmor(float newCharacterBaseArmor)
+    {
+        this.characterBaseArmor = newCharacterBaseArmor;
+    }
 
     public abstract void Attack();
 
