@@ -34,6 +34,7 @@ public class Sword4TargetEnemy : MonoBehaviour
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 nearestEnemy.GetComponent<Enemy>().TakeDamage(swordDamage);
+                nearestEnemy.GetComponent<EnemyBase>().TakeDamage(swordDamage);
                 lastAttackTime = Time.time;
             }
         }
