@@ -40,13 +40,16 @@ public class StageEventManager : MonoBehaviour
 
         totalGameTime += Time.deltaTime;
 
-        // Thay đổi spawnInterval theo thời gian chơi
-        if (totalGameTime >= 540f)
-            spawnInterval = 0.2f;
-        else if (totalGameTime >= 360f)
+        if (totalGameTime >= 1080f)
+            spawnInterval = 0.25f;
+        else if (totalGameTime >= 840f)
             spawnInterval = 0.5f;
-        else if (totalGameTime >= 180f)
+        else if (totalGameTime >= 600f)
+            spawnInterval = 0.75f;
+        else if (totalGameTime >= 360f)
             spawnInterval = 1f;
+        else if (totalGameTime >= 180f)
+            spawnInterval = 1.5f;
         else
             spawnInterval = 2f;
 
