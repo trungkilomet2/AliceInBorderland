@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundAudioSource: {fileID: 400687945}
   effectAudioSource: {fileID: 1569475496}
-  backgroundClip: {fileID: 8300000, guid: 18624e9ad05df2144a8954eb32bfc5a8, type: 3}
+  backgroundClip: {fileID: 8300000, guid: a272808ea95972c4f97411f3a21be7d9, type: 3}
   clickOptionClip: {fileID: 8300000, guid: f807dcd6576aefd41b509b3f8629fb59, type: 3}
 --- !u!4 &1202798847
 Transform:
