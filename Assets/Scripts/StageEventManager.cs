@@ -114,6 +114,13 @@ public class StageEventManager : MonoBehaviour
     {
         currentStage = stageData.stageEvents[currentStageIndex];
         stageStartTime = Time.time;
+
+        // Đặt thời lượng stage tùy theo loại
+        if (currentStage is BossStageEvent)
+            stageDuration = 300f; // Boss stage = 5 phút
+        else
+            stageDuration = 120f; // Enemy stage = 2 phút
+
         nextSpawnTime = Time.time + spawnInterval;
         bossSpawned = false;
         bossDefeated = false;
