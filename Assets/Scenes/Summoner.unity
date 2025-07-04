@@ -365226,6 +365226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1621890032106311648, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}
+      propertyPath: bossSkillBases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7655666251203725423, guid: f01eed8d2d7c9fe409298d3aff4c010f, type: 3}
       propertyPath: m_Name
       value: Joker2

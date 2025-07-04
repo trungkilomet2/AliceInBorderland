@@ -7,7 +7,7 @@ public class JSkill2 : BossSkillBase
     public GameObject balloonPrefab;
     public float balloonRadius = 3f;
     public float balloonDuration = 2f;
-    public bool IsRunning { get; private set; } = false;
+    public bool IsSkillRunning { get; private set; } = false;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class JSkill2 : BossSkillBase
 
     IEnumerator SummonBalloons()
     {
-        IsRunning = true;
+        IsSkillRunning = true;
         Vector3 bossPos = transform.position;
         int count = 5;
         List<GameObject> balloons = new List<GameObject>();

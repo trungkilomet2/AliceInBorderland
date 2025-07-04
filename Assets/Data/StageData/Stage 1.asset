@@ -15,4 +15,4 @@ MonoBehaviour:
   message: Stage 1
   enemiesToSpawn:
   - enemyData: {fileID: 11400000, guid: faa4375e45b73ea4a9e6257f8489dc58, type: 2}
-    maxCount: 50
+    maxCount: 30

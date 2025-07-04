@@ -10,6 +10,7 @@ public class AbysalImpact : MonoBehaviour
     private const string ENEMY_TAG = "Enemy";
     private const string IMPACT_TRIGGER = "Impact";
     private const float abysalDamage = 20f;
+    private const float destroyAfterTime = 5f;
 
     void Start()
     {
@@ -32,9 +33,13 @@ public class AbysalImpact : MonoBehaviour
             if (other.CompareTag(ENEMY_TAG))
             {
                 other.GetComponent<Enemy>()?.TakeDamage(abysalDamage);
+                other.GetComponent<EnemyBase>()?.TakeDamage(abysalDamage);
             }
 
             Destroy(gameObject, destroyDelay);
+        } else
+        {
+            Destroy(gameObject, destroyAfterTime);
         }
     }
 }

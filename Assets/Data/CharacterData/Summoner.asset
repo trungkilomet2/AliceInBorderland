@@ -17,9 +17,9 @@ MonoBehaviour:
   characterPortrait: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
   description: A master of summoning, the Summoner calls ancient creatures to devastate
     enemies.
-  health: 200
+  health: 100
   speed: 5
-  damage: 20
+  damage: 10
   weaponName: Basic Weapon
   isLocked: 0
   characterPrefab: {fileID: 1672598209208808701, guid: 56c8e7a0707690740a9d633236f3e947, type: 3}

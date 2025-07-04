@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,15 @@ public abstract class BossSkillBase : MonoBehaviour
     protected virtual void Awake()
     {
         BossBase bossBase = GetComponent<BossBase>();
+        if (bossBase != null)
+        {
+            target = bossBase.targetGameObject;
+        }
+        else
+        {
+           
+            Debug.LogWarning("BossSkillBase không tìm thấy BossBase trên object " + gameObject.name);
+        }
         target = bossBase.targetGameObject;
         audioManager = FindAnyObjectByType<AudioManager>();
     }

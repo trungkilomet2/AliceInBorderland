@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageEventManager : MonoBehaviour
 {
@@ -40,13 +42,16 @@ public class StageEventManager : MonoBehaviour
 
         totalGameTime += Time.deltaTime;
 
-        // Thay đổi spawnInterval theo thời gian chơi
-        if (totalGameTime >= 540f)
-            spawnInterval = 0.2f;
-        else if (totalGameTime >= 360f)
+        if (totalGameTime >= 1080f)
+            spawnInterval = 0.25f;
+        else if (totalGameTime >= 840f)
             spawnInterval = 0.5f;
-        else if (totalGameTime >= 180f)
+        else if (totalGameTime >= 600f)
+            spawnInterval = 0.75f;
+        else if (totalGameTime >= 360f)
             spawnInterval = 1f;
+        else if (totalGameTime >= 180f)
+            spawnInterval = 1.5f;
         else
             spawnInterval = 2f;
 
@@ -111,6 +116,13 @@ public class StageEventManager : MonoBehaviour
     {
         currentStage = stageData.stageEvents[currentStageIndex];
         stageStartTime = Time.time;
+
+        // Đặt thời lượng stage tùy theo loại
+        if (currentStage is BossStageEvent)
+            stageDuration = 300f; // Boss stage = 5 phút
+        else
+            stageDuration = 120f; // Enemy stage = 2 phút
+
         nextSpawnTime = Time.time + spawnInterval;
         bossSpawned = false;
         bossDefeated = false;
@@ -135,7 +147,18 @@ public class StageEventManager : MonoBehaviour
         {
             bossDefeated = true;
             Debug.Log("✅ Boss đã bị tiêu diệt!");
+
+            if (currentStageIndex == stageData.stageEvents.Count - 1)
+            {
+                StartCoroutine(LoadWinSceneAfterDelay(1f));
+            }
         }
+    }
+
+    private IEnumerator LoadWinSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("WinScene");
     }
 
     private int GetAliveEnemyCount(EnemyData data)

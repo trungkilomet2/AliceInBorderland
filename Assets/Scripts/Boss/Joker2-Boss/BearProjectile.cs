@@ -10,18 +10,29 @@ public class BearProjectile : MonoBehaviour
 
     public void Init()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
         timer = homingTime;
     }
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        
         if (player != null)
         {
+            Vector3 bearPos = transform.position;
+            Vector3 playerPos = player.position;
+            bool facingLeft = bearPos.x > playerPos.x;
+            GetComponent<SpriteRenderer>().flipX = facingLeft;
+
             direction = (player.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
+
+        timer -= Time.deltaTime;
         if (timer <= 0f)
         {
             Destroy(gameObject);
@@ -32,7 +43,13 @@ public class BearProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<CharacterCommonBehavior>().TakeDamage(6);
+            
+            var behav = other.GetComponent<CharacterCommonBehavior>();
+            if (behav != null)
+            {
+                behav.TakeDamage(6);
+            }
+            Destroy(gameObject); 
         }
     }
 }

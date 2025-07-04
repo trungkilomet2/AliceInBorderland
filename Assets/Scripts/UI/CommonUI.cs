@@ -424,8 +424,8 @@ public class CommonUI : MonoBehaviour
                 updateData = null;
                 continue;
             }
-            Debug.Log("Update Data: " + updateData.Name);
-            Debug.Log("Update Data: " + updateData.description);
+      //      Debug.Log("Update Data: " + updateData.Name);
+       //     Debug.Log("Update Data: " + updateData.description);
             equipmentTooltips[i].SetEquipmentInfo(updateData.description);
             equipmentTooltips[i].SetEquipmentName(updateData.Name);
             listUpgrade.Add(updateData);

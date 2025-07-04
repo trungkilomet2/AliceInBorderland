@@ -18,7 +18,7 @@ public class JSkill1 : BossSkillBase
     [Range(1, 10)]
     public float starScale = 3f;
 
-    public bool IsRunning { get; private set; } = false;
+    public bool IsSkillRunning { get; private set; } = false;
 
 
     public Collider2D playerCol;
@@ -44,7 +44,7 @@ public class JSkill1 : BossSkillBase
 
     IEnumerator SkillRoutine()
     {
-        IsRunning = true;
+        IsSkillRunning = true;
         // 1. Vẽ vòng lửa quanh target
         Vector3 center = target.transform.position;
         yield return StartCoroutine(DrawFireCircleWithSprites(center));
@@ -55,7 +55,7 @@ public class JSkill1 : BossSkillBase
 
         // 3. Boss bay theo đường ngôi sao, tạo vùng lửa
         yield return StartCoroutine(MoveBossAndSpawnFire(center, points));
-        IsRunning = false;
+        IsSkillRunning = false;
         runningSkill = null;
     }
 
