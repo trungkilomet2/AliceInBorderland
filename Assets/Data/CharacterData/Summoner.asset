@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Summoner
   m_EditorClassIdentifier: 
   characterName: Summoner
-  characterSprite: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
-  characterPortrait: {fileID: -1884012988, guid: 90185f3b3356cfc4e8f6bf930ee38952, type: 3}
+  characterSprite: {fileID: -1884012988, guid: a2611980ed884de488afe8e1cd6b6592, type: 3}
+  characterPortrait: {fileID: -1884012988, guid: a2611980ed884de488afe8e1cd6b6592, type: 3}
   description: A master of summoning, the Summoner calls ancient creatures to devastate
     enemies.
   health: 100
