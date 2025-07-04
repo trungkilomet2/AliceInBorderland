@@ -40,11 +40,11 @@ public class StageEventManager : MonoBehaviour
 
         totalGameTime += Time.deltaTime;
 
-        if (totalGameTime >= 900f)
+        if (totalGameTime >= 1080f)
             spawnInterval = 0.25f;
-        else if (totalGameTime >= 720f)
+        else if (totalGameTime >= 840f)
             spawnInterval = 0.5f;
-        else if (totalGameTime >= 540f)
+        else if (totalGameTime >= 600f)
             spawnInterval = 0.75f;
         else if (totalGameTime >= 360f)
             spawnInterval = 1f;
