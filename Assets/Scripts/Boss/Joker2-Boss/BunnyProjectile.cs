@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BunnyProjectile : Joker_Boss
+public class BunnyProjectile : MonoBehaviour
 {
     public GameObject bearPrefab;
     public float moveSpeed = 3f;

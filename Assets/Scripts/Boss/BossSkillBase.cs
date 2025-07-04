@@ -34,7 +34,7 @@ public abstract class BossSkillBase : MonoBehaviour
         }
         else
         {
-            // Có thể log warning tại đây để biết đang gắn skill sai object
+           
             Debug.LogWarning("BossSkillBase không tìm thấy BossBase trên object " + gameObject.name);
         }
         target = bossBase.targetGameObject;
