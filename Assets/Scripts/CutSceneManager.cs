@@ -15,7 +15,7 @@ public class CutSceneManager : MonoBehaviour
             if (beam != null)
                 Destroy(beam);  // Xóa beam khỏi scene
         }
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Credit");
     }
     public void RegisterBeam(GameObject beam)
     {
