@@ -65,7 +65,7 @@ public class PauseUIManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 
     public void QuitGame()
@@ -75,7 +75,7 @@ public class PauseUIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync("CharacterSelection");
     }
 
 
