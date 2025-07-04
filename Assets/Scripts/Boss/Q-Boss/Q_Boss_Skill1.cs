@@ -4,46 +4,40 @@ using UnityEngine;
 
 public class Q_Boss_Skill1 : BossSkillBase
 {
-    public float dashSpeed = 40f; // Đổi tên để dễ hiểu hơn, giống Player
-    public float dashDistance = 50f; // Thay thế skillRange nếu bạn muốn dash một khoảng cố định
-                                     // Hoặc vẫn dùng skillRange nếu bạn muốn dash đến gần người chơi
+    public float dashSpeed = 40f; // Tốc độ dash mặc định
+    private float originalDashSpeed; // Để lưu lại tốc độ gốc
+    public float dashDistance = 50f;
 
-    private Vector3 dashTarget; // Điểm đến của cú dash
-    private bool isDashingInternal = false; // Biến cờ nội bộ cho trạng thái dash của skill này
-    // isDashing static vẫn giữ nguyên để các script khác kiểm tra trạng thái của boss
+    private Vector3 dashTarget;
+    private bool isDashingInternal = false;
     public static bool isDashing = false;
 
-    // Không cần Rigidbody2D nữa nếu chỉ dùng transform.position
-    // private Rigidbody2D rb;
+    private int dashCount = 0; // Đếm số lần dash liên tiếp
 
     protected override void Awake()
     {
         base.Awake();
-        // Không cần lấy Rigidbody2D nếu không sử dụng nó cho dash
-        // rb = GetComponent<Rigidbody2D>();
+        originalDashSpeed = dashSpeed; // Lưu tốc độ ban đầu
     }
 
-    // Thêm hàm Update để xử lý di chuyển liên tục khi đang dash
-    public void Update() // SkillBase có thể đã có Update, nếu không thì thêm override
+    public void Update()
     {
-        base.Update(); // Quan trọng để gọi Update của BossSkillBase
+        base.Update();
 
         if (isDashingInternal)
         {
-            // Di chuyển boss về phía dashTarget
             transform.position = Vector3.MoveTowards(transform.position, dashTarget, dashSpeed * Time.deltaTime);
 
-            // Kiểm tra nếu đã gần đến đích
             if (Vector3.Distance(transform.position, dashTarget) < 0.1f)
             {
-                StopDash(); // Dừng dash khi đến đích
+                StopDash();
             }
         }
     }
 
     protected override void Activate()
     {
-        if (isDashingInternal) return; // Ngăn không cho dash nếu đang dash
+        if (isDashingInternal) return;
 
         if (target == null)
         {
@@ -53,31 +47,37 @@ public class Q_Boss_Skill1 : BossSkillBase
 
         Debug.Log("BOSS DASH!");
 
+        dashCount++;
+
+        if (dashCount == 4)
+        {
+            dashSpeed *= 4;
+            Debug.Log("🔥 Dash tăng tốc gấp đôi!");
+        }
+
         Vector3 direction = (target.transform.position - transform.position).normalized;
+        dashTarget = transform.position + (direction * dashDistance);
 
-        // Tính toán điểm đích của cú dash
-        // Dash tới một điểm cách vị trí hiện tại một khoảng skillRange theo hướng về người chơi
-        dashTarget = transform.position + (direction * dashDistance); // Hoặc (direction * skillRange)
-
-        // Cập nhật biến trạng thái
         isDashingInternal = true;
-        isDashing = true; // Cập nhật biến static để các script khác biết boss đang dash
-
-        // Nếu có Animator, bạn có thể kích hoạt animation dash ở đây
-        // if (animator != null)
-        //     animator.SetTrigger("dashTrigger");
+        isDashing = true;
     }
 
-    // Hàm riêng để dừng dash, có thể gọi khi đến đích hoặc khi va chạm
     private void StopDash()
     {
         if (isDashingInternal)
         {
             Debug.Log("Boss Dash Ended.");
+
             isDashingInternal = false;
-            isDashing = false; // Tắt biến static
-            // Đặt lại vận tốc về 0 nếu boss có Rigidbody2D và nó đang bị ảnh hưởng bởi vận tốc từ nơi khác
-            // if (rb != null) rb.velocity = Vector2.zero;
+            isDashing = false;
+
+            // Nếu vừa dash gấp đôi thì reset lại tốc độ và đếm
+            if (dashCount >= 4)
+            {
+                dashSpeed = originalDashSpeed;
+                dashCount = 0; // Reset đếm sau khi dash đặc biệt
+                Debug.Log("🔁 DashSpeed đã được reset.");
+            }
         }
     }
 }
