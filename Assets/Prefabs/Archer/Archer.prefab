@@ -141,7 +141,7 @@ MonoBehaviour:
   - {fileID: 8285860307898521780}
   - {fileID: 1419719742341763180}
   - {fileID: 8274900416447067520}
-  hp: 50
+  hp: 100
   commonUI: {fileID: 0}
   attackSound: {fileID: 8300000, guid: d8181b47697c8aa4fa01e7d6dddf8883, type: 3}
   damageReductionMultiplier: 1
