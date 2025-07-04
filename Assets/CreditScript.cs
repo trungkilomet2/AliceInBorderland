@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreditScript : MonoBehaviour
 {
@@ -16,5 +17,9 @@ public class CreditScript : MonoBehaviour
     void Update()
     {
         rectTransform.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
+        if (rectTransform.anchoredPosition.y >= 1500)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
