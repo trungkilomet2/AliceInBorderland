@@ -129,7 +129,7 @@ public abstract class CharacterCommonBehavior : MonoBehaviour
         {
             audioManager?.PlayCoinSound();
             Destroy(collision.gameObject);
-            commonUI.AddExp(30f);
+            commonUI.AddExp(8.8f);
         }
         if (collision.tag == ENERMY_WEAPON)
         {
