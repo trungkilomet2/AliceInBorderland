@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BearProjectile : Joker_Boss
+public class BearProjectile : MonoBehaviour
 {
     public float homingTime = 7f;
     public float moveSpeed = 4f;
@@ -10,24 +10,29 @@ public class BearProjectile : Joker_Boss
 
     public void Init()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
         timer = homingTime;
     }
 
     void Update()
     {
-
-
-        Vector3 bearPos = transform.position;
-        Vector3 playerPos = targetGameObject.transform.position;
-        bool facingLeft = bearPos.x > playerPos.x;
-        GetComponent<SpriteRenderer>().flipX = facingLeft;
-        timer -= Time.deltaTime;
+        
         if (player != null)
         {
+            Vector3 bearPos = transform.position;
+            Vector3 playerPos = player.position;
+            bool facingLeft = bearPos.x > playerPos.x;
+            GetComponent<SpriteRenderer>().flipX = facingLeft;
+
             direction = (player.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
+
+        timer -= Time.deltaTime;
         if (timer <= 0f)
         {
             Destroy(gameObject);
@@ -38,7 +43,13 @@ public class BearProjectile : Joker_Boss
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<CharacterCommonBehavior>().TakeDamage(6);
+            
+            var behav = other.GetComponent<CharacterCommonBehavior>();
+            if (behav != null)
+            {
+                behav.TakeDamage(6);
+            }
+            Destroy(gameObject); 
         }
     }
 }

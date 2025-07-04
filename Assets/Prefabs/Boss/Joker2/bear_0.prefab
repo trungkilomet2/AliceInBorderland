@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 72231222301613113}
   - component: {fileID: -2443481371611759127}
   - component: {fileID: -2752061005524442557}
+  - component: {fileID: 839644759771402328}
   m_Layer: 9
   m_Name: bear_0
   m_TagString: Weapon
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 287420879
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: -1762970953, guid: 0e5c25dec2dd0bc40843ddcc7416e68c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,6 +121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6530febd64653948a7e78145c52193d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetDestination: {fileID: 0}
+  targetGameObject: {fileID: 0}
+  targetCharacter: {fileID: 0}
+  speed: 0
+  hp: 50
+  damage: 10
+  coin: {fileID: 0}
+  exp: {fileID: 0}
+  bossSkillBases: []
   homingTime: 7
   moveSpeed: 4
 --- !u!61 &-2752061005524442557
@@ -167,3 +177,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.89, y: 1.66}
   m_EdgeRadius: 0
+--- !u!50 &839644759771402328
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655542389831496875}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

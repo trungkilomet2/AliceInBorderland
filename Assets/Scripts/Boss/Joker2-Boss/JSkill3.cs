@@ -13,7 +13,7 @@ public class JSkill3 : BossSkillBase
 
     private void Awake()
     {
-        cooldown = 20f; // Cooldown của skill
+        cooldown = 10f; // Cooldown của skill
     }
 
     protected override void Activate()
