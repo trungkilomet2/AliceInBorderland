@@ -158,7 +158,7 @@ public class StageEventManager : MonoBehaviour
     private IEnumerator LoadWinSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("WinScene");
+        SceneManager.LoadScene("EndScene");
     }
 
     private int GetAliveEnemyCount(EnemyData data)
