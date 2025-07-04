@@ -179,7 +179,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65, y: 0.99}
+    oldSize: {x: 2.5, y: 2.5}
     newSize: {x: 2.33, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   damageReductionMultiplier: 1
   audioManager: {fileID: 0}
   isDashing: 0
+  healAmountPerCoin: 10
   projectile: {fileID: 1002380445795179338, guid: 74dd24a2986f3d24081306289d3556a1, type: 3}
   projectileSpawnPoint: {fileID: 7312249985641595714}
   timeBtwProjectile: 0.5

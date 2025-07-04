@@ -20,6 +20,7 @@ public class Archer : CharacterCommonBehavior
         _timeBtwArrow -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _timeBtwArrow < 0)
         {
+            animator.SetTrigger("attack");
             Attack();
         }
     }

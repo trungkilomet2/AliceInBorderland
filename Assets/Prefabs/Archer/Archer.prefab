@@ -147,6 +147,7 @@ MonoBehaviour:
   damageReductionMultiplier: 1
   audioManager: {fileID: 0}
   isDashing: 0
+  healAmountPerCoin: 10
   arrow: {fileID: 8875036098252759429, guid: 95510d04de5f5c141b93d44b340dea52, type: 3}
   arrowSpawnPoint: {fileID: 1999351418892819015}
   timeBtwArrow: 0.2
