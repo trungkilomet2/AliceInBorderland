@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a00b9de18b52ed4d91e7da5ae0f19b6
+guid: 10252bbf14cdf9d4692bea47898229c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_0
+      name: Atk_04
       rect:
         serializedVersion: 2
-        x: 351
-        y: 158
-        width: 32
-        height: 34
+        x: 95
+        y: 256
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f7cd77b5e7a7e4dbeb8f7c6ba33ea2
-      internalID: -1417317413
+      spriteID: c9ab234ce0c67cf44afdce1cab4a6d93
+      internalID: 772414204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_1
+      name: Atk_00
       rect:
         serializedVersion: 2
-        x: 383
-        y: 158
-        width: 31
-        height: 34
+        x: 95
+        y: 384
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e606b3d11aa83ff47af48b74f5df250f
-      internalID: -838712669
+      spriteID: 798b1c8b62de07b409f63db530cb9a78
+      internalID: -619255066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_2
+      name: Atk_01
       rect:
         serializedVersion: 2
-        x: 414
-        y: 158
-        width: 35
-        height: 34
+        x: 382
+        y: 384
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e73631984d3e664b826d6b99fe60852
-      internalID: 1824161749
+      spriteID: 9e36483f097602143a8f1f02d35fa3be
+      internalID: 1100250503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_3
+      name: Atk_02
       rect:
         serializedVersion: 2
-        x: 449
-        y: 158
-        width: 31
-        height: 34
+        x: 669
+        y: 384
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0f86e33f54b7944692c55a9005b6b5c
-      internalID: 1314901949
+      spriteID: c5995a8fbb505724e91301e84bbe912f
+      internalID: 2121279877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_4
+      name: Atk_4
       rect:
         serializedVersion: 2
-        x: 191
-        y: 480
-        width: 33
-        height: 32
+        x: 669
+        y: 384
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab267dd98b679f41ae1717fdda195f7
-      internalID: 1034409743
+      spriteID: bad7825ef5805b04c9e9e2a2fb89f60c
+      internalID: 1151678851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_5
+      name: Atk_03
       rect:
         serializedVersion: 2
-        x: 224
-        y: 480
-        width: 32
-        height: 32
+        x: 956
+        y: 384
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cd555ec26bd6ff458b711ff9f3e3e68
-      internalID: -1548020519
+      spriteID: 2b6c45290fe57484eacfde4ecea549a8
+      internalID: 1644173440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_6
+      name: Atk_05
       rect:
         serializedVersion: 2
-        x: 256
-        y: 480
-        width: 32
-        height: 32
+        x: 382
+        y: 256
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d734ca0a18dbd240a2739bd4ad272c1
-      internalID: 1851539680
+      spriteID: 718e791ca35c64c4ba07a8fede93ee41
+      internalID: -1093305069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_7
+      name: Atk_06
       rect:
         serializedVersion: 2
-        x: 288
-        y: 480
-        width: 32
-        height: 32
+        x: 669
+        y: 256
+        width: 108
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e705b3946352b634f84ba253110acb52
-      internalID: 84429954
+      spriteID: 38fea4d7a5781524cbb5355db7678fec
+      internalID: 112817114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red Effect Bullet Impact Explosion 32x32_8
+      name: Atk_07
       rect:
         serializedVersion: 2
-        x: 512
-        y: 224
-        width: 32
-        height: 32
+        x: 1019
+        y: 268
+        width: 45
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa8c02efdf743b4ab871b719ba75b17
+      internalID: -301994667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atk 1_0
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 135
+        width: 11
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 603d47e3d1c94394d803b9ad68b9cd0d
-      internalID: -1027048205
+      spriteID: cef79ea8914ba264aa7596ab9ffbefad
+      internalID: 1140471926
       vertices: []
       indices: 
       edges: []
@@ -296,15 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Red Effect Bullet Impact Explosion 32x32_0: -1417317413
-      Red Effect Bullet Impact Explosion 32x32_1: -838712669
-      Red Effect Bullet Impact Explosion 32x32_2: 1824161749
-      Red Effect Bullet Impact Explosion 32x32_3: 1314901949
-      Red Effect Bullet Impact Explosion 32x32_4: 1034409743
-      Red Effect Bullet Impact Explosion 32x32_5: -1548020519
-      Red Effect Bullet Impact Explosion 32x32_6: 1851539680
-      Red Effect Bullet Impact Explosion 32x32_7: 84429954
-      Red Effect Bullet Impact Explosion 32x32_8: -1027048205
+      Atk 1_0: 1140471926
+      Atk_00: -619255066
+      Atk_01: 1100250503
+      Atk_02: 2121279877
+      Atk_03: 1644173440
+      Atk_04: 772414204
+      Atk_05: -1093305069
+      Atk_06: 112817114
+      Atk_07: -301994667
+      Atk_4: 1151678851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
