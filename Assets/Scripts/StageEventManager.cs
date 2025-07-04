@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageEventManager : MonoBehaviour
 {
@@ -145,7 +147,18 @@ public class StageEventManager : MonoBehaviour
         {
             bossDefeated = true;
             Debug.Log("✅ Boss đã bị tiêu diệt!");
+
+            if (currentStageIndex == stageData.stageEvents.Count - 1)
+            {
+                StartCoroutine(LoadWinSceneAfterDelay(1f));
+            }
         }
+    }
+
+    private IEnumerator LoadWinSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("WinScene");
     }
 
     private int GetAliveEnemyCount(EnemyData data)
