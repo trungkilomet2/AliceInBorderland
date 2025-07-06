@@ -17,10 +17,7 @@ public class BunnyProjectile : MonoBehaviour
     void Update()
     {
 
-        Vector3 bunnyPos = transform.position;
-        Vector3 playerPos = targetGameObject.transform.position;
-        bool facingLeft = bunnyPos.x > playerPos.x;
-        GetComponent<SpriteRenderer>().flipX = facingLeft;
+        
         transform.position += direction * moveSpeed * Time.deltaTime;
         timeAlive += Time.deltaTime;
         if (timeAlive >= lifeTime)
